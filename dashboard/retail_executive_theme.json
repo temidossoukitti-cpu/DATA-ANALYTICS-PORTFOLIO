@@ -1,0 +1,112 @@
+{
+  "name": "Retail Executive",
+  "dataColors": [
+    "#1F7A8C",
+    "#2A9D6F",
+    "#E0A458",
+    "#D95D5D",
+    "#5B6C8F",
+    "#7A6F9B",
+    "#3D8FB0",
+    "#8AA66A"
+  ],
+  "background": "#F4F6F8",
+  "foreground": "#16324F",
+  "tableAccent": "#1F7A8C",
+  "good": "#2A9D6F",
+  "neutral": "#E0A458",
+  "bad": "#D95D5D",
+  "maximum": "#1F7A8C",
+  "center": "#E8EDF2",
+  "minimum": "#D95D5D",
+  "null": "#A7B1BC",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 30,
+      "color": "#16324F"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#16324F"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 11,
+      "color": "#16324F"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#526273"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 100
+          }
+        ],
+        "visualHeader": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "show": false
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [
+          {
+            "color": {
+              "solid": {
+                "color": "#16324F"
+              }
+            },
+            "fontSize": 28,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ],
+        "categoryLabels": [
+          {
+            "show": false
+          }
+        ]
+      }
+    },
+    "slicer": {
+      "*": {
+        "header": [
+          {
+            "show": false
+          }
+        ],
+        "items": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#243B53"
+              }
+            },
+            "textSize": 10,
+            "fontFamily": "Segoe UI"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+KPI,Value,Format
+Total Sales,2297200.8603,currency
+Total Profit,286397.0217,currency
+Profit Margin,0.12467217240315605,percent
+Orders,5009.0,integer
+Customers,793.0,integer
+Products,1862.0,integer
+Units Sold,37873.0,integer
+Average Order Value,458.61466566180883,currency
+Average Discount,0.1562027216329798,percent
+Average Shipping Days,3.958174904942966,decimal
+Repeat Customer Rate,0.9848675914249685,percent
+Loss-making Sales Share,0.20403403241751783,percent
+Sales CAGR,0.14829824805914638,percent
+Latest Annual Sales Growth,0.20355961535337053,percent
+Latest Annual Profit Growth,0.14235675147891946,percent

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <filter id="panelShadow" x="-8%" y="-8%" width="116%" height="124%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#172B3A" flood-opacity="0.07"/>
+    </filter>
+    <style>
+      .ui { font-family: "Segoe UI", Arial, sans-serif; }
+      .title { font-size: 24px; font-weight: 600; fill: #FFFFFF; }
+      .meta { font-size: 10px; font-weight: 400; fill: #C9D4DA; }
+      .section { font-size: 12px; font-weight: 600; fill: #172B3A; }
+      .eyebrow { font-size: 9px; font-weight: 600; fill: #71808A; }
+      .kpi-label { font-size: 10px; font-weight: 600; fill: #536572; }
+      .filter-label { font-size: 10px; font-weight: 600; fill: #536572; }
+      .filter-value { font-size: 10px; font-weight: 400; fill: #273B49; }
+      .footer { font-size: 9px; font-weight: 400; fill: #7B8992; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="900" fill="#F3F5F7"/>
+  <rect x="0" y="0" width="1440" height="72" fill="#243D4D"/>
+  <rect x="0" y="69" width="1440" height="3" fill="#176B78"/>
+
+  <g class="ui">
+    <text x="24" y="32" class="title">Dashboard Title</text>
+    <text x="24" y="52" class="meta">EXECUTIVE ANALYTICS</text>
+    <text x="1416" y="31" text-anchor="end" class="meta">BUSINESS UNIT</text>
+    <text x="1416" y="50" text-anchor="end" class="meta">REPORTING PERIOD</text>
+
+    <!-- KPI row -->
+    <g filter="url(#panelShadow)">
+      <rect x="24" y="92" width="212" height="104" rx="5" fill="#FFFFFF"/>
+      <rect x="260" y="92" width="212" height="104" rx="5" fill="#FFFFFF"/>
+      <rect x="496" y="92" width="212" height="104" rx="5" fill="#FFFFFF"/>
+      <rect x="732" y="92" width="212" height="104" rx="5" fill="#FFFFFF"/>
+      <rect x="968" y="92" width="212" height="104" rx="5" fill="#FFFFFF"/>
+      <rect x="1204" y="92" width="212" height="104" rx="5" fill="#FFFFFF"/>
+    </g>
+    <rect x="24" y="92" width="4" height="104" rx="2" fill="#176B78"/>
+    <rect x="260" y="92" width="4" height="104" rx="2" fill="#4F6B78"/>
+    <rect x="496" y="92" width="4" height="104" rx="2" fill="#3F7D6A"/>
+    <rect x="732" y="92" width="4" height="104" rx="2" fill="#A6783D"/>
+    <rect x="968" y="92" width="4" height="104" rx="2" fill="#6B6585"/>
+    <rect x="1204" y="92" width="4" height="104" rx="2" fill="#4D7699"/>
+    <text x="44" y="119" class="kpi-label">KPI 01</text>
+    <text x="280" y="119" class="kpi-label">KPI 02</text>
+    <text x="516" y="119" class="kpi-label">KPI 03</text>
+    <text x="752" y="119" class="kpi-label">KPI 04</text>
+    <text x="988" y="119" class="kpi-label">KPI 05</text>
+    <text x="1224" y="119" class="kpi-label">KPI 06</text>
+
+    <!-- Filters and main trend -->
+    <g filter="url(#panelShadow)">
+      <rect x="24" y="220" width="260" height="250" rx="5" fill="#FFFFFF"/>
+      <rect x="308" y="220" width="1108" height="250" rx="5" fill="#FFFFFF"/>
+    </g>
+    <text x="44" y="250" class="section">Filters</text>
+    <text x="264" y="250" text-anchor="end" class="eyebrow">REPORT CONTROLS</text>
+    <line x1="44" y1="262" x2="264" y2="262" stroke="#E3E8EB"/>
+
+    <text x="44" y="290" class="filter-label">PERIOD</text>
+    <rect x="44" y="300" width="220" height="34" rx="4" fill="#F7F8F9" stroke="#CFD8DE"/>
+    <text x="56" y="321" class="filter-value">All</text>
+    <path d="M244 313 l5 5 l5 -5" fill="none" stroke="#71808A" stroke-width="1.5"/>
+
+    <text x="44" y="357" class="filter-label">DIMENSION 01</text>
+    <rect x="44" y="367" width="220" height="34" rx="4" fill="#F7F8F9" stroke="#CFD8DE"/>
+    <text x="56" y="388" class="filter-value">All</text>
+    <path d="M244 380 l5 5 l5 -5" fill="none" stroke="#71808A" stroke-width="1.5"/>
+
+    <text x="44" y="424" class="filter-label">DIMENSION 02</text>
+    <rect x="44" y="434" width="220" height="34" rx="4" fill="#F7F8F9" stroke="#CFD8DE"/>
+    <text x="56" y="455" class="filter-value">All</text>
+    <path d="M244 447 l5 5 l5 -5" fill="none" stroke="#71808A" stroke-width="1.5"/>
+
+    <text x="328" y="250" class="section">Main Trend</text>
+    <text x="1396" y="250" text-anchor="end" class="eyebrow">PERFORMANCE OVER TIME</text>
+    <line x1="328" y1="262" x2="1396" y2="262" stroke="#E3E8EB"/>
+
+    <!-- Analysis row -->
+    <g filter="url(#panelShadow)">
+      <rect x="24" y="494" width="686" height="178" rx="5" fill="#FFFFFF"/>
+      <rect x="734" y="494" width="682" height="178" rx="5" fill="#FFFFFF"/>
+    </g>
+    <text x="44" y="524" class="section">Chart 01</text>
+    <text x="690" y="524" text-anchor="end" class="eyebrow">BREAKDOWN</text>
+    <line x1="44" y1="536" x2="690" y2="536" stroke="#E3E8EB"/>
+    <text x="754" y="524" class="section">Chart 02</text>
+    <text x="1396" y="524" text-anchor="end" class="eyebrow">COMPARISON</text>
+    <line x1="754" y1="536" x2="1396" y2="536" stroke="#E3E8EB"/>
+
+    <!-- Detail row -->
+    <g filter="url(#panelShadow)">
+      <rect x="24" y="696" width="686" height="180" rx="5" fill="#FFFFFF"/>
+      <rect x="734" y="696" width="682" height="180" rx="5" fill="#FFFFFF"/>
+    </g>
+    <text x="44" y="726" class="section">Chart 03</text>
+    <text x="690" y="726" text-anchor="end" class="eyebrow">DRIVER ANALYSIS</text>
+    <line x1="44" y1="738" x2="690" y2="738" stroke="#E3E8EB"/>
+    <text x="754" y="726" class="section">Table / Top 10</text>
+    <text x="1396" y="726" text-anchor="end" class="eyebrow">DETAIL VIEW</text>
+    <line x1="754" y1="738" x2="1396" y2="738" stroke="#E3E8EB"/>
+
+    <text x="24" y="894" class="footer">Source: data model</text>
+    <text x="1416" y="894" text-anchor="end" class="footer">Last refresh: DD MMM YYYY, HH:mm</text>
+  </g>
+</svg>

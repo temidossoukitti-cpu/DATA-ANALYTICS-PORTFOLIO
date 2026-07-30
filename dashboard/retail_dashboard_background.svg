@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#16324F" flood-opacity="0.08"/>
+    </filter>
+    <style>
+      .ui { font-family: "Segoe UI", Arial, sans-serif; }
+      .heading { font-size: 24px; font-weight: 600; fill: #FFFFFF; }
+      .subheading { font-size: 11px; font-weight: 400; fill: #C8D6E3; }
+      .section { font-size: 12px; font-weight: 600; fill: #16324F; }
+      .kpi { font-size: 11px; font-weight: 600; fill: #526273; }
+      .filter-label { font-size: 10px; font-weight: 600; fill: #C8D6E3; }
+      .filter-value { font-size: 11px; font-weight: 400; fill: #FFFFFF; }
+      .footer { font-size: 9px; font-weight: 400; fill: #8795A5; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="900" fill="#F4F6F8"/>
+  <rect x="0" y="0" width="1440" height="72" fill="#16324F"/>
+  <rect x="0" y="72" width="220" height="828" fill="#203D5A"/>
+  <rect x="0" y="72" width="4" height="828" fill="#1F7A8C"/>
+
+  <g class="ui">
+    <text x="28" y="32" class="heading">Retail Sales</text>
+    <text x="28" y="52" class="subheading">EXECUTIVE PERFORMANCE DASHBOARD</text>
+    <text x="1410" y="31" text-anchor="end" class="subheading">COMMERCIAL MANAGEMENT</text>
+    <text x="1410" y="50" text-anchor="end" class="subheading">USD | 2014-2017</text>
+
+    <text x="24" y="108" class="filter-label">FILTERS</text>
+    <line x1="24" y1="121" x2="196" y2="121" stroke="#4A6279" stroke-width="1"/>
+
+    <text x="24" y="153" class="filter-label">YEAR</text>
+    <rect x="20" y="164" width="180" height="42" rx="4" fill="#294966" stroke="#537089"/>
+    <text x="34" y="190" class="filter-value">All years</text>
+    <path d="M178 181 l6 6 l6 -6" fill="none" stroke="#C8D6E3" stroke-width="1.5"/>
+
+    <text x="24" y="235" class="filter-label">REGION</text>
+    <rect x="20" y="246" width="180" height="42" rx="4" fill="#294966" stroke="#537089"/>
+    <text x="34" y="272" class="filter-value">All regions</text>
+    <path d="M178 263 l6 6 l6 -6" fill="none" stroke="#C8D6E3" stroke-width="1.5"/>
+
+    <text x="24" y="317" class="filter-label">SEGMENT</text>
+    <rect x="20" y="328" width="180" height="42" rx="4" fill="#294966" stroke="#537089"/>
+    <text x="34" y="354" class="filter-value">All segments</text>
+    <path d="M178 345 l6 6 l6 -6" fill="none" stroke="#C8D6E3" stroke-width="1.5"/>
+
+    <text x="24" y="399" class="filter-label">CATEGORY</text>
+    <rect x="20" y="410" width="180" height="42" rx="4" fill="#294966" stroke="#537089"/>
+    <text x="34" y="436" class="filter-value">All categories</text>
+    <path d="M178 427 l6 6 l6 -6" fill="none" stroke="#C8D6E3" stroke-width="1.5"/>
+
+    <text x="24" y="481" class="filter-label">SHIP MODE</text>
+    <rect x="20" y="492" width="180" height="42" rx="4" fill="#294966" stroke="#537089"/>
+    <text x="34" y="518" class="filter-value">All ship modes</text>
+    <path d="M178 509 l6 6 l6 -6" fill="none" stroke="#C8D6E3" stroke-width="1.5"/>
+
+    <line x1="24" y1="568" x2="196" y2="568" stroke="#4A6279" stroke-width="1"/>
+    <text x="24" y="595" class="filter-label">SELECTION</text>
+    <text x="24" y="620" class="filter-value">Jan 2014 - Dec 2017</text>
+
+    <text x="24" y="856" class="subheading">Source: Superstore Clean</text>
+    <text x="24" y="874" class="subheading">Last order: 30 Dec 2017</text>
+
+    <!-- KPI cards -->
+    <g filter="url(#shadow)">
+      <rect x="244" y="92" width="218" height="110" rx="5" fill="#FFFFFF"/>
+      <rect x="482" y="92" width="218" height="110" rx="5" fill="#FFFFFF"/>
+      <rect x="720" y="92" width="218" height="110" rx="5" fill="#FFFFFF"/>
+      <rect x="958" y="92" width="218" height="110" rx="5" fill="#FFFFFF"/>
+      <rect x="1196" y="92" width="220" height="110" rx="5" fill="#FFFFFF"/>
+    </g>
+    <rect x="244" y="92" width="5" height="110" rx="2" fill="#1F7A8C"/>
+    <rect x="482" y="92" width="5" height="110" rx="2" fill="#2A9D6F"/>
+    <rect x="720" y="92" width="5" height="110" rx="2" fill="#E0A458"/>
+    <rect x="958" y="92" width="5" height="110" rx="2" fill="#5B6C8F"/>
+    <rect x="1196" y="92" width="5" height="110" rx="2" fill="#7A6F9B"/>
+    <text x="264" y="119" class="kpi">TOTAL SALES</text>
+    <text x="502" y="119" class="kpi">TOTAL PROFIT</text>
+    <text x="740" y="119" class="kpi">PROFIT MARGIN</text>
+    <text x="978" y="119" class="kpi">ORDERS</text>
+    <text x="1216" y="119" class="kpi">CUSTOMERS</text>
+
+    <!-- Row 1 -->
+    <g filter="url(#shadow)">
+      <rect x="244" y="222" width="570" height="240" rx="5" fill="#FFFFFF"/>
+      <rect x="834" y="222" width="582" height="240" rx="5" fill="#FFFFFF"/>
+    </g>
+    <text x="264" y="251" class="section">Sales Trend</text>
+    <text x="794" y="251" text-anchor="end" class="footer">MONTHLY</text>
+    <line x1="264" y1="262" x2="794" y2="262" stroke="#E7EBEF"/>
+    <text x="854" y="251" class="section">Profit Trend</text>
+    <text x="1396" y="251" text-anchor="end" class="footer">MONTHLY</text>
+    <line x1="854" y1="262" x2="1396" y2="262" stroke="#E7EBEF"/>
+
+    <!-- Row 2 -->
+    <g filter="url(#shadow)">
+      <rect x="244" y="482" width="365" height="190" rx="5" fill="#FFFFFF"/>
+      <rect x="629" y="482" width="465" height="190" rx="5" fill="#FFFFFF"/>
+      <rect x="1114" y="482" width="302" height="190" rx="5" fill="#FFFFFF"/>
+    </g>
+    <text x="264" y="511" class="section">Sales by Category</text>
+    <line x1="264" y1="522" x2="589" y2="522" stroke="#E7EBEF"/>
+    <text x="649" y="511" class="section">Profit by Sub-Category</text>
+    <line x1="649" y1="522" x2="1074" y2="522" stroke="#E7EBEF"/>
+    <text x="1134" y="511" class="section">Profit by Region</text>
+    <line x1="1134" y1="522" x2="1396" y2="522" stroke="#E7EBEF"/>
+
+    <!-- Row 3 -->
+    <g filter="url(#shadow)">
+      <rect x="244" y="692" width="570" height="184" rx="5" fill="#FFFFFF"/>
+      <rect x="834" y="692" width="582" height="184" rx="5" fill="#FFFFFF"/>
+    </g>
+    <text x="264" y="721" class="section">Top 10 Customers</text>
+    <text x="794" y="721" text-anchor="end" class="footer">BY SALES</text>
+    <line x1="264" y1="732" x2="794" y2="732" stroke="#E7EBEF"/>
+    <text x="854" y="721" class="section">Discount vs Profit</text>
+    <text x="1396" y="721" text-anchor="end" class="footer">SUB-CATEGORY VIEW</text>
+    <line x1="854" y1="732" x2="1396" y2="732" stroke="#E7EBEF"/>
+  </g>
+</svg>

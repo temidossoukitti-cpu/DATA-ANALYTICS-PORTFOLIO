@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dashboard interactif de pilotage des ventes Retail Superstore."
+    />
+    <title>Retail Sales | Executive Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="dashboard-shell">
+      <header class="topbar">
+        <div>
+          <h1>Retail Sales</h1>
+          <p>Executive performance dashboard</p>
+        </div>
+        <div class="topbar-context">
+          <span>Commercial management</span>
+          <strong id="reporting-period">USD | 2014-2017</strong>
+        </div>
+      </header>
+
+      <aside class="filter-rail" aria-label="Filtres du rapport">
+        <div class="rail-heading">
+          <span>Filtres</span>
+          <button
+            id="reset-filters"
+            class="icon-button"
+            type="button"
+            title="Réinitialiser les filtres"
+            aria-label="Réinitialiser les filtres"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
+              <path d="M3 3v5h5" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="filter-list">
+          <label>
+            <span>Année</span>
+            <select id="filter-year" data-field="year">
+              <option value="">Toutes les années</option>
+            </select>
+          </label>
+          <label>
+            <span>Région</span>
+            <select id="filter-region" data-field="region">
+              <option value="">Toutes les régions</option>
+            </select>
+          </label>
+          <label>
+            <span>Segment</span>
+            <select id="filter-segment" data-field="segment">
+              <option value="">Tous les segments</option>
+            </select>
+          </label>
+          <label>
+            <span>Catégorie</span>
+            <select id="filter-category" data-field="category">
+              <option value="">Toutes les catégories</option>
+            </select>
+          </label>
+          <label>
+            <span>Mode de livraison</span>
+            <select id="filter-ship-mode" data-field="shipMode">
+              <option value="">Tous les modes</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="selection-summary">
+          <span>Sélection</span>
+          <strong id="selection-period">Jan. 2014 - Déc. 2017</strong>
+          <small id="selection-count">9 994 lignes analysées</small>
+        </div>
+
+        <footer>
+          <span>Source : Superstore Clean</span>
+          <span id="last-order">Dernière commande : 30 déc. 2017</span>
+        </footer>
+      </aside>
+
+      <section class="content">
+        <section class="kpi-grid" aria-label="Indicateurs clés">
+          <article class="kpi-card accent-sales">
+            <span>Chiffre d’affaires</span>
+            <strong id="kpi-sales">-</strong>
+            <small id="kpi-sales-change">Période sélectionnée</small>
+          </article>
+          <article class="kpi-card accent-profit">
+            <span>Profit total</span>
+            <strong id="kpi-profit">-</strong>
+            <small id="kpi-profit-change">Période sélectionnée</small>
+          </article>
+          <article class="kpi-card accent-margin">
+            <span>Marge bénéficiaire</span>
+            <strong id="kpi-margin">-</strong>
+            <small id="kpi-margin-status">Profit / chiffre d’affaires</small>
+          </article>
+          <article class="kpi-card accent-orders">
+            <span>Commandes</span>
+            <strong id="kpi-orders">-</strong>
+            <small id="kpi-aov">Panier moyen : -</small>
+          </article>
+          <article class="kpi-card accent-customers">
+            <span>Clients</span>
+            <strong id="kpi-customers">-</strong>
+            <small id="kpi-repeat">Portefeuille actif</small>
+          </article>
+        </section>
+
+        <section class="chart-row trend-row">
+          <article class="panel">
+            <header>
+              <h2>Évolution du chiffre d’affaires</h2>
+              <span>Mensuel</span>
+            </header>
+            <div id="sales-trend" class="chart" role="img"></div>
+          </article>
+          <article class="panel">
+            <header>
+              <h2>Évolution du profit</h2>
+              <span>Mensuel</span>
+            </header>
+            <div id="profit-trend" class="chart" role="img"></div>
+          </article>
+        </section>
+
+        <section class="chart-row breakdown-row">
+          <article class="panel">
+            <header>
+              <h2>Ventes par catégorie</h2>
+              <span>Part du CA</span>
+            </header>
+            <div id="category-sales" class="chart" role="img"></div>
+          </article>
+          <article class="panel">
+            <header>
+              <h2>Profit par sous-catégorie</h2>
+              <span>Top et pertes</span>
+            </header>
+            <div id="subcategory-profit" class="chart" role="img"></div>
+          </article>
+          <article class="panel">
+            <header>
+              <h2>Profit par région</h2>
+              <span>Comparaison</span>
+            </header>
+            <div id="region-profit" class="chart" role="img"></div>
+          </article>
+        </section>
+
+        <section class="chart-row detail-row">
+          <article class="panel">
+            <header>
+              <h2>Top 10 clients</h2>
+              <span>Par ventes</span>
+            </header>
+            <div id="top-customers" class="chart" role="img"></div>
+          </article>
+          <article class="panel">
+            <header>
+              <h2>Remise vs profit</h2>
+              <span>Vue sous-catégorie</span>
+            </header>
+            <div id="discount-profit" class="chart" role="img"></div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+    <div id="loading" class="loading-state">
+      <div class="spinner" aria-hidden="true"></div>
+      <strong>Chargement des données</strong>
+      <span>Préparation du tableau de bord...</span>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+// ---------------------------------------------------------------------------
+// MODEL CONVENTION
+// Rename the imported query to Sales. Keep the source file unchanged.
+// Create a one-to-many relationship: Date[Date] (1) -> Sales[Order Date] (*).
+// Mark Date as the model's date table using Date[Date].
+// ---------------------------------------------------------------------------
+
+// CALCULATED TABLE
+Date =
+VAR MinOrderDate = MIN ( Sales[Order Date] )
+VAR MaxOrderDate = MAX ( Sales[Order Date] )
+RETURN
+    CALENDAR (
+        DATE ( YEAR ( MinOrderDate ), 1, 1 ),
+        DATE ( YEAR ( MaxOrderDate ), 12, 31 )
+    )
+
+// CALCULATED COLUMNS ON THE Date TABLE
+Year = YEAR ( Date[Date] )
+
+Month Number = MONTH ( Date[Date] )
+
+Month = FORMAT ( Date[Date], "MMM" )
+
+Month Full = FORMAT ( Date[Date], "MMMM" )
+
+Month Start = DATE ( YEAR ( Date[Date] ), MONTH ( Date[Date] ), 1 )
+
+Year Month = FORMAT ( Date[Date], "YYYY-MMM" )
+
+Year Month Sort = YEAR ( Date[Date] ) * 100 + MONTH ( Date[Date] )
+
+Quarter = "Q" & FORMAT ( Date[Date], "Q" )
+
+// Sort Date[Month] by Date[Month Number].
+// Sort Date[Year Month] by Date[Year Month Sort].
+
+// ---------------------------------------------------------------------------
+// CORE KPI MEASURES
+// ---------------------------------------------------------------------------
+
+Total Sales =
+SUM ( Sales[Sales] )
+
+Total Profit =
+SUM ( Sales[Profit] )
+
+Profit Margin =
+DIVIDE ( [Total Profit], [Total Sales] )
+
+Orders =
+DISTINCTCOUNT ( Sales[Order ID] )
+
+Customers =
+DISTINCTCOUNT ( Sales[Customer ID] )
+
+// ---------------------------------------------------------------------------
+// SUPPORTING MEASURES
+// ---------------------------------------------------------------------------
+
+Average Discount =
+AVERAGE ( Sales[Discount] )
+
+Average Order Value =
+DIVIDE ( [Total Sales], [Orders] )
+
+Profit per Order =
+DIVIDE ( [Total Profit], [Orders] )
+
+Sales LY =
+CALCULATE ( [Total Sales], DATEADD ( Date[Date], -1, YEAR ) )
+
+Sales YoY =
+DIVIDE ( [Total Sales] - [Sales LY], [Sales LY] )
+
+Profit LY =
+CALCULATE ( [Total Profit], DATEADD ( Date[Date], -1, YEAR ) )
+
+Profit YoY =
+DIVIDE ( [Total Profit] - [Profit LY], [Profit LY] )
+
+Customer Sales Rank =
+RANKX (
+    ALLSELECTED ( Sales[Customer Name] ),
+    [Total Sales],
+    ,
+    DESC,
+    DENSE
+)
+
+Top 10 Customer Sales =
+IF ( [Customer Sales Rank] <= 10, [Total Sales] )
+
+Profit Status Color =
+IF ( [Total Profit] < 0, "#D95D5D", "#2A9D6F" )
+
+Margin Status Color =
+SWITCH (
+    TRUE (),
+    [Profit Margin] < 0, "#D95D5D",
+    [Profit Margin] < 0.10, "#E0A458",
+    "#2A9D6F"
+)
+
+Selected Period =
+VAR MinVisibleDate = MIN ( Date[Date] )
+VAR MaxVisibleDate = MAX ( Date[Date] )
+RETURN
+    FORMAT ( MinVisibleDate, "MMM YYYY" )
+        & " - "
+        & FORMAT ( MaxVisibleDate, "MMM YYYY" )
+
+// Recommended model format strings:
+// Total Sales, Total Profit, Sales LY, Average Order Value, Profit per Order:
+//     $#,0;($#,0);-
+// Profit Margin, Average Discount, Sales YoY, Profit YoY:
+//     0.0%;(0.0%);-
+// Orders, Customers:
+//     #,0
