@@ -1,0 +1,48 @@
+/* Projet 1 : mesures DAX
+   DAX = langage de calcul de Power BI.
+   Table principale supposée : FactBudgetActual
+*/
+
+Total Budget =
+SUM ( FactBudgetActual[budget] )
+
+Total Dépenses Réelles =
+SUM ( FactBudgetActual[expenditures] )
+
+Écart Budget =
+[Total Dépenses Réelles] - [Total Budget]
+
+Écart Budget % =
+DIVIDE ( [Écart Budget], [Total Budget], BLANK () )
+
+Taux de Consommation =
+DIVIDE ( [Total Dépenses Réelles], [Total Budget], BLANK () )
+
+Lignes en Dépassement =
+CALCULATE (
+    COUNTROWS ( FactBudgetActual ),
+    FactBudgetActual[unfavorable_flag] = TRUE ()
+)
+
+Budget à Zéro =
+CALCULATE (
+    COUNTROWS ( FactBudgetActual ),
+    FactBudgetActual[budget_zero_flag] = TRUE ()
+)
+
+Montants Négatifs =
+CALCULATE (
+    COUNTROWS ( FactBudgetActual ),
+    FactBudgetActual[negative_amount_flag] = TRUE ()
+)
+
+Statut Écart =
+SWITCH (
+    TRUE (),
+    [Écart Budget] > 0, "Dépassement",
+    [Écart Budget] < 0, "Sous-consommation",
+    "Équilibre"
+)
+
+-- Pour une dépense, un écart positif signifie que l’organisation a dépensé plus que prévu.
+-- Les budgets égaux à zéro ne sont pas utilisés pour calculer un pourcentage.

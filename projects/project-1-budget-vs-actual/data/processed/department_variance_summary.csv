@@ -1,0 +1,62 @@
+dept_rollup_name,department_name,budget,expenditures,variance,rows,zero_budget_rows,variance_pct,unfavorable
+Austin Transportation,PW Mobility - CIPs,15700.0,15700.0,0.0,1,0,0.0,False
+Austin Resource Recovery,Austin Resource Recovery CIPs,0.0,0.0,0.0,11,11,,False
+Communications & Public Information,Austin Communications & Engagement,0.0,0.0,0.0,312,312,,False
+Aviation,Austin Aviation CIPs,0.0,0.0,0.0,1,1,,False
+Austin Water,AW - Reclaimed CIP,309231.0,309231.0,0.0,1,0,0.0,False
+Economic Development,Austin Economic Development CIPs,0.0,0.0,0.0,1,1,,False
+Parks & Recreation,Austin Parks & Recreation CIPs,0.0,0.0,0.0,17,17,,False
+Planning & Zoning,Austin Planning CIPs,1500000.0,1500000.0,0.0,2,1,0.0,False
+Financial Services,GG CIP-Miscellaneous,9340294.0,9340294.0,0.0,1,0,0.0,False
+Neighborhood Housing & Community Development,Austin Housing - AHFC,0.0,0.0,0.0,10,10,,False
+Public Works,Austin Transportation & Public Works CIPs,91332.0,91331.41,-0.5899999999965075,2,1,-0.0006459948320375197,False
+Information Security Office,Information Security Office,0.0,-142238.95,-142238.95,127,127,,False
+Austin Water,AW - Water CIPs,21925630.0,21602905.49,-322724.51000000164,2,0,-1.4719052998705244,False
+Austin Water,AW - Wastewater CIPs,13544667.0,12952384.62,-592282.3800000008,2,0,-4.372808722429284,False
+Economic Development,Social Service Grants - EDD,4066735.0,2919386.79,-1147348.21,4,1,-28.213006502759587,False
+Municipal Court,Social Service Grants - CC,6166090.0,4812439.69,-1353650.3099999996,3,2,-21.95313902327082,False
+Small and Minority Business Resources,Austin Small & Minority Business Resources,6157511.0,4615686.41,-1541824.5899999999,155,72,-25.03973748483762,False
+Austin Transportation,Austin Transportation,0.0,-1554735.03,-1554735.03,1,1,,False
+Office of the City Auditor,Austin City Auditor's Office,5548299.0,3883716.52,-1664582.4800000002,102,38,-30.001672224225846,False
+Watershed Protection,Austin Watershed Protection CIPs,6502186.0,4757364.75,-1744821.25,3,0,-26.83437923799781,False
+Office of the City Clerk,Austin City Clerk's Office,7671881.0,5193937.0,-2477944.0,84,29,-32.29904113476213,False
+Austin Conv & Visitors Bureau,Austin Convention&Visitors Bur,12913215.0,9684912.06,-3228302.9399999995,1,0,-24.999993727356042,False
+Planning & Zoning,Austin Planning,13449842.0,9943150.74,-3506691.2600000002,412,215,-26.072360255235715,False
+Mayor & Council,Mayor and Council,14426799.0,9999008.54,-4427790.46,475,170,-30.69142683695808,False
+Forensic Science,Austin Forensic Science,15949216.0,10541455.92,-5407760.08,366,170,-33.90611852018306,False
+Communications & Technology Management,Wireless Communication Services,21112598.0,15400580.34,-5712017.66,249,100,-27.05502023010148,False
+Austin Convention Center,Austin Convention Center CIPs,7000000.0,0.0,-7000000.0,1,0,-100.0,False
+Animal Services,Austin Animal Services,26243641.27,18702470.02,-7541171.25,470,193,-28.735232174586116,False
+Law,Austin City Attorney's Office,29930742.0,21756833.16,-8173908.839999999,440,236,-27.309409302315323,False
+Austin Public Health,Social Service Grants - APH,25415420.0,16406770.33,-9008649.67,20,7,-35.44560613202536,False
+Municipal Court,Austin Municipal Court,39846643.0,29437309.54,-10409333.46,693,379,-26.123489148132258,False
+Homeless Strategy Office,Austin Homeless Strategies & Operations,20673082.0,10068544.23,-10604537.77,212,90,-51.29635615047625,False
+Fleet Services,Austin Fleet Mobility Services,81400689.0,68567399.66,-12833289.34,1180,530,-15.765578274159326,False
+Economic Development,Austin Economic Development,34434892.0,19694004.79,-14740887.209999999,581,301,-42.80799605818424,False
+Nondepartmental,Nondepartmental Revenue/Expenses,439874669.0,422501899.07,-17372769.930000015,42,14,-3.949481785230969,False
+Building Services,Austin Facilities Management,70665881.0,52649414.33,-18016466.669999998,1545,843,-25.495283459354308,False
+Austin Public Health,Austin Public Health,70339192.68,50619071.04,-19720121.64,2108,927,-28.035752030470984,False
+Homeless Strategy Office,Social Service Grants - HSO,38705288.0,18458747.14,-20246540.86,3,1,-52.309495436385845,False
+Management Services,Management Services,60518866.0,39882689.02,-20636176.98,1627,692,-34.0987502640912,False
+Austin Public Library,Austin Public Library,83692693.0,63020904.29,-20671788.71,919,460,-24.699633825858612,False
+Public Works,Austin Capital Delivery Services,65991023.0,43102123.66,-22888899.34,967,364,-34.68486818275267,False
+Communications & Technology Management,Austin Technology Services,145666595.0,117404734.77,-28261860.23,1410,697,-19.401744257151066,False
+Emergency Medical Services,Austin-Travis County Emergency Medical Services,151269631.0,120671322.4,-30598308.599999998,1246,595,-20.227661294420688,False
+Development Services,Austin Development Services,110741037.0,79786691.01,-30954345.990000002,2192,1062,-27.952010229053574,False
+Watershed Protection,Austin Watershed Protection,128523125.0,95212387.11,-33310737.89,1863,918,-25.918088974260467,False
+Austin Resource Recovery,Austin Resource Recovery,146784957.0,111739432.37,-35045524.63,1848,682,-23.875419761168036,False
+Parks & Recreation,Austin Parks & Recreation,157486780.0,120099203.08,-37387576.92,6083,2551,-23.7401367403664,False
+Neighborhood Housing & Community Development,Austin Housing,55938052.0,18158349.29,-37779702.71,259,146,-67.53846685615724,False
+"Office of Arts, Culture, Music and Entertainment","Austin Arts, Culture, Music & Entertainment",71193853.0,31300098.68,-39893754.32,1054,528,-56.03539159483334,False
+Fire,Austin Fire,269946011.0,228713409.91,-41232601.089999996,1621,908,-15.274387992345623,False
+Financial Services,Austin Financial Services,152459876.0,108391959.26,-44067916.74,1207,558,-28.90459962068971,False
+Enterprise Debt Service,Enterprise Debt Svc & Reserve,576232647.0,517960325.15999997,-58272321.84,26,7,-10.112638036629674,False
+Human Resources,Austin Human Resources,385842777.0,321938639.63,-63904137.370000005,754,343,-16.562222018736925,False
+Public Works,Austin Transportation & Public Works,244743306.0,180626019.96,-64117286.04,2884,1255,-26.197769037245905,False
+Austin Convention Center,Austin Convention Center,279684067.0,205794990.21,-73889076.79,1487,546,-26.41876513830872,False
+Austin Energy,Austin Energy CIPs,223938407.0,126990000.0,-96948407.0,1,0,-43.29244290819663,False
+Police,Austin Police,528637858.0,429124954.55,-99512903.45,4480,2486,-18.82439971788778,False
+Austin Water,Austin Water,895344702.0,690778373.25,-204566328.75,6928,2807,-22.847773409843665,False
+General Obligation Debt Service,G O Debt Service,283886060.0,79034997.32000001,-204851062.68,7,0,-72.15960610394184,False
+Aviation,Austin Aviation,650840976.0,362072058.0,-288768918.0,1771,881,-44.36858290249998,False
+Austin Energy,Austin Energy,1387405791.0,1074710564.46,-312695226.54,6993,3266,-22.538123205801153,False

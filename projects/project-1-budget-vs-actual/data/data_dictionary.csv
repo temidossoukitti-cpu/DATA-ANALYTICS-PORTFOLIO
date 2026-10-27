@@ -1,0 +1,19 @@
+column_name,type,definition
+budget_fiscal_year,Nombre entier,Année fiscale du budget
+thru_quarter,Nombre entier,Trimestre jusqu’auquel les données sont disponibles
+dept_rollup_name,Texte,Grande direction
+department_name,Texte,Département
+fund_name,Texte,Fonds ou enveloppe financière
+program_name,Texte,Programme
+activity_name,Texte,Activité
+unit_name,Texte,Unité opérationnelle
+expense_name,Texte,Catégorie de dépense
+budget,Montant,Montant prévu
+expenditures,Montant,Montant réellement dépensé
+variance,Montant calculé,Dépenses réelles moins budget
+variance_pct,Pourcentage calculé,"Écart rapporté au budget, non calculé si budget nul"
+budget_zero_flag,Oui/Non,Indique un budget égal à zéro
+negative_amount_flag,Oui/Non,Indique un budget ou une dépense négative
+unfavorable_flag,Oui/Non,Indique une dépense réelle supérieure au budget
+period_label,Texte calculé,Libellé de la période FY2026-Q3
+key,Identifiant,Clé unique de la ligne source
