@@ -13,8 +13,8 @@ function Router() {
       <Switch>
         <Route path={"/"} component={Home} />
         <Route path={"/404"} component={NotFound} />
-        {/* Final fallback route */}
-        <Route component={NotFound} />
+        {/* GitHub Pages peut conserver le sous-chemin du dépôt dans l'URL. */}
+        <Route component={Home} />
       </Switch>
     </WouterRouter>
   );
