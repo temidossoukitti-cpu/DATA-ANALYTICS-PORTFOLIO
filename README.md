@@ -369,3 +369,4 @@ Cette commande génère automatiquement :
 ## Projet 1 — Civic Signal Budget Control Tower
 
 Le dossier [`projects/project-1-budget-vs-actual`](projects/project-1-budget-vs-actual/) contient le premier projet Finance du portfolio : un dashboard Budget vs Réalisé basé sur les données publiques de la ville d’Austin. Il comprend les données préparées, les contrôles qualité, SQL, DAX, les rapports et la version web interactive.
+Dashboard web Finance : https://temidossoukitti-cpu.github.io/Retail-Sales-Analysis/

@@ -11,4 +11,8 @@
 - [x] Ajouter des explications simples pour les indicateurs
 - [x] Vérifier le rendu responsive et les interactions dans le navigateur
 - [x] Corriger les erreurs TypeScript/build
-- [ ] Capturer une version finale et préparer l'archive portfolio
+- [x] Capturer une version finale et préparer l'archive portfolio
+
+## Décision de livraison
+
+La version web publiée sur GitHub Pages est le livrable de visualisation retenu. La version Power BI PBIX est laissée de côté.

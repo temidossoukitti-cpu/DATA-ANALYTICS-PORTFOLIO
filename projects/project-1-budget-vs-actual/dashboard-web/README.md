@@ -16,3 +16,7 @@ Cette application React présente le projet Austin Budget vs Réalisé dans un n
 pnpm install
 pnpm run dev
 ```
+
+## Publication
+
+Le site est publié automatiquement dans le dépôt parent par GitHub Actions et GitHub Pages.

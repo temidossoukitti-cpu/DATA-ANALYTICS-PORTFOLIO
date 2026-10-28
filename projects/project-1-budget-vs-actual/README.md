@@ -63,9 +63,15 @@ python3 scripts/create_excel_model.py
 python3 scripts/analyze_variances.py
 ```
 
+## Dashboard web
+
+La version interactive est publiée directement dans le navigateur avec GitHub Pages : [ouvrir le dashboard Budget vs Réalisé](https://temidossoukitti-cpu.github.io/Retail-Sales-Analysis/).
+
+Le code source se trouve dans `dashboard-web/`. La publication est automatisée par GitHub Actions à chaque mise à jour du dashboard.
+
 ## Limites
 
-Il ne s’agit pas d’une série mensuelle sur plusieurs années. Les résultats décrivent uniquement l’exercice fiscal 2026 jusqu’au troisième trimestre disponible dans l’export. Le dataset concerne une organisation publique et non une entreprise privée. Les lignes avec budget nul ou montant négatif nécessitent une interprétation métier. Le dashboard Power BI doit être construit à partir du fichier préparé et des mesures DAX fournies ; le fichier PBIX n’est pas inclus dans cet environnement.
+Il ne s’agit pas d’une série mensuelle sur plusieurs années. Les résultats décrivent uniquement l’exercice fiscal 2026 jusqu’au troisième trimestre disponible dans l’export. Le dataset concerne une organisation publique et non une entreprise privée. Les lignes avec budget nul ou montant négatif nécessitent une interprétation métier. Le fichier PBIX n’est volontairement pas inclus dans cette version ; la version web interactive est le livrable de visualisation retenu.
 
 ## Crédits
 
