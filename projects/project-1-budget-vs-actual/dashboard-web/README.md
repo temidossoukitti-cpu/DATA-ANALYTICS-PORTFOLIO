@@ -19,4 +19,4 @@ pnpm run dev
 
 ## Publication
 
-Le site est publié automatiquement dans le dépôt parent par GitHub Actions et GitHub Pages.
+Le site est publié dans le dépôt parent par GitHub Pages depuis la branche `gh-pages`.

@@ -67,7 +67,7 @@ python3 scripts/analyze_variances.py
 
 La version interactive est publiée directement dans le navigateur avec GitHub Pages : [ouvrir le dashboard Budget vs Réalisé](https://temidossoukitti-cpu.github.io/Retail-Sales-Analysis/).
 
-Le code source se trouve dans `dashboard-web/`. La publication est automatisée par GitHub Actions à chaque mise à jour du dashboard.
+Le code source se trouve dans `dashboard-web/`. La version publiée est construite dans la branche `gh-pages` du dépôt.
 
 ## Limites
 
