@@ -1,4 +1,4 @@
-# Data Analytics Portfolio · Finance & Gestion du risque
+# Data Analytics Portfolio 
 
 **Des tableaux de bord et des analyses conçus pour aider à décider : finance et risque d'abord, puis commerce, économie, santé, IA et cybersécurité.**
 
