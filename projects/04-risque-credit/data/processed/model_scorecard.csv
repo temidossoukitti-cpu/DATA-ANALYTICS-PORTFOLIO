@@ -1,0 +1,2 @@
+scorecard_key,random_state,train_fraction,test_fraction,train_clients,test_clients,test_default_rate,decision_threshold,roc_auc,pr_auc_average_precision,ks_statistic,precision_at_threshold,recall_at_threshold,brier_score,true_negative,false_positive,false_negative,true_positive,base_lgd_assumption,risk_band_cutoffs,protected_features_excluded
+1,42,0.70000000,0.30000000,21000,9000,0.22122222,0.25000000,0.75362917,0.50162255,0.39484335,0.45317337,0.58814666,0.14216694,5596,1413,820,1171,0.45000000,<0.10; 0.10-<0.20; 0.20-<0.40; >=0.40,sex; marriage; age

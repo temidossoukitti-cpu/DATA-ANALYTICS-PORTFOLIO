@@ -22,13 +22,27 @@ Je conçois des analyses de données qui relient les indicateurs aux décisions 
 
 Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des projets complémentaires en analyse commerciale. Chaque étude documente sa question de gestion, ses données, sa méthode, ses résultats et ses limites.
 
-## Projets
+## Projets par domaine
 
-| Référence | Projet | Question traitée | Technologies | État |
+### Finance
+
+| Référence | Projet | Décision soutenue et repère chiffré | Technologies | État |
 |---|---|---|---|---|
-| 01 | [Civic Signal · Budget contre réalisé](projects/project-1-budget-vs-actual/) | Où les dépenses s’écartent-elles du budget et quelles actions prioriser ? | SQL · DAX · Web | Publié |
-| 02 | [Risque et performance d’un portefeuille](projects/02-portefeuille-risque/README.md) | Comment mesurer la concentration du risque et comparer des stratégies d’allocation ? | Python · pandas · NumPy · SciPy · DAX | Analyse terminée |
-| 03 | [Analyse des ventes d’un distributeur](projects/03-ventes-retail/README.md) | Quels produits, remises et marchés influencent les ventes et la rentabilité ? | Python · Excel · Power BI · Web | Publié |
+| 01 | [Civic Signal · Budget contre réalisé](projects/project-1-budget-vs-actual/) | Ajuster l’analyse budgétaire; consommation observée : **74,32 %**. | SQL · DAX · Web | Publié |
+| 02 | [Risque et performance d’un portefeuille](projects/02-portefeuille-risque/README.md) | Limiter les concentrations; AFBK représente **34,9 % du risque**. | Python · pandas · NumPy · SciPy · DAX | Analyse terminée |
+| 04 | [Risque de défaut des cartes de crédit](projects/04-risque-credit/README.md) | Orienter le suivi du risque; défaut observé : **22,12 %**. | Python · pandas · scikit-learn · SQLite · DAX | Données, QA, SQL, DAX et rapport prêts; Power BI en attente |
+
+### Commerce
+
+| Référence | Projet | Décision soutenue et repère chiffré | Technologies | État |
+|---|---|---|---|---|
+| 03 | [Analyse des ventes d’un distributeur](projects/03-ventes-retail/README.md) | Prioriser produits et marchés; **2,30 M$ de ventes**. | Python · Excel · Power BI · Web | Publié |
+
+### État des livrables — projet 04
+
+| Données | Qualité | SQL et parité | DAX | Rapport QA | Dashboard Power BI |
+|---|---|---|---|---|---|
+| Reproductibles | PASS | 34/34 comparaisons PASS | 14 mesures documentées | PASS | À construire par Samuel |
 
 ### Aperçu du projet ventes
 
@@ -65,7 +79,8 @@ Consulter le [standard de qualité](docs/STANDARD_QUALITE.md) et la [feuille de 
 └── projects/
     ├── project-1-budget-vs-actual/    # Suivi budgétaire
     ├── 02-portefeuille-risque/        # Analyse de risque et allocation
-    └── 03-ventes-retail/              # Analyse commerciale
+    ├── 03-ventes-retail/              # Analyse commerciale
+    └── 04-risque-credit/              # Défaut des cartes de crédit
 ```
 
 Chaque dossier de projet contient sa propre présentation et ses livrables. Les instructions de reproduction sont indiquées dans le README correspondant.
