@@ -1,0 +1,20 @@
+ratio_key,label_fr,category,unit,definition,formula,sort_order
+operating_margin,Marge opérationnelle,Rentabilité,proportion,Résultat d'exploitation divisé par les produits.,operating_income / revenue,1
+net_margin,Marge nette,Rentabilité,proportion,Résultat net divisé par les produits.,net_income / revenue,2
+effective_tax_rate,Taux d'impôt effectif,Rentabilité,proportion,Charge d'impôt divisée par le résultat avant impôt (résultat net + charge d'impôt).,income_tax / (net_income + income_tax),3
+roa,Rentabilité de l'actif (ROA),Rentabilité,proportion,Résultat net divisé par le total de l'actif de fin d'exercice.,net_income / total_assets,4
+roe,Rentabilité des capitaux propres (ROE),Rentabilité,proportion,Résultat net divisé par les capitaux propres de fin d'exercice.,net_income / equity,5
+asset_turnover,Rotation de l'actif,Efficacité,ratio,Produits divisés par le total de l'actif; nombre d'unités de produits par unité d'actif.,revenue / total_assets,6
+current_ratio,Ratio de liquidité courante,Liquidité,ratio,Actif courant divisé par le passif courant.,current_assets / current_liabilities,7
+cash_ratio,Ratio de trésorerie,Liquidité,ratio,Trésorerie et équivalents divisés par le passif courant.,cash / current_liabilities,8
+debt_ratio,Ratio d'endettement global,Structure,proportion,Total du passif divisé par le total de l'actif.,total_liabilities / total_assets,9
+equity_ratio,Part des capitaux propres,Structure,proportion,Capitaux propres divisés par le total de l'actif.,equity / total_assets,10
+leverage,Levier financier,Structure,ratio,Total de l'actif divisé par les capitaux propres.,total_assets / equity,11
+interest_coverage,Couverture des intérêts,Structure,ratio,Résultat d'exploitation divisé par la charge d'intérêts.,operating_income / interest_expense,12
+cfo_margin,Marge de trésorerie d'exploitation,Trésorerie,proportion,Flux de trésorerie d'exploitation divisé par les produits.,cfo / revenue,13
+fcf,Flux de trésorerie disponible,Trésorerie,USD,Flux de trésorerie d'exploitation moins les investissements corporels.,cfo - capex,14
+fcf_margin,Marge de flux disponible,Trésorerie,proportion,Flux de trésorerie disponible divisé par les produits.,(cfo - capex) / revenue,15
+capex_intensity,Intensité des investissements,Trésorerie,proportion,Investissements corporels divisés par les produits.,capex / revenue,16
+revenue_growth,Croissance des produits,Croissance,proportion,Variation annuelle des produits par rapport à l'exercice précédent.,revenue / revenue(t-1) - 1,17
+net_income_growth,Croissance du résultat net,Croissance,proportion,Variation annuelle du résultat net par rapport à l'exercice précédent.,net_income / net_income(t-1) - 1,18
+eps_growth,Croissance du BPA dilué,Croissance,proportion,Variation annuelle du bénéfice par action dilué.,eps_diluted / eps_diluted(t-1) - 1,19

@@ -1,0 +1,5 @@
+field,available,handling
+segmentation par activité,False,La source companyfacts ne détaille pas les segments; aucune marge par activité n'est calculée.
+répartition géographique,False,Aucune ventilation régionale dans le fichier; la croissance n'est pas décomposée par zone.
+détail des rachats d'actions,False,Les rachats expliquent la baisse des capitaux propres mais leur montant annuel n'est pas extrait ici.
+intérêts minoritaires,False,L'écart résiduel de bilan n'est pas rattaché à une ligne; il n'est pas interprété.

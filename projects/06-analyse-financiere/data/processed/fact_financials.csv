@@ -1,0 +1,106 @@
+fiscal_year_key,metric_key,value,unit,statement,definition
+2019,revenue,16883000000.0,USD,Compte de résultat,Produits totaux annuels (US-GAAP Revenues).
+2020,revenue,15301000000.0,USD,Compte de résultat,Produits totaux annuels (US-GAAP Revenues).
+2021,revenue,18884000000.0,USD,Compte de résultat,Produits totaux annuels (US-GAAP Revenues).
+2022,revenue,22237000000.0,USD,Compte de résultat,Produits totaux annuels (US-GAAP Revenues).
+2023,revenue,25098000000.0,USD,Compte de résultat,Produits totaux annuels (US-GAAP Revenues).
+2024,revenue,28167000000.0,USD,Compte de résultat,Produits totaux annuels (US-GAAP Revenues).
+2025,revenue,32791000000.0,USD,Compte de résultat,Produits totaux annuels (US-GAAP Revenues).
+2019,operating_income,9664000000.0,USD,Compte de résultat,Résultat d'exploitation annuel (US-GAAP OperatingIncomeLoss).
+2020,operating_income,8081000000.0,USD,Compte de résultat,Résultat d'exploitation annuel (US-GAAP OperatingIncomeLoss).
+2021,operating_income,10082000000.0,USD,Compte de résultat,Résultat d'exploitation annuel (US-GAAP OperatingIncomeLoss).
+2022,operating_income,12264000000.0,USD,Compte de résultat,Résultat d'exploitation annuel (US-GAAP OperatingIncomeLoss).
+2023,operating_income,14008000000.0,USD,Compte de résultat,Résultat d'exploitation annuel (US-GAAP OperatingIncomeLoss).
+2024,operating_income,15582000000.0,USD,Compte de résultat,Résultat d'exploitation annuel (US-GAAP OperatingIncomeLoss).
+2025,operating_income,18897000000.0,USD,Compte de résultat,Résultat d'exploitation annuel (US-GAAP OperatingIncomeLoss).
+2019,net_income,8118000000.0,USD,Compte de résultat,Résultat net attribuable au groupe (US-GAAP ProfitLoss).
+2020,net_income,6411000000.0,USD,Compte de résultat,Résultat net attribuable au groupe (US-GAAP ProfitLoss).
+2021,net_income,8687000000.0,USD,Compte de résultat,Résultat net attribuable au groupe (US-GAAP ProfitLoss).
+2022,net_income,9930000000.0,USD,Compte de résultat,Résultat net attribuable au groupe (US-GAAP ProfitLoss).
+2023,net_income,11195000000.0,USD,Compte de résultat,Résultat net attribuable au groupe (US-GAAP ProfitLoss).
+2024,net_income,12874000000.0,USD,Compte de résultat,Résultat net attribuable au groupe (US-GAAP ProfitLoss).
+2025,net_income,14968000000.0,USD,Compte de résultat,Résultat net attribuable au groupe (US-GAAP ProfitLoss).
+2019,income_tax,1613000000.0,USD,Compte de résultat,Charge d'impôt sur le résultat (US-GAAP IncomeTaxExpenseBenefit).
+2020,income_tax,1349000000.0,USD,Compte de résultat,Charge d'impôt sur le résultat (US-GAAP IncomeTaxExpenseBenefit).
+2021,income_tax,1620000000.0,USD,Compte de résultat,Charge d'impôt sur le résultat (US-GAAP IncomeTaxExpenseBenefit).
+2022,income_tax,1802000000.0,USD,Compte de résultat,Charge d'impôt sur le résultat (US-GAAP IncomeTaxExpenseBenefit).
+2023,income_tax,2444000000.0,USD,Compte de résultat,Charge d'impôt sur le résultat (US-GAAP IncomeTaxExpenseBenefit).
+2024,income_tax,2380000000.0,USD,Compte de résultat,Charge d'impôt sur le résultat (US-GAAP IncomeTaxExpenseBenefit).
+2025,income_tax,3610000000.0,USD,Compte de résultat,Charge d'impôt sur le résultat (US-GAAP IncomeTaxExpenseBenefit).
+2019,interest_expense,224000000.0,USD,Compte de résultat,"Charge d'intérêts annuelle; InterestExpenseNonoperating prioritaire, InterestExpense en secours."
+2020,interest_expense,380000000.0,USD,Compte de résultat,"Charge d'intérêts annuelle; InterestExpenseNonoperating prioritaire, InterestExpense en secours."
+2021,interest_expense,431000000.0,USD,Compte de résultat,"Charge d'intérêts annuelle; InterestExpenseNonoperating prioritaire, InterestExpense en secours."
+2022,interest_expense,471000000.0,USD,Compte de résultat,"Charge d'intérêts annuelle; InterestExpenseNonoperating prioritaire, InterestExpense en secours."
+2023,interest_expense,575000000.0,USD,Compte de résultat,"Charge d'intérêts annuelle; InterestExpenseNonoperating prioritaire, InterestExpense en secours."
+2024,interest_expense,646000000.0,USD,Compte de résultat,"Charge d'intérêts annuelle; InterestExpenseNonoperating prioritaire, InterestExpense en secours."
+2025,interest_expense,722000000.0,USD,Compte de résultat,"Charge d'intérêts annuelle; InterestExpenseNonoperating prioritaire, InterestExpense en secours."
+2019,total_assets,29236000000.0,USD,Bilan,Total de l'actif au 31 décembre.
+2020,total_assets,33584000000.0,USD,Bilan,Total de l'actif au 31 décembre.
+2021,total_assets,37669000000.0,USD,Bilan,Total de l'actif au 31 décembre.
+2022,total_assets,38724000000.0,USD,Bilan,Total de l'actif au 31 décembre.
+2023,total_assets,42448000000.0,USD,Bilan,Total de l'actif au 31 décembre.
+2024,total_assets,48081000000.0,USD,Bilan,Total de l'actif au 31 décembre.
+2025,total_assets,54157000000.0,USD,Bilan,Total de l'actif au 31 décembre.
+2019,total_liabilities,23245000000.0,USD,Bilan,Total du passif au 31 décembre.
+2020,total_liabilities,27067000000.0,USD,Bilan,Total du passif au 31 décembre.
+2021,total_liabilities,30257000000.0,USD,Bilan,Total du passif au 31 décembre.
+2022,total_liabilities,32347000000.0,USD,Bilan,Total du passif au 31 décembre.
+2023,total_liabilities,35451000000.0,USD,Bilan,Total du passif au 31 décembre.
+2024,total_liabilities,41566000000.0,USD,Bilan,Total du passif au 31 décembre.
+2025,total_liabilities,46411000000.0,USD,Bilan,Total du passif au 31 décembre.
+2019,equity,5893000000.0,USD,Bilan,Capitaux propres attribuables aux actionnaires au 31 décembre.
+2020,equity,6391000000.0,USD,Bilan,Capitaux propres attribuables aux actionnaires au 31 décembre.
+2021,equity,7312000000.0,USD,Bilan,Capitaux propres attribuables aux actionnaires au 31 décembre.
+2022,equity,6298000000.0,USD,Bilan,Capitaux propres attribuables aux actionnaires au 31 décembre.
+2023,equity,6929000000.0,USD,Bilan,Capitaux propres attribuables aux actionnaires au 31 décembre.
+2024,equity,6485000000.0,USD,Bilan,Capitaux propres attribuables aux actionnaires au 31 décembre.
+2025,equity,7737000000.0,USD,Bilan,Capitaux propres attribuables aux actionnaires au 31 décembre.
+2019,current_assets,16902000000.0,USD,Bilan,Actif courant au 31 décembre.
+2020,current_assets,19113000000.0,USD,Bilan,Actif courant au 31 décembre.
+2021,current_assets,16949000000.0,USD,Bilan,Actif courant au 31 décembre.
+2022,current_assets,16606000000.0,USD,Bilan,Actif courant au 31 décembre.
+2023,current_assets,18961000000.0,USD,Bilan,Actif courant au 31 décembre.
+2024,current_assets,19724000000.0,USD,Bilan,Actif courant au 31 décembre.
+2025,current_assets,23558000000.0,USD,Bilan,Actif courant au 31 décembre.
+2019,current_liabilities,11904000000.0,USD,Bilan,Passif courant au 31 décembre.
+2020,current_liabilities,11847000000.0,USD,Bilan,Passif courant au 31 décembre.
+2021,current_liabilities,13162000000.0,USD,Bilan,Passif courant au 31 décembre.
+2022,current_liabilities,14171000000.0,USD,Bilan,Passif courant au 31 décembre.
+2023,current_liabilities,16264000000.0,USD,Bilan,Passif courant au 31 décembre.
+2024,current_liabilities,19220000000.0,USD,Bilan,Passif courant au 31 décembre.
+2025,current_liabilities,22762000000.0,USD,Bilan,Passif courant au 31 décembre.
+2019,cash,6988000000.0,USD,Bilan,Trésorerie et équivalents de trésorerie au 31 décembre.
+2020,cash,10113000000.0,USD,Bilan,Trésorerie et équivalents de trésorerie au 31 décembre.
+2021,cash,7421000000.0,USD,Bilan,Trésorerie et équivalents de trésorerie au 31 décembre.
+2022,cash,7008000000.0,USD,Bilan,Trésorerie et équivalents de trésorerie au 31 décembre.
+2023,cash,8588000000.0,USD,Bilan,Trésorerie et équivalents de trésorerie au 31 décembre.
+2024,cash,8442000000.0,USD,Bilan,Trésorerie et équivalents de trésorerie au 31 décembre.
+2025,cash,10566000000.0,USD,Bilan,Trésorerie et équivalents de trésorerie au 31 décembre.
+2019,cfo,8183000000.0,USD,Flux de trésorerie,Flux net de trésorerie lié aux activités opérationnelles.
+2020,cfo,7224000000.0,USD,Flux de trésorerie,Flux net de trésorerie lié aux activités opérationnelles.
+2021,cfo,9463000000.0,USD,Flux de trésorerie,Flux net de trésorerie lié aux activités opérationnelles.
+2022,cfo,11195000000.0,USD,Flux de trésorerie,Flux net de trésorerie lié aux activités opérationnelles.
+2023,cfo,11980000000.0,USD,Flux de trésorerie,Flux net de trésorerie lié aux activités opérationnelles.
+2024,cfo,14780000000.0,USD,Flux de trésorerie,Flux net de trésorerie lié aux activités opérationnelles.
+2025,cfo,17648000000.0,USD,Flux de trésorerie,Flux net de trésorerie lié aux activités opérationnelles.
+2019,capex,422000000.0,USD,Flux de trésorerie,Décaissements pour acquisitions d'immobilisations corporelles (capex).
+2020,capex,339000000.0,USD,Flux de trésorerie,Décaissements pour acquisitions d'immobilisations corporelles (capex).
+2021,capex,407000000.0,USD,Flux de trésorerie,Décaissements pour acquisitions d'immobilisations corporelles (capex).
+2022,capex,442000000.0,USD,Flux de trésorerie,Décaissements pour acquisitions d'immobilisations corporelles (capex).
+2023,capex,371000000.0,USD,Flux de trésorerie,Décaissements pour acquisitions d'immobilisations corporelles (capex).
+2024,capex,474000000.0,USD,Flux de trésorerie,Décaissements pour acquisitions d'immobilisations corporelles (capex).
+2025,capex,489000000.0,USD,Flux de trésorerie,Décaissements pour acquisitions d'immobilisations corporelles (capex).
+2019,eps_diluted,7.94,USD par action,Compte de résultat,Bénéfice par action dilué déclaré.
+2020,eps_diluted,6.37,USD par action,Compte de résultat,Bénéfice par action dilué déclaré.
+2021,eps_diluted,8.76,USD par action,Compte de résultat,Bénéfice par action dilué déclaré.
+2022,eps_diluted,10.22,USD par action,Compte de résultat,Bénéfice par action dilué déclaré.
+2023,eps_diluted,11.83,USD par action,Compte de résultat,Bénéfice par action dilué déclaré.
+2024,eps_diluted,13.89,USD par action,Compte de résultat,Bénéfice par action dilué déclaré.
+2025,eps_diluted,16.52,USD par action,Compte de résultat,Bénéfice par action dilué déclaré.
+2019,diluted_shares,1022000000.0,actions,Compte de résultat,Nombre moyen pondéré d'actions diluées.
+2020,diluted_shares,1006000000.0,actions,Compte de résultat,Nombre moyen pondéré d'actions diluées.
+2021,diluted_shares,992000000.0,actions,Compte de résultat,Nombre moyen pondéré d'actions diluées.
+2022,diluted_shares,971000000.0,actions,Compte de résultat,Nombre moyen pondéré d'actions diluées.
+2023,diluted_shares,946000000.0,actions,Compte de résultat,Nombre moyen pondéré d'actions diluées.
+2024,diluted_shares,927000000.0,actions,Compte de résultat,Nombre moyen pondéré d'actions diluées.
+2025,diluted_shares,906000000.0,actions,Compte de résultat,Nombre moyen pondéré d'actions diluées.

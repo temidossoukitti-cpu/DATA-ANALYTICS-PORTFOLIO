@@ -1,0 +1,16 @@
+metric_key,label_fr,statement,unit,definition,sort_order
+revenue,Produits,Compte de résultat,USD,Produits totaux annuels (US-GAAP Revenues).,1
+operating_income,Résultat d'exploitation,Compte de résultat,USD,Résultat d'exploitation annuel (US-GAAP OperatingIncomeLoss).,2
+net_income,Résultat net,Compte de résultat,USD,Résultat net attribuable au groupe (US-GAAP ProfitLoss).,3
+income_tax,Charge d'impôt,Compte de résultat,USD,Charge d'impôt sur le résultat (US-GAAP IncomeTaxExpenseBenefit).,4
+interest_expense,Charge d'intérêts,Compte de résultat,USD,"Charge d'intérêts annuelle; InterestExpenseNonoperating prioritaire, InterestExpense en secours.",5
+total_assets,Total actif,Bilan,USD,Total de l'actif au 31 décembre.,6
+total_liabilities,Total passif,Bilan,USD,Total du passif au 31 décembre.,7
+equity,Capitaux propres,Bilan,USD,Capitaux propres attribuables aux actionnaires au 31 décembre.,8
+current_assets,Actif courant,Bilan,USD,Actif courant au 31 décembre.,9
+current_liabilities,Passif courant,Bilan,USD,Passif courant au 31 décembre.,10
+cash,Trésorerie et équivalents,Bilan,USD,Trésorerie et équivalents de trésorerie au 31 décembre.,11
+cfo,Flux de trésorerie d'exploitation,Flux de trésorerie,USD,Flux net de trésorerie lié aux activités opérationnelles.,12
+capex,Investissements corporels,Flux de trésorerie,USD,Décaissements pour acquisitions d'immobilisations corporelles (capex).,13
+eps_diluted,BPA dilué,Compte de résultat,USD par action,Bénéfice par action dilué déclaré.,14
+diluted_shares,Actions diluées moyennes,Compte de résultat,actions,Nombre moyen pondéré d'actions diluées.,15

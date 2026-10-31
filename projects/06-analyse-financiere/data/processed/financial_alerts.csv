@@ -1,0 +1,7 @@
+alert_key,label_fr,unit,threshold,observed,status,definition
+operating_margin,Marge opérationnelle,proportion,0.4000000000,0.5762861761,CONFORME,Seuil de lecture interne : marge opérationnelle au moins égale à 40 %.
+current_ratio,Liquidité courante,ratio,1.0000000000,1.0349705650,CONFORME,Seuil de lecture interne : actif courant au moins égal au passif courant.
+debt_ratio,Ratio d'endettement global,proportion,0.8000000000,0.8569713980,VIGILANCE,Seuil de lecture interne : passif inférieur ou égal à 80 % du total de l'actif.
+interest_coverage,Couverture des intérêts,ratio,8.0000000000,26.1731301939,CONFORME,Seuil de lecture interne : résultat d'exploitation au moins huit fois la charge d'intérêts.
+fcf,Flux de trésorerie disponible,USD,0.0000000000,17159000000.0000000000,CONFORME,Seuil de lecture interne : flux disponible positif.
+revenue_growth,Croissance des produits,proportion,0.0000000000,0.1641637377,CONFORME,Seuil de lecture interne : croissance annuelle des produits positive.
