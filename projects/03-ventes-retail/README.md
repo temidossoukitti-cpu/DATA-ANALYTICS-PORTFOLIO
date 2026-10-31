@@ -1,7 +1,6 @@
 # 03 · Analyse des ventes d'un distributeur américain
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-C7F436?style=flat-square)](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/)
-[← Retour à l'index](../../README.md)
+[Site du portfolio](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/) · [Retour à l'index](../../README.md)
 
 > **Données publiques** : jeu de données *Sample Superstore* (commandes d'un distributeur américain, 2014-2017).
 
