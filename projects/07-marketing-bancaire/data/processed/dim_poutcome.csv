@@ -1,0 +1,4 @@
+poutcome_key,code_source,label_fr,sort_order
+1,failure,Échec,1
+2,nonexistent,Inexistant,2
+3,success,Succès,3

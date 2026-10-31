@@ -1,0 +1,2 @@
+method,precision_weighted,recall_weighted,f1_weighted,accuracy,threshold_selected,pr_auc,roc_auc
+Règle poutcome=success,0.6632911392405063,0.1882183908045977,0.2932288752098489,0.8977824538685659,N/A (taux naturel),N/A,N/A

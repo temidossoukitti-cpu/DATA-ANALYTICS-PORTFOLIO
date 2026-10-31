@@ -1,0 +1,5 @@
+marital_key,code_source,label_fr,sort_order
+1,divorced,Divorcé ou veuf,1
+2,married,Marié,2
+3,single,Célibataire,3
+4,unknown,Non renseigné,4
