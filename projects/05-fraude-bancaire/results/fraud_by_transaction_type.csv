@@ -1,0 +1,2 @@
+dimension,availability,fraud_rate,reason
+type de transaction,NON DISPONIBLE,,La source OpenML ne contient pas de colonne type/canal; V1–V28 sont anonymisées par PCA. Aucun type métier n'est inféré.

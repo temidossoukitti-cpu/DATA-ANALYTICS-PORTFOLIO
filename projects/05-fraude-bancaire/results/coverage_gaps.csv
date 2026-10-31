@@ -1,0 +1,5 @@
+field,available,handling
+type/canal de transaction,False,Taux non calculable; conserver cette lacune dans les recommandations.
+devise,False,"Montants rapportés en unités du dataset, sans symbole monétaire."
+date civile,False,Time est relatif au premier enregistrement; fenêtres de six heures relatives.
+identifiant client,False,Aucune déduplication au niveau client ou compte possible.

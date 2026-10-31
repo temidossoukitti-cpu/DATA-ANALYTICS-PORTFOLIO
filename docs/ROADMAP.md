@@ -5,7 +5,7 @@
 2. Risque et performance d'un portefeuille d'actions *(analyse terminée, dashboard en cours)*
 3. Risque de défaut des cartes de crédit (projet 04) *(données, analyse, SQL, DAX et rapport terminés; dashboard à construire)*
 4. Analyse financière d'une entreprise : ratios, marges, liquidité
-5. Détection de fraude sur des transactions bancaires (projet 05, à venir)
+5. Détection de fraude sur des transactions bancaires (projet 05, analyses et QA automatisée terminées; dashboard à construire par Samuel)
 6. Performance marketing d'une banque
 7. P&L et seuil de rentabilité d'une PME
 

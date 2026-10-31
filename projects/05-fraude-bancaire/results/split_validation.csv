@@ -1,0 +1,11 @@
+metric,value,unit,status,definition
+sample_rows,25492,rows,PASS,Échantillon évalué.
+train_rows,17844,rows,PASS,Lignes train du split group-stratifié.
+test_rows,7648,rows,PASS,Lignes test du split group-stratifié.
+test_fraction,0.30001569119723837,proportion,PASS,Proportion test visée 30 %.
+fraud_train_rows,344,rows,PASS,Fraudes étiquetées en train.
+fraud_test_rows,148,rows,PASS,Fraudes étiquetées en test.
+duplicate_groups_crossing_partitions,0,groups,PASS,Groupes d'attributs identiques présents à la fois en train et en test; attendu 0.
+selected_test_folds,1;2;4,folds,PASS,Trois plis de StratifiedGroupKFold affectés au test.
+threshold_selection,training_oof,source,PASS,"Le seuil est choisi sur des prédictions hors pli du train, jamais sur les étiquettes test."
+random_state,42,seed,PASS,Graine du split group-stratifié et de la validation croisée.

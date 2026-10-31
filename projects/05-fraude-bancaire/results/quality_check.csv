@@ -1,0 +1,17 @@
+scope,rule,rows_checked,exceptions,severity,status,action
+full_source,source_missing_cells,284807,0,critique,PASS,Aucune valeur manquante dans les colonnes source.
+full_source,source_negative_amount_rows,284807,0,critique,PASS,Amount ne doit pas être négatif.
+full_source,source_negative_time_rows,284807,0,critique,PASS,Time ne doit pas être négatif.
+full_source,source_label_conflict_groups,284807,0,critique,PASS,Un même profil source hors cible ne doit pas porter deux classes.
+full_source,source_exact_duplicate_rows,284807,1081,information,INFO,Lignes conservées telles quelles; les groupes identiques seront maintenus dans un même pli train/test.
+full_source,source_duplicate_fraud_rows,492,19,information,INFO,"Toutes les lignes Class=1 sont conservées, y compris les répétitions exactes."
+committed_sample,required_columns_present,33,0,critique,PASS,"Schéma source, identifiant technique et poids d'échantillonnage présents."
+committed_sample,missing_cells,790252,0,critique,PASS,Aucune imputation n'est pratiquée; toute valeur manquante bloque le pipeline.
+committed_sample,nonfinite_numeric_rows,25492,0,critique,PASS,Les colonnes numériques doivent être finies.
+committed_sample,target_outside_0_1,25492,0,critique,PASS,"Class doit être binaire : 0 légitime, 1 fraude."
+committed_sample,negative_amount_rows,25492,0,critique,PASS,Aucune valeur négative de Amount n'est attendue.
+committed_sample,time_outside_source_range,25492,0,critique,PASS,Time reste dans la plage observée du fichier source.
+committed_sample,all_source_fraud_rows_retained,492,0,critique,PASS,"Recensement complet des fraudes, aucune ligne Class=1 retirée."
+committed_sample,design_weights_reconstruct_population,25492,0,critique,PASS,Somme des poids d'inclusion égale à la population source.
+committed_sample,sample_exact_duplicate_rows,25492,27,information,INFO,Répétitions conservées; elles sont groupées pour éviter une fuite entre partitions.
+committed_sample,transaction_id_unique,25492,0,critique,PASS,transaction_id représente uniquement le numéro de ligne source.

@@ -1,0 +1,7 @@
+assumption,value,unit,status,definition
+loss_severity_base,1.0,part of Amount,ASSUMPTION,Un frauduleux manqué est évalué à 100 % de Amount; les remboursements et pertes réellement recouvrées sont inconnus.
+legitimate_friction_base,10.0,dataset amount units per legitimate flag,ASSUMPTION,Coût proxy fixe d'une friction sur une transaction légitime; la devise n'est pas fournie par la source.
+loss_severity_sensitivity,0.5;1.0;1.5,part of Amount,ASSUMPTION,Trois scénarios de perte sur fraude manquée.
+friction_cost_sensitivity,5;10;25,dataset amount units per legitimate flag,ASSUMPTION,Trois coûts proxy de friction pour une alerte injustifiée.
+baseline_amount_rule,1034.19,dataset amount units,RULE DE COMPARAISON,Alerter si Amount atteint le 99e percentile pondéré du train légitime.
+model_threshold_grid,0.001,probability step,CHOIX MÉTHODOLOGIQUE,Seuil coût-minimal sélectionné sur les prédictions groupées hors pli du train; test réservé à l'évaluation.

@@ -1,0 +1,3 @@
+outcome_key,label_fr,is_fraud
+0,Légitime,0
+1,Fraude,1

@@ -1,0 +1,5 @@
+amount_band_key,label_fr,lower_exclusive,upper_inclusive,sort_order
+1,≤ 10,,10.0,1
+2,"(10, 50]",10.0,50.0,2
+3,"(50, 200]",50.0,200.0,3
+4,> 200,200.0,,4

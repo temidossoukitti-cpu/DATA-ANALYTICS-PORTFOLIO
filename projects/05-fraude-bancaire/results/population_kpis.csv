@@ -1,0 +1,28 @@
+metric,value,unit,scope,definition
+transactions_total,284807,transactions,full_source,"Toutes les lignes du Parquet officiel, sans déduplication."
+transactions_fraud,492,transactions,full_source,Nombre de lignes Class=1 dans le Parquet officiel.
+transactions_legitimes,284315,transactions,full_source,Nombre de lignes Class=0 dans le Parquet officiel.
+fraud_rate,0.001727485630620034,proportion,full_source,transactions_fraud / transactions_total; estimation exacte du fichier source.
+amount_total,25162590.009999998,unités de montant du dataset,full_source,Somme de Amount; la source ne précise aucune devise.
+amount_fraud,60127.97,unités de montant du dataset,full_source,"Somme de Amount pour Class=1; exposition labellisée fraude, pas une perte recouvrée observée."
+amount_legitime,25102462.04,unités de montant du dataset,full_source,Somme de Amount pour Class=0.
+fraud_amount_share,0.002389577939953885,proportion,full_source,amount_fraud / amount_total.
+amount_mean,88.34961925093133,unités de montant du dataset,full_source,Moyenne de Amount sur toutes les transactions.
+amount_median,22.0,unités de montant du dataset,full_source,Médiane de Amount sur toutes les transactions.
+amount_max,25691.16,unités de montant du dataset,full_source,Maximum de Amount.
+exact_duplicate_rows,1081,lignes au-delà de la première occurrence,full_source,"Doublons exacts sur Time, V1–V28, Amount et Class; conservés et regroupés au split."
+exact_duplicate_fraud_rows,19,lignes au-delà de la première occurrence,full_source,"Doublons exacts de classe fraude; conservés, aucun fraud row source n'est supprimé."
+exact_duplicate_legitimate_rows,1062,lignes au-delà de la première occurrence,full_source,Doublons exacts de classe légitime; conservés dans la population source.
+feature_groups_with_label_conflict,0,groupes,full_source,Groupes d'attributs hors cible portant des classes différentes; attendu 0.
+missing_cells,0,cellules,full_source,Cellules manquantes dans les colonnes source.
+negative_amount_rows,0,lignes,full_source,"Amount négatif; règle de contrôle, attendu 0."
+negative_time_rows,0,lignes,full_source,"Time négatif; règle de contrôle, attendu 0."
+time_max_seconds,172792.0,secondes depuis la première transaction,full_source,Maximum Time déclaré dans le descriptif OpenML.
+source_size_bytes,73231038,octets,full_source,Taille exacte du Parquet téléchargé depuis OpenML.
+source_sha256,91650a62cb263b7fd76610a8f2fa55c4e861033b56dd51ed22d707838c95e0cf,SHA-256,full_source,Empreinte du fichier Parquet complet; le fichier complet n'est pas redistribué par le dépôt.
+sample_rows,25492,transactions,committed_sample,Toutes les fraudes et l'échantillon aléatoire des transactions légitimes.
+sample_fraud_rows,492,transactions,committed_sample,Toutes les lignes Class=1 du fichier source.
+sample_legitimate_rows,25000,transactions,committed_sample,Lignes Class=0 tirées sans remise avec random_state indiqué.
+sample_legitimate_weight,11.3726,poids par ligne,committed_sample,N légitimes source / N légitimes échantillonnées.
+sample_fraud_weight,1.0,poids par ligne,committed_sample,Toutes les lignes fraude sont conservées; poids de recensement égal à 1.
+sample_seed,42,graine aléatoire,committed_sample,Graine de l'échantillonnage reproductible.

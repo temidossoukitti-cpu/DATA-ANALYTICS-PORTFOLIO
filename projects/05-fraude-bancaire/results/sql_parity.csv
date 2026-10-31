@@ -1,0 +1,85 @@
+indicator,python_value,sql_value,absolute_difference,tolerance,status
+global.transactions_population_exact,284807.0,284807.0,0.0,0.01,PASS
+global.fraud_transactions_population_exact,492.0,492.0,0.0,0.01,PASS
+global.fraud_rate_weighted_sample,0.00172748563062,0.001727485630620034,3.404394821604484e-17,1e-10,PASS
+global.amount_total_weighted_sample,24469924.286852,24469924.286852002,3.725290298461914e-09,0.01,PASS
+global.fraud_amount_weighted_sample,60127.97,60127.97,0.0,0.01,PASS
+amount_band.1.transactions_estimate,99963.95680000004,99963.9568,4.3655745685100555e-11,0.01,PASS
+amount_band.1.fraud_transactions_estimate,249.0,249.0,0.0,0.01,PASS
+amount_band.1.fraud_rate,0.0024908977992755,0.0024908977992755886,8.847089727481716e-17,1e-10,PASS
+amount_band.1.amount_estimate,386046.106918,386046.10691800003,5.820766091346741e-11,0.01,PASS
+amount_band.1.fraud_amount_estimate,458.9,458.9,0.0,0.01,PASS
+amount_band.2.transactions_estimate,91538.19440000004,91538.19440000001,2.9103830456733704e-11,0.01,PASS
+amount_band.2.fraud_transactions_estimate,57.0,57.0,0.0,0.01,PASS
+amount_band.2.fraud_rate,0.0006226908928411,0.0006226908928411198,1.984089975648473e-17,1e-10,PASS
+amount_band.2.amount_estimate,2376900.360136,2376900.360136,0.0,0.01,PASS
+amount_band.2.fraud_amount_estimate,1615.0300000000002,1615.03,2.2737367544323206e-13,0.01,PASS
+amount_band.3.transactions_estimate,64310.69960000002,64310.6996,2.1827872842550278e-11,0.01,PASS
+amount_band.3.fraud_transactions_estimate,101.0,101.0,0.0,0.01,PASS
+amount_band.3.fraud_rate,0.0015705007196034,0.0015705007196034296,2.970713952610282e-17,1e-10,PASS
+amount_band.3.amount_estimate,6635724.317100001,6635724.317100001,0.0,0.01,PASS
+amount_band.3.fraud_amount_estimate,11088.15,11088.15,0.0,0.01,PASS
+amount_band.4.transactions_estimate,28994.149200000007,28994.1492,7.275957614183426e-12,0.01,PASS
+amount_band.4.fraud_transactions_estimate,85.0,85.0,0.0,0.01,PASS
+amount_band.4.fraud_rate,0.0029316259433472,0.0029316259433472187,1.8648277366750676e-17,1e-10,PASS
+amount_band.4.amount_estimate,15071253.502698,15071253.502698,0.0,0.01,PASS
+amount_band.4.fraud_amount_estimate,46965.89,46965.89,0.0,0.01,PASS
+time_window.1.transactions_estimate,11814.2684,11814.2684,0.0,0.01,PASS
+time_window.1.fraud_transactions_estimate,55.0,55.0,0.0,0.01,PASS
+time_window.1.fraud_rate,0.0046553877174485,0.004655387717448505,4.336808689942018e-18,1e-10,PASS
+time_window.1.amount_estimate,740768.6310159999,740768.631016,1.1641532182693481e-10,0.01,PASS
+time_window.1.fraud_amount_estimate,5084.6900000000005,5084.6900000000005,0.0,0.01,PASS
+time_window.2.transactions_estimate,35584.884600000005,35584.8846,7.275957614183426e-12,0.01,PASS
+time_window.2.fraud_transactions_estimate,91.0,91.0,0.0,0.01,PASS
+time_window.2.fraud_rate,0.0025572655643795,0.0025572655643795457,4.5536491244391186e-17,1e-10,PASS
+time_window.2.amount_estimate,3569449.35324,3569449.35324,0.0,0.01,PASS
+time_window.2.fraud_amount_estimate,9627.67,9627.67,0.0,0.01,PASS
+time_window.3.transactions_estimate,46937.48460000001,46937.4846,7.275957614183426e-12,0.01,PASS
+time_window.3.fraud_transactions_estimate,71.0,71.0,0.0,0.01,PASS
+time_window.3.fraud_rate,0.0015126502965606,0.0015126502965606297,2.970713952610282e-17,1e-10,PASS
+time_window.3.amount_estimate,4884975.47154,4884975.47154,0.0,0.01,PASS
+time_window.3.fraud_amount_estimate,9110.83,9110.83,0.0,0.01,PASS
+time_window.4.transactions_estimate,50774.42340000001,50774.4234,7.275957614183426e-12,0.01,PASS
+time_window.4.fraud_transactions_estimate,64.0,64.0,0.0,0.01,PASS
+time_window.4.fraud_rate,0.00126047714015,0.0012604771401500544,5.442694905877232e-17,1e-10,PASS
+time_window.4.amount_estimate,3723743.47232,3723743.47232,0.0,0.01,PASS
+time_window.4.fraud_amount_estimate,9415.920000000002,9415.92,1.8189894035458565e-12,0.01,PASS
+time_window.5.transactions_estimate,11737.2876,11737.2876,0.0,0.01,PASS
+time_window.5.fraud_transactions_estimate,69.0,69.0,0.0,0.01,PASS
+time_window.5.fraud_rate,0.0058787006292663,0.005878700629266339,3.903127820947816e-17,1e-10,PASS
+time_window.5.amount_estimate,651614.39454,651614.39454,0.0,0.01,PASS
+time_window.5.fraud_amount_estimate,5731.459999999999,5731.46,9.094947017729282e-13,0.01,PASS
+time_window.6.transactions_estimate,34918.13680000001,34918.1368,7.275957614183426e-12,0.01,PASS
+time_window.6.fraud_transactions_estimate,27.0,27.0,0.0,0.01,PASS
+time_window.6.fraud_rate,0.0007732371333169,0.0007732371333169186,1.8539857149502126e-17,1e-10,PASS
+time_window.6.amount_estimate,3186024.654378,3186024.654378,0.0,0.01,PASS
+time_window.6.fraud_amount_estimate,4744.17,4744.17,0.0,0.01,PASS
+time_window.7.transactions_estimate,50227.538600000014,50227.5386,1.4551915228366852e-11,0.01,PASS
+time_window.7.fraud_transactions_estimate,63.0,63.0,0.0,0.01,PASS
+time_window.7.fraud_rate,0.0012542920030725,0.0012542920030725933,9.324138683375338e-17,1e-10,PASS
+time_window.7.amount_estimate,4659863.396948,4659863.396948,0.0,0.01,PASS
+time_window.7.fraud_amount_estimate,10244.35,10244.35,0.0,0.01,PASS
+time_window.8.transactions_estimate,42812.97600000001,42812.976,7.275957614183426e-12,0.01,PASS
+time_window.8.fraud_transactions_estimate,52.0,52.0,0.0,0.01,PASS
+time_window.8.fraud_rate,0.0012145850360881,0.0012145850360881243,2.42861286636753e-17,1e-10,PASS
+time_window.8.amount_estimate,3053484.91287,3053484.91287,0.0,0.01,PASS
+time_window.8.fraud_amount_estimate,6168.88,6168.88,0.0,0.01,PASS
+model_test.precision_weighted,0.6797099818826203,0.6797099818808368,1.783573289060314e-12,1e-10,PASS
+model_test.recall_weighted,0.8175675675675675,0.8175675675675675,0.0,1e-10,PASS
+model_test.transactions_estimate,284806.9999999999,284807.0000002464,2.4650944396853447e-07,0.01,PASS
+money_controls.Modèle logistique.transactions_flagged_estimate,591.7865765765767,591.7865765738,2.7768010113504715e-09,0.02,PASS
+money_controls.Modèle logistique.fraud_transactions_intercepted_estimate,402.2432432432431,402.2432432403,2.9431248549371958e-09,0.02,PASS
+money_controls.Modèle logistique.fraud_transactions_missed_estimate,89.75675675675674,89.7567567561,6.567404398083454e-10,0.02,PASS
+money_controls.Modèle logistique.amount_flagged_estimate,109868.20235675677,109868.20235648472,2.720480551943183e-07,0.02,PASS
+money_controls.Modèle logistique.fraud_amount_intercepted_estimate,44976.14675675676,44976.14675642766,3.2909883884713054e-07,0.02,PASS
+money_controls.Modèle logistique.fraud_amount_missed_estimate,12293.151891891892,12293.151891801943,8.99490260053426e-08,0.02,PASS
+money_controls.Modèle logistique.legitimate_amount_blocked_estimate,64892.05559999998,64892.05560005706,5.7079887483268976e-08,0.02,PASS
+money_controls.Modèle logistique.expected_cost_estimate,14188.585225225224,14188.585225136942,8.82828317116946e-08,0.02,PASS
+money_controls.Règle montant P99.transactions_flagged_estimate,2019.1323063063055,2019.1323063080001,1.6946160030784085e-09,0.02,PASS
+money_controls.Règle montant P99.fraud_transactions_intercepted_estimate,9.972972972972972,9.9729729729,7.297273896256229e-11,0.02,PASS
+money_controls.Règle montant P99.fraud_transactions_missed_estimate,482.0270270270269,482.0270270235,3.526906766637694e-09,0.02,PASS
+money_controls.Règle montant P99.amount_flagged_estimate,3190834.5734706298,3190834.5734733255,2.6957131922245026e-06,0.02,PASS
+money_controls.Règle montant P99.fraud_amount_intercepted_estimate,13556.827297297295,13556.8272971981,9.919494914356619e-08,0.02,PASS
+money_controls.Règle montant P99.fraud_amount_missed_estimate,43712.47135135135,43712.471351031505,3.198438207618892e-07,0.02,PASS
+money_controls.Règle montant P99.legitimate_amount_blocked_estimate,3177277.7461733324,3177277.7461761273,2.794899046421051e-06,0.02,PASS
+money_controls.Règle montant P99.expected_cost_estimate,63804.06468468467,63804.06468438251,3.021632437594235e-07,0.02,PASS

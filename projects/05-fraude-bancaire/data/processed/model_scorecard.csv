@@ -1,0 +1,2 @@
+model_name,recommended_threshold,pr_auc_test,precision_test,recall_test,f1_test,expected_cost_test,test_transactions_population_estimate,split_method,features_used
+Régression logistique pondérée,0.191,0.65945134327485,0.6797099818826203,0.8175675675675675,0.7422923515325933,14188.585225225224,284806.9999999999,"StratifiedGroupKFold 10 plis, 3 plis test; groupes de doublons non séparés; seed 42","V1–V28, Amount; Time excluded"
