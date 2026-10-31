@@ -71,7 +71,9 @@ Les conclusions ne décrivent que deux jours d’un jeu historique fortement dé
 
 ## Statut qualité
 
-**Automatisé :** `FAIL` selon [`qa/validation_report.md`](qa/validation_report.md). **Manuel Power BI :** à faire par Samuel; aucune validation Desktop n’est revendiquée.
+<!-- AUTO:QA_STATUS_BEGIN -->
+**Automatisé :** `PASS` selon [`qa/validation_report.md`](qa/validation_report.md). **Manuel Power BI :** à faire par Samuel; aucune validation Desktop n’est revendiquée.
+<!-- AUTO:QA_STATUS_END -->
 
 ## Dashboard
 

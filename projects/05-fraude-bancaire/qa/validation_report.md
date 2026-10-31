@@ -14,7 +14,7 @@
 | Mesures DAX | Définitions numérotées et valeurs générées | 15 mesures | PASS |
 | Pages planifiées | 4 pages | 4 pages | PASS |
 | Graphiques | Au moins 6 PNG Matplotlib | 7 PNG | PASS |
-| README projet | Au plus 120 lignes; badge PORTFOLIO | 91 lignes; badge présent | PASS |
+| README projet | Au plus 120 lignes; badge PORTFOLIO | 93 lignes; badge présent | PASS |
 | Liens relatifs/images | Tous résolus | 0 cassé(s) | PASS |
 | Taille du projet | <25 Mo hors Parquet complet local | 11.91 Mo; maximum 7.41 Mo | PASS |
 | Parquet complet ignoré | Exclu de Git et du décompte versionné | ignore actif | PASS |

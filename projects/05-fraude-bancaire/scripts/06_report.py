@@ -181,7 +181,8 @@ def main() -> None:
     readme_text = replace_block(readme_text, "<!-- AUTO:SUMMARY_BEGIN -->", "<!-- AUTO:SUMMARY_END -->", summary)
     readme_text = replace_block(readme_text, "<!-- AUTO:KEY_RESULTS_BEGIN -->", "<!-- AUTO:KEY_RESULTS_END -->", key_results)
     readme_text = replace_block(readme_text, "<!-- AUTO:RECOMMENDATIONS_BEGIN -->", "<!-- AUTO:RECOMMENDATIONS_END -->", recommendation_md)
-    readme_text = readme_text.replace("{{AUTO_QA_STATUS}}", project_status_placeholder)
+    qa_status = f"**Automatisé :** `{project_status_placeholder}` selon [`qa/validation_report.md`](qa/validation_report.md). **Manuel Power BI :** à faire par Samuel; aucune validation Desktop n’est revendiquée."
+    readme_text = replace_block(readme_text, "<!-- AUTO:QA_STATUS_BEGIN -->", "<!-- AUTO:QA_STATUS_END -->", qa_status)
     readme_path.write_text(readme_text, encoding="utf-8")
 
     # Update only the project 05 root-index row and its generated deliverables table.
@@ -251,7 +252,9 @@ def main() -> None:
     record("Checklist Desktop", "Tous les tests manuels restent non cochés", f"{len(manual_marks)} cases; toutes non cochées={manual_all_unchecked}", manual_all_unchecked)
 
     overall_status = "PASS" if all(item["status"] == "PASS" for item in checks) else "FAIL"
-    readme_text = readme_path.read_text(encoding="utf-8").replace("EN COURS", overall_status)
+    readme_text = readme_path.read_text(encoding="utf-8")
+    qa_status = f"**Automatisé :** `{overall_status}` selon [`qa/validation_report.md`](qa/validation_report.md). **Manuel Power BI :** à faire par Samuel; aucune validation Desktop n’est revendiquée."
+    readme_text = replace_block(readme_text, "<!-- AUTO:QA_STATUS_BEGIN -->", "<!-- AUTO:QA_STATUS_END -->", qa_status)
     readme_path.write_text(readme_text, encoding="utf-8")
     root_readme = root_readme_path.read_text(encoding="utf-8").replace("EN COURS", overall_status)
     root_readme_path.write_text(root_readme, encoding="utf-8")
