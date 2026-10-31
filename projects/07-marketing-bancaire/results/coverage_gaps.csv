@@ -1,0 +1,5 @@
+dimension,available,handling
+identifiant client,False,Aucun identifiant unique; les doublons sont conservés au niveau ligne.
+revenu client,False,Non fourni par la source.
+date civile,False,Aucune date civile; seule une fenêtre relative (6 h) existe.
+durée utilisable pour modélisation,False,Exclue du modèle (fuite d'information).

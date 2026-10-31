@@ -1,0 +1,7 @@
+age_band_key,label_fr,lower_inclusive,upper_inclusive,sort_order
+1,17–25 ans,17,25.0,1
+2,26–35 ans,26,35.0,2
+3,36–45 ans,36,45.0,3
+4,46–55 ans,46,55.0,4
+5,56–65 ans,56,65.0,5
+6,66 ans et plus,66,,6

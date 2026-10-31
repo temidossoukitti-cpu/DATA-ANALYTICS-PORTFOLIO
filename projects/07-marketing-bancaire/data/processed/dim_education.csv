@@ -1,0 +1,9 @@
+education_key,code_source,label_fr,sort_order
+1,illiterate,Analphabète,1
+2,basic.4y,Primaire (4 ans),2
+3,basic.6y,Primaire (6 ans),3
+4,basic.9y,Collège,4
+5,high.school,Lycée,5
+6,professional.course,Formation professionnelle,6
+7,university.degree,Université,7
+8,unknown,Non renseigné,8

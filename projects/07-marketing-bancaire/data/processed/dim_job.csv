@@ -1,0 +1,13 @@
+job_key,code_source,label_fr,sort_order,source_rows
+1,admin.,Administratif,1,10422
+2,blue-collar,Ouvrier,2,9254
+3,entrepreneur,Entrepreneur,3,1456
+4,housemaid,Aide à domicile,4,1060
+5,management,Cadre,5,2924
+6,retired,Retraité,6,1720
+7,self-employed,Indépendant,7,1421
+8,services,Services,8,3969
+9,student,Étudiant,9,875
+10,technician,Technicien,10,6743
+11,unemployed,Sans emploi,11,1014
+12,unknown,Non renseigné,12,330

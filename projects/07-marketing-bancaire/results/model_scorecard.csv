@@ -1,0 +1,2 @@
+model_name,recommended_threshold,roc_auc_test,pr_auc_test,precision_test,recall_test,f1_test,accuracy_test,test_rows,positives_test,features_used,split_method
+Modèle logistique,0.6500000000000001,0.7917167587653637,0.45180856080704246,0.4345172031076582,0.5625,0.49029430181590483,0.8682421495629654,12356,1392,"job, marital, education, default, housing, loan, contact, month, day_of_week, poutcome, age, campaign, pdays, previous, emp.var.rate, cons.price.idx, cons.conf.idx, euribor3m, nr.employed",StratifiedGroupKFold 70/30; seuil optimisant F1 sur OOF 5-fold

@@ -1,0 +1,15 @@
+scope,rule,rows_checked,exceptions,severity,status,action
+source,required_columns_present,41188,0,critique,PASS,Les 20 variables et la cible doivent être présentes.
+source,missing_cells,41188,0,critique,PASS,Aucune valeur manquante explicite; les absences sont codées unknown.
+source,exact_duplicate_rows,41188,12,information,INFO,Doublons exacts conservés et regroupés pour empêcher une fuite entre train et test.
+source,target_outside_no_yes,41188,0,critique,PASS,La cible doit valoir no ou yes.
+source,age_outside_17_100,41188,0,critique,PASS,L'âge doit rester dans une plage plausible.
+source,duration_negative,41188,0,critique,PASS,La durée d'appel ne peut pas être négative.
+source,duration_zero_with_subscription,41188,0,critique,PASS,Une durée nulle ne doit jamais produire une souscription.
+source,campaign_below_one,41188,0,critique,PASS,Chaque ligne compte au moins un contact de campagne.
+source,pdays_outside_0_999,41188,0,critique,PASS,pdays vaut 999 lorsque le client n'a jamais été contacté.
+source,previous_negative,41188,0,critique,PASS,Le nombre de contacts antérieurs ne peut pas être négatif.
+source,month_unknown,41188,0,critique,PASS,Le mois doit être un code valide.
+source,day_of_week_unknown,41188,0,critique,PASS,Le jour doit être un jour ouvré valide.
+source,economic_indicator_range,41188,0,critique,PASS,Les cinq indicateurs macroéconomiques restent dans les plages documentées par la source.
+source,rows_with_unknown_category,41188,10700,information,INFO,"La modalité unknown est conservée comme catégorie explicite, sans imputation."
