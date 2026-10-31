@@ -1,6 +1,6 @@
 <div align="center">
 
-# Samuel Dossou-Kitti
+# DATA ANALYTICS PORTFOLIO
 
 ### Portfolio professionnel · Analyse de données, finance et gestion du risque
 
