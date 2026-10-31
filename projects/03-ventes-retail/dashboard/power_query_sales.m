@@ -1,6 +1,6 @@
 // Create a Power Query text parameter named CsvPath before using this query.
 // Example value:
-// C:\Users\YourName\Retail-Sales-Analysis\data\processed\superstore_clean.csv
+// C:\Users\YourName\DATA-ANALYTICS-PORTFOLIO\projects\03-ventes-retail\data\processed\superstore_clean.csv
 
 let
     Source = Csv.Document(

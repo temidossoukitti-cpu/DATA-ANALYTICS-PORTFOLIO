@@ -206,7 +206,7 @@ function vitePluginStorageProxy(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? "/Retail-Sales-Analysis/" : "/",
+  base: process.env.GITHUB_ACTIONS ? "/DATA-ANALYTICS-PORTFOLIO/" : "/",
   plugins,
   resolve: {
     alias: {

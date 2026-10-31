@@ -117,3 +117,7 @@ projects/03-ventes-retail/
 
 ## Livrables
 [Rapport d'exploration](reports/data_exploration.md) · [Rapport de nettoyage](reports/data_cleaning_report.md) · [Rapport d'analyse métier](reports/business_analysis.md) · [Classeur Excel](reports/retail_sales_analysis.xlsx) · [Dataset nettoyé](data/processed/superstore_clean.csv) · [KPI](data/processed/business_kpis.csv)
+
+## Auteur
+
+**Samuel DOSSOU-KITTI** · [temidossoukitti@gmail.com](mailto:temidossoukitti@gmail.com)
