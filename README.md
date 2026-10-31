@@ -32,6 +32,7 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 | 02 | [Risque et performance d’un portefeuille](projects/02-portefeuille-risque/README.md) | Limiter les concentrations; AFBK représente **34,9 % du risque**. | Python · pandas · NumPy · SciPy · DAX | Analyse terminée |
 | 04 | [Risque de défaut des cartes de crédit](projects/04-risque-credit/README.md) | Orienter le suivi du risque; défaut observé : **22,12 %**. | Python · pandas · scikit-learn · SQLite · DAX | Données, QA, SQL, DAX et rapport prêts; Power BI en attente |
 | 05 | [Détection de fraude sur les transactions bancaires](projects/05-fraude-bancaire/README.md) | Prioriser la revue; fraude source : **0,173 %**. | Python · pandas · scikit-learn · SQLite · Power BI/DAX | Analyse terminée; dashboard à construire par Samuel |
+| 06 | [Analyse financière de Mastercard](projects/06-analyse-financiere/README.md) | Protéger la marge; marge opérationnelle **57,63 %**. | Python · pandas · SQLite · Power BI/DAX | Analyse terminée; dashboard à construire par Samuel |
 
 ### Commerce
 
@@ -52,6 +53,14 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 |---|---|---|---|---|---|
 | Échantillon 25 492 lignes | PASS | 84/84 comparaisons | 15 mesures | PASS | À construire par Samuel |
 <!-- AUTO:PROJECT05_STATUS_END -->
+
+### État des livrables — projet 06
+
+<!-- AUTO:PROJECT06_STATUS_BEGIN -->
+| Données | Qualité | SQL/Python | DAX | Rapport QA | Dashboard Power BI |
+|---|---|---|---|---|---|
+| 7 exercices · 105 valeurs | PASS | 109/109 comparaisons | 15 mesures | PASS | À construire par Samuel |
+<!-- AUTO:PROJECT06_STATUS_END -->
 
 ### Aperçu du projet ventes
 
@@ -90,7 +99,8 @@ Consulter le [standard de qualité](docs/STANDARD_QUALITE.md) et la [feuille de 
     ├── 02-portefeuille-risque/        # Analyse de risque et allocation
     ├── 03-ventes-retail/              # Analyse commerciale
     ├── 04-risque-credit/              # Défaut des cartes de crédit
-    └── 05-fraude-bancaire/            # Détection de fraude
+    ├── 05-fraude-bancaire/            # Détection de fraude
+    └── 06-analyse-financiere/         # Ratios financiers Mastercard
 ```
 
 Chaque dossier de projet contient sa propre présentation et ses livrables. Les instructions de reproduction sont indiquées dans le README correspondant.

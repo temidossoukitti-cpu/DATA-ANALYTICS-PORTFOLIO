@@ -1,0 +1,14 @@
+scope,rule,rows_checked,exceptions,severity,status,action
+source,entity_is_mastercard,1,0,critique,PASS,Entité lue : Mastercard Incorporated.
+source,cik_equals_1141391,1,0,critique,PASS,Identifiant SEC attendu de Mastercard Incorporated.
+extraction,metric_year_grid_complete,105,0,critique,PASS,Une valeur annuelle par indicateur et par exercice.
+extraction,duplicate_metric_year,105,0,critique,PASS,"Clé (exercice, indicateur) unique."
+extraction,nonfinite_values,105,0,critique,PASS,Toutes les valeurs sont finies.
+coherence,positive_revenue,7,0,critique,PASS,Les produits doivent être positifs.
+coherence,positive_assets,7,0,critique,PASS,Le total de l'actif doit être positif.
+coherence,positive_equity,7,0,critique,PASS,Les capitaux propres doivent rester positifs.
+coherence,current_below_total,14,0,critique,PASS,L'actif et le passif courants ne peuvent dépasser leurs totaux.
+coherence,positive_interest_expense,7,0,critique,PASS,La charge d'intérêts sert de dénominateur.
+coherence,balance_sheet_identity,7,0,information,INFO,"Écart actif = passif + capitaux propres toléré à 0,5 % du total de l'actif; un écart résiduel relève d'intérêts minoritaires non détaillés."
+coherence,eps_matches_net_income,7,0,critique,PASS,"BPA déclaré comparé à résultat net / actions diluées, tolérance 1 %."
+ratios,ratio_grid_complete,133,0,critique,PASS,Attendu : 3 valeurs manquantes (première année sans variation).

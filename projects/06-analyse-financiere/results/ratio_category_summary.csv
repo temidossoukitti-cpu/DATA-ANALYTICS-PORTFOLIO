@@ -1,0 +1,20 @@
+ratio_key,label_fr,category,last_value,mean,change_absolute
+operating_margin,Marge opérationnelle,Rentabilité,0.5762861761,0.5533669647,0.0038760594
+net_margin,Marge nette,Rentabilité,0.4564667134,0.4522829877,-0.0243720001
+effective_tax_rate,Taux d'impôt effectif,Rentabilité,0.1943158575,0.1685576266,0.0285569427
+roa,Rentabilité de l'actif (ROA),Rentabilité,0.2763816312,0.2519260812,-0.0012897329
+roe,Rentabilité des capitaux propres (ROE),Rentabilité,1.9345999742,1.5258434147,0.5570333697
+asset_turnover,Rotation de l'actif,Efficacité,0.6054803626,0.5558861671,0.0280073841
+current_ratio,Ratio de liquidité courante,Liquidité,1.0349705650,1.2456786196,-0.3848883060
+cash_ratio,Ratio de trésorerie,Liquidité,0.4641947105,0.5614966623,-0.1228348594
+debt_ratio,Ratio d'endettement global,Structure,0.8569713980,0.8280313960,0.0618899915
+equity_ratio,Part des capitaux propres,Structure,0.1428624185,0.1699413626,-0.0587041432
+leverage,Levier financier,Structure,6.9997415019,6.0080545340,2.0386011659
+interest_coverage,Couverture des intérêts,Structure,26.1731301939,26.9277981292,-16.9697269490
+cfo_margin,Marge de trésorerie d'exploitation,Trésorerie,0.5381964563,0.5002314079,0.0535077162
+fcf,Flux de trésorerie disponible,Trésorerie,17159000000.0000000000,11075571428.5714282990,9398000000.0000000000
+fcf_margin,Marge de flux disponible,Trésorerie,0.5232838279,0.4809309396,0.0635906454
+capex_intensity,Intensité des investissements,Trésorerie,0.0149126285,0.0193004682,-0.0100829292
+revenue_growth,Croissance des produits,Croissance,0.1641637377,0.1221875893,0.2578674633
+net_income_growth,Croissance du résultat net,Croissance,0.1626534100,0.1213085908,0.3729268763
+eps_growth,Croissance du BPA dilué,Croissance,0.1893448524,0.1441904265,0.3870778499
