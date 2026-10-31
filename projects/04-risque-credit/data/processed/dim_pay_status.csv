@@ -1,0 +1,12 @@
+pay_status_key,pay_code,pay_status_label
+1,-2,Aucun achat déclaré (hypothèse)
+2,-1,Paiement à jour
+3,0,Crédit renouvelable (hypothèse)
+4,1,Retard de 1 mois
+5,2,Retard de 2 mois
+6,3,Retard de 3 mois
+7,4,Retard de 4 mois
+8,5,Retard de 5 mois
+9,6,Retard de 6 mois
+10,7,Retard de 7 mois
+11,8,Retard de 8 mois

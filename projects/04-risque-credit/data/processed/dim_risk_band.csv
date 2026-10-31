@@ -1,0 +1,5 @@
+risk_band_key,risk_band_label,probability_min,probability_max,ordre
+1,Faible,0.00000000,0.10000000,1
+2,Modéré,0.10000000,0.20000000,2
+3,Élevé,0.20000000,0.40000000,3
+4,Très élevé,0.40000000,1.00000000,4

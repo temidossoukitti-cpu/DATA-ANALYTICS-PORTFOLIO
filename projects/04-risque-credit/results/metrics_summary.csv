@@ -1,0 +1,10 @@
+indicator,definition,value,unit
+Clients,Nombre de clients distincts,30000.00000000,clients
+Défauts le mois suivant,Somme de default_next_month,6636.00000000,clients
+Taux de défaut,Défauts / clients,0.22120000,proportion
+Limite de crédit totale,Somme de limit_bal,5024529680.00000000,NT$
+Limite moyenne,Moyenne de limit_bal,167484.32266667,NT$
+Exposition des défaillants,Somme de limit_bal pour default_next_month = 1,863407680.00000000,NT$
+Part de l’exposition des défaillants,Exposition des défaillants / limite totale,0.17183851,proportion
+Utilisation moyenne,"Moyenne de bill_amt1 / limit_bal, bornée à 0–1,5",0.42124896,ratio
+Clients avec utilisation supérieure à 100 %,Nombre de clients avec utilization > 1,2115.00000000,clients

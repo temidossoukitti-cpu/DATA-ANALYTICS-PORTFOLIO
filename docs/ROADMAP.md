@@ -3,9 +3,9 @@
 ## Lot 1 : Finance (en priorité)
 1. Budget contre réalisé : Civic Signal Budget Control Tower *(publié)*
 2. Risque et performance d'un portefeuille d'actions *(analyse terminée, dashboard en cours)*
-3. Risque de crédit d'un portefeuille de prêts (fintech ou microfinance)
+3. Risque de défaut des cartes de crédit (projet 04) *(données, analyse, SQL, DAX et rapport terminés; dashboard à construire)*
 4. Analyse financière d'une entreprise : ratios, marges, liquidité
-5. Détection de fraude sur des transactions bancaires
+5. Détection de fraude sur des transactions bancaires (projet 05, à venir)
 6. Performance marketing d'une banque
 7. P&L et seuil de rentabilité d'une PME
 

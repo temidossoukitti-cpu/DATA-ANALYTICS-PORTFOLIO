@@ -1,0 +1,17 @@
+rule,description,count_before,count_after,affected_rows,status,note
+source_rows,Nombre de clients lus dans le XLS,30000,30000,0,PASS,Aucune ligne n’est supprimée.
+source_columns,Colonnes UCI reconnues,25,44,0,PASS,25 colonnes brutes; les champs dérivés sont ajoutés après lecture.
+missing_raw_values,Valeurs manquantes dans les données brutes,0,0,0,PASS,Aucune imputation n’est appliquée au fichier brut.
+unique_client_id,Unicité de l’identifiant client,30000,30000,0,PASS,La clé client sert uniquement à la jointure; elle n’entre pas dans le modèle.
+duplicate_profiles_excluding_id,Profils dupliqués sur toutes les colonnes hors ID,30000,30000,70,PASS,Le contrôle est compté; les clients ne sont pas supprimés.
+age_range,Âge hors de l’intervalle de contrôle 18–100,30000,30000,0,PASS,Intervalle de contrôle analytique; aucune valeur n’est tronquée.
+positive_limit,Limite de crédit non positive,30000,30000,0,PASS,La division d’utilisation exige une limite positive.
+sex_codes,"Codes de sexe hors {1, 2}",30000,30000,0,PASS,Champ conservé à des fins descriptives uniquement.
+education_unknown_codes,"Codes éducation 0, 5, 6 recodés vers 4",345,345,345,PASS,Valeur source conservée dans education_original; recodage documenté comme demandé.
+marriage_zero,Code matrimonial 0 recodé vers 3,54,54,54,PASS,Valeur source conservée dans marriage_original.
+payment_status_range,"Statuts de paiement hors [-2, 9]",180000,180000,0,PASS,Les codes -2 et 0 sont des hypothèses métier explicitées dans DATA_DICTIONARY.md.
+binary_target,"Cible hors {0, 1}",30000,30000,0,PASS,1 représente un défaut le mois suivant.
+utilization_negative_cap,Utilisations négatives ramenées à zéro,590,2598,590,PASS,Hypothèse documentée; les montants source restent inchangés.
+utilization_upper_cap,Utilisations supérieures à 150 % plafonnées,164,164,164,PASS,Hypothèse documentée; le ratio brut reste disponible pour audit.
+payment_ratio_denominator,Ratio de paiement manquant lorsque le relevé n’est pas positif,2598,2598,2598,PASS,Le ratio n’est calculé que lorsque bill_amt1 > 0.
+source_sha256,Empreinte du XLS brut conforme à SOURCE.md,1,1,0,PASS,30c6be3abd8dcfd3e6096c828bad8c2f011238620f5369220bd60cfc82700933
