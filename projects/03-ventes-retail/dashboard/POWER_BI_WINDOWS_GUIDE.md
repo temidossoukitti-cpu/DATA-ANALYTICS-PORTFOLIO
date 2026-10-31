@@ -26,7 +26,7 @@ design du fond. Il n'est pas nécessaire pour construire le rapport Power BI.
 3. Aller dans :
 
 ```text
-Retail-Sales-Analysis\data\processed\
+DATA-ANALYTICS-PORTFOLIO\projects\03-ventes-retail\data\processed\
 ```
 
 4. Faire `Maj + clic droit` sur `superstore_clean.csv`.
@@ -36,7 +36,7 @@ Retail-Sales-Analysis\data\processed\
 Exemple :
 
 ```text
-C:\Users\Samuel\Documents\Retail-Sales-Analysis\data\processed\superstore_clean.csv
+C:\Users\Samuel\Documents\DATA-ANALYTICS-PORTFOLIO\projects\03-ventes-retail\data\processed\superstore_clean.csv
 ```
 
 ## 3. Créer le rapport Power BI
@@ -47,7 +47,7 @@ C:\Users\Samuel\Documents\Retail-Sales-Analysis\data\processed\superstore_clean.
 4. Aller dans le dossier :
 
 ```text
-Retail-Sales-Analysis\dashboard\
+DATA-ANALYTICS-PORTFOLIO\projects\03-ventes-retail\dashboard\
 ```
 
 5. Enregistrer le rapport sous :
@@ -84,7 +84,7 @@ des colonnes.
 Exemple de valeur actuelle :
 
 ```text
-C:\Users\Samuel\Documents\Retail-Sales-Analysis\data\processed\superstore_clean.csv
+C:\Users\Samuel\Documents\DATA-ANALYTICS-PORTFOLIO\projects\03-ventes-retail\data\processed\superstore_clean.csv
 ```
 
 Ne pas ajouter manuellement de guillemets autour du chemin dans le champ du
@@ -427,7 +427,7 @@ Ne pas supprimer ces colonnes.
 4. Sélectionner :
 
 ```text
-Retail-Sales-Analysis\dashboard\retail_executive_theme.json
+DATA-ANALYTICS-PORTFOLIO\projects\03-ventes-retail\dashboard\retail_executive_theme.json
 ```
 
 5. Valider l'importation.
@@ -458,7 +458,7 @@ visuels.
 5. Sélectionner :
 
 ```text
-Retail-Sales-Analysis\dashboard\retail_dashboard_background.png
+DATA-ANALYTICS-PORTFOLIO\projects\03-ventes-retail\dashboard\retail_dashboard_background.png
 ```
 
 6. Régler :
@@ -723,7 +723,7 @@ Vérifier les points suivants :
 2. Vérifier que le fichier se trouve dans :
 
 ```text
-Retail-Sales-Analysis\dashboard\retail_sales_dashboard.pbix
+DATA-ANALYTICS-PORTFOLIO\projects\03-ventes-retail\dashboard\retail_sales_dashboard.pbix
 ```
 
 Le rapport Power BI est alors terminé.
