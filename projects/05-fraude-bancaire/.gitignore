@@ -1,0 +1,45 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+~$*
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
+
+# IDE and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local environment variables
+.env
+.env.*
+!.env.example
+
+# Official OpenML source (>50 MB); only the weighted sample is versioned.
+/data/raw/openml_43627_full.parquet

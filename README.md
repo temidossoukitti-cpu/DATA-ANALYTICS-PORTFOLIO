@@ -31,6 +31,7 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 | 01 | [Civic Signal · Budget contre réalisé](projects/project-1-budget-vs-actual/) | Ajuster l’analyse budgétaire; consommation observée : **74,32 %**. | SQL · DAX · Web | Publié |
 | 02 | [Risque et performance d’un portefeuille](projects/02-portefeuille-risque/README.md) | Limiter les concentrations; AFBK représente **34,9 % du risque**. | Python · pandas · NumPy · SciPy · DAX | Analyse terminée |
 | 04 | [Risque de défaut des cartes de crédit](projects/04-risque-credit/README.md) | Orienter le suivi du risque; défaut observé : **22,12 %**. | Python · pandas · scikit-learn · SQLite · DAX | Données, QA, SQL, DAX et rapport prêts; Power BI en attente |
+| 05 | [Détection de fraude sur les transactions bancaires](projects/05-fraude-bancaire/README.md) | Prioriser la revue; fraude source : **0,173 %**. | Python · pandas · scikit-learn · SQLite · Power BI/DAX | Analyse terminée; dashboard à construire par Samuel |
 
 ### Commerce
 
@@ -43,6 +44,14 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 | Données | Qualité | SQL et parité | DAX | Rapport QA | Dashboard Power BI |
 |---|---|---|---|---|---|
 | Reproductibles | PASS | 34/34 comparaisons PASS | 14 mesures documentées | PASS | À construire par Samuel |
+
+### État des livrables — projet 05
+
+<!-- AUTO:PROJECT05_STATUS_BEGIN -->
+| Données | Qualité | SQL/Python | DAX | Rapport QA | Dashboard Power BI |
+|---|---|---|---|---|---|
+| Échantillon 25 492 lignes | PASS | 84/84 comparaisons | 15 mesures | PASS | À construire par Samuel |
+<!-- AUTO:PROJECT05_STATUS_END -->
 
 ### Aperçu du projet ventes
 
@@ -80,7 +89,8 @@ Consulter le [standard de qualité](docs/STANDARD_QUALITE.md) et la [feuille de 
     ├── project-1-budget-vs-actual/    # Suivi budgétaire
     ├── 02-portefeuille-risque/        # Analyse de risque et allocation
     ├── 03-ventes-retail/              # Analyse commerciale
-    └── 04-risque-credit/              # Défaut des cartes de crédit
+    ├── 04-risque-credit/              # Défaut des cartes de crédit
+    └── 05-fraude-bancaire/            # Détection de fraude
 ```
 
 Chaque dossier de projet contient sa propre présentation et ses livrables. Les instructions de reproduction sont indiquées dans le README correspondant.

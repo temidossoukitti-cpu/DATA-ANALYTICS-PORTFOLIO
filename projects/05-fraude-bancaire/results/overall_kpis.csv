@@ -1,0 +1,10 @@
+metric,value,unit,source
+transactions_population_exact,284807.0,transactions,results/population_kpis.csv
+fraud_transactions_population_exact,492.0,transactions,results/population_kpis.csv
+fraud_rate_population_exact,0.001727485630620034,proportion,results/population_kpis.csv
+fraud_rate_weighted_sample,0.0017274856306200336,proportion,committed sample and sampling_weight
+amount_total_population_exact,25162590.009999998,dataset amount units,results/population_kpis.csv
+fraud_amount_population_exact,60127.97,dataset amount units,results/population_kpis.csv
+amount_total_weighted_sample,24469924.286852002,dataset amount units,committed sample and sampling_weight
+fraud_amount_weighted_sample,60127.969999999994,dataset amount units,committed sample and sampling_weight
+unweighted_sample_fraud_rate,0.019300172603169623,proportion,descriptive only; oversampled fraud class
