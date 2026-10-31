@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="48" viewBox="0 0 150 48" role="img" aria-labelledby="title">
+  <title id="title">Portfolio</title>
+  <rect x="1" y="1" width="148" height="46" rx="9" fill="#F4C542" />
+  <text x="75" y="30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#14213D">Portfolio</text>
+</svg>

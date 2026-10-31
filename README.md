@@ -6,7 +6,11 @@
 
 **Des analyses reproductibles et des tableaux de bord conçus pour éclairer les décisions.**
 
-[Voir le site portfolio](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/) · [Me contacter](mailto:temidossoukitti@gmail.com) · [Explorer les projets](#projets)
+<p align="center">
+  <a href="mailto:temidossoukitti@gmail.com"><img src="assets/contact-button.svg" width="180" height="48" alt="Me contacter"></a>
+  &nbsp;&nbsp;
+  <a href="https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/"><img src="assets/portfolio-button.svg" width="150" height="48" alt="Portfolio"></a>
+</p>
 
 </div>
 
