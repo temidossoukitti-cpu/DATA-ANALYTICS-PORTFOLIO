@@ -1,123 +1,73 @@
-# Data Analytics Portfolio 
+<div align="center">
 
-**Des tableaux de bord et des analyses conçus pour aider à décider : finance et risque d'abord, puis commerce, économie, santé, IA et cybersécurité.**
+# Samuel Dossou-Kitti
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-C7F436?style=for-the-badge)](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/)
+### Portfolio professionnel · Analyse de données, finance et gestion du risque
 
-Chaque projet de ce dépôt est présenté comme un **produit d'analyse vérifiable** : une question de gestion, des données documentées, une méthode reproductible, des résultats chiffrés, des recommandations et des limites assumées. Les données sont publiques ou clairement signalées comme simulées.
+**Des analyses reproductibles et des tableaux de bord conçus pour éclairer les décisions.**
 
----
+[Voir le site portfolio](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/) · [Me contacter](mailto:temidossoukitti@gmail.com) · [Explorer les projets](#projets)
 
-## Projets phares
-
-| Projet | En une phrase |
-|---|---|
-| [01 · Civic Signal Budget Control Tower](projects/project-1-budget-vs-actual/) | Où le budget dérape-t-il par rapport au réalisé, à partir de données publiques ? |
-| [02 · Risque d'un portefeuille d'actions](projects/02-portefeuille-risque/README.md) | Où le risque se concentre-t-il, et comment rééquilibrer ? |
+</div>
 
 ---
 
-## Index des projets
+## Présentation
 
-### Finance
+Je conçois des analyses de données qui relient les indicateurs aux décisions opérationnelles. Mon travail couvre la préparation des données, l’analyse, la modélisation, la visualisation et la formulation de recommandations.
 
-| # | Projet | Décision soutenue | Outils | Livrables | Statut |
-|---|---|---|---|---|---|
-| 01 | [Budget contre réalisé · Civic Signal Budget Control Tower](projects/project-1-budget-vs-actual/) | Repérer et corriger les écarts entre budget et réalisé | SQL · DAX · Web | Données · Contrôles qualité · SQL · DAX · Rapports · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/) | Publié |
-| 02 | [Risque et performance d'un portefeuille](projects/02-portefeuille-risque/README.md) | Rééquilibrer pour réduire la concentration du risque | Python · DAX | Données · Code · Résultats · DAX · QA | Analyse terminée, dashboard en cours |
+Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des projets complémentaires en analyse commerciale. Chaque étude documente sa question de gestion, ses données, sa méthode, ses résultats et ses limites.
 
-### Commerce et ventes
+## Projets
 
-| # | Projet | Décision soutenue | Outils | Livrables | Statut |
-|---|---|---|---|---|---|
-| 03 | [Analyse des ventes d'un distributeur](projects/03-ventes-retail/README.md) | Améliorer la rentabilité : remises, produits déficitaires, régions | Python · Excel · Web · Power BI | Données · Scripts · Rapports · Classeur Excel · 8 graphiques | Publié |
+| Référence | Projet | Question traitée | Technologies | État |
+|---|---|---|---|---|
+| 01 | [Civic Signal · Budget contre réalisé](projects/project-1-budget-vs-actual/) | Où les dépenses s’écartent-elles du budget et quelles actions prioriser ? | SQL · DAX · Web | Publié |
+| 02 | [Risque et performance d’un portefeuille](projects/02-portefeuille-risque/README.md) | Comment mesurer la concentration du risque et comparer des stratégies d’allocation ? | Python · pandas · NumPy · SciPy · DAX | Analyse terminée |
+| 03 | [Analyse des ventes d’un distributeur](projects/03-ventes-retail/README.md) | Quels produits, remises et marchés influencent les ventes et la rentabilité ? | Python · Excel · Power BI · Web | Publié |
 
-<!-- Pour ajouter un projet : copie une ligne du tableau du bon domaine, change le numéro, le nom, le lien et le statut. -->
+### Aperçu du projet ventes
 
-### Économie · Santé · IA · Cybersécurité
+L’analyse du jeu de données Sample Superstore couvre **9 994 lignes** et la période **2014–2017**. Elle met en évidence **2,30 M$ de ventes**, **286 397 $ de profit** et une marge globale de **12,5 %**. Le dossier comprend les scripts de nettoyage et d’analyse, les rapports, un classeur Excel et huit visualisations.
 
-*Les projets de diversification seront ajoutés après le lot Finance.*
+[Consulter l’étude complète](projects/03-ventes-retail/README.md) · [Ouvrir le tableau de bord en ligne](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/)
 
-<details>
-<summary><b>Projets à venir</b></summary>
+## Méthode de travail
 
-- Risque de crédit d'un portefeuille de prêts
-- Analyse financière d'une entreprise : ratios, marges, liquidité
-- Détection de fraude sur des transactions bancaires
-- Performance marketing d'une banque
-- P&L et seuil de rentabilité d'une PME
+Les projets sont structurés pour être compréhensibles et vérifiables :
 
-</details>
+- Données et sources décrites, avec distinction claire entre données publiques et données simulées.
+- Nettoyage reproductible et conservation des données originales.
+- Indicateurs définis et reliés à une question de gestion.
+- Résultats accompagnés de recommandations et de limites explicites.
+- Code, documentation et livrables organisés dans un dossier par projet.
 
----
-
-## Parcours conseillé pour un recruteur
-
-1. **Résumé de 60 secondes** : ouvrir le README d'un projet et lire la question de gestion et les chiffres clés.
-2. **Aperçu du dashboard** : consulter le dashboard en ligne ou les images du projet.
-3. **Reproduire** : lancer le script d'analyse du projet.
-4. **Vérifier** : lire les mesures DAX, les contrôles qualité et les limites.
-
----
-
-## Structure d'un projet
-
-```text
-projects/<numero-nom-du-projet>/
-├── README.md        # question, résumé, résultats, recommandations, limites
-├── data/            # données brutes et nettoyées + dictionnaire
-├── scripts/         # code reproductible
-├── notebooks/       # exploration commentée
-├── results/         # tableaux produits par l'analyse
-├── model/           # modèle de données et mesures DAX
-├── qa/              # checklist de validation
-└── preview/         # aperçus du dashboard (PNG / PDF)
-```
-
-Chaque projet garde sa propre organisation interne : les chemins du README d'un projet partent toujours de son dossier.
-
----
-
-## État de livraison
-
-| Projet | Données | Contrôles qualité | SQL | DAX | Rapport | Dashboard |
-|---|:-:|:-:|:-:|:-:|:-:|:-:|
-| 01 · Budget contre réalisé | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ web |
-| 02 · Portefeuille | ✅ | ✅ | – | ✅ | ⏳ | ⏳ |
-| 03 · Ventes | ✅ | ✅ | – | ✅ | ✅ | ✅ web |
-
-✅ livré · ⏳ en cours · – sans objet
-
----
-
-## Standard de qualité
-
-- Une **question de gestion** avant tout graphique.
-- Des données **documentées** (source, période, dictionnaire) et un nettoyage tracé.
-- Une analyse **reproductible** : un script régénère les résultats.
-- Des indicateurs **définis en une ligne** et comparés à une référence.
-- 3 à 5 **recommandations** chiffrées, classées par impact.
-- Des **limites** explicites.
-- Aucune donnée confidentielle.
-
-Détails : [`docs/STANDARD_QUALITE.md`](docs/STANDARD_QUALITE.md) · Prochains projets : [`docs/ROADMAP.md`](docs/ROADMAP.md)
-
----
+Consulter le [standard de qualité](docs/STANDARD_QUALITE.md) et la [feuille de route](docs/ROADMAP.md).
 
 ## Compétences et outils
 
-| Domaine | Outils |
+| Domaine | Outils et pratiques |
 |---|---|
-| Analyse et modélisation | Python (pandas, NumPy, SciPy) · SQL |
-| Visualisation | Power BI · DAX · Matplotlib · HTML/CSS/JavaScript |
-| Finance | Budget et réalisé · risque et performance · rentabilité |
-| Méthode | Git · documentation · contrôle qualité |
+| Analyse et traitement | Python, pandas, NumPy, SciPy, SQL |
+| Visualisation et restitution | Power BI, DAX, Matplotlib, Excel, HTML, CSS, JavaScript |
+| Finance et gestion | Budget et réalisé, rentabilité, risque et performance de portefeuille |
+| Méthode | Git, documentation, contrôles qualité, analyses reproductibles |
 
----
+## Structure du portfolio
 
-## Auteur
+```text
+.
+├── docs/                              # Standard qualité et feuille de route
+└── projects/
+    ├── project-1-budget-vs-actual/    # Suivi budgétaire
+    ├── 02-portefeuille-risque/        # Analyse de risque et allocation
+    └── 03-ventes-retail/              # Analyse commerciale
+```
 
-**Samuel DOSSOU-KITTI** · Data Analyst, finance et gestion du risque
+Chaque dossier de projet contient sa propre présentation et ses livrables. Les instructions de reproduction sont indiquées dans le README correspondant.
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-C7F436?style=flat-square)](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/)
-[![Email](https://img.shields.io/badge/EMAIL-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:temidossoukitti@gmail.com)
+## Contact
+
+**Samuel Dossou-Kitti**  
+Analyste de données · Finance et gestion du risque  
+[temidossoukitti@gmail.com](mailto:temidossoukitti@gmail.com) · [Site portfolio](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/)
