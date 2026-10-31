@@ -7,9 +7,9 @@
 **Des analyses reproductibles et des tableaux de bord conçus pour éclairer les décisions.**
 
 <p align="center">
-  <a href="mailto:temidossoukitti@gmail.com" style="display:inline-block;padding:12px 22px;border-radius:6px;background-color:#2563EB;color:#FFFFFF;text-decoration:none;font-weight:bold;">Me contacter</a>
+  <a href="mailto:temidossoukitti@gmail.com"><img src="assets/contact-button.svg" width="180" height="48" alt="Me contacter"></a>
   &nbsp;&nbsp;
-  <a href="https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/" style="display:inline-block;padding:12px 22px;border-radius:6px;background-color:#F4C542;color:#14213D;text-decoration:none;font-weight:bold;">Portfolio</a>
+  <a href="https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/"><img src="assets/portfolio-button.svg" width="150" height="48" alt="Portfolio"></a>
 </p>
 
 </div>
