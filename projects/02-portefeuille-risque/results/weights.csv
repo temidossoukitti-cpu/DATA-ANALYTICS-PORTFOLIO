@@ -1,0 +1,11 @@
+ticker,valeur_marche,poids,sector
+NVTK,18582.0,0.0869,Technologie
+CLDX,30140.0,0.141,Technologie
+AFBK,60901.0,0.285,Finance
+GLPY,13470.0,0.063,Finance
+MDVT,12792.0,0.0599,Sante
+ENRG,19389.0,0.0907,Energie
+CNSM,12352.0,0.0578,Consommation
+INDX,17388.0,0.0814,Industrie
+TLCM,16005.0,0.0749,Telecom
+UTLG,12700.0,0.0594,Services publics
