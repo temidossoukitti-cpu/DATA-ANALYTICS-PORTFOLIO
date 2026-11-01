@@ -22,11 +22,11 @@ CREATE TABLE fact_campaign (
     previously_contacted INTEGER NOT NULL,
     previous INTEGER NOT NULL,
     poutcome_key INTEGER NOT NULL,
-    emp_var_rate REAL NOT NULL,
-    cons_price_idx REAL NOT NULL,
-    cons_conf_idx REAL NOT NULL,
+    "emp.var.rate" REAL NOT NULL,
+    "cons.price.idx" REAL NOT NULL,
+    "cons.conf.idx" REAL NOT NULL,
     euribor3m REAL NOT NULL,
-    nr_employed REAL NOT NULL,
+    "nr.employed" REAL NOT NULL,
     outcome_key INTEGER NOT NULL CHECK (outcome_key IN (0, 1))
 );
 
