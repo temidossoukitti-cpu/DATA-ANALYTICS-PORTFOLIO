@@ -188,10 +188,11 @@ def main() -> None:
     split_validation.to_csv(ROOT / "results/split_validation.csv", index=False, encoding="utf-8")
 
     # overall KPIs update
+    subscriptions = int(fact["outcome_key"].sum())
     overall_rows = [
-        {"metric": "campaign_rows", "value": str(len(fact)), "unit": "campaigns", "source": "results/overall_kpis.csv"},
-        {"metric": "subscriptions", "value": str(int(fact["outcome_key"].sum())), "unit": "subscriptions", "source": "results/overall_kpis.csv"},
-        {"metric": "conversion_rate", "value": fr_pct(int(fact["outcome_key"].sum()) / len(fact)), "unit": "proportion", "source": "results/overall_kpis.csv"},
+        {"metric": "campaign_rows", "value": len(fact), "unit": "campaigns", "source": "results/overall_kpis.csv"},
+        {"metric": "subscriptions", "value": subscriptions, "unit": "subscriptions", "source": "results/overall_kpis.csv"},
+        {"metric": "conversion_rate", "value": subscriptions / len(fact), "unit": "proportion", "source": "results/overall_kpis.csv"},
     ]
     overall = pd.DataFrame(overall_rows)
     overall.to_csv(ROOT / "results/overall_kpis.csv", index=False, encoding="utf-8")

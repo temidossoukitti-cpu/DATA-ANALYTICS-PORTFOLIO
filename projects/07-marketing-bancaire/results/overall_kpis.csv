@@ -1,4 +1,4 @@
 metric,value,unit,source
-campaign_rows,41188,campaigns,results/overall_kpis.csv
-subscriptions,4640,subscriptions,results/overall_kpis.csv
-conversion_rate,"11,27 %",proportion,results/overall_kpis.csv
+campaign_rows,41188.0,campaigns,results/overall_kpis.csv
+subscriptions,4640.0,subscriptions,results/overall_kpis.csv
+conversion_rate,0.11265417111780131,proportion,results/overall_kpis.csv

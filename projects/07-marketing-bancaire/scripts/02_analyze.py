@@ -32,9 +32,9 @@ def main() -> None:
     conv_rate = fr_pct(pop / total)
 
     overall = pd.DataFrame([
-        {"metric": "campaign_rows", "value": str(total), "unit": "campaigns", "source": "results/overall_kpis.csv"},
-        {"metric": "subscriptions", "value": str(pop), "unit": "subscriptions", "source": "results/overall_kpis.csv"},
-        {"metric": "conversion_rate", "value": conv_rate, "unit": "proportion", "source": "results/overall_kpis.csv"},
+        {"metric": "campaign_rows", "value": total, "unit": "campaigns", "source": "results/overall_kpis.csv"},
+        {"metric": "subscriptions", "value": pop, "unit": "subscriptions", "source": "results/overall_kpis.csv"},
+        {"metric": "conversion_rate", "value": pop / total, "unit": "proportion", "source": "results/overall_kpis.csv"},
     ])
     (ROOT / "results").mkdir(exist_ok=True)
     overall.to_csv(ROOT / "results/overall_kpis.csv", index=False, encoding="utf-8")
@@ -46,7 +46,8 @@ def main() -> None:
         .reset_index()
     )
     month_conv["conversion_rate"] = month_conv["subscriptions"] / month_conv["rows"]
-    month_conv["label_fr"] = month_conv["month_key"].map(MONTH_LABELS)
+    month_labels = dim_month.set_index("month_key")["label_fr"]
+    month_conv["label_fr"] = month_conv["month_key"].map(month_labels)
     month_conv = month_conv.sort_values("month_key")
     month_conv.to_csv(ROOT / "results/conversion_by_month.csv", index=False, encoding="utf-8")
 
