@@ -4,7 +4,7 @@
 
 [← Retour à l’index du portfolio](../../)
 
-**Données publiques :** [SEC EDGAR — companyfacts, Mastercard Incorporated, CIK 1141391](https://data.sec.gov/api/xbrl/companyfacts/CIK0001141391.json). Dépôts 10-K annuels, exercices 2019 à 2025. Empreinte et volume dans [`data/raw/SOURCE.md`](data/raw/SOURCE.md).
+**Données publiques :** [SEC EDGAR — companyfacts, Mastercard Incorporated, CIK 1141391](https://data.sec.gov/api/xbrl/companyfacts/CIK0001141391.json). La SEC indique que les dépôts publics EDGAR sont réutilisables; son API ne requiert pas de clé. Conditions et référence dans [`data/raw/SOURCE.md`](data/raw/SOURCE.md). Exercices 2019–2025.
 
 ## Question de gestion
 
