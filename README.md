@@ -33,6 +33,7 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 | 04 | [Risque de défaut des cartes de crédit](projects/04-risque-credit/README.md) | Orienter le suivi du risque; défaut observé : **22,12 %**. | Python · pandas · scikit-learn · SQLite · DAX | Données, QA, SQL, DAX et rapport prêts; Power BI en attente |
 | 05 | [Détection de fraude sur les transactions bancaires](projects/05-fraude-bancaire/README.md) | Prioriser la revue; fraude source : **0,173 %**. | Python · pandas · scikit-learn · SQLite · Power BI/DAX | Analyse terminée; dashboard à construire par Samuel |
 | 06 | [Analyse financière de Mastercard](projects/06-analyse-financiere/README.md) | Protéger la marge; marge opérationnelle **57,63 %**. | Python · pandas · SQLite · Power BI/DAX | Analyse terminée; dashboard à construire par Samuel |
+| 07 | [Performance marketing d'une banque](projects/07-marketing-bancaire/README.md) | Prioriser les campagnes; conversion globale **11,27 %**. | Python · pandas · scikit-learn · Power BI/DAX | Analyse et documentation terminées; dashboard à construire par Samuel |
 
 ### Commerce
 
@@ -68,6 +69,10 @@ L’analyse du jeu de données Sample Superstore couvre **9 994 lignes** et la p
 
 [Consulter l’étude complète](projects/03-ventes-retail/README.md) · [Ouvrir le tableau de bord en ligne](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/)
 
+### Projets en préparation
+
+Les projets [08 · Inclusion financière](projects/08-inclusion-financiere/README.md) et [10 · Cryptomonnaies](projects/10-cryptomonnaies/README.md) sont présents dans le dépôt comme cadrages de sources, mais ne sont pas encore annoncés comme analyses terminées.
+
 ## Méthode de travail
 
 Les projets sont structurés pour être compréhensibles et vérifiables :
@@ -100,7 +105,10 @@ Consulter le [standard de qualité](docs/STANDARD_QUALITE.md) et la [feuille de 
     ├── 03-ventes-retail/              # Analyse commerciale
     ├── 04-risque-credit/              # Défaut des cartes de crédit
     ├── 05-fraude-bancaire/            # Détection de fraude
-    └── 06-analyse-financiere/         # Ratios financiers Mastercard
+    ├── 06-analyse-financiere/         # Ratios financiers Mastercard
+    ├── 07-marketing-bancaire/         # Performance de campagne bancaire
+    ├── 08-inclusion-financiere/       # Cadrage Global Findex
+    └── 10-cryptomonnaies/             # Cadrage BTC/ETH
 ```
 
 Chaque dossier de projet contient sa propre présentation et ses livrables. Les instructions de reproduction sont indiquées dans le README correspondant.

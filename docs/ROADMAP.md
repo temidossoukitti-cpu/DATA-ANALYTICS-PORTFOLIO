@@ -6,11 +6,11 @@
 3. Risque de défaut des cartes de crédit (projet 04) *(données, analyse, SQL, DAX et rapport terminés; dashboard à construire)*
 4. Analyse financière d'une entreprise : ratios, marges, liquidité (projet 06, analyses et QA automatisée terminées; dashboard à construire par Samuel)
 5. Détection de fraude sur des transactions bancaires (projet 05, analyses et QA automatisée terminées; dashboard à construire par Samuel)
-6. Performance marketing d'une banque
-7. P&L et seuil de rentabilité d'une PME
+6. Performance marketing d'une banque (projet 07, analyse, QA et kit Power BI prêts; dashboard à construire)
+7. P&L et seuil de rentabilité d'une PME (à construire)
 
 ## Lot 2 : Diversification
 - Ventes et commerce : analyse d'un distributeur *(publié, projet 03)*
-- Économie ouest-africaine, santé, IA (churn), cybersécurité, énergie et climat, crypto
+- Inclusion financière (projet 08, cadrage en préparation), cryptomonnaies (projet 10, cadrage en préparation), économie ouest-africaine, santé, IA (churn), cybersécurité, énergie et climat
 
 *La numérotation des dossiers suit l'ordre de création ; l'index du README range les projets par domaine.*
