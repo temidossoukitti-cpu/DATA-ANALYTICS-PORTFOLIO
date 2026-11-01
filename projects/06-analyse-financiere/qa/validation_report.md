@@ -15,7 +15,7 @@
 | Graphiques | Au moins 6 PNG Matplotlib | 8 PNG | PASS |
 | README projet | Au plus 120 lignes; badge PORTFOLIO | 94 lignes; badge présent | PASS |
 | Liens relatifs/images | Tous résolus | 0 cassé(s) | PASS |
-| Taille du projet | <25 Mo; aucun fichier >50 Mo | 4.88 Mo; maximum 4.18 Mo | PASS |
+| Taille du projet | <25 Mo; aucun fichier >50 Mo | 4.92 Mo; maximum 4.18 Mo | PASS |
 | Caches Python | Aucun | 0 artefact(s) | PASS |
 | Conformité texte | Aucun chemin absolu, TODO, LinkedIn ou emoji | 0 chemin(s), 0 TODO, 0 LinkedIn, 0 emoji | PASS |
 | Dépendances | Versions directes épinglées avec == | 3 dépendances | PASS |

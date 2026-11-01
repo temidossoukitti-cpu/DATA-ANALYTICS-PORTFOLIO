@@ -8,7 +8,7 @@ L’extraction retient les dépôts **10-K** annuels de formulaire et de périod
 
 ## Licence et redistribution
 
-Les dépôts déposés auprès de la SEC sont des documents publics. L’API companyfacts expose les faits XBRL déjà déposés; aucune licence commerciale n’est requise pour les consulter. Le fichier brut est conservé tel quel afin de permettre la vérification des valeurs extraites. Les résultats du projet ne constituent ni une recommandation d’investissement ni une opinion sur la valeur de l’entreprise.
+La SEC indique que les contenus créés par le gouvernement et les dépôts publics EDGAR sont librement accessibles et réutilisables [2]. Cette indication de réutilisation ne correspond pas à une licence Creative Commons attribuée au fichier. L’API `data.sec.gov` est publique et ne requiert pas d’authentification ni de clé; toute récupération automatisée doit respecter les règles SEC applicables [3]. Le JSON conservé permet de vérifier les valeurs extraites. Les résultats du projet ne constituent ni une recommandation d’investissement ni une opinion sur la valeur de l’entreprise.
 
 ## Extraction et contrôle
 
@@ -26,3 +26,5 @@ La source ne fournit **aucune segmentation par activité**, aucune ventilation g
 ## Références
 
 [1]: https://data.sec.gov/api/xbrl/companyfacts/CIK0001141391.json "SEC EDGAR companyfacts, Mastercard Incorporated (CIK 1141391)"
+[2]: https://www.sec.gov/about/webmaster-frequently-asked-questions "SEC Webmaster FAQ, réutilisation du contenu EDGAR public"
+[3]: https://www.sec.gov/search-filings/edgar-application-programming-interfaces "SEC EDGAR APIs, accès et règles d’utilisation"
