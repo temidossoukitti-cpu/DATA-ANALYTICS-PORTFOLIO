@@ -1,0 +1,6 @@
+check,sql_value,python_value,status
+campaign_rows,41188.0,41188.0,PASS
+subscriptions,4640.0,4640.0,PASS
+conversion_rate,0.11265417111780131,0.11265417111780131,PASS
+month_aggregates,1.0,1.0,PASS
+job_aggregates,1.0,1.0,PASS
