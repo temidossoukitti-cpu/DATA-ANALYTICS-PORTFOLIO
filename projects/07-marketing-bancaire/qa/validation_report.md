@@ -1,6 +1,6 @@
 # Rapport de validation automatisée
 
-Ce rapport est régénéré par `python scripts/run_all.py` à partir de `results/quality_check.csv`, `results/source_integrity.csv`, `results/split_validation.csv` et `results/model_scorecard.csv`.
+Ce rapport est régénéré par `python scripts/run_all.py` à partir de `results/quality_check.csv`, `results/source_integrity.csv`, `results/split_validation.csv`, `results/model_scorecard.csv` et `results/sql_parity.csv`.
 
 ## État initial observé
 
@@ -16,5 +16,7 @@ Ce rapport est régénéré par `python scripts/run_all.py` à partir de `result
 ## Métriques du modèle
 
 Le modèle logistique donne ROC-AUC 0,7917, PR-AUC 0,4518, précision 0,4345, rappel 0,5625 et F1 0,4903 sur l'échantillon test, avec un seuil sélectionné à 0,65 par validation hors pli. Ces métriques ne constituent pas une validation métier ni une autorisation de décision automatisée.
+
+La parité SQL/Python est **5/5 PASS** dans `results/sql_parity.csv` pour les KPI globaux, le taux de conversion et les agrégats par mois et par métier. La base SQLite reproductible est générée dans `data/processed/bank_marketing.db`.
 
 Le contrôle manuel Power BI reste à faire : relations, types, filtres, titres, interactions, export PDF et cohérence des cartes KPI.
