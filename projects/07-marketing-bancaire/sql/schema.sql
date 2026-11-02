@@ -1,5 +1,6 @@
--- Projet 07 : schéma SQLite minimal pour la table de faits.
--- Les dimensions sont importées depuis data/processed via l'outil SQLite choisi.
+-- Projet 07 : schéma SQLite de la table de faits générée par le pipeline.
+-- Les noms avec un point sont conservés comme dans la source et doivent être
+-- entourés de guillemets dans les requêtes SQL.
 
 DROP TABLE IF EXISTS fact_campaign;
 CREATE TABLE fact_campaign (
