@@ -69,5 +69,14 @@ python scripts/analysis.py
 ```
 Les résultats sont écrits dans `results/` et `data/cleaned/`.
 
-## Dashboard
-*À venir : dashboard Power BI (aperçus dans `preview/`). Les mesures DAX sont déjà documentées dans `model/DAX_MEASURES.md`.*
+## Dashboards et livrables
+
+Le projet dispose maintenant de deux dashboards sans dépendance à Power BI :
+
+- [Dashboard HTML interactif](dashboard/web/) — version statique publiable sur GitHub Pages ;
+- [Dashboard web permanent](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/02-portefeuille-risque/dashboard/web/) — version hébergée sur GitHub Pages ;
+- [Application Streamlit](dashboard/streamlit_app.py) — version interactive lançable en local ;
+- [Rapport PDF](reports/rapport_portefeuille_risque.pdf) — synthèse de quatre pages ;
+- [Capture principale](preview/dashboard_web.png) et [vue filtrée Finance](preview/dashboard_web_finance.png).
+
+Les instructions de lancement sont dans [`dashboard/README.md`](dashboard/README.md). Les livrables sont autonomes et reposent sur Python, Streamlit, HTML et JavaScript.
