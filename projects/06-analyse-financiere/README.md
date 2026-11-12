@@ -78,7 +78,7 @@ La source ne fournit ni segmentation par activité, ni ventilation géographique
 
 ## Dashboard
 
-Quatre pages Power BI sont planifiées dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md). Le dashboard reste à construire par Samuel. Aucun PBIX/PBIP, PDF de dashboard ou PowerPoint n’est produit dans cette livraison; les exports PDF/PNG seront effectués après la validation Desktop décrite dans [`powerbi/EXPORT_PREVIEWS.md`](powerbi/EXPORT_PREVIEWS.md).
+Dashboard web interactif à quatre pages : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/06-analyse-financiere/dashboard/web/) · [code](dashboard/web/) · captures : [synthèse](preview/dashboard_web.png), [rentabilité](preview/dashboard_web_rentabilite.png), [liquidité](preview/dashboard_web_liquidite.png) et [trésorerie](preview/dashboard_web_tresorerie.png). Les quatre pages Power BI planifiées dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md) restent disponibles en option.
 
 ## Reproduire
 
