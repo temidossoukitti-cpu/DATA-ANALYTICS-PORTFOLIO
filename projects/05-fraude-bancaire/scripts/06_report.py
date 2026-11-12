@@ -157,7 +157,7 @@ def main() -> None:
         f"- **Population source :** {fr_num(source_total)} transactions, {fr_num(source_fraud)} fraudes ({fr_pct(model_rate)}); échantillon pondéré de {fr_num(sample_total)} lignes.",
         f"- **Modèle (test) :** PR-AUC {float(metrics_model['pr_auc_weighted']):.4f}, précision {fr_pct(metrics_model['precision_weighted'], 2)}, rappel {fr_pct(metrics_model['recall_weighted'], 2)}, seuil {float(metrics_model['decision_threshold']):.3f} choisi hors test.",
         f"- **Comparaison sous hypothèses :** coût estimé {fr_num(money_model['expected_cost_estimate'])} contre {fr_num(money_baseline['expected_cost_estimate'])} unités pour la règle de montant; exposition fraude interceptée {fr_num(money_model['fraud_amount_intercepted_estimate'])} unités.",
-        f"- **Livrables automatisés :** {table_count} tables Power BI, {dax_count} mesures DAX, {page_count} pages planifiées, {visual_count} graphiques, {sql_passes}/{len(parity)} comparaisons SQL/Python; dashboard manuel à construire.",
+        f"- **Livrables automatisés :** {table_count} tables Power BI, {dax_count} mesures DAX, {page_count} pages planifiées, {visual_count} graphiques, {sql_passes}/{len(parity)} comparaisons SQL/Python; dashboard web interactif publié.",
     ])
     key_results = "\n".join([
         "| Indicateur | Résultat | Référence |",
@@ -200,7 +200,7 @@ def main() -> None:
     root_status = "\n".join([
         "| Données | Qualité | SQL/Python | DAX | Rapport QA | Dashboard Power BI |",
         "|---|---|---|---|---|---|",
-        f"| Échantillon {fr_num(sample_total)} lignes | {project_status_placeholder} | {sql_passes}/{len(parity)} comparaisons | {dax_count} mesures | {project_status_placeholder} | À construire par Samuel |",
+        f"| Échantillon {fr_num(sample_total)} lignes | {project_status_placeholder} | {sql_passes}/{len(parity)} comparaisons | {dax_count} mesures | {project_status_placeholder} | Dashboard web publié |",
     ])
     root_readme = replace_block(root_readme, "<!-- AUTO:PROJECT05_STATUS_BEGIN -->", "<!-- AUTO:PROJECT05_STATUS_END -->", root_status)
     root_readme_path.write_text(root_readme, encoding="utf-8")
