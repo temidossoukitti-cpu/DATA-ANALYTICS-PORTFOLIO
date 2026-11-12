@@ -27,16 +27,25 @@ Le dashboard charge directement
 `data/processed/superstore_clean.csv`. Il ne modifie aucune donnée et ne
 nécessite aucune bibliothèque JavaScript externe.
 
+La maquette web reprend la structure de référence financière : navigation
+verticale sombre, cartes KPI avec mini-tendances, graphique en anneau en haut à
+droite, puis deux grands visuels analytiques. Les chiffres sont recalculés à
+partir des données réelles du jeu Superstore.
+
 Fonctionnalités disponibles :
 
 - filtres année, région, segment, catégorie et mode de livraison ;
-- cinq KPI recalculés à chaque sélection ;
-- tendances mensuelles des ventes et du profit ;
-- analyse des catégories, sous-catégories et régions ;
-- Top 10 clients dynamique ;
-- analyse remise moyenne versus profit ;
-- infobulles et sélection par clic sur plusieurs graphiques ;
-- mise en page responsive pour écran large, tablette et mobile.
+- trois KPI principaux (chiffre d’affaires, profit et marge) avec comparaison
+  annuelle et mini-tendances ;
+- répartition du chiffre d’affaires par catégorie en anneau ;
+- ventes annuelles en colonnes et profit annuel en ligne, avec axes distincts ;
+- waterfall mensuel montrant la contribution au profit cumulé, avec total final ;
+- infobulles, clics de filtrage sur les visuels et réinitialisation des filtres ;
+- disposition responsive pour écran large, tablette et mobile.
+
+Le jeu de données ne fournit pas de budget commercial ni de coûts OPEX
+distincts ; les visuels ne prétendent donc pas comparer les ventes à un budget
+ni le profit à des charges qui ne figurent pas dans la source.
 
 ## Version Power BI
 

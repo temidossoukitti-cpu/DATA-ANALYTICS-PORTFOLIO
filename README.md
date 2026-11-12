@@ -39,7 +39,7 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 
 | Référence | Projet | Décision soutenue et repère chiffré | Technologies | État |
 |---|---|---|---|---|
-| 03 | [Analyse des ventes d’un distributeur](projects/03-ventes-retail/README.md) | Prioriser produits et marchés; **2,30 M$ de ventes**. | Python · Excel · Power BI · Web | Publié |
+| 03 | [Analyse des ventes d’un distributeur](projects/03-ventes-retail/README.md) · [Dashboard](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/03-ventes-retail/dashboard/web/) | Prioriser produits et marchés; **2,30 M$ de ventes**. | Python · Excel · Power BI · Web | Publié |
 
 ### État des livrables — projet 04
 

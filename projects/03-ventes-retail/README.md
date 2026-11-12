@@ -90,7 +90,7 @@ Liste complète : [`data/processed/business_kpis.csv`](data/processed/business_k
 | ![États](visuals/07_state_profit_extremes.png) | ![Top clients](visuals/08_top_customers.png) |
 
 ## Dashboard
-Version web (navigateur) et kit Power BI : consignes de lancement et d'assemblage dans [`dashboard/README.md`](dashboard/README.md).
+[Ouvrir le dashboard web interactif](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/03-ventes-retail/dashboard/web/) · Guide de lancement et kit Power BI dans [`dashboard/README.md`](dashboard/README.md).
 
 ## Reproduire l'analyse
 Prérequis : Python 3.10+ et `pip`. Depuis **ce dossier** (`projects/03-ventes-retail`) :

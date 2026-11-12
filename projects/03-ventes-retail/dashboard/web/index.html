@@ -3,184 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Dashboard interactif de pilotage des ventes Retail Superstore."
-    />
-    <title>Retail Sales | Executive Dashboard</title>
+    <meta name="description" content="Tableau de bord interactif de performance commerciale du jeu Sample Superstore." />
+    <title>Retail Sales | Executive Performance</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="dashboard-shell">
+    <div class="app-shell">
       <header class="topbar">
-        <div>
-          <h1>Retail Sales</h1>
-          <p>Executive performance dashboard</p>
-        </div>
-        <div class="topbar-context">
-          <span>Commercial management</span>
-          <strong id="reporting-period">USD | 2014-2017</strong>
-        </div>
+        <a class="brand" href="#overview" aria-label="Retail Sales — Vue d’ensemble">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M5 25h26M9 21c4-10 14-10 18 0M11 13c3-4 11-4 14 0M15 8c2-2 4-2 6 0"/><circle cx="7" cy="25" r="1.5"/><circle cx="29" cy="25" r="1.5"/></svg></span>
+          <span><strong>Retail Sales</strong><small>Executive performance</small></span>
+        </a>
+        <div class="topbar-context"><span>COMMERCIAL MANAGEMENT</span><strong id="reporting-period">USD · 2014—2017</strong></div>
       </header>
 
-      <aside class="filter-rail" aria-label="Filtres du rapport">
-        <div class="rail-heading">
-          <span>Filtres</span>
-          <button
-            id="reset-filters"
-            class="icon-button"
-            type="button"
-            title="Réinitialiser les filtres"
-            aria-label="Réinitialiser les filtres"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
-              <path d="M3 3v5h5" />
-            </svg>
-          </button>
-        </div>
-
-        <div class="filter-list">
-          <label>
-            <span>Année</span>
-            <select id="filter-year" data-field="year">
-              <option value="">Toutes les années</option>
-            </select>
-          </label>
-          <label>
-            <span>Région</span>
-            <select id="filter-region" data-field="region">
-              <option value="">Toutes les régions</option>
-            </select>
-          </label>
-          <label>
-            <span>Segment</span>
-            <select id="filter-segment" data-field="segment">
-              <option value="">Tous les segments</option>
-            </select>
-          </label>
-          <label>
-            <span>Catégorie</span>
-            <select id="filter-category" data-field="category">
-              <option value="">Toutes les catégories</option>
-            </select>
-          </label>
-          <label>
-            <span>Mode de livraison</span>
-            <select id="filter-ship-mode" data-field="shipMode">
-              <option value="">Tous les modes</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="selection-summary">
-          <span>Sélection</span>
-          <strong id="selection-period">Jan. 2014 - Déc. 2017</strong>
-          <small id="selection-count">9 994 lignes analysées</small>
-        </div>
-
-        <footer>
-          <span>Source : Superstore Clean</span>
-          <span id="last-order">Dernière commande : 30 déc. 2017</span>
-        </footer>
+      <aside class="side-nav" aria-label="Navigation du rapport">
+        <div class="nav-caption">RAPPORT</div>
+        <a class="nav-link is-active" href="#overview" aria-current="page"><span class="nav-icon">◉</span><span>Vue d’ensemble</span></a>
+        <a class="nav-link" href="#sales-performance"><span class="nav-icon">▥</span><span>Ventes</span></a>
+        <a class="nav-link" href="#monthly-profit"><span class="nav-icon">↗</span><span>Rentabilité</span></a>
+        <a class="nav-link" href="#product-mix"><span class="nav-icon">◌</span><span>Produits</span></a>
+        <div class="nav-foot"><span class="status-dot"></span> Données actualisées<br /><small>Sample Superstore</small></div>
       </aside>
 
-      <section class="content">
-        <section class="kpi-grid" aria-label="Indicateurs clés">
-          <article class="kpi-card accent-sales">
-            <span>Chiffre d’affaires</span>
-            <strong id="kpi-sales">-</strong>
-            <small id="kpi-sales-change">Période sélectionnée</small>
+      <main id="overview" class="main-content">
+        <div class="page-heading">
+          <div><p class="eyebrow">ANALYSE COMMERCIALE · SUPERSTORE</p><h1>Performance des ventes</h1><p class="subheading">Vue exécutive de la performance et de la rentabilité</p></div>
+          <div class="heading-badge"><span class="badge-dot"></span> Données historiques · 2014–2017</div>
+        </div>
+
+        <section class="filter-bar" aria-label="Filtres du rapport">
+          <div class="filter-title"><span class="filter-glyph">☷</span> Filtres</div>
+          <label><span>Année</span><select id="filter-year"><option value="">Toutes</option></select></label>
+          <label><span>Région</span><select id="filter-region"><option value="">Toutes</option></select></label>
+          <label><span>Segment</span><select id="filter-segment"><option value="">Tous</option></select></label>
+          <label><span>Catégorie</span><select id="filter-category"><option value="">Toutes</option></select></label>
+          <label><span>Livraison</span><select id="filter-ship-mode"><option value="">Tous les modes</option></select></label>
+          <button id="reset-filters" type="button" class="reset-button" title="Réinitialiser les filtres">Réinitialiser</button>
+        </section>
+
+        <section class="top-grid" aria-label="Indicateurs et répartition des ventes">
+          <article class="metric-card" style="--metric-accent:#111842">
+            <div class="metric-heading"><span>Chiffre d’affaires</span><span class="metric-tag">REVENUE</span></div>
+            <strong id="kpi-sales" class="metric-value">—</strong>
+            <div class="sparkline" id="spark-sales" aria-hidden="true"></div>
+            <div class="metric-foot"><span id="kpi-sales-change">Période sélectionnée</span><span class="metric-unit">USD</span></div>
           </article>
-          <article class="kpi-card accent-profit">
-            <span>Profit total</span>
-            <strong id="kpi-profit">-</strong>
-            <small id="kpi-profit-change">Période sélectionnée</small>
+          <article class="metric-card" style="--metric-accent:#4c67d6">
+            <div class="metric-heading"><span>Profit total</span><span class="metric-tag">GROSS PROFIT</span></div>
+            <strong id="kpi-profit" class="metric-value">—</strong>
+            <div class="sparkline" id="spark-profit" aria-hidden="true"></div>
+            <div class="metric-foot"><span id="kpi-profit-change">Période sélectionnée</span><span class="metric-unit">USD</span></div>
           </article>
-          <article class="kpi-card accent-margin">
-            <span>Marge bénéficiaire</span>
-            <strong id="kpi-margin">-</strong>
-            <small id="kpi-margin-status">Profit / chiffre d’affaires</small>
+          <article class="metric-card" style="--metric-accent:#7a79c9">
+            <div class="metric-heading"><span>Marge bénéficiaire</span><span class="metric-tag">PROFIT MARGIN</span></div>
+            <strong id="kpi-margin" class="metric-value">—</strong>
+            <div class="sparkline" id="spark-margin" aria-hidden="true"></div>
+            <div class="metric-foot"><span id="kpi-margin-status">Profit / chiffre d’affaires</span><span class="metric-unit">% DU CA</span></div>
           </article>
-          <article class="kpi-card accent-orders">
-            <span>Commandes</span>
-            <strong id="kpi-orders">-</strong>
-            <small id="kpi-aov">Panier moyen : -</small>
-          </article>
-          <article class="kpi-card accent-customers">
-            <span>Clients</span>
-            <strong id="kpi-customers">-</strong>
-            <small id="kpi-repeat">Portefeuille actif</small>
+          <article class="panel donut-panel" id="product-mix">
+            <header class="panel-heading"><div><h2>Ventes par catégorie</h2><p>Répartition du chiffre d’affaires</p></div><span class="panel-kicker">MIX PRODUIT</span></header>
+            <div id="category-sales" class="chart donut-chart" role="img" aria-label="Répartition des ventes par catégorie"></div>
           </article>
         </section>
 
-        <section class="chart-row trend-row">
-          <article class="panel">
-            <header>
-              <h2>Évolution du chiffre d’affaires</h2>
-              <span>Mensuel</span>
-            </header>
-            <div id="sales-trend" class="chart" role="img"></div>
+        <section class="bottom-grid">
+          <article class="panel annual-panel" id="sales-performance">
+            <header class="panel-heading"><div><h2>Ventes et profit par année</h2><p>Chiffre d’affaires annuel et profit réalisé</p></div><div class="legend"><span><i class="legend-square sales-key"></i>Ventes</span><span><i class="legend-line profit-key"></i>Profit</span></div></header>
+            <div id="annual-performance" class="chart" role="img" aria-label="Ventes et profit par année"></div>
+            <div class="chart-note">Les barres représentent les ventes; la ligne représente le profit annuel. Échelles distinctes indiquées sur les axes.</div>
           </article>
-          <article class="panel">
-            <header>
-              <h2>Évolution du profit</h2>
-              <span>Mensuel</span>
-            </header>
-            <div id="profit-trend" class="chart" role="img"></div>
+          <article class="panel monthly-panel" id="monthly-profit">
+            <header class="panel-heading"><div><h2>Profit / perte par mois</h2><p>Contribution mensuelle au profit total</p></div><span class="panel-kicker">USD · MENSUEL</span></header>
+            <div id="monthly-profit-chart" class="chart" role="img" aria-label="Profit mensuel positif ou négatif"></div>
+            <div class="chart-note"><span class="note-positive">■ Profit positif</span><span class="note-negative">■ Profit négatif</span><span id="profit-total-note"></span></div>
           </article>
         </section>
-
-        <section class="chart-row breakdown-row">
-          <article class="panel">
-            <header>
-              <h2>Ventes par catégorie</h2>
-              <span>Part du CA</span>
-            </header>
-            <div id="category-sales" class="chart" role="img"></div>
-          </article>
-          <article class="panel">
-            <header>
-              <h2>Profit par sous-catégorie</h2>
-              <span>Top et pertes</span>
-            </header>
-            <div id="subcategory-profit" class="chart" role="img"></div>
-          </article>
-          <article class="panel">
-            <header>
-              <h2>Profit par région</h2>
-              <span>Comparaison</span>
-            </header>
-            <div id="region-profit" class="chart" role="img"></div>
-          </article>
-        </section>
-
-        <section class="chart-row detail-row">
-          <article class="panel">
-            <header>
-              <h2>Top 10 clients</h2>
-              <span>Par ventes</span>
-            </header>
-            <div id="top-customers" class="chart" role="img"></div>
-          </article>
-          <article class="panel">
-            <header>
-              <h2>Remise vs profit</h2>
-              <span>Vue sous-catégorie</span>
-            </header>
-            <div id="discount-profit" class="chart" role="img"></div>
-          </article>
-        </section>
-      </section>
-    </main>
-
-    <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
-    <div id="loading" class="loading-state">
-      <div class="spinner" aria-hidden="true"></div>
-      <strong>Chargement des données</strong>
-      <span>Préparation du tableau de bord...</span>
+        <footer class="page-footer"><span>Source : Sample Superstore · 9 994 lignes initiales</span><span id="selection-count">Chargement des données…</span></footer>
+      </main>
     </div>
-
+    <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+    <div id="loading" class="loading-state"><div class="spinner"></div><strong>Chargement des données</strong><span>Préparation du tableau de bord…</span></div>
     <script src="./app.js"></script>
   </body>
 </html>
