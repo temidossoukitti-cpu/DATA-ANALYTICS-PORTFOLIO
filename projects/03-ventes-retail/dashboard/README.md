@@ -1,9 +1,10 @@
 # Retail Sales Dashboard
 
-Le dossier `dashboard/` contient deux versions cohérentes du même tableau de
+Le dossier `dashboard/` contient trois versions cohérentes du même tableau de
 bord :
 
 - une version web interactive, consultable dans un navigateur ;
+- une application Streamlit exécutable en local ;
 - un kit Power BI prêt à assembler dans Power BI Desktop.
 
 Pour construire la version Power BI sur Windows, suivre le guide détaillé
@@ -46,6 +47,25 @@ Fonctionnalités disponibles :
 Le jeu de données ne fournit pas de budget commercial ni de coûts OPEX
 distincts ; les visuels ne prétendent donc pas comparer les ventes à un budget
 ni le profit à des charges qui ne figurent pas dans la source.
+
+## Version Streamlit
+
+Depuis la racine du projet, installer les dépendances puis lancer :
+
+```bash
+python -m pip install -r requirements.txt
+streamlit run dashboard/streamlit_app.py
+```
+
+L'application utilise le même CSV nettoyé, les mêmes filtres et les mêmes
+indicateurs que le dashboard web. Elle s’ouvre normalement à l’adresse
+`http://localhost:8501`.
+
+## Captures et rapport du dashboard
+
+- Rapport PDF : [`reports/retail_dashboard_report.pdf`](reports/retail_dashboard_report.pdf).
+- Captures de la vue web et de la vue Streamlit dans [`preview/`](preview/), dont
+  les vues globales et filtrées sur la région West.
 
 ## Version Power BI
 

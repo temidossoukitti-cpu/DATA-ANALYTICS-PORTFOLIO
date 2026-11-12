@@ -92,11 +92,15 @@ Liste complète : [`data/processed/business_kpis.csv`](data/processed/business_k
 ## Dashboard
 [Ouvrir le dashboard web interactif](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/03-ventes-retail/dashboard/web/) · Guide de lancement et kit Power BI dans [`dashboard/README.md`](dashboard/README.md).
 
+![Dashboard retail — vue d’ensemble](dashboard/preview/retail_dashboard_overview.png)
+
+Application Streamlit : [`dashboard/streamlit_app.py`](dashboard/streamlit_app.py) · Rapport du dashboard : [`dashboard/reports/retail_dashboard_report.pdf`](dashboard/reports/retail_dashboard_report.pdf) · [Captures web et Streamlit](dashboard/preview/).
+
 ## Reproduire l'analyse
 Prérequis : Python 3.10+ et `pip`. Depuis **ce dossier** (`projects/03-ventes-retail`) :
 
 ```bash
-python -m pip install pandas numpy matplotlib openpyxl jupyter
+python -m pip install -r requirements.txt
 python scripts/clean_data.py      # génère data/processed/superstore_clean.csv et le rapport de nettoyage
 python scripts/analyze_sales.py   # génère les KPI, les 8 graphiques, le rapport et le classeur Excel
 jupyter notebook notebooks/01_data_exploration.ipynb   # exploration
@@ -110,12 +114,12 @@ projects/03-ventes-retail/
 ├── scripts/       # explore.py · clean_data.py · analyze_sales.py
 ├── reports/       # rapports Markdown et classeur Excel
 ├── visuals/       # 8 graphiques PNG
-├── dashboard/     # version web, thème et mesures pour Power BI
+├── dashboard/     # versions web et Streamlit, captures, rapport PDF et kit Power BI
 └── requirements.txt
 ```
 
 ## Livrables
-[Rapport d'exploration](reports/data_exploration.md) · [Rapport de nettoyage](reports/data_cleaning_report.md) · [Rapport d'analyse métier](reports/business_analysis.md) · [Classeur Excel](reports/retail_sales_analysis.xlsx) · [Dataset nettoyé](data/processed/superstore_clean.csv) · [KPI](data/processed/business_kpis.csv)
+[Rapport d'exploration](reports/data_exploration.md) · [Rapport de nettoyage](reports/data_cleaning_report.md) · [Rapport d'analyse métier](reports/business_analysis.md) · [Rapport PDF du dashboard](dashboard/reports/retail_dashboard_report.pdf) · [Application Streamlit](dashboard/streamlit_app.py) · [Classeur Excel](reports/retail_sales_analysis.xlsx) · [Dataset nettoyé](data/processed/superstore_clean.csv) · [KPI](data/processed/business_kpis.csv)
 
 ## Auteur
 
