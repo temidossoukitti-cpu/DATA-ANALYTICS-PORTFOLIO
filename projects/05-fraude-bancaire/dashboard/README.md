@@ -24,3 +24,9 @@ python3 dashboard/build_web_data.py   # lit data/processed et results, écrit da
 ```
 
 Le script recalcule le coût de référence (14 188,6 unités) et l'affiche à côté de la valeur du dépôt pour contrôle.
+
+## Version Streamlit et rapport
+
+La version [Streamlit](streamlit_app.py) reprend les trois pages du dashboard web : vue d'ensemble, scénario de seuil/coûts et segmentation/limites. Elle utilise les tables `data/processed/` et `results/` comme source unique, avec la palette noire, rouge et gris du dashboard. Installation : `pip install -r dashboard/requirements.txt`, puis `streamlit run dashboard/streamlit_app.py` depuis le dossier du projet.
+
+Le [rapport PDF](reports/dashboard_fraude_report.pdf) présente la question de gestion, les données et limites, la méthode, les résultats, le scénario de seuil et les recommandations. Les coûts y sont explicitement présentés comme des hypothèses.

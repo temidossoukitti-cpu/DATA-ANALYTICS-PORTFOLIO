@@ -79,6 +79,8 @@ Les conclusions ne décrivent que deux jours d’un jeu historique fortement dé
 
 Dashboard web interactif à 3 pages (vue d’ensemble, scénario de seuil et de coûts, segmentation) : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/05-fraude-bancaire/dashboard/web/) · [code](dashboard/web/) · captures : [vue d’ensemble](preview/dashboard_web.png), [scénario](preview/dashboard_web_scenario.png) et [segmentation](preview/dashboard_web_segmentation.png). Les quatre pages Power BI planifiées dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md) restent disponibles en option.
 
+Une version Streamlit reprend les trois pages, les KPI pondérés, les filtres, les curseurs de scénario et la palette du dashboard : [application](dashboard/streamlit_app.py) · [dépendances](dashboard/requirements.txt). Le [rapport PDF](dashboard/reports/dashboard_fraude_report.pdf) documente la question de gestion, les données, les limites, les résultats, le scénario de seuil et les recommandations. La capture de la version Streamlit est disponible dans [`preview/dashboard_streamlit.png`](preview/dashboard_streamlit.png).
+
 ## Reproduire
 
 ```bash
