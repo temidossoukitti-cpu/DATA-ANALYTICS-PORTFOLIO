@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fraud Monitor · Détection de fraude sur les transactions bancaires</title>
+<style>
+:root{--red:#d92b2b;--ink:#161616;--mut:#6c6c72;--line:#e1e1e6;--bg:#e8e8ec}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:"Segoe UI",Arial,sans-serif;color:var(--ink)}
+.app{max-width:1440px;margin:0 auto;padding:0 0 24px}
+header{background:#050505;color:#fff;padding:16px 28px 20px;border-radius:0 0 26px 26px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand b{display:block;font-size:17px}.brand span{font-size:13px;font-weight:600}
+nav{display:flex;gap:10px;background:#1b1b1b;padding:6px 10px;border-radius:30px}nav button{width:42px;height:34px;border-radius:20px;border:0;background:#2a2a2a;cursor:pointer;display:grid;place-items:center}nav button.on{background:#fff}nav svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2}nav button.on svg{stroke:#050505}
+.ic{display:flex;gap:10px;align-items:center}.ic button{background:none;border:0;color:#fff;cursor:pointer;font-size:12px}.av{width:28px;height:28px;border-radius:50%;background:#7a7a80;display:grid;place-items:center;font-size:11px;font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:16px}
+.kp{background:#141414;border:1px solid #3a3a3a;border-radius:16px;padding:12px 16px;box-shadow:inset 0 0 0 1px #00000080}.kp:first-child{border-color:#fff}.kp small{display:block;font-size:11px;color:#c9c9cf}.kp b{display:block;font-size:24px;margin-top:6px}
+.bar{display:flex;gap:14px;align-items:center;padding:14px 28px 0;font-size:12px;color:var(--mut)}.bar select{font:inherit;padding:5px 8px;border-radius:8px;border:1px solid #c4c4cc;background:#fff}
+main{padding:14px 28px 0;display:grid;gap:16px}main[hidden]{display:none}
+.g2{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.card{background:#fff;border-radius:12px;box-shadow:0 2px 6px #0002;padding:14px 16px}
+.card h3{margin:0;font-size:14px}.card em{display:block;font-size:11px;color:var(--mut);margin:2px 0 8px}
+svg.ch{width:100%;height:auto;display:block}.ax{font-size:9.5px;fill:#555}
+table{width:100%;border-collapse:collapse;font-size:11.5px}th{font-weight:600;text-align:right;padding:5px 6px;border-bottom:1px solid var(--line)}th:first-child,td:first-child{text-align:left}td{padding:5px 6px;text-align:right;border-bottom:1px solid #f0f0f3}tr.t td{font-weight:700}
+.sc{border:2px solid #050505;border-radius:12px;background:#fff;padding:14px 16px}.sc h2{margin:0;font-size:19px}.sc p{margin:2px 0 10px;font-size:12px;color:var(--mut)}
+.sl{border:1px solid #bbb;border-radius:4px;padding:6px 10px;margin-bottom:10px;font-size:12px}.sl b{float:right}.sl input{width:100%;accent-color:#050505}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}.mini div{border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-size:11px;color:var(--mut)}.mini b{display:block;font-size:19px;color:var(--ink)}.mini .s b{color:var(--red)}
+.dl td{font-size:12px}.dl td:last-child{font-weight:700;font-size:15px;text-align:right}
+.note{font-size:10.5px;color:var(--mut);padding:0 28px}
+@media(max-width:1000px){.kpis{grid-template-columns:repeat(2,1fr)}.g2,.g3{grid-template-columns:1fr}header{border-radius:0}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+<div class="top"><div class="brand"><b>Fraud Monitor</b><span id="pt"></span></div>
+<nav id="nav"><button class="on" title="Vue d'ensemble"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></button><button title="Scénario"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2.5"/><circle cx="15" cy="17" r="2.5"/></svg></button><button title="Segmentation et limites"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button></nav>
+<div class="ic"><button id="rs">↻ Reset</button><a href="https://github.com/temidossoukitti-cpu" style="color:#fff;font-size:12px">GitHub</a><div class="av" title="Samuel Dossou-Kitti">SD</div></div></div>
+<section class="kpis" id="kp"></section>
+</header>
+<div class="bar" id="fb">Tranche de montant <select id="fbb"></select> Fenêtre horaire (relative) <select id="fbw"></select></div>
+<main id="p0">
+<div class="g2"><div class="card"><h3>Taux de fraude par fenêtre de 6 h</h3><em>Temps relatif à la première transaction (2 jours) · ligne rouge : taux moyen</em><div id="c1"></div></div>
+<div class="card"><h3>Montant frauduleux par tranche de montant</h3><em>Répartition du montant frauduleux estimé</em><div id="c2"></div></div></div>
+<div class="g2"><div class="card"><h3>Taux de fraude par tranche de montant</h3><em>Taux de fraude estimé par tranche · ligne rouge : taux moyen</em><div id="c3"></div></div>
+<div class="card"><h3>Fenêtres à plus forte fraude</h3><em>Fraudes estimées et taux</em><div id="c4"></div></div></div>
+</main>
+<main id="p1" hidden>
+<div class="g2"><div class="sc"><h2>Analyse de scénario</h2><p>Référence (seuil 0,191, frais 10, perte 100 %) contre simulation, sur la partition test.</p>
+<div class="sl">Seuil de décision du modèle <b id="v1"></b><input id="s1" type="range" min="0.01" max="0.99" step="0.005"></div>
+<div class="sl">Coût de friction par alerte légitime <b id="v2"></b><input id="s2" type="range" min="0" max="50" step="1"></div>
+<div class="sl">Sévérité de perte sur fraude manquée <b id="v3"></b><input id="s3" type="range" min="0.5" max="1.5" step="0.1"></div>
+<div class="mini" id="mini"></div></div>
+<div class="card"><h3>Écart simulation − référence</h3><em>Population estimée de 284 807 transactions</em><table class="dl" id="dl"></table><h3 style="margin-top:14px">Règle simple : montant au-dessus du P99</h3><em>Comparaison avec la règle de référence</em><div id="rl"></div></div></div>
+<div class="g2"><div class="card"><h3>Coût estimé selon le seuil</h3><em>Ligne pointillée : seuil de référence · point rouge : seuil simulé</em><div id="c5"></div></div>
+<div class="card"><h3>Alertes et rappel par tranche de montant</h3><em>Référence contre simulation</em><div id="c6"></div></div></div>
+</main>
+<main id="p2" hidden>
+<div class="g2"><div class="card"><h3>Taux de fraude : fenêtre horaire × tranche de montant</h3><em>Intensité du rouge proportionnelle au taux</em><div id="c7"></div></div>
+<div class="card"><h3>Limites des données</h3><em>Ce que la source ne permet pas d'analyser</em><div id="c8"></div></div></div>
+</main>
+<p class="note">Source : OpenML, credit-card-fraud-detection (dataset 43627), licence ODbL 1.0 / DbCL 1.0. Chiffres estimés à partir d'un échantillon pondéré ; montants en unités du jeu de données (devise non précisée). Les coûts sont des hypothèses, pas des pertes comptables.</p>
+</div>
+<script src="data.js"></script>
+<script>
+const D=DATA,$=id=>document.getElementById(id),nf=(x,d=0)=>x.toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d}),pc=(x,d=2)=>nf(x*100,d)+" %";
+const F={b:null,w:null},TITLES=["Vue d'ensemble du risque de fraude","Scénario : seuil d'alerte et coûts","Segmentation et limites des données"];let pg=0;
+function agg(fb,fw){const a={n:0,f:0,a:0,fa:0};for(const r of D.cube){if(fb!=null&&r[0]!==fb||fw!=null&&r[1]!==fw)continue;a.n+=r[3];a.a+=r[4];if(r[2]){a.f+=r[3];a.fa+=r[4]}}return a}
+function sim(th,fr,sv,rule){const T=D.test,o={tp:0,fp:0,fn:0,cost:0,ia:0,band:D.bands.map(()=>[0,0,0])};
+ for(let i=0;i<T.p.length;i++){const f=rule?T.r[i]:T.p[i]>=th?1:0,w=T.w[i],y=T.y[i],a=T.a[i],b=o.band[T.b[i]];
+  if(f){b[0]+=w;if(y){o.tp+=w;o.ia+=w*a;b[1]+=w}else{o.fp+=w;o.cost+=w*fr}}else if(y)o.fn+=w,o.cost+=w*a*sv;if(y)b[2]+=w}
+ o.flag=o.tp+o.fp;o.prec=o.tp/(o.flag||1);o.rec=o.tp/((o.tp+o.fn)||1);return o}
+function bars(id,lab,val,avg,fmt){const W=520,H=210,m={l:44,r:10,t:16,b:30},mx=Math.max(...val,avg||0)*1.18||1,bw=(W-m.l-m.r)/val.length,Y=v=>H-m.b-v/mx*(H-m.t-m.b);
+ let s=[0,.5,1].map(t=>`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(mx*t)}" y2="${Y(mx*t)}" stroke="#eee"/><text class="ax" x="${m.l-5}" y="${Y(mx*t)+3}" text-anchor="end">${fmt(mx*t)}</text>`).join("");
+ val.forEach((v,i)=>{const x=m.l+i*bw+bw*.2;s+=`<rect x="${x}" y="${Y(v)}" width="${bw*.6}" height="${H-m.b-Y(v)}" rx="5" fill="${i%2?"#8a8a90":"#2a2a2e"}"/><text class="ax" x="${x+bw*.3}" y="${Y(v)-4}" text-anchor="middle" style="font-weight:600">${fmt(v)}</text><text class="ax" x="${x+bw*.3}" y="${H-12}" text-anchor="middle">${lab[i]}</text>`});
+ if(avg!=null)s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(avg)}" y2="${Y(avg)}" stroke="#d92b2b" stroke-dasharray="4 3"/><text class="ax" x="${W-m.r}" y="${Y(avg)-3}" text-anchor="end" fill="#d92b2b" style="fill:#d92b2b">moyenne ${fmt(avg)}</text>`;
+ $(id).innerHTML=`<svg class="ch" viewBox="0 0 ${W} ${H}">${s}</svg>`}
+function donut(id,lab,val){const t=val.reduce((a,b)=>a+b,0)||1,C=["#d92b2b","#161616","#7d7d84","#c9c9cf"],R=52,L=2*Math.PI*R;let off=0;
+ const arcs=val.map((v,i)=>{const l=v/t*L,s=`<circle cx="75" cy="75" r="${R}" fill="none" stroke="${C[i]}" stroke-width="20" stroke-dasharray="${l} ${L-l}" stroke-dashoffset="${-off}" transform="rotate(-90 75 75)"/>`;off+=l;return s}).join("");
+ $(id).innerHTML=`<svg viewBox="0 0 150 150" style="width:150px;display:block;margin:0 auto 6px">${arcs}</svg><table>${lab.map((l,i)=>`<tr><td><span style="color:${C[i]}">●</span> ${l}</td><td>${pc(val[i]/t,1)}</td></tr>`).join("")}</table>`}
+function p0(){const fb=F.b,fw=F.w,A=agg(fb,fw);
+ const wr=D.wins.map((_,i)=>{const a=agg(fb,i);return a.n?a.f/a.n:0}),wa=agg(fb,null);
+ bars("c1",D.wins.map(w=>w.slice(0,3)),wr,wa.f/wa.n,v=>pc(v,2));
+ const bf=D.bands.map((_,i)=>agg(i,fw)),br=bf.map(a=>a.n?a.f/a.n:0);
+ donut("c2",D.bands,bf.map(a=>a.fa));bars("c3",D.bands,br,A.f/A.n,v=>pc(v,2));
+ const top=D.wins.map((w,i)=>{const a=agg(fb,i);return[w,a.f,a.n?a.f/a.n:0]}).sort((x,y)=>y[1]-x[1]).slice(0,5);
+ $("c4").innerHTML=`<table><tr><th>Fenêtre</th><th>Fraudes</th><th>Taux</th></tr>${top.map(t=>`<tr><td>${t[0]}</td><td>${nf(t[1])}</td><td>${pc(t[2],2)}</td></tr>`).join("")}</table>`;
+ const un=fb==null&&fw==null,P=D.pop,n=un?P.n:A.n,f=un?P.f:A.f;
+ return[["Transactions",nf(n)],["Fraudes",nf(f)],["Taux de fraude",pc(f/n,3)],["Montant total",nf((un?P.a:A.a)/1e6,2)+" M"],["Montant frauduleux",nf(un?P.fa:A.fa)]]}
+function p1(){const th=+$("s1").value,fr=+$("s2").value,sv=+$("s3").value;$("v1").textContent=nf(th,3);$("v2").textContent=nf(fr);$("v3").textContent=pc(sv,0);
+ const B=sim(D.th0,D.fr0,D.sv0),S=sim(th,fr,sv),Rg=sim(0,D.fr0,D.sv0,true);
+ const mini=(o,c)=>`<div style="grid-column:1/3;border:0;padding:0;font-weight:700;color:#161616;font-size:12px">${c?"Simulation":"Référence"}</div><div class="${c}">Alertes<b>${nf(o.flag)}</b></div><div class="${c}">Coût estimé<b>${nf(o.cost)}</b></div><div class="${c}">Précision<b>${pc(o.prec,1)}</b></div><div class="${c}">Rappel<b>${pc(o.rec,1)}</b></div>`;
+ $("mini").innerHTML=mini(B,"")+mini(S,"s");
+ const d=(a,b,f)=>{const x=a-b;return(x>0?"+":"")+f(x)};
+ $("dl").innerHTML=`<tr><td>Variation des alertes</td><td>${d(S.flag,B.flag,v=>nf(v))}</td></tr><tr><td>Variation du coût estimé</td><td>${d(S.cost,B.cost,v=>nf(v))}</td></tr><tr><td>Variation du rappel</td><td>${d(S.rec,B.rec,v=>nf(v*100,1))} pt</td></tr><tr><td>Variation de la précision</td><td>${d(S.prec,B.prec,v=>nf(v*100,1))} pt</td></tr>`;
+ $("rl").innerHTML=`<table><tr><th></th><th>Alertes</th><th>Rappel</th><th>Coût</th></tr><tr><td>Modèle (référence)</td><td>${nf(B.flag)}</td><td>${pc(B.rec,1)}</td><td>${nf(B.cost)}</td></tr><tr><td>Règle montant P99</td><td>${nf(Rg.flag)}</td><td>${pc(Rg.rec,1)}</td><td>${nf(Rg.cost)}</td></tr></table>`;
+ const W=520,H=200,m={l:50,r:12,t:12,b:26},ps=[];for(let t=0.01;t<0.99;t+=0.02)ps.push([t,sim(t,fr,sv).cost]);
+ const mx=Math.max(...ps.map(p=>p[1]))*1.08,X=t=>m.l+t*(W-m.l-m.r),Y=v=>H-m.b-v/mx*(H-m.t-m.b);
+ $("c5").innerHTML=`<svg class="ch" viewBox="0 0 ${W} ${H}">${[0,.5,1].map(t=>`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(mx*t)}" y2="${Y(mx*t)}" stroke="#eee"/><text class="ax" x="${m.l-5}" y="${Y(mx*t)+3}" text-anchor="end">${nf(mx*t/1000)} k</text>`).join("")}${[0,.25,.5,.75,1].map(t=>`<text class="ax" x="${X(t)}" y="${H-8}" text-anchor="middle">${t}</text>`).join("")}<path d="${ps.map((p,i)=>(i?"L":"M")+X(p[0])+","+Y(p[1])).join("")}" fill="none" stroke="#2a2a2e" stroke-width="2.4"/><line x1="${X(D.th0)}" x2="${X(D.th0)}" y1="${m.t}" y2="${H-m.b}" stroke="#888" stroke-dasharray="4 3"/><circle cx="${X(th)}" cy="${Y(S.cost)}" r="5.5" fill="#d92b2b"/></svg>`;
+ const mxf=Math.max(...D.bands.map((_,i)=>B.band[i][0]),1);
+ $("c6").innerHTML=`<table><tr><th>Tranche</th><th>Alertes réf.</th><th>Alertes simul.</th><th>Rappel réf.</th><th>Rappel simul.</th></tr>${D.bands.map((b,i)=>{const r=B.band[i],s=S.band[i],rr=r[2]?r[1]/r[2]:0,sr=s[2]?s[1]/s[2]:0;return`<tr><td>${b}</td><td>${nf(r[0])}</td><td>${nf(s[0])}</td><td>${pc(rr,1)}</td><td style="background:rgba(217,43,43,${sr*.45})">${pc(sr,1)}</td></tr>`}).join("")}</table>`;
+ return[["Seuil simulé",nf(th,3)],["Précision",pc(S.prec,1)],["Rappel",pc(S.rec,1)],["Coût estimé",nf(S.cost)],["Fraude interceptée",nf(S.ia)]]}
+function p2(){const M=D.wins.map((_,w)=>D.bands.map((_,b)=>{const a=agg(b,w);return a.n?a.f/a.n:0})),mx=Math.max(...M.flat());
+ $("c7").innerHTML=`<table><tr><th>Fenêtre</th>${D.bands.map(b=>`<th>${b}</th>`).join("")}<th>Total</th></tr>${D.wins.map((w,i)=>{const a=agg(null,i);return`<tr><td>${w}</td>${M[i].map(v=>`<td style="background:rgba(217,43,43,${v/mx*.7})">${pc(v,2)}</td>`).join("")}<td><b>${pc(a.f/a.n,2)}</b></td></tr>`}).join("")}</table>`;
+ $("c8").innerHTML=`<table><tr><th>Information absente</th><th>Traitement</th></tr>${D.gaps.map(g=>`<tr><td>${g[0]}</td><td style="text-align:left;font-size:11px">${g[1]}</td></tr>`).join("")}</table>`;
+ const P=D.pop;return[["Population",nf(P.n)],["Fraudes",nf(P.f)],["Échantillon pondéré",nf(D.sample_rows)],["Fenêtres relatives",nf(D.wins.length)],["Tranches de montant",nf(D.bands.length)]]}
+function render(){const k=[p0,p1,p2][pg]();$("kp").innerHTML=k.map(x=>`<div class="kp"><small>${x[0]}</small><b>${x[1]}</b></div>`).join("");$("pt").textContent=TITLES[pg];$("fb").style.display=pg===0?"flex":"none";
+ [0,1,2].forEach(i=>$("p"+i).hidden=i!==pg);document.querySelectorAll("#nav button").forEach((b,i)=>b.classList.toggle("on",i===pg))}
+const opt=(id,l,t)=>$(id).innerHTML=`<option value="">${t}</option>`+l.map((x,i)=>`<option value="${i}">${x}</option>`).join("");
+opt("fbb",D.bands,"Toutes");opt("fbw",D.wins,"Toutes");
+$("fbb").onchange=e=>{F.b=e.target.value===""?null:+e.target.value;render()};$("fbw").onchange=e=>{F.w=e.target.value===""?null:+e.target.value;render()};
+const rs=()=>{$("s1").value=D.th0;$("s2").value=D.fr0;$("s3").value=D.sv0;F.b=F.w=null;$("fbb").value=$("fbw").value="";render()};
+document.querySelectorAll("#nav button").forEach((b,i)=>b.onclick=()=>{pg=i;render()});["s1","s2","s3"].forEach(i=>$(i).oninput=render);$("rs").onclick=rs;
+rs();
+</script>
+</body>
+</html>
