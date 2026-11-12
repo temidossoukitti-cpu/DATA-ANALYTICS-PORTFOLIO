@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Credit Risk Dashboard · Risque de défaut des cartes de crédit</title>
+<style>
+:root{--navy:#12125c;--ink:#0b0b3b;--purple:#7c5ce0;--blue:#1e90ff;--bar:#1428a0;--track:#efeff6;--bg:#f4f5fa;--mut:#6b6f8a;--line:#dcdeea}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:"Segoe UI",Arial,sans-serif;color:var(--ink)}
+.app{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 270px;gap:0 20px;padding:0 0 20px 0}
+header{grid-column:1;background:linear-gradient(135deg,#0d0d4d,#1c1c86);color:#fff;padding:34px 40px 70px;border-radius:0 0 0 70px}
+header h1{margin:0;font-size:34px;font-weight:800;letter-spacing:-.5px}header p{margin:6px 0 0;font-size:12px;font-style:italic;opacity:.85}
+main{grid-column:1;margin-top:-44px;padding:0 20px 0 16px;display:grid;gap:16px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.card{background:#fff;border-radius:14px;border:1px solid var(--line);box-shadow:0 3px 0 #0b0b3b22,0 8px 16px #0b0b3b0d;padding:14px 16px}
+.kpi .lab{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mut)}.kpi svg{width:15px;height:15px;stroke:var(--purple);fill:none;stroke-width:2}
+.kpi .val{font-size:27px;font-weight:700;margin:6px 0 8px}
+.chip{display:inline-block;font-size:11px;font-weight:600;padding:2px 7px;border-radius:4px;background:#eceef5;color:var(--mut)}.chip.g{background:#e6f6ec;color:#16883f}.chip.r{background:#fde9e9;color:#d02a2a}
+.grid{display:grid;grid-template-columns:1.25fr 1fr .85fr;grid-template-rows:auto auto;gap:16px}
+.grid h3{margin:0 0 8px;font-size:13.5px;font-weight:700;line-height:1.3}.tall{grid-row:span 2}
+svg.ch{width:100%;height:auto;display:block}.axis{font-size:9.5px;fill:var(--mut)}
+table{width:100%;border-collapse:collapse;font-size:11.5px}th{text-align:left;font-size:11px;padding:3px 0}td{padding:3px 6px}td.v{text-align:right;font-weight:600}tr.tot td{font-weight:700;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:78px 1fr;align-items:center;gap:8px;margin:20px 0;font-size:10.5px;color:var(--mut)}
+.trk{background:var(--track);height:40px;border-radius:4px;position:relative}.fil{background:var(--bar);height:100%;border-radius:4px 0 0 4px;display:flex;align-items:center}.trk b{position:absolute;right:6px;top:12px;font-size:11px;color:var(--ink)}
+aside{grid-column:2;grid-row:1/span 2;background:#fff;border-radius:0 0 0 36px;box-shadow:0 0 14px #0b0b3b1f;padding:38px 22px 24px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;max-height:900px}
+aside h2{margin:0 0 6px;font-size:15px;display:flex;gap:10px;align-items:center}aside hr{border:0;border-top:1px solid var(--line);margin:8px 0 14px}
+label{display:block;font-size:11px;font-weight:600;margin:14px 0 5px}select{width:100%;font:inherit;font-size:11px;padding:5px 8px;border:1px solid #c9cbd9;border-radius:6px;background:#fff;color:#444}
+button{margin-top:22px;background:var(--ink);color:#fff;border:0;border-radius:8px;padding:10px;font-weight:700;cursor:pointer}
+.me{margin-top:auto;border-top:1px solid var(--line);padding-top:12px;display:flex;gap:10px;align-items:center;font-size:11px}.me i{width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700}.me a{color:var(--mut);margin-right:6px}
+footer{grid-column:1;font-size:10.5px;color:var(--mut);padding:0 20px 0 16px}
+@media(max-width:1000px){.app{grid-template-columns:1fr}aside{grid-column:1;grid-row:auto;position:static;height:auto;border-radius:14px;margin:0 16px}.kpis{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.tall{grid-row:auto}header{border-radius:0}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><h1>Credit Risk Dashboard</h1><p>Cohorte de 30 000 clients de cartes de crédit (Taïwan, avril–septembre 2005) : profils à risque de défaut le mois suivant.</p></header>
+<main>
+<section class="kpis" id="kpis"></section>
+<section class="grid">
+<div class="card"><h3 id="t1"></h3><div id="c1"></div></div>
+<div class="card"><h3>Top 5 segments (âge × limite) par exposition des défaillants</h3><div id="c3"></div></div>
+<div class="card tall"><h3>Taux de défaut par statut de paiement récent</h3><div id="c5"></div></div>
+<div class="card"><h3 id="t2"></h3><div id="c2"></div></div>
+<div class="card"><h3>Répartition des clients par niveau de risque</h3><div id="c4"></div></div>
+</section>
+</main>
+<aside>
+<h2><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><path d="M3 5h18M7 12h10M10 19h4"/></svg>Filtres</h2><hr>
+<div id="flt"></div><button id="clr">Réinitialiser les filtres</button>
+<div class="me"><i>SD</i><div><b>Samuel Dossou-Kitti</b><br><em>Data Analyst</em><br><a href="mailto:temidossoukitti@gmail.com">Email</a>|<a href="https://github.com/temidossoukitti-cpu" style="margin-left:6px">GitHub</a></div></div>
+</aside>
+<footer>Source : UCI Machine Learning Repository, Default of Credit Card Clients (Yeh, 2009), licence CC BY 4.0. Exposition = limite de crédit des défaillants. Score PD : régression logistique.</footer>
+</div>
+<script src="data.js"></script>
+<script>
+const D=DATA,L=D.labels,K=D.dims,NAMES={limite:"Limite de crédit",age_b:"Tranche d'âge",edu:"Éducation",mar:"État matrimonial",risk:"Niveau de risque",pay:"Statut de paiement récent"};
+const MOIS=["Avr","Mai","Juin","Juil","Août","Sep"],F={};
+const nf=(x,d=0)=>x.toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d});
+const pc=(x,d=1)=>nf(x*100,d)+" %";
+function agg(rows){const a={n:0,d:0,lim:0,dlim:0,u:0,late:Array(6).fill(0),bill:Array(6).fill(0)};
+ for(const r of rows){a.n+=r[6];a.d+=r[7];a.lim+=r[8];a.dlim+=r[9];a.u+=r[10];for(let i=0;i<6;i++){a.late[i]+=r[11+i];a.bill[i]+=r[17+i]}}return a}
+const ALL=agg(D.rows);
+const sel=()=>D.rows.filter(r=>K.every((k,i)=>F[k]==null||r[i]===F[k]));
+const ICON=["M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8","M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0","M3 7h18v12H3zM3 7l3-4h12l3 4","M12 3a9 9 0 1 0 9 9M12 12l5-5","M4 20V10M10 20V4M16 20v-7M22 20H2"];
+function chip(txt,diff,bad){const c=Math.abs(diff)<1e-9?"":(diff>0)===bad?"r":"g";return `<span class="chip ${c}">${diff>0?"▲ ":diff<0?"▼ ":""}${txt}</span>`}
+function kpis(a){const pt=(x,y)=>nf((x-y)*100,2)+" pt vs portefeuille";const rate=a.n?a.d/a.n:0,ur=a.n?a.u/a.n:0,R=ALL.d/ALL.n,U=ALL.u/ALL.n;
+ const k=[["Clients",nf(a.n),`<span class="chip">${pc(a.n/ALL.n,1)} du portefeuille</span>`],
+ ["Défaillants",nf(a.d),`<span class="chip">${pc(a.d/ALL.d,1)} des défaillants</span>`],
+ ["Taux de défaut",pc(rate,2),chip(pt(rate,R),rate-R,true)],
+ ["Exposition défaillants","NT$ "+nf(a.dlim/1e6)+" M",`<span class="chip">${pc(a.dlim/ALL.dlim,1)} de l'exposition</span>`],
+ ["Utilisation moyenne",pc(ur,1),chip(pt(ur,U),ur-U,true)]];
+ document.getElementById("kpis").innerHTML=k.map((x,i)=>`<div class="card kpi"><div class="lab"><svg viewBox="0 0 24 24"><path d="${ICON[i]}"/></svg>${x[0]}</div><div class="val">${x[1]}</div>${x[2]}</div>`).join("")}
+function smooth(p){let d=`M${p[0][0]},${p[0][1]}`;for(let i=0;i<p.length-1;i++){const a=p[i-1]||p[i],b=p[i],c=p[i+1],e=p[i+2]||c;d+=`C${b[0]+(c[0]-a[0])/6},${b[1]+(c[1]-a[1])/6} ${c[0]-(e[0]-b[0])/6},${c[1]-(e[1]-b[1])/6} ${c[0]},${c[1]}`}return d}
+function line(id,main,ref,color,fmt,uid){const W=380,H=190,m={l:38,r:10,t:10,b:24},mx=Math.max(...main,...ref)*1.12||1;
+ const X=i=>m.l+i*(W-m.l-m.r)/5,Y=v=>H-m.b-v/mx*(H-m.t-m.b),pm=main.map((v,i)=>[X(i),Y(v)]),pr=ref.map((v,i)=>[X(i),Y(v)]);
+ let g="";for(let i=0;i<=2;i++){const v=mx*i/2;g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="#eceef5"/><text class="axis" x="${m.l-5}" y="${Y(v)+3}" text-anchor="end">${fmt(v)}</text>`}
+ g+=MOIS.map((t,i)=>`<text class="axis" x="${X(i)}" y="${H-7}" text-anchor="middle">${t}</text>`).join("");
+ document.getElementById(id).innerHTML=`<svg class="ch" viewBox="0 0 ${W} ${H}"><defs><linearGradient id="g${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${color}" stop-opacity=".35"/><stop offset="1" stop-color="${color}" stop-opacity=".03"/></linearGradient></defs>${g}
+ <path d="${smooth(pm)}L${X(5)},${Y(0)}L${X(0)},${Y(0)}Z" fill="url(#g${uid})"/><path d="${smooth(pr)}" fill="none" stroke="#9a9db0" stroke-width="1.5" stroke-dasharray="4 3"/><path d="${smooth(pm)}" fill="none" stroke="${color}" stroke-width="2.4"/></svg>`}
+function render(){const rows=sel(),a=agg(rows);kpis(a);
+ const late=a.late.map(v=>a.n?v/a.n:0),lateAll=ALL.late.map(v=>v/ALL.n),bill=a.bill.map(v=>a.n?v/a.n:0),billAll=ALL.bill.map(v=>v/ALL.n);
+ document.getElementById("t1").textContent=`${pc(late[5],1)} des clients sont en retard de paiement en septembre (${pc(lateAll[5],1)} sur le portefeuille, ligne pointillée)`;
+ document.getElementById("t2").textContent=`Montant facturé moyen : NT$ ${nf(bill[5])} en septembre (NT$ ${nf(billAll[5])} sur le portefeuille)`;
+ line("c1",late,lateAll,"#7c5ce0",v=>pc(v,0),1);line("c2",bill,billAll,"#1e90ff",v=>nf(v/1000)+" k",2);
+ const seg={};rows.forEach(r=>{const k=L.age_b[r[1]]+" · "+L.limite[r[0]];seg[k]=(seg[k]||0)+r[9]});
+ const top=Object.entries(seg).sort((x,y)=>y[1]-x[1]).slice(0,5),mx=top.length?top[0][1]:1,mn=top.length?top[top.length-1][1]:0;
+ const heat=v=>{const t=mx===mn?1:(v-mn)/(mx-mn),c=(x,y)=>Math.round(y+(x-y)*t);return `background:rgb(${c(11,219)},${c(11,231)},${c(82,251)});color:${t>.5?"#fff":"#0b0b3b"}`};
+ document.getElementById("c3").innerHTML=`<table><tr><th>Segment</th><th style="text-align:right">Exposition</th></tr>${top.map(t=>`<tr><td>${t[0]}</td><td class="v" style="${heat(t[1])}">NT$ ${nf(t[1]/1e6,1)} M</td></tr>`).join("")}<tr class="tot"><td>Total (top 5)</td><td class="v">NT$ ${nf(top.reduce((s,t)=>s+t[1],0)/1e6,1)} M</td></tr></table>`;
+ const rb=L.risk.map(()=>0);rows.forEach(r=>rb[r[4]]+=r[6]);const tot=rb.reduce((s,v)=>s+v,0)||1,sh=["#0b0b52","#1428a0","#1e90ff","#a9cdfb"].reverse(),R=40,C=2*Math.PI*R;let off=0;
+ const arcs=rb.map((v,i)=>{const l=v/tot*C,s=`<circle r="${R}" cx="60" cy="60" fill="none" stroke="${sh[i]}" stroke-width="14" stroke-dasharray="${l} ${C-l}" stroke-dashoffset="${-off}" transform="rotate(-90 60 60)"/>`;off+=l;return s}).join("");
+ document.getElementById("c4").innerHTML=`<svg viewBox="0 0 120 120" style="width:120px;display:block;margin:0 auto 8px">${arcs}</svg><table><tr><th>Niveau</th><th style="text-align:right">Clients</th></tr>${rb.map((v,i)=>`<tr><td><span style="color:${sh[i]}">●</span> ${L.risk[i]}</td><td class="v">${nf(v)}</td></tr>`).join("")}<tr class="tot"><td>Total</td><td class="v">${nf(tot)}</td></tr></table>`;
+ const pr=L.pay.map(()=>[0,0]);rows.forEach(r=>{pr[r[5]][0]+=r[6];pr[r[5]][1]+=r[7]});const rt=pr.map(x=>x[0]?x[1]/x[0]:0),m2=Math.max(...rt,.01)*1.4;
+ document.getElementById("c5").innerHTML=rt.map((v,i)=>`<div class="row"><span>${L.pay[i]}</span><div class="trk"><div class="fil" style="width:${v/m2*100}%"></div><b>${pc(v,1)}</b></div></div>`).join("")}
+document.getElementById("flt").innerHTML=K.map(k=>`<label>${NAMES[k]}</label><select data-k="${k}"><option value="">Tous</option>${L[k].map((t,i)=>`<option value="${i}">${t}</option>`).join("")}</select>`).join("");
+document.querySelectorAll("select").forEach(s=>s.onchange=()=>{F[s.dataset.k]=s.value===""?null:+s.value;render()});
+document.getElementById("clr").onclick=()=>{document.querySelectorAll("select").forEach(s=>s.value="");K.forEach(k=>F[k]=null);render()};
+render();
+</script>
+</body>
+</html>
