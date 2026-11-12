@@ -26,3 +26,9 @@ python3 dashboard/build_web_data.py
 ```
 
 Le script lit les tables annuelles, ratios, alertes et recommandations et écrit `dashboard/web/data.js`.
+
+## Version Streamlit et rapport
+
+La version [Streamlit](streamlit_app.py) reprend les quatre pages du dashboard web : synthèse financière, rentabilité, liquidité/structure et trésorerie/croissance. Elle permet de sélectionner l'exercice affiché et utilise uniquement les résultats validés du projet 06. Installation : `pip install -r dashboard/requirements.txt`, puis `streamlit run dashboard/streamlit_app.py` depuis le dossier du projet.
+
+Le [rapport PDF](reports/dashboard_financier_report.pdf) présente la question de gestion, les données SEC, la méthode, les limites, les résultats et les recommandations. Les seuils y sont explicitement présentés comme des repères internes au projet.

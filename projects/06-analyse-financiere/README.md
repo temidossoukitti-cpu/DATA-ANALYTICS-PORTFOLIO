@@ -80,6 +80,8 @@ La source ne fournit ni segmentation par activité, ni ventilation géographique
 
 Dashboard web interactif à quatre pages : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/06-analyse-financiere/dashboard/web/) · [code](dashboard/web/) · captures : [synthèse](preview/dashboard_web.png), [rentabilité](preview/dashboard_web_rentabilite.png), [liquidité](preview/dashboard_web_liquidite.png) et [trésorerie](preview/dashboard_web_tresorerie.png). Les quatre pages Power BI planifiées dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md) restent disponibles en option.
 
+Une version [Streamlit](dashboard/streamlit_app.py) reprend les quatre pages, l’exercice sélectionné, les KPI et les ratios issus de `results/`, avec la même palette violette. Le [rapport PDF](dashboard/reports/dashboard_financier_report.pdf) documente la question de gestion, les données, la méthode, les limites, les résultats et les recommandations. La capture de la version Streamlit est disponible dans [`preview/dashboard_streamlit.png`](preview/dashboard_streamlit.png).
+
 ## Reproduire
 
 ```bash
