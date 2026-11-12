@@ -32,7 +32,7 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 | 02 | [Risque et performance d’un portefeuille](projects/02-portefeuille-risque/README.md) | Limiter les concentrations; AFBK représente **34,9 % du risque**. | Python · pandas · NumPy · SciPy · Streamlit · HTML | Dashboards publiés |
 | 04 | [Risque de défaut des cartes de crédit](projects/04-risque-credit/README.md) | Orienter le suivi du risque; défaut observé : **22,12 %**. | Python · pandas · scikit-learn · SQLite · DAX | Données, QA, SQL, DAX et rapport prêts; Power BI en attente |
 | 05 | [Détection de fraude sur les transactions bancaires](projects/05-fraude-bancaire/README.md) | Prioriser la revue; fraude source : **0,173 %**. | Python · pandas · scikit-learn · SQLite · Power BI/DAX | Analyse terminée; dashboard à construire par Samuel |
-| 06 | [Analyse financière de Mastercard](projects/06-analyse-financiere/README.md) | Protéger la marge; marge opérationnelle **57,63 %**. | Python · pandas · SQLite · Power BI/DAX | Analyse terminée; dashboard à construire par Samuel |
+| 06 | [Analyse financière de Mastercard](projects/06-analyse-financiere/README.md) | Protéger la marge; marge opérationnelle **57,63 %**. | Python · pandas · SQLite · Power BI/DAX · HTML | Données, QA, SQL, rapport et dashboard web publiés |
 | 07 | [Performance marketing d'une banque](projects/07-marketing-bancaire/README.md) | Prioriser les campagnes; conversion globale **11,27 %**. | Python · pandas · scikit-learn · Power BI/DAX | Analyse et documentation terminées; dashboard à construire par Samuel |
 
 ### Commerce
@@ -60,7 +60,7 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 <!-- AUTO:PROJECT06_STATUS_BEGIN -->
 | Données | Qualité | SQL/Python | DAX | Rapport QA | Dashboard Power BI |
 |---|---|---|---|---|---|
-| 7 exercices · 105 valeurs | PASS | 109/109 comparaisons | 15 mesures | PASS | À construire par Samuel |
+| 7 exercices · 105 valeurs | PASS | 109/109 comparaisons | 15 mesures | PASS | [Dashboard web publié](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/06-analyse-financiere/dashboard/web/) |
 <!-- AUTO:PROJECT06_STATUS_END -->
 
 ### Aperçu du projet ventes
