@@ -1,0 +1,36 @@
+{
+  "summary": [
+    {
+      "symbol": "BTCUSDT",
+      "start_date": "2017-08-17",
+      "end_date": "2026-11-13",
+      "observations": 3376,
+      "start_close": 4285.08,
+      "end_close": 68232.0,
+      "total_return": 14.923156627180823,
+      "cagr": 0.3492308652577911,
+      "annualized_volatility": 0.6653258423563061,
+      "best_day": 0.22501392983789725,
+      "worst_day": -0.3950484717412017,
+      "max_drawdown": -0.8318705353076483,
+      "positive_days_pct": 0.5108148148148148
+    },
+    {
+      "symbol": "ETHUSDT",
+      "start_date": "2017-08-17",
+      "end_date": "2026-11-13",
+      "observations": 3376,
+      "start_close": 302.0,
+      "end_close": 1926.44,
+      "total_return": 5.378940397350994,
+      "cagr": 0.222057598678562,
+      "annualized_volatility": 0.8589541080105574,
+      "best_day": 0.2633288653351713,
+      "worst_day": -0.44596886079852016,
+      "max_drawdown": -0.9396550481981527,
+      "positive_days_pct": 0.5099259259259259
+    }
+  ],
+  "correlation": 0.7841340217625241,
+  "last_updated": "2026-11-13"
+}

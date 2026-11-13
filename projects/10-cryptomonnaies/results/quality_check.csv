@@ -1,0 +1,5 @@
+check,value,status
+rows,6752,PASS
+symbols,"BTCUSDT, ETHUSDT",PASS
+duplicate_symbol_date,0,PASS
+missing_close,0,PASS
