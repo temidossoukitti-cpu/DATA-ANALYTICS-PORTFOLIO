@@ -90,7 +90,7 @@ Liste complète : [`data/processed/business_kpis.csv`](data/processed/business_k
 | ![États](visuals/07_state_profit_extremes.png) | ![Top clients](visuals/08_top_customers.png) |
 
 ## Dashboard
-[Ouvrir le dashboard web interactif](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/03-ventes-retail/dashboard/web/) · Guide de lancement et kit Power BI dans [`dashboard/README.md`](dashboard/README.md).
+[Ouvrir le dashboard web interactif](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/03-ventes-retail/dashboard/web/) · [Application Streamlit en ligne](https://projet03-ventes-retail.streamlit.app/) · Guide de lancement et kit Power BI dans [`dashboard/README.md`](dashboard/README.md).
 
 ![Dashboard retail — vue d’ensemble](dashboard/preview/retail_dashboard_overview.png)
 

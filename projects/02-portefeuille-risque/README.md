@@ -75,7 +75,8 @@ Le projet dispose maintenant de deux dashboards sans dépendance à Power BI :
 
 - [Dashboard HTML interactif](dashboard/web/) — version statique publiable sur GitHub Pages ;
 - [Dashboard web permanent](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/02-portefeuille-risque/dashboard/web/) — version hébergée sur GitHub Pages ;
-- [Application Streamlit](dashboard/streamlit_app.py) — version interactive lançable en local ;
+- [Application Streamlit en ligne](https://projet02-portefeuille-risque.streamlit.app/) — version interactive hébergée sur Streamlit Community Cloud ;
+- [Code de l’application Streamlit](dashboard/streamlit_app.py) — version exécutable en local ;
 - [Rapport PDF](reports/rapport_portefeuille_risque.pdf) — synthèse de quatre pages ;
 - [Capture principale](preview/dashboard_web.png) et [vue filtrée Finance](preview/dashboard_web_finance.png).
 
