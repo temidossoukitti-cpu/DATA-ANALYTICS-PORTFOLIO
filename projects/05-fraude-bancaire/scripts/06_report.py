@@ -190,7 +190,7 @@ def main() -> None:
     root_readme = root_readme_path.read_text(encoding="utf-8")
     root_row = (
         f"| 05 | [Détection de fraude sur les transactions bancaires](projects/05-fraude-bancaire/README.md) | "
-        f"Prioriser la revue; fraude source : **{fr_pct(model_rate)}**. | Python · pandas · scikit-learn · SQLite · Power BI/DAX | "
+        f"Prioriser la revue; fraude source : **{fr_pct(model_rate)}**. | Python · pandas · scikit-learn · SQLite · HTML | "
         f"Données, QA, SQL, rapport et dashboard web publiés |"
     )
     row_pattern = re.compile(r"(?m)^\| 05 \| \[Détection de fraude sur les transactions bancaires\].*$")
