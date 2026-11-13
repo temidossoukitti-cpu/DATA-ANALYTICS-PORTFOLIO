@@ -34,6 +34,7 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 | 05 | [Détection de fraude sur les transactions bancaires](projects/05-fraude-bancaire/README.md) | Prioriser la revue; fraude source : **0,173 %**. | Python · pandas · scikit-learn · SQLite · Power BI/DAX | Analyse terminée; dashboard à construire par Samuel |
 | 06 | [Analyse financière de Mastercard](projects/06-analyse-financiere/README.md) | Protéger la marge; marge opérationnelle **57,63 %**. | Python · pandas · SQLite · Power BI/DAX | Analyse terminée; dashboard à construire par Samuel |
 | 07 | [Performance marketing d'une banque](projects/07-marketing-bancaire/README.md) | Prioriser les campagnes; conversion globale **11,27 %**. | Python · pandas · scikit-learn · Power BI/DAX | Analyse et documentation terminées; dashboard à construire par Samuel |
+| 08 | [Inclusion financière — Global Findex](projects/08-inclusion-financiere/README.md) | Suivre l’accès aux comptes et les fractures; compte ou mobile money : **78,0 %** en 2024. | Python · pandas · HTML · JavaScript · Chart.js | Données, analyse, QA et dashboard web prêts |
 
 ### Commerce
 
@@ -63,6 +64,12 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 | 7 exercices · 105 valeurs | PASS | 109/109 comparaisons | 15 mesures | PASS | À construire par Samuel |
 <!-- AUTO:PROJECT06_STATUS_END -->
 
+### État des livrables — projet 08
+
+| Données | Qualité | Analyse | Dashboard web |
+|---|---|---|---|
+| Global Findex 2025 · 8 577 lignes | PASS | 153 pays en 2024 · tendances 2011–2024 | Prêt · publication GitHub Pages après fusion |
+
 ### Aperçu du projet ventes
 
 L’analyse du jeu de données Sample Superstore couvre **9 994 lignes** et la période **2014–2017**. Elle met en évidence **2,30 M$ de ventes**, **286 397 $ de profit** et une marge globale de **12,5 %**. Le dossier comprend les scripts de nettoyage et d’analyse, les rapports, un classeur Excel et huit visualisations.
@@ -71,7 +78,7 @@ L’analyse du jeu de données Sample Superstore couvre **9 994 lignes** et la p
 
 ### Projets en préparation
 
-Les projets [08 · Inclusion financière](projects/08-inclusion-financiere/README.md) et [10 · Cryptomonnaies](projects/10-cryptomonnaies/README.md) sont présents dans le dépôt comme cadrages de sources, mais ne sont pas encore annoncés comme analyses terminées.
+Le projet [10 · Cryptomonnaies](projects/10-cryptomonnaies/README.md) reste présent dans le dépôt comme cadrage de source et n’est pas encore annoncé comme analyse terminée.
 
 ## Méthode de travail
 

@@ -1,0 +1,7 @@
+metric,value,unit,definition
+countries_2024,153.0,countries,Country-level rows with group=all in 2024
+account_rate_2024,0.780155352428678,share,Weighted adult-population average
+bank_account_rate_2024,0.7434583032721209,share,Weighted adult-population average
+mobile_money_rate_2024,0.2808613133821292,share,Weighted adult-population average
+saving_rate_2024,0.527931973663363,share,Weighted adult-population average
+borrowing_rate_2024,0.5919307998228573,share,Weighted adult-population average
