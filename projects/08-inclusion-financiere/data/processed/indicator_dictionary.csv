@@ -1,0 +1,10 @@
+Series_key,dashboard_label,Indicator name,Definition
+account_t_d,Compte ou mobile money,"Account (%, age 15+)","The percentage of respondents who report having an account (by themselves or together with someone else) at a bank or similar financial institution (see the definition for ""bank or similar financial institution account"") or report personally using a mobile money service in the past year (see the definition for ""mobile money account"")."
+borrow_any_t_d,Emprunt,"Borrowed any money (%, age 15+)",The percentage of respondents who report borrowing any money (by themselves or together with someone else) for any reason and from any source in the past year.
+fiaccount_t_d,Compte bancaire / institution financière,"Bank or similar financial institution account (%, age 15+)",The percentage of respondents who report having an account (by themselves or together with someone else) at a bank or another similar financial institution.
+fin26a,Paiement de factures en ligne,"Used a mobile phone or the internet to pay bills (%, age 15+)",The percentage of respondents who report using a mobile phone or the internet to pay bills in the past year.
+fin26b,Achat en ligne,"Used a mobile phone or the internet to buy something online (%, age 15+)",The percentage of respondents who report using a mobile phone or the internet to buy something online in the past year.
+mobileaccount_t_d,Compte mobile money,"Mobile money account (%, age 15+)",The percentage of respondents who report personally using a mobile money service in the past year.
+save_any_t_d,Épargne,"Saved any money (%, age 15+)",The percentage of respondents who report personally saving or setting aside any money for any reason and using any mode of saving in the past year.
+con1,Possession d’un téléphone mobile,"Own a mobile phone (%, age 15+)",The percentage of respondents who report owning a mobile phone that they use to make and receive personal calls.
+internet,Usage récent d’internet,"Used the internet in the past three months (%, age 15+)",The percentage of respondents who report that they used the internet in the past three months.

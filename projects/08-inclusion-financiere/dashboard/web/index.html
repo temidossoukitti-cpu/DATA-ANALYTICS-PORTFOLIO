@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dashboard descriptif des fractures d'accès aux services financiers, à partir des données Global Findex 2025 de la Banque mondiale.">
+  <title>Fractures d’accès financier | Global Findex 2025</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="mark">IF</div><div><strong>Inclusion Finance</strong><small>Observatory</small></div></div>
+    <nav aria-label="Navigation principale">
+      <button class="nav active" data-page="gaps">Fractures d’accès</button>
+      <button class="nav" data-page="overview">Vue d’ensemble</button>
+      <button class="nav" data-page="countries">Comparaison pays</button>
+      <button class="nav" data-page="trends">Tendances</button>
+    </nav>
+    <div class="side-note">SOURCE OFFICIELLE<br><b>Global Findex 2025</b><br><span>Banque mondiale · adultes de 15 ans et plus</span></div>
+  </aside>
+  <main>
+    <header class="topbar">
+      <div><p class="eyebrow">GLOBAL FINDEX 2025 · BANQUE MONDIALE</p><h1>Les fractures d’accès</h1><p class="sub">Qui reste moins bien servi par les services financiers ? Comparaisons descriptives par pays et groupes.</p></div>
+      <div class="status"><span class="dot"></span> Source documentée<br><small>Enquêtes pays · 2011 à 2024</small></div>
+    </header>
+    <section class="filters"><span>LECTURE</span><button id="reset">Réinitialiser la vue</button><span class="filter-chip">Écart = différence en points de pourcentage</span></section>
+
+    <section id="gaps" class="page active">
+      <div class="page-title"><div><p class="eyebrow">ÉQUITÉ D’ACCÈS · DERNIÈRE ANNÉE</p><h2>Les écarts observés en 2024</h2></div><p>Classements limités aux pays avec les deux estimations disponibles.</p></div>
+      <div class="kpis gap-kpis" id="gapKpis"></div>
+      <div class="grid two">
+        <article class="panel"><header><h2>Plus grands écarts femmes–hommes</h2><span>Compte · points de pourcentage</span></header><p class="chart-note">Écart absolu entre les estimations hommes et femmes; le sens est indiqué pour chaque pays.</p><canvas id="genderChart"></canvas></article>
+        <article class="panel"><header><h2>Plus grands écarts riches–pauvres</h2><span>Compte · points de pourcentage</span></header><p class="chart-note">Écart absolu entre les 60 % les plus riches et les 40 % les plus pauvres.</p><canvas id="incomeGapChart"></canvas></article>
+      </div>
+      <article class="panel regional-panel"><header><h2>Les fractures varient selon les régions</h2><span>Moyenne simple des pays avec données</span></header><p class="chart-note">Chaque barre résume les écarts pays observés dans la région; les pays sans valeur comparable sont exclus.</p><canvas id="regionalGapChart"></canvas></article>
+      <div class="grid two">
+        <article class="panel insight"><h2>À retenir</h2><p>Un taux global d’accès ne montre pas si les femmes et les ménages moins aisés disposent des mêmes possibilités. Les indicateurs de genre et de revenu doivent être lus séparément des niveaux globaux.</p><div class="callout">Ces écarts sont descriptifs. Ils ne démontrent ni une cause, ni la qualité, le coût ou la fréquence d’utilisation des services financiers.</div></article>
+        <article class="panel"><header><h2>Précautions de lecture</h2><span>Méthode</span></header><div class="metric-list"><div><span>Mesure affichée</span><b>Points de pourcentage</b></div><div><span>Comparaison</span><b>Estimations pays 2024</b></div><div><span>Données manquantes</span><b>Exclues des classements</b></div><div><span>Interprétation</span><b>Descriptive, non causale</b></div></div></article>
+      </div>
+    </section>
+
+    <section id="overview" class="page">
+      <div class="page-title"><div><p class="eyebrow">CONTEXTE</p><h2>Vue d’ensemble</h2></div><p>Repères globaux pour situer les écarts d’accès.</p></div>
+      <div class="kpis" id="kpis"></div>
+      <div class="grid two"><article class="panel"><header><h2>Accès financier par région</h2><span>2024 · taux pondérés</span></header><canvas id="regionChart"></canvas></article><article class="panel"><header><h2>Canaux d’inclusion financière</h2><span>Monde · adultes couverts</span></header><canvas id="channelChart"></canvas></article></div>
+      <article class="panel insight"><h2>Comment lire ces indicateurs</h2><p>La détention d’un compte, le compte bancaire et le mobile money sont des indicateurs distincts. Une progression du taux global ne signifie pas nécessairement que l’accès est équitable, abordable ou utilisé régulièrement.</p></article>
+    </section>
+
+    <section id="countries" class="page">
+      <div class="page-title"><div><p class="eyebrow">COMPARAISON</p><h2>Comparer les pays</h2></div><p>Classement indicatif selon la détention d’un compte, année 2024.</p></div>
+      <div class="grid two"><article class="panel"><header><h2>Pays au taux de compte le plus élevé</h2><span>Top pays · 2024</span></header><canvas id="topChart"></canvas></article><article class="panel"><header><h2>Focus pays sélectionnés</h2><span>Comparaison descriptive</span></header><canvas id="focusChart"></canvas></article></div>
+      <article class="panel"><header><h2>Tableau pays</h2><span>Taux disponibles · 2024</span></header><div class="table-wrap"><table id="countryTable"></table></div></article>
+    </section>
+
+    <section id="trends" class="page">
+      <div class="page-title"><div><p class="eyebrow">ÉVOLUTION</p><h2>Tendances 2011–2024</h2></div><p>Les pays couverts et le nombre de réponses varient selon l’indicateur et l’année.</p></div>
+      <article class="panel"><header><h2>Accès et usage financier</h2><span>Moyenne pondérée par population adulte couverte</span></header><canvas id="trendChart"></canvas></article>
+      <article class="panel"><header><h2>Connectivité en 2024</h2><span>Téléphone et internet · population couverte</span></header><canvas id="connectivityChart"></canvas></article>
+    </section>
+    <footer>Source : Global Findex Database 2025 · Banque mondiale. Agrégations du projet calculées à partir des lignes pays disponibles. Les écarts entre groupes ne prouvent pas de causalité.</footer>
+  </main>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

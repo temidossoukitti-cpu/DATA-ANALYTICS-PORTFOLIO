@@ -1,0 +1,6 @@
+rule,value,status,note
+source_rows,8577,PASS,CSV officiel Global Findex 2025 chargé.
+source_years,"2011,2014,2017,2021,2022,2024",PASS,"Les années disponibles sont conservées; l’analyse comparative utilise 2011, 2014, 2017, 2021 et 2024."
+country_latest_rows,153,PASS,Lignes pays disponibles pour 2024.
+duplicate_country_year_all,0,PASS,Une ligne par pays et année pour la vue nationale.
+account_missing_latest,0,PASS,Valeurs manquantes du taux de compte en 2024.
