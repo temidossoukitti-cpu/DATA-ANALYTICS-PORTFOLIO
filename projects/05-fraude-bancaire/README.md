@@ -16,7 +16,7 @@ Comment prioriser les transactions de carte susceptibles d’être frauduleuses 
 - **Population source :** 284 807 transactions, 492 fraudes (0,173 %); échantillon pondéré de 25 492 lignes.
 - **Modèle (test) :** PR-AUC 0.6595, précision 67,97 %, rappel 81,76 %, seuil 0.191 choisi hors test.
 - **Comparaison sous hypothèses :** coût estimé 14 189 contre 63 804 unités pour la règle de montant; exposition fraude interceptée 44 976 unités.
-- **Livrables automatisés :** 8 tables Power BI, 15 mesures DAX, 4 pages planifiées, 7 graphiques, 84/84 comparaisons SQL/Python; dashboard manuel à construire.
+- **Livrables automatisés :** 8 tables Power BI, 15 mesures DAX, 4 pages planifiées, 7 graphiques, 84/84 comparaisons SQL/Python; dashboard web interactif publié.
 <!-- AUTO:SUMMARY_END -->
 
 ## Données et contrôle qualité
@@ -77,7 +77,7 @@ Les conclusions ne décrivent que deux jours d’un jeu historique fortement dé
 
 ## Dashboard
 
-Quatre pages Power BI sont planifiées dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md). Le dashboard reste à construire par Samuel. Aucun PBIX/PBIP, PDF de dashboard ou PowerPoint n’est produit dans cette livraison; les exports PDF/PNG seront effectués après la validation Desktop décrite dans [`powerbi/EXPORT_PREVIEWS.md`](powerbi/EXPORT_PREVIEWS.md).
+Dashboard web interactif à 3 pages (vue d’ensemble, scénario de seuil et de coûts, segmentation) : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/05-fraude-bancaire/dashboard/web/) · [code](dashboard/web/) · captures : [vue d’ensemble](preview/dashboard_web.png), [scénario](preview/dashboard_web_scenario.png) et [segmentation](preview/dashboard_web_segmentation.png). Les quatre pages Power BI planifiées dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md) restent disponibles en option.
 
 ## Reproduire
 
