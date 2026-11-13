@@ -1,0 +1,5 @@
+recommendation_id,trigger,cohort_customers,observed_default_rate,exposure_ntd,expected_loss_ntd,action,evidence
+R1,pay_0 >= 1,6818,0.50293341,393030000.00000000,,Déclencher une revue de recouvrement dès l’apparition d’un retard récent; vérifier la capacité opérationnelle avant toute généralisation.,results/default_by_segment.csv; results/default_rate_by_pay0.csv
+R2,utilization >= 0.60 et pay_0 >= 1,2898,0.58316080,155310000.00000000,,Soumettre les demandes de hausse de limite à une revue manuelle pour ce segment; ne pas bloquer automatiquement les clients.,results/default_by_segment.csv; results/quality_check.csv
+R3,"Bande très élevée, PD >= 0.40, partition test",1611,0.56176288,86080000.00000000,20480898.78219300,Prioriser ces dossiers pour une revue humaine et une relance adaptée; seuils de bandes considérés comme hypothèses de triage.,results/risk_band_summary.csv; results/expected_loss_sensitivity.csv
+R4,"Bande de limite Q1, partition complète",7676,0.31787389,80900000.00000000,,Examiner la politique de limite et la composition de cette bande avant toute modification; le taux observé ne démontre pas un effet causal.,results/default_by_segment.csv
