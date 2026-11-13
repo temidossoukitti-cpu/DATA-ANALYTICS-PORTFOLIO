@@ -96,7 +96,7 @@ Automatisé : **PASS** · Manuel Power BI : **à faire** (20 cases non cochées;
 ## Dashboard
 
 <!-- DYNAMIQUE_DASHBOARD_BEGIN -->
-Plan Power BI de **4 pages** dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md); le dashboard reste à construire par Samuel.
+Dashboard web publié : [ouvrir le dashboard](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/04-risque-credit/dashboard/web/). Le plan Power BI de **4 pages** reste disponible dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md).
 <!-- DYNAMIQUE_DASHBOARD_END -->
 
 ## Reproduire
