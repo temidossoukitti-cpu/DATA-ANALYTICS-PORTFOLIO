@@ -57,3 +57,12 @@ Le pipeline régénère les tables de `data/processed/`, les agrégats de `resul
 ## Contenu du dossier
 
 `data/` contient la source, le dictionnaire et les tables préparées. `scripts/` contient le pipeline. `results/` et `visuals/` contiennent les sorties. `model/` et `powerbi/` préparent le dashboard. `qa/` sépare les contrôles automatisés des vérifications manuelles.
+
+## Dashboard web publié
+
+[Ouvrir le dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/07-marketing-bancaire/dashboard/web/) · Captures : `preview/dashboard_web.png`, `preview/dashboard_web_1.png`, `preview/dashboard_web_2.png`. Les filtres sont recalculés à partir des 41 188 lignes traitées.
+## Livrables complémentaires
+- Application Streamlit : [`dashboard/streamlit_app.py`](dashboard/streamlit_app.py)
+- Dépendances : [`dashboard/requirements.txt`](dashboard/requirements.txt)
+- Rapport PDF : [`dashboard/reports/dashboard_marketing-bancaire_report.pdf`](dashboard/reports/dashboard_marketing-bancaire_report.pdf)
+- Capture : [`preview/dashboard_streamlit.png`](preview/dashboard_streamlit.png)

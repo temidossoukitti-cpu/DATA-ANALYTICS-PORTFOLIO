@@ -96,7 +96,7 @@ Automatisé : **PASS** · Manuel Power BI : **à faire** (20 cases non cochées;
 ## Dashboard
 
 <!-- DYNAMIQUE_DASHBOARD_BEGIN -->
-Plan Power BI de **4 pages** dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md); le dashboard reste à construire par Samuel.
+Dashboard web interactif : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/04-risque-credit/dashboard/web/) · [code](dashboard/web/) · captures : [vue d’ensemble](preview/dashboard_web.png) et [filtre « Très élevé »](preview/dashboard_web_risque_eleve.png). Le plan Power BI de **4 pages** ([`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md)) reste disponible en option.
 <!-- DYNAMIQUE_DASHBOARD_END -->
 
 ## Reproduire
@@ -117,3 +117,8 @@ Le pipeline régénère les CSV traités, la base SQLite, les résultats, les gr
 - Mesures DAX documentées : **14**; pages planifiées : **4**; indicateurs de portefeuille : **9**.
 - Recommandations chiffrées : **4**; graphiques Matplotlib : **8**.
 <!-- DYNAMIQUE_COUNTS_END -->
+## Livrables complémentaires
+- Application Streamlit : [`dashboard/streamlit_app.py`](dashboard/streamlit_app.py)
+- Dépendances : [`dashboard/requirements.txt`](dashboard/requirements.txt)
+- Rapport PDF : [`dashboard/reports/dashboard_risque-credit_report.pdf`](dashboard/reports/dashboard_risque-credit_report.pdf)
+- Capture : [`preview/dashboard_streamlit.png`](preview/dashboard_streamlit.png)
