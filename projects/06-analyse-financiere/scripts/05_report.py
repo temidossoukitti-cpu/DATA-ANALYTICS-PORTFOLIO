@@ -174,7 +174,7 @@ def main() -> None:
     root_row = (
         f"| 06 | [Analyse financière de Mastercard](projects/06-analyse-financiere/README.md) | "
         f"Protéger la marge; marge opérationnelle **{fr_pct(latest['operating_margin'], 2)}**. | "
-        f"Python · pandas · SQLite · Power BI/DAX | Analyse terminée; dashboard web publié |"
+        f"Python · pandas · SQLite · HTML | Analyse terminée; dashboard web publié |"
     )
     row_pattern = re.compile(r"(?m)^\| 06 \| \[Analyse financi.*$")
     root_readme, row_count = row_pattern.subn(root_row, root_readme, count=1)
