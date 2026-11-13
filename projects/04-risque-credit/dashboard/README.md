@@ -22,3 +22,8 @@ python3 dashboard/build_web_data.py   # agrège data/processed/fact_clients.csv 
 ```
 
 Source : UCI Default of Credit Card Clients (Yeh, 2009), licence CC BY 4.0.
+## Livrables complémentaires
+- `streamlit_app.py` : application interactive cohérente avec le dashboard web.
+- `requirements.txt` : dépendances de reproduction.
+- `reports/dashboard_risque-credit_report.pdf` : rapport PDF de 5 pages.
+- `../preview/dashboard_streamlit.png` : capture de référence.

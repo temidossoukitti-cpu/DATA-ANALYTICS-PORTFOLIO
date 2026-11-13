@@ -117,3 +117,8 @@ Le pipeline régénère les CSV traités, la base SQLite, les résultats, les gr
 - Mesures DAX documentées : **14**; pages planifiées : **4**; indicateurs de portefeuille : **9**.
 - Recommandations chiffrées : **4**; graphiques Matplotlib : **8**.
 <!-- DYNAMIQUE_COUNTS_END -->
+## Livrables complémentaires
+- Application Streamlit : [`dashboard/streamlit_app.py`](dashboard/streamlit_app.py)
+- Dépendances : [`dashboard/requirements.txt`](dashboard/requirements.txt)
+- Rapport PDF : [`dashboard/reports/dashboard_risque-credit_report.pdf`](dashboard/reports/dashboard_risque-credit_report.pdf)
+- Capture : [`preview/dashboard_streamlit.png`](preview/dashboard_streamlit.png)

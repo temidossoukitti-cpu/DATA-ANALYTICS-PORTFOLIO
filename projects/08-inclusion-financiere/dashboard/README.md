@@ -26,3 +26,8 @@ bash scripts/download_source.sh
 ## Calcul des écarts
 
 Pour chaque pays, le taux de détention d’un compte est extrait séparément pour les sous-groupes du Global Findex 2025. Le dashboard calcule la différence signée (hommes moins femmes; plus riches moins plus pauvres), puis classe les pays selon sa valeur absolue. Il ne remplace pas les agrégats officiels de la Banque mondiale et ne permet pas d’inférer une causalité.
+## Livrables complémentaires
+- `streamlit_app.py` : application interactive cohérente avec le dashboard web.
+- `requirements.txt` : dépendances de reproduction.
+- `reports/dashboard_inclusion-financiere_report.pdf` : rapport PDF de 5 pages.
+- `../preview/dashboard_streamlit.png` : capture de référence.

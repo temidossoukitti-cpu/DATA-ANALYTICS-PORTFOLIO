@@ -91,3 +91,8 @@ Cette commande régénère les tables traitées, analyses, modèle, graphiques, 
 ## Contenu du dossier
 
 `data/` : source, dictionnaire, échantillon et tables Power BI. `scripts/` : préparation, nettoyage, analyse, modèle, SQL et rapport. `sql/` : schéma et requêtes. `results/` : KPI, contrôles, comparaisons et recommandations. `visuals/` : graphiques Matplotlib. `model/`, `powerbi/`, `qa/` : modèle, DAX, plan de pages et contrôles.
+## Livrables complémentaires
+- Application Streamlit : [`dashboard/streamlit_app.py`](dashboard/streamlit_app.py)
+- Dépendances : [`dashboard/requirements.txt`](dashboard/requirements.txt)
+- Rapport PDF : [`dashboard/reports/dashboard_fraude-bancaire_report.pdf`](dashboard/reports/dashboard_fraude-bancaire_report.pdf)
+- Capture : [`preview/dashboard_streamlit.png`](preview/dashboard_streamlit.png)

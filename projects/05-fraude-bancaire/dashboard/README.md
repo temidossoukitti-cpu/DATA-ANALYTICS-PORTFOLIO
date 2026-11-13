@@ -24,3 +24,8 @@ python3 dashboard/build_web_data.py   # lit data/processed et results, écrit da
 ```
 
 Le script recalcule le coût de référence (14 188,6 unités) et l'affiche à côté de la valeur du dépôt pour contrôle.
+## Livrables complémentaires
+- `streamlit_app.py` : application interactive cohérente avec le dashboard web.
+- `requirements.txt` : dépendances de reproduction.
+- `reports/dashboard_fraude-bancaire_report.pdf` : rapport PDF de 5 pages.
+- `../preview/dashboard_streamlit.png` : capture de référence.

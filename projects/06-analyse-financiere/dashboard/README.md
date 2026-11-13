@@ -26,3 +26,8 @@ python3 dashboard/build_web_data.py
 ```
 
 Le script lit les tables annuelles, ratios, alertes et recommandations et écrit `dashboard/web/data.js`.
+## Livrables complémentaires
+- `streamlit_app.py` : application interactive cohérente avec le dashboard web.
+- `requirements.txt` : dépendances de reproduction.
+- `reports/dashboard_analyse-financiere_report.pdf` : rapport PDF de 5 pages.
+- `../preview/dashboard_streamlit.png` : capture de référence.
