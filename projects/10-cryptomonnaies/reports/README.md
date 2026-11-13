@@ -1,4 +1,4 @@
-# Rapport d’analyse — BTC/ETH OHLC
+# Rapport d’analyse — Projet 9 · BTC/ETH OHLC
 
 ## Périmètre
 

@@ -104,7 +104,7 @@ function setView(view) {
   state.view = view;
   $$('.view').forEach(el => el.classList.toggle('active', el.id === `view-${view}`));
   $$('.nav-item,.mobile-nav button').forEach(el => el.classList.toggle('active', el.dataset.view === view));
-  const titles = { overview: ['Performance overview', 'Une lecture claire des cycles BTC et ETH, sur les données Spot quotidiennes.'], momentum: ['Momentum', 'Les régimes mensuels qui structurent les accélérations et les ralentissements.'], persona: ['Market persona', 'Un résumé comportemental construit à partir des observations du marché.'], about: ['Project info', 'Méthode, source et limites du projet 10.'] };
+  const titles = { overview: ['Performance overview', 'Une lecture claire des cycles BTC et ETH, sur les données Spot quotidiennes.'], momentum: ['Momentum', 'Les régimes mensuels qui structurent les accélérations et les ralentissements.'], persona: ['Market persona', 'Un résumé comportemental construit à partir des observations du marché.'], about: ['Project info', 'Méthode, source et limites du projet 9.'] };
   $('#page-title').textContent = titles[view][0]; $('#page-subtitle').textContent = titles[view][1];
   if (view === 'overview') updateOverview(); if (view === 'momentum') updateMomentum(); if (view === 'persona') updatePersona();
 }
