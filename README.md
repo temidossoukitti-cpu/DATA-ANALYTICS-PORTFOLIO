@@ -33,7 +33,7 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 | 04 | [Risque de défaut des cartes de crédit](projects/04-risque-credit/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/04-risque-credit/dashboard/web/) | Orienter le suivi du risque; défaut observé : **22,12 %**. | Python · pandas · scikit-learn · SQLite · HTML | Dashboard web publié |
 | 05 | [Détection de fraude sur les transactions bancaires](projects/05-fraude-bancaire/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/05-fraude-bancaire/dashboard/web/) | Prioriser la revue; fraude source : **0,173 %**. | Python · pandas · scikit-learn · SQLite · HTML | Dashboard web publié |
 | 06 | [Analyse financière de Mastercard](projects/06-analyse-financiere/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/06-analyse-financiere/dashboard/web/) | Protéger la marge; marge opérationnelle **57,63 %**. | Python · pandas · SQLite · HTML | Dashboard web publié |
-| 07 | [Performance marketing d'une banque](projects/07-marketing-bancaire/README.md) | Prioriser les campagnes; conversion globale **11,27 %**. | Python · pandas · scikit-learn · Power BI/DAX | Analyse et documentation terminées; dashboard à construire par Samuel |
+| 07 | [Performance marketing d'une banque](projects/07-marketing-bancaire/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/07-marketing-bancaire/dashboard/web/) | Prioriser les campagnes; conversion globale **11,27 %**. | Python · pandas · scikit-learn · HTML | Dashboard web publié |
 | 08 | [Inclusion financière — Global Findex](projects/08-inclusion-financiere/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/08-inclusion-financiere/dashboard/web/) | Examiner les fractures de genre et de revenu; écarts observés jusqu’à **33,8** et **37,4 points**. | Python · pandas · JavaScript · Chart.js | Dashboard descriptif publié |
 
 ### Commerce
@@ -119,3 +119,8 @@ Chaque dossier de projet contient sa propre présentation et ses livrables. Les 
 **Samuel Dossou-Kitti**  
 Analyste de données · Finance et gestion du risque  
 [temidossoukitti@gmail.com](mailto:temidossoukitti@gmail.com) · [Site portfolio](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/)
+
+### État des livrables — projet 07
+| Données | Qualité | Analyse | Rapport QA | Dashboard web |
+|---|---|---|---|---|
+| Reproductibles | PASS | Documentée | PASS | [Dashboard web publié](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/07-marketing-bancaire/dashboard/web/) |
