@@ -16,7 +16,7 @@ Comment évaluer la rentabilité, l’efficacité, la liquidité et la structure
 - **Période et source :** sept exercices 2019–2025, quinze indicateurs et 105 valeurs extraites des 10-K annuels de la SEC.
 - **Dernier exercice :** produits 32,79 Md USD, résultat net 14,97 Md USD, marge opérationnelle 57,63 %, ROE 193,46 %.
 - **Structure et trésorerie :** liquidité courante 1,03, passif/actif 85,70 %, flux disponible 17,16 Md USD (52,33 % des produits).
-- **Livrables automatisés :** 7 tables Power BI, 15 mesures DAX, 4 pages planifiées, 8 graphiques, 109/109 comparaisons SQL/Python; dashboard manuel à construire.
+- **Livrables automatisés :** 7 tables Power BI, 15 mesures DAX, 4 pages planifiées, 8 graphiques, 109/109 comparaisons SQL/Python; dashboard web publié.
 <!-- AUTO:SUMMARY_END -->
 
 ## Données et contrôle qualité

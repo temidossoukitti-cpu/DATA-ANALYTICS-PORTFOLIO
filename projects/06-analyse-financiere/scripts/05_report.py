@@ -140,7 +140,7 @@ def main() -> None:
         f"- **Période et source :** sept exercices 2019–2025, quinze indicateurs et 105 valeurs extraites des 10-K annuels de la SEC.",
         f"- **Dernier exercice :** produits {fr_num(latest['revenue']/1e9, 2)} Md USD, résultat net {fr_num(latest['net_income']/1e9, 2)} Md USD, marge opérationnelle {fr_pct(latest['operating_margin'], 2)}, ROE {fr_pct(latest['roe'], 2)}.",
         f"- **Structure et trésorerie :** liquidité courante {fr_ratio(latest['current_ratio'], 2)}, passif/actif {fr_pct(latest['debt_ratio'], 2)}, flux disponible {fr_num(latest['fcf']/1e9, 2)} Md USD ({fr_pct(latest['fcf_margin'], 2)} des produits).",
-        f"- **Livrables automatisés :** {table_count} tables Power BI, {dax_count} mesures DAX, {page_count} pages planifiées, {visual_count} graphiques, {sql_passes}/{len(parity)} comparaisons SQL/Python; dashboard manuel à construire.",
+        f"- **Livrables automatisés :** {table_count} tables Power BI, {dax_count} mesures DAX, {page_count} pages planifiées, {visual_count} graphiques, {sql_passes}/{len(parity)} comparaisons SQL/Python; dashboard web publié.",
     ])
     key_results = "\n".join([
         "| Indicateur | Résultat | Référence |",
@@ -174,7 +174,7 @@ def main() -> None:
     root_row = (
         f"| 06 | [Analyse financière de Mastercard](projects/06-analyse-financiere/README.md) | "
         f"Protéger la marge; marge opérationnelle **{fr_pct(latest['operating_margin'], 2)}**. | "
-        f"Python · pandas · SQLite · Power BI/DAX | Analyse terminée; dashboard à construire par Samuel |"
+        f"Python · pandas · SQLite · Power BI/DAX | Analyse terminée; dashboard web publié |"
     )
     row_pattern = re.compile(r"(?m)^\| 06 \| \[Analyse financi.*$")
     root_readme, row_count = row_pattern.subn(root_row, root_readme, count=1)
@@ -183,7 +183,7 @@ def main() -> None:
     root_status = "\n".join([
         "| Données | Qualité | SQL/Python | DAX | Rapport QA | Dashboard Power BI |",
         "|---|---|---|---|---|---|",
-        f"| 7 exercices · 105 valeurs | {project_status_placeholder} | {sql_passes}/{len(parity)} comparaisons | {dax_count} mesures | {project_status_placeholder} | À construire par Samuel |",
+        f"| 7 exercices · 105 valeurs | {project_status_placeholder} | {sql_passes}/{len(parity)} comparaisons | {dax_count} mesures | {project_status_placeholder} | Dashboard web publié |",
     ])
     root_readme = replace_block(root_readme, "<!-- AUTO:PROJECT06_STATUS_BEGIN -->", "<!-- AUTO:PROJECT06_STATUS_END -->", root_status)
     root_readme_path.write_text(root_readme, encoding="utf-8")
@@ -244,7 +244,7 @@ def main() -> None:
     root_status = "\n".join([
         "| Données | Qualité | SQL/Python | DAX | Rapport QA | Dashboard Power BI |",
         "|---|---|---|---|---|---|",
-        f"| 7 exercices · 105 valeurs | {overall_status} | {sql_passes}/{len(parity)} comparaisons | {dax_count} mesures | {overall_status} | À construire par Samuel |",
+        f"| 7 exercices · 105 valeurs | {overall_status} | {sql_passes}/{len(parity)} comparaisons | {dax_count} mesures | {overall_status} | Dashboard web publié |",
     ])
     root_readme = replace_block(root_readme, "<!-- AUTO:PROJECT06_STATUS_BEGIN -->", "<!-- AUTO:PROJECT06_STATUS_END -->", root_status)
     root_readme_path.write_text(root_readme, encoding="utf-8")
