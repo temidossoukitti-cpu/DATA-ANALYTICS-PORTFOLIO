@@ -24,7 +24,7 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 
 ## Projets par domaine
 
-### Finance
+### Projets
 
 | Référence | Projet | Décision soutenue et repère chiffré | Technologies | État |
 |---|---|---|---|---|
@@ -36,11 +36,6 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 | 07 | [Performance marketing d'une banque](projects/07-marketing-bancaire/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/07-marketing-bancaire/dashboard/web/) | Prioriser les campagnes; conversion globale **11,27 %**. | Python · pandas · scikit-learn · HTML | Dashboard web publié |
 | 08 | [Inclusion financière — Global Findex](projects/08-inclusion-financiere/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/08-inclusion-financiere/dashboard/web/) | Examiner les fractures de genre et de revenu; écarts observés jusqu’à **33,8** et **37,4 points**. | Python · pandas · JavaScript · Chart.js | Dashboard descriptif publié |
 
-### Commerce
-
-| Référence | Projet | Décision soutenue et repère chiffré | Technologies | État |
-|---|---|---|---|---|
-| 03 | [Analyse des ventes d’un distributeur](projects/03-ventes-retail/README.md) · [Dashboard Streamlit](https://projet03-ventes-retail.streamlit.app/) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/03-ventes-retail/dashboard/web/) | Prioriser produits et marchés; **2,30 M$ de ventes**. | Python · Excel · Streamlit · Web · kit Power BI | Publié |
 
 ### État des livrables — projet 04
 
