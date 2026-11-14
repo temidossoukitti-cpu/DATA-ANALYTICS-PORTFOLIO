@@ -71,7 +71,7 @@ Les résultats sont écrits dans `results/` et `data/cleaned/`.
 
 ## Dashboards et livrables
 
-Le projet dispose maintenant de deux dashboards sans dépendance à Power BI :
+Le projet dispose de deux dashboards :
 
 - [Dashboard HTML interactif](dashboard/web/) — version statique publiable sur GitHub Pages ;
 - [Dashboard web permanent](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/02-portefeuille-risque/dashboard/web/) — version hébergée sur GitHub Pages ;

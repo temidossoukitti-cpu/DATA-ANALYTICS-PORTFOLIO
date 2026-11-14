@@ -28,51 +28,26 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 
 | Référence | Projet | Décision soutenue et repère chiffré | Technologies | État |
 |---|---|---|---|---|
-| 01 | [Civic Signal · Budget contre réalisé](projects/project-1-budget-vs-actual/) | Ajuster l’analyse budgétaire; consommation observée : **74,32 %**. | SQL · DAX · Web | Publié |
+| 01 | [Civic Signal · Budget contre réalisé](projects/01-budget-vs-actual/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/01-budget-vs-actual/dashboard/web/) | Ajuster l’analyse budgétaire; consommation observée : **74,32 %**. | Python · SQL · React · Streamlit | Publié |
 | 02 | [Risque et performance d’un portefeuille](projects/02-portefeuille-risque/README.md) · [Dashboard Streamlit](https://projet02-portefeuille-risque.streamlit.app/) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/02-portefeuille-risque/dashboard/web/) | Limiter les concentrations; AFBK représente **34,9 % du risque**. | Python · pandas · NumPy · SciPy · Streamlit · HTML | Dashboards publiés |
 | 04 | [Risque de défaut des cartes de crédit](projects/04-risque-credit/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/04-risque-credit/dashboard/web/) | Orienter le suivi du risque; défaut observé : **22,12 %**. | Python · pandas · scikit-learn · SQLite · HTML | Dashboard web publié |
 | 05 | [Détection de fraude sur les transactions bancaires](projects/05-fraude-bancaire/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/05-fraude-bancaire/dashboard/web/) | Prioriser la revue; fraude source : **0,173 %**. | Python · pandas · scikit-learn · SQLite · HTML | Dashboard web publié |
 | 06 | [Analyse financière de Mastercard](projects/06-analyse-financiere/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/06-analyse-financiere/dashboard/web/) | Protéger la marge; marge opérationnelle **57,63 %**. | Python · pandas · SQLite · HTML | Dashboard web publié |
 | 07 | [Performance marketing d'une banque](projects/07-marketing-bancaire/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/07-marketing-bancaire/dashboard/web/) | Prioriser les campagnes; conversion globale **11,27 %**. | Python · pandas · scikit-learn · HTML | Dashboard web publié |
 | 08 | [Inclusion financière — Global Findex](projects/08-inclusion-financiere/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/08-inclusion-financiere/dashboard/web/) | Examiner les fractures de genre et de revenu; écarts observés jusqu’à **33,8** et **37,4 points**. | Python · pandas · JavaScript · Chart.js | Dashboard descriptif publié |
+| 09 | [Cryptomonnaies · Bitcoin et Ethereum](projects/09-cryptomonnaies/README.md) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/09-cryptomonnaies/dashboard/web/) | Mesurer le risque historique; baisse maximale depuis le sommet : BTC **−83,2 %**, ETH **−94,0 %**. | Python · pandas · JavaScript | Dashboard descriptif publié |
 
 ### Commerce
 
 | Référence | Projet | Décision soutenue et repère chiffré | Technologies | État |
 |---|---|---|---|---|
-| 03 | [Analyse des ventes d’un distributeur](projects/03-ventes-retail/README.md) · [Dashboard Streamlit](https://projet03-ventes-retail.streamlit.app/) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/03-ventes-retail/dashboard/web/) | Prioriser produits et marchés; **2,30 M$ de ventes**. | Python · Excel · Streamlit · Web · kit Power BI | Publié |
-
-### État des livrables — projet 04
-
-| Données | Qualité | SQL et parité | DAX | Rapport QA | Dashboard Power BI |
-| Reproductibles | PASS | 34/34 comparaisons PASS | 14 mesures documentées | PASS | Dashboard web publié |
-| Reproductibles | PASS | 34/34 comparaisons PASS | 14 mesures documentées | PASS | À construire par Samuel |
-
-### État des livrables — projet 05
-
-<!-- AUTO:PROJECT05_STATUS_BEGIN -->
-| Données | Qualité | SQL/Python | DAX | Rapport QA | Dashboard Power BI |
-|---|---|---|---|---|---|
-| Échantillon 25 492 lignes | PASS | 84/84 comparaisons | 15 mesures | PASS | [Dashboard web publié](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/05-fraude-bancaire/dashboard/web/) |
-<!-- AUTO:PROJECT05_STATUS_END -->
-
-### État des livrables — projet 06
-
-<!-- AUTO:PROJECT06_STATUS_BEGIN -->
-| Données | Qualité | SQL/Python | DAX | Rapport QA | Dashboard Power BI |
-| 7 exercices · 105 valeurs | PASS | 109/109 comparaisons | 15 mesures | PASS | [Dashboard web publié](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/06-analyse-financiere/dashboard/web/) |
-| 7 exercices · 105 valeurs | PASS | 109/109 comparaisons | 15 mesures | PASS | À construire par Samuel |
-<!-- AUTO:PROJECT06_STATUS_END -->
+| 03 | [Analyse des ventes d’un distributeur](projects/03-ventes-retail/README.md) · [Dashboard Streamlit](https://projet03-ventes-retail.streamlit.app/) · [Dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/03-ventes-retail/dashboard/web/) | Prioriser produits et marchés; **2,30 M$ de ventes**. | Python · Excel · Streamlit · Web | Publié |
 
 ### Aperçu du projet ventes
 
 L’analyse du jeu de données Sample Superstore couvre **9 994 lignes** et la période **2014–2017**. Elle met en évidence **2,30 M$ de ventes**, **286 397 $ de profit** et une marge globale de **12,5 %**. Le dossier comprend les scripts de nettoyage et d’analyse, les rapports, un classeur Excel et huit visualisations.
 
-[Consulter l’étude complète](projects/03-ventes-retail/README.md) · [Ouvrir le tableau de bord en ligne](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/)
-
-### Projets en préparation
-
-Le projet [10 · Cryptomonnaies](projects/10-cryptomonnaies/README.md) est présent dans le dépôt comme cadrage de sources, mais n’est pas encore annoncé comme analyse terminée.
+[Consulter l’étude complète](projects/03-ventes-retail/README.md) · [Ouvrir le tableau de bord en ligne](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/03-ventes-retail/dashboard/web/)
 
 ## Méthode de travail
 
@@ -90,8 +65,8 @@ Consulter le [standard de qualité](docs/STANDARD_QUALITE.md) et la [feuille de 
 
 | Domaine | Outils et pratiques |
 |---|---|
-| Analyse et traitement | Python, pandas, NumPy, SciPy, SQL |
-| Visualisation et restitution | Power BI, DAX, Matplotlib, Excel, HTML, CSS, JavaScript |
+| Analyse et traitement | Python, pandas, NumPy, SciPy, scikit-learn, SQL, SQLite |
+| Visualisation et restitution | Matplotlib, Excel, HTML, CSS, JavaScript, Chart.js, Streamlit |
 | Finance et gestion | Budget et réalisé, rentabilité, risque et performance de portefeuille |
 | Méthode | Git, documentation, contrôles qualité, analyses reproductibles |
 
@@ -99,17 +74,18 @@ Consulter le [standard de qualité](docs/STANDARD_QUALITE.md) et la [feuille de 
 
 ```text
 .
-├── docs/                              # Standard qualité et feuille de route
+├── assets/                        # Boutons et visuels du README
+├── docs/                          # Standard qualité et feuille de route
 └── projects/
-    ├── project-1-budget-vs-actual/    # Suivi budgétaire
+    ├── 01-budget-vs-actual/           # Suivi budgétaire
     ├── 02-portefeuille-risque/        # Analyse de risque et allocation
     ├── 03-ventes-retail/              # Analyse commerciale
     ├── 04-risque-credit/              # Défaut des cartes de crédit
     ├── 05-fraude-bancaire/            # Détection de fraude
     ├── 06-analyse-financiere/         # Ratios financiers Mastercard
     ├── 07-marketing-bancaire/         # Performance de campagne bancaire
-    ├── 08-inclusion-financiere/       # Cadrage Global Findex
-    └── 10-cryptomonnaies/             # Cadrage BTC/ETH
+    ├── 08-inclusion-financiere/       # Inclusion financière, Global Findex
+    └── 09-cryptomonnaies/             # Bitcoin et Ethereum
 ```
 
 Chaque dossier de projet contient sa propre présentation et ses livrables. Les instructions de reproduction sont indiquées dans le README correspondant.
@@ -119,8 +95,3 @@ Chaque dossier de projet contient sa propre présentation et ses livrables. Les 
 **Samuel Dossou-Kitti**  
 Analyste de données · Finance et gestion du risque  
 [temidossoukitti@gmail.com](mailto:temidossoukitti@gmail.com) · [Site portfolio](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/)
-
-### État des livrables — projet 07
-| Données | Qualité | Analyse | Rapport QA | Dashboard web |
-|---|---|---|---|---|
-| Reproductibles | PASS | Documentée | PASS | [Dashboard web publié](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/07-marketing-bancaire/dashboard/web/) |

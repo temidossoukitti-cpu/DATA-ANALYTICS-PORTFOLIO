@@ -24,6 +24,6 @@
 | buy_price | Prix d'achat (clôture de la date d'achat) |
 
 ## Tables produites (data/cleaned et results)
-- `prices_long.csv` : date, ticker, close, rendement (format long pour Power BI).
+- `prices_long.csv` : date, ticker, close, rendement (format long).
 - `portfolio_returns.csv` : rendements hebdomadaires du portefeuille et de l'indice.
 - `performance_base100.csv` : valeur du portefeuille et de l'indice en base 100.

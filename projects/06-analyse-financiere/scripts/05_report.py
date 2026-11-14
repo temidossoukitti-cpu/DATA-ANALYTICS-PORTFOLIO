@@ -170,23 +170,6 @@ def main() -> None:
     readme_path.write_text(readme_text, encoding="utf-8")
 
     root_readme_path = REPO / "README.md"
-    root_readme = root_readme_path.read_text(encoding="utf-8")
-    root_row = (
-        f"| 06 | [Analyse financière de Mastercard](projects/06-analyse-financiere/README.md) | "
-        f"Protéger la marge; marge opérationnelle **{fr_pct(latest['operating_margin'], 2)}**. | "
-        f"Python · pandas · SQLite · HTML | Analyse terminée; dashboard web publié |"
-    )
-    row_pattern = re.compile(r"(?m)^\| 06 \| \[Analyse financi.*$")
-    root_readme, row_count = row_pattern.subn(root_row, root_readme, count=1)
-    if row_count != 1:
-        raise SystemExit("Ligne projet 06 absente du README racine; ajouter la ligne d'index avant run_all.py.")
-    root_status = "\n".join([
-        "| Données | Qualité | SQL/Python | DAX | Rapport QA | Dashboard Power BI |",
-        "|---|---|---|---|---|---|",
-        f"| 7 exercices · 105 valeurs | {project_status_placeholder} | {sql_passes}/{len(parity)} comparaisons | {dax_count} mesures | {project_status_placeholder} | Dashboard web publié |",
-    ])
-    root_readme = replace_block(root_readme, "<!-- AUTO:PROJECT06_STATUS_BEGIN -->", "<!-- AUTO:PROJECT06_STATUS_END -->", root_status)
-    root_readme_path.write_text(root_readme, encoding="utf-8")
 
     (ROOT / "qa/validation_report.md").write_text(
         "# Rapport de validation automatique — projet 06\n\nGénération en cours par `scripts/05_report.py`.\n",
@@ -241,12 +224,6 @@ def main() -> None:
     readme_path.write_text(readme_text, encoding="utf-8")
 
     root_readme = root_readme_path.read_text(encoding="utf-8")
-    root_status = "\n".join([
-        "| Données | Qualité | SQL/Python | DAX | Rapport QA | Dashboard Power BI |",
-        "|---|---|---|---|---|---|",
-        f"| 7 exercices · 105 valeurs | {overall_status} | {sql_passes}/{len(parity)} comparaisons | {dax_count} mesures | {overall_status} | Dashboard web publié |",
-    ])
-    root_readme = replace_block(root_readme, "<!-- AUTO:PROJECT06_STATUS_BEGIN -->", "<!-- AUTO:PROJECT06_STATUS_END -->", root_status)
     root_readme_path.write_text(root_readme, encoding="utf-8")
 
     report = [

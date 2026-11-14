@@ -37,11 +37,11 @@ Les sorties sont dans `visuals/` : conversion par mois, métier, issue précéde
 
 ## Statut qualité
 
-**Automatisé : PASS**, sous réserve de l'exécution de `python scripts/run_all.py`. **Manuel Power BI : à faire.** Les contrôles de relations, filtres, interactions, export PDF et cohérence visuelle sont listés dans `qa/CHECKLIST.md` et `qa/INTERACTION_TESTS.md`.
+**Automatisé : PASS**, sous réserve de l'exécution de `python scripts/run_all.py`. Le rapport de contrôle est dans `qa/validation_report.md`.
 
-## Dashboard Power BI
+## Dashboard web
 
-Le dashboard à construire comporte trois pages : vue exécutive, segmentation et priorisation contrôlée. Le plan détaillé, les mesures DAX, l'import Power Query et la procédure d'export sont dans `powerbi/` et `model/`.
+[Ouvrir le dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/07-marketing-bancaire/dashboard/web/) : filtres par mois, canal, issue précédente, groupe d'âge et métier. Le code est dans `dashboard/`.
 
 ## Reproduire
 
@@ -56,7 +56,7 @@ Le pipeline régénère les tables de `data/processed/`, les agrégats de `resul
 
 ## Contenu du dossier
 
-`data/` contient la source, le dictionnaire et les tables préparées. `scripts/` contient le pipeline. `results/` et `visuals/` contiennent les sorties. `model/` et `powerbi/` préparent le dashboard. `qa/` sépare les contrôles automatisés des vérifications manuelles.
+`data/` contient la source, le dictionnaire et les tables préparées. `scripts/` contient le pipeline. `results/` et `visuals/` contiennent les sorties. `model/` décrit le modèle de données. `dashboard/` contient le dashboard web. `qa/` contient le rapport de validation.
 
 ## Dashboard web publié
 
