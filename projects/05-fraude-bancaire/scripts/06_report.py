@@ -187,23 +187,6 @@ def main() -> None:
 
     # Update only the project 05 root-index row and its generated deliverables table.
     root_readme_path = REPO / "README.md"
-    root_readme = root_readme_path.read_text(encoding="utf-8")
-    root_row = (
-        f"| 05 | [Détection de fraude sur les transactions bancaires](projects/05-fraude-bancaire/README.md) | "
-        f"Prioriser la revue; fraude source : **{fr_pct(model_rate)}**. | Python · pandas · scikit-learn · SQLite · HTML | "
-        f"Dashboard web publié |"
-    )
-    row_pattern = re.compile(r"(?m)^\| 05 \| \[Détection de fraude sur les transactions bancaires\].*$")
-    root_readme, row_count = row_pattern.subn(root_row, root_readme, count=1)
-    if row_count != 1:
-        raise SystemExit("Ligne projet 05 absente du README racine; ajouter la ligne d'index avant run_all.py.")
-    root_status = "\n".join([
-        "| Données | Qualité | SQL/Python | DAX | Rapport QA | Dashboard Power BI |",
-        "|---|---|---|---|---|---|",
-        f"| Échantillon {fr_num(sample_total)} lignes | {project_status_placeholder} | {sql_passes}/{len(parity)} comparaisons | {dax_count} mesures | {project_status_placeholder} | Dashboard web publié |",
-    ])
-    root_readme = replace_block(root_readme, "<!-- AUTO:PROJECT05_STATUS_BEGIN -->", "<!-- AUTO:PROJECT05_STATUS_END -->", root_status)
-    root_readme_path.write_text(root_readme, encoding="utf-8")
 
     (ROOT / "qa/validation_report.md").write_text("# Rapport de validation automatique — projet 05\n\nGénération en cours par `scripts/06_report.py`.\n", encoding="utf-8")
 

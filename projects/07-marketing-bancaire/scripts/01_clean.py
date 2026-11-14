@@ -1,4 +1,4 @@
-"""Contrôle la source marketing et construit le modèle en étoile Power BI."""
+"""Contrôle la source marketing et construit le modèle en étoile."""
 from __future__ import annotations
 
 import hashlib

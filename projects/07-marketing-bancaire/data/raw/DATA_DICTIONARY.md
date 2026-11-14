@@ -14,4 +14,4 @@ La source contient 20 variables explicatives et la cible `y`. Les valeurs `unkno
 
 `campaign_id` identifie la ligne de campagne. `outcome_key` encode la cible en 0/1. Les dimensions `dim_*` portent les libellés français et les ordres d'affichage. `age_band_key` regroupe l'âge en six classes et `campaign_band_key` regroupe le nombre de contacts. `previously_contacted` indique si `pdays` est différent de 999.
 
-Les tables Power BI préparées sont `fact_campaign`, `dim_outcome`, `dim_job`, `dim_education`, `dim_marital`, `dim_month`, `dim_contact`, `dim_poutcome`, `dim_age_band` et `dim_campaign_band`.
+Les tables préparées sont `fact_campaign`, `dim_outcome`, `dim_job`, `dim_education`, `dim_marital`, `dim_month`, `dim_contact`, `dim_poutcome`, `dim_age_band` et `dim_campaign_band`.

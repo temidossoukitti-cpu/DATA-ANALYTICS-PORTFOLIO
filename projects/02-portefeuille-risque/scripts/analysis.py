@@ -68,7 +68,7 @@ pd.DataFrame(fr).to_csv(out + "efficient_frontier.csv", index=False)
 pd.DataFrame({"portefeuille": 100 * (1 + rp).cumprod(), "IDX": 100 * (1 + rm).cumprod()}).round(2).to_csv(out + "performance_base100.csv")
 print("OK - resultats ecrits dans results/")
 
-# 8. Tables prêtes pour Power BI ------------------------------------------------
+# 8. Tables prêtes pour l'analyse et les dashboards ------------------------------------------------
 rp.rename("portefeuille").to_frame().join(rm.rename("IDX")).round(6).to_csv(out + "portfolio_returns.csv")
 long = px.reset_index().melt(id_vars="date", var_name="ticker", value_name="close").sort_values(["ticker", "date"])
 long["rendement"] = long.groupby("ticker")["close"].pct_change().round(6)
