@@ -191,7 +191,7 @@ def replace_readme_blocks(page_count: int, metrics: pd.Series, kpis: pd.Series, 
         f"Bandes de score documentées : `{model['risk_band_cutoffs']}`. "
         f"La perte attendue applique une LGD de base de **{format_pct(model['base_lgd_assumption'])}** sur l’exposition facturée positive."
     )
-    dashboard_block = f"Plan Power BI de **{format_count(page_count)} pages** dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md); le dashboard reste à construire par Samuel."
+    dashboard_block = f"Dashboard web interactif : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/04-risque-credit/dashboard/web/) · [code](dashboard/web/) · captures : [vue d’ensemble](preview/dashboard_web.png) et [filtre « Très élevé »](preview/dashboard_web_risque_eleve.png). Le plan Power BI de **{format_count(page_count)} pages** ([`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md)) reste disponible en option."
     count_block = (
         f"- Tables CSV traitées : **{format_count(counts['processed_table_count'])}** ({format_count(counts['star_table_count'])} tables en étoile et une scorecard auxiliaire).\n"
         f"- Mesures DAX documentées : **{format_count(counts['measure_count'])}**; pages planifiées : **{format_count(page_count)}**; indicateurs de portefeuille : **{format_count(counts['indicator_count'])}**.\n"

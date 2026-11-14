@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dashboard exécutif du risque de défaut des cartes de crédit — projet 4." />
+  <title>Credit Risk · Projet 4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">CR</div>
+        <div><div class="brand-name">Credit Risk</div><div class="brand-sub">Projet 04 · Portfolio</div></div>
+      </div>
+      <div class="side-label">PILOTAGE</div>
+      <nav class="nav-list" aria-label="Navigation principale">
+        <button class="nav-item active" data-page="overview"><span class="nav-icon">⌂</span><span>Vue d’ensemble</span></button>
+        <button class="nav-item" data-page="segments"><span class="nav-icon">◒</span><span>Segments à risque</span></button>
+        <button class="nav-item" data-page="payments"><span class="nav-icon">↗</span><span>Paiements & retards</span></button>
+        <button class="nav-item" data-page="scoring"><span class="nav-icon">◎</span><span>Scoring & actions</span></button>
+      </nav>
+      <div class="sidebar-note"><div class="note-dot"></div><div><strong>Données contrôlées</strong><span>30 000 lignes · 16/16 contrôles PASS</span></div></div>
+      <div class="sidebar-foot"><span>UCI · Yeh (2009)</span><span>v1.0</span></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+        <div class="topbar-brand"><div class="brand-mark">CR</div><strong>Credit Risk</strong></div>
+        <div class="topbar-context"><span class="eyebrow">PORTFOLIO CREDIT · 09/2005</span><span class="topbar-title">Executive risk cockpit</span></div>
+        <nav class="top-nav" aria-label="Vues du dashboard"><button class="top-nav-item active" data-page="overview">Overview</button><button class="top-nav-item" data-page="segments">Segments</button><button class="top-nav-item" data-page="payments">Paiements</button><button class="top-nav-item" data-page="scoring">Scoring</button></nav>
+        <div class="topbar-actions"><span class="live-pill"><i></i> Cohorte complète</span><button class="icon-button" id="infoBtn" aria-label="À propos">?</button><div class="avatar">SD</div></div>
+      </header>
+
+      <section class="content-wrap">
+        <div class="page-heading"><div><div class="kicker" id="pageKicker">SYNTHÈSE DU PORTEFEUILLE</div><h1 id="pageTitle">Vue d’ensemble</h1><p id="pageDescription">La cohorte présente une lecture claire de l’exposition, de l’utilisation et du défaut à horizon un mois.</p></div><div class="heading-meta"><span class="data-badge">SOURCE · UCI CREDIT CARD CLIENTS</span><span class="updated">Dernier relevé · septembre 2005</span></div></div>
+
+        <div class="filter-strip" id="filterStrip">
+          <div class="filter-heading"><span class="filter-icon">≡</span><div><strong>Filtres actifs</strong><small id="filterSummary">Tous les clients</small></div></div>
+          <label><span>Partition</span><select id="partitionFilter"><option value="all">Toutes</option><option value="Test">Test · 30 %</option><option value="Train">Train · 70 %</option></select></label>
+          <label><span>Bande de risque</span><select id="riskFilter"><option value="all">Toutes</option><option value="1">Faible</option><option value="2">Modéré</option><option value="3">Élevé</option><option value="4">Très élevé</option></select></label>
+          <label><span>Bande de limite</span><select id="limitFilter"><option value="all">Toutes</option><option value="Q1">Q1 · 10k–50k</option><option value="Q2">Q2 · 60k–100k</option><option value="Q3">Q3 · 110k–180k</option><option value="Q4">Q4 · 190k–270k</option><option value="Q5">Q5 · 280k+</option></select></label>
+          <label><span>Statut pay_0</span><select id="payFilter"><option value="all">Tous</option></select></label>
+          <button class="reset-button" id="resetBtn">Réinitialiser <span>↺</span></button>
+        </div>
+        <div class="filter-warning" id="filterWarning" hidden></div>
+
+        <div id="dashboard"></div>
+        <footer class="footer"><span>Projet 4 · Analyse descriptive et score de risque</span><span>Résultats non causaux · Validation métier requise avant décision</span></footer>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <dialog id="infoDialog"><button class="dialog-close" id="dialogClose">×</button><div class="kicker">À PROPOS DES DONNÉES</div><h2>Un cockpit de risque, pas une décision automatisée.</h2><p>Cette interface reprend les artefacts du projet 4 — cohorte historique taïwanaise, relevé de septembre 2005 et score de régression logistique. Les bandes de risque servent au triage illustratif.</p><div class="dialog-grid"><div><span>LGD de base</span><strong>45 %</strong></div><div><span>Seuil de classification</span><strong>0,25</strong></div><div><span>Partition test</span><strong>9 000 clients</strong></div><div><span>Exclusions du score</span><strong>Sexe · âge · mariage</strong></div></div><p class="dialog-foot">Les codes -2 et 0 des variables de paiement reposent sur des hypothèses documentées. Les taux observés ne prouvent pas un effet causal.</p></dialog>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
