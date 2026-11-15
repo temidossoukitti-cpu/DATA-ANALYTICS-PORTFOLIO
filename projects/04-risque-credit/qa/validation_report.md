@@ -29,7 +29,7 @@ Taux de défaut : **22,12 %**; limite totale : **NT$ 5 024 529 680**; exposition
 | Modèle en étoile | 7 tables en étoile + 1 scorecard; fact 30 000 lignes | 8 CSV traités; 8 tables SQLite; 30 000 lignes fact | PASS |
 | Modèle prédictif | Split stratifié 70/30, graine 42, seuil documenté; variables sensibles exclues | 21 000/9 000; random_state=42; seuil 0,25; ROC-AUC 0,7536 | PASS |
 | Parité SQL / Python | Au moins 5 indicateurs, écarts dans la tolérance | 34 comparaisons; 34 PASS | PASS |
-| README et navigation | Badge PORTFOLIO, moins de 120 lignes, liens/images locaux résolus | 119 lignes; 0 lien(s) rompu(s) | PASS |
+| README et navigation | Badge PORTFOLIO, moins de 120 lignes, liens/images locaux résolus | 118 lignes; 0 lien(s) rompu(s) | PASS |
 | Conformité du texte | Aucun marqueur de tâche restant, chemin absolu ou lien professionnel | Détection tâche=False; chemin absolu=False; LinkedIn URL=False | PASS |
 | Poids du projet | Projet <25 Mo et aucun fichier >50 Mo | 23.60 Mo; 0 fichier(s) >50 Mo | PASS |
 | Graphiques | De 6 à 8 PNG Matplotlib | 8 PNG | PASS |
