@@ -8,7 +8,7 @@
 
 ## Question de gestion
 
-Quels profils de clients de cartes de crédit font défaut le mois suivant, et comment ajuster les limites de crédit et les actions de relance pour réduire les pertes ?
+Quels profils de clients de cartes de crédit font défaut le mois suivant, et comment ajuster les limites de crédit et les actions de relance pour réduire les pertes ? **Décision soutenue :** orienter le suivi vers les clients en retard de paiement récent (défaut observé 50,29 %) et à forte utilisation avec retard (58,32 %), par une revue humaine plutôt qu’un blocage automatique.
 
 ## Résumé en 60 secondes
 
