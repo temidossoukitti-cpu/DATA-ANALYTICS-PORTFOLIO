@@ -1,4 +1,4 @@
-# Modèle de données Power BI
+# Modèle de données
 
 ## Tables chargées
 
@@ -30,4 +30,4 @@ Les montants de `fact_financials` sont exprimés en **dollars américains**, san
 
 `fiscal_year_key` est l’année civile de clôture (31 décembre). Les comparaisons annuelles portent sur des exercices complets; aucun cumul infra-annuel n’existe dans la source. La croissance de la première année est absente par construction (pas d’exercice précédent dans la fenêtre).
 
-Les valeurs de `financial_scorecard` correspondent à l’exercice le plus récent; elles ne se recalculent pas à partir de filtres de page. Pour les cartes sensibles à la sélection, utiliser les mesures DAX sur `fact_financials` et `fact_ratios`.
+Les valeurs de `financial_scorecard` correspondent à l’exercice le plus récent; elles ne se recalculent pas à partir de filtres de page. Pour un résultat sensible à une sélection, recalculer à partir de `fact_financials` et `fact_ratios`.

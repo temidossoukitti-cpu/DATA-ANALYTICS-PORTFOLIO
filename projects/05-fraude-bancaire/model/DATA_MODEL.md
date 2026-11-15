@@ -1,4 +1,4 @@
-# Modèle de données Power BI
+# Modèle de données
 
 ## Tables chargées
 

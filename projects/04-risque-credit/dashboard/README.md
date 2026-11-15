@@ -1,6 +1,6 @@
 # Dashboard web — Risque de défaut des cartes de crédit
 
-Dashboard interactif sans Power BI : HTML, CSS et JavaScript, sans backend.
+Dashboard interactif : HTML, CSS et JavaScript, sans backend.
 
 - **Version hébergée :** https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/04-risque-credit/dashboard/web/
 - **Filtres :** limite de crédit, tranche d'âge, éducation, état matrimonial, niveau de risque, statut de paiement récent. Tous les indicateurs et graphiques se recalculent.

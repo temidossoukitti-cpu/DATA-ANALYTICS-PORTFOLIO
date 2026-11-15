@@ -1,4 +1,4 @@
-"""Prépare la table auxiliaire Power BI à partir des métriques calculées."""
+"""Prépare la table auxiliaire à partir des métriques calculées."""
 from __future__ import annotations
 
 import pandas as pd

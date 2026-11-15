@@ -16,7 +16,7 @@ Comment évaluer la rentabilité, l’efficacité, la liquidité et la structure
 - **Période et source :** sept exercices 2019–2025, quinze indicateurs et 105 valeurs extraites des 10-K annuels de la SEC.
 - **Dernier exercice :** produits 32,79 Md USD, résultat net 14,97 Md USD, marge opérationnelle 57,63 %, ROE 193,46 %.
 - **Structure et trésorerie :** liquidité courante 1,03, passif/actif 85,70 %, flux disponible 17,16 Md USD (52,33 % des produits).
-- **Livrables automatisés :** 7 tables Power BI, 15 mesures DAX, 4 pages planifiées, 8 graphiques, 109/109 comparaisons SQL/Python; dashboard web publié.
+- **Livrables automatisés :** 7 tables CSV, 8 graphiques, 109/109 comparaisons SQL/Python; dashboard web publié.
 <!-- AUTO:SUMMARY_END -->
 
 ## Données et contrôle qualité
@@ -73,12 +73,12 @@ La source ne fournit ni segmentation par activité, ni ventilation géographique
 ## Statut qualité
 
 <!-- AUTO:QA_STATUS_BEGIN -->
-**Automatisé :** `PASS` selon [`qa/validation_report.md`](qa/validation_report.md). **Manuel Power BI :** à faire par Samuel; aucune validation Desktop n’est revendiquée.
+**Automatisé :** `PASS` selon [`qa/validation_report.md`](qa/validation_report.md).
 <!-- AUTO:QA_STATUS_END -->
 
 ## Dashboard
 
-Dashboard web interactif à quatre pages : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/06-analyse-financiere/dashboard/web/) · [code](dashboard/web/) · captures : [synthèse](preview/dashboard_web.png), [rentabilité](preview/dashboard_web_rentabilite.png), [liquidité](preview/dashboard_web_liquidite.png) et [trésorerie](preview/dashboard_web_tresorerie.png). Les quatre pages Power BI planifiées dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md) restent disponibles en option.
+Dashboard web interactif à quatre pages : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/06-analyse-financiere/dashboard/web/) · [code](dashboard/web/) · captures : [synthèse](preview/dashboard_web.png), [rentabilité](preview/dashboard_web_rentabilite.png), [liquidité](preview/dashboard_web_liquidite.png) et [trésorerie](preview/dashboard_web_tresorerie.png).
 
 ## Reproduire
 
@@ -87,8 +87,8 @@ python -m pip install -r requirements.txt
 python scripts/run_all.py
 ```
 
-Cette commande régénère les tables traitées, analyses, ratios, graphiques, base SQLite, contrôles de parité, rapport QA et blocs dynamiques des README/DAX à partir du JSON brut versionné.
+Cette commande régénère les tables traitées, analyses, ratios, graphiques, base SQLite, contrôles de parité, rapport QA et blocs dynamiques des README à partir du JSON brut versionné.
 
 ## Contenu du dossier
 
-`data/` : source, dictionnaire et tables Power BI. `scripts/` : nettoyage, analyse, ratios, SQL et rapport. `sql/` : schéma et requêtes. `results/` : KPI, contrôles, comparaisons et recommandations. `visuals/` : graphiques Matplotlib. `model/`, `powerbi/`, `qa/` : modèle, DAX, plan de pages et contrôles.
+`data/` : source, dictionnaire et tables préparées. `scripts/` : nettoyage, analyse, ratios, SQL et rapport. `sql/` : schéma et requêtes. `results/` : KPI, contrôles, comparaisons et recommandations. `visuals/` : graphiques Matplotlib. `model/`, `qa/` : modèle de données et contrôles.

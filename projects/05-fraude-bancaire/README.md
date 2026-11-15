@@ -16,7 +16,7 @@ Comment prioriser les transactions de carte susceptibles d’être frauduleuses 
 - **Population source :** 284 807 transactions, 492 fraudes (0,173 %); échantillon pondéré de 25 492 lignes.
 - **Modèle (test) :** PR-AUC 0.6595, précision 67,97 %, rappel 81,76 %, seuil 0.191 choisi hors test.
 - **Comparaison sous hypothèses :** coût estimé 14 189 contre 63 804 unités pour la règle de montant; exposition fraude interceptée 44 976 unités.
-- **Livrables automatisés :** 8 tables Power BI, 15 mesures DAX, 4 pages planifiées, 7 graphiques, 84/84 comparaisons SQL/Python; dashboard web interactif publié.
+- **Livrables automatisés :** 8 tables CSV, 7 graphiques, 84/84 comparaisons SQL/Python; dashboard web interactif publié.
 <!-- AUTO:SUMMARY_END -->
 
 ## Données et contrôle qualité
@@ -72,12 +72,12 @@ Les conclusions ne décrivent que deux jours d’un jeu historique fortement dé
 ## Statut qualité
 
 <!-- AUTO:QA_STATUS_BEGIN -->
-**Automatisé :** `PASS` selon [`qa/validation_report.md`](qa/validation_report.md). **Manuel Power BI :** à faire par Samuel; aucune validation Desktop n’est revendiquée.
+**Automatisé :** `PASS` selon [`qa/validation_report.md`](qa/validation_report.md).
 <!-- AUTO:QA_STATUS_END -->
 
 ## Dashboard
 
-Dashboard web interactif à 3 pages (vue d’ensemble, scénario de seuil et de coûts, segmentation) : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/05-fraude-bancaire/dashboard/web/) · [code](dashboard/web/) · captures : [vue d’ensemble](preview/dashboard_web.png), [scénario](preview/dashboard_web_scenario.png) et [segmentation](preview/dashboard_web_segmentation.png). Les quatre pages Power BI planifiées dans [`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md) restent disponibles en option.
+Dashboard web interactif à 3 pages (vue d’ensemble, scénario de seuil et de coûts, segmentation) : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/05-fraude-bancaire/dashboard/web/) · [code](dashboard/web/) · captures : [vue d’ensemble](preview/dashboard_web.png), [scénario](preview/dashboard_web_scenario.png) et [segmentation](preview/dashboard_web_segmentation.png).
 
 ## Reproduire
 
@@ -86,8 +86,8 @@ python -m pip install -r requirements.txt
 python scripts/run_all.py
 ```
 
-Cette commande régénère les tables traitées, analyses, modèle, graphiques, base SQLite, contrôles de parité, rapport QA et blocs dynamiques des README/DAX à partir de l’échantillon commité. Pour reconstruire aussi l’échantillon, télécharger le Parquet officiel selon `data/raw/SOURCE.md`, vérifier son SHA-256, puis exécuter `python scripts/00_make_sample.py --input data/raw/openml_43627_full.parquet`.
+Cette commande régénère les tables traitées, analyses, modèle, graphiques, base SQLite, contrôles de parité, rapport QA et blocs dynamiques des README à partir de l’échantillon commité. Pour reconstruire aussi l’échantillon, télécharger le Parquet officiel selon `data/raw/SOURCE.md`, vérifier son SHA-256, puis exécuter `python scripts/00_make_sample.py --input data/raw/openml_43627_full.parquet`.
 
 ## Contenu du dossier
 
-`data/` : source, dictionnaire, échantillon et tables Power BI. `scripts/` : préparation, nettoyage, analyse, modèle, SQL et rapport. `sql/` : schéma et requêtes. `results/` : KPI, contrôles, comparaisons et recommandations. `visuals/` : graphiques Matplotlib. `model/`, `powerbi/`, `qa/` : modèle, DAX, plan de pages et contrôles.
+`data/` : source, dictionnaire, échantillon et tables préparées. `scripts/` : préparation, nettoyage, analyse, modèle, SQL et rapport. `sql/` : schéma et requêtes. `results/` : KPI, contrôles, comparaisons et recommandations. `visuals/` : graphiques Matplotlib. `model/`, `qa/` : modèle de données et contrôles.

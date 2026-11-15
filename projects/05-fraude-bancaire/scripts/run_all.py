@@ -33,7 +33,7 @@ def main() -> None:
     bytecode = list(ROOT.rglob("*.pyc"))
     if caches or bytecode:
         raise SystemExit(f"Caches Python détectés : {len(caches)} dossier(s), {len(bytecode)} fichier(s).")
-    print("\nPipeline complet : PASS. Le dashboard Power BI reste à construire manuellement par Samuel.")
+    print("\nPipeline complet : PASS.")
 
 
 if __name__ == "__main__":
