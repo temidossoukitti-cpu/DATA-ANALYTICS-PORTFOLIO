@@ -13,13 +13,13 @@
 | `dim_pay_status` | `pay_status_key` | Code et libellé du statut `pay_0` | 1 → plusieurs |
 | `dim_risk_band` | `risk_band_key` | Bande de probabilité et bornes | 1 → plusieurs |
 
-Créer dans Power BI six relations actives, un-à-plusieurs, avec filtrage simple de la dimension vers `fact_clients`. Les clés étrangères et valeurs de dimension sont vérifiées lors de la reconstruction SQLite.
+Six relations actives, un-à-plusieurs, avec filtrage simple de la dimension vers `fact_clients`. Les clés étrangères et valeurs de dimension sont vérifiées lors de la reconstruction SQLite.
 
 ## Table auxiliaire de performance
 
-`model_scorecard` est une table d’une ligne, sans relation, exportée pour permettre l’affichage Power BI des métriques calculées hors échantillon (ROC-AUC, PR-AUC, KS, précision, rappel, seuil et matrice de confusion). Elle n’est pas une dimension et ne change pas le schéma en étoile du portefeuille. Les colonnes et valeurs proviennent de `results/model_metrics.csv`.
+`model_scorecard` est une table d’une ligne, sans relation, exportée pour afficher les métriques calculées hors échantillon (ROC-AUC, PR-AUC, KS, précision, rappel, seuil et matrice de confusion). Elle n’est pas une dimension et ne change pas le schéma en étoile du portefeuille. Les colonnes et valeurs proviennent de `results/model_metrics.csv`.
 
-`_Mesures` est une table de mesures créée dans Power BI Desktop; elle n’est pas importée depuis les CSV. Le nombre de mesures DAX est généré dans `qa/validation_report.md`.
+Les indicateurs de portefeuille sont calculés par les scripts et enregistrés dans `results/`.
 
 ## Contrat analytique
 

@@ -8,7 +8,7 @@
 
 ## Question de gestion
 
-Quels profils de clients de cartes de crédit font défaut le mois suivant, et comment ajuster les limites de crédit et les actions de relance pour réduire les pertes ?
+Quels profils de clients de cartes de crédit font défaut le mois suivant, et comment ajuster les limites de crédit et les actions de relance pour réduire les pertes ? **Décision soutenue :** orienter le suivi vers les clients en retard de paiement récent (défaut observé 50,29 %) et à forte utilisation avec retard (58,32 %), par une revue humaine plutôt qu’un blocage automatique.
 
 ## Résumé en 60 secondes
 
@@ -16,7 +16,7 @@ Quels profils de clients de cartes de crédit font défaut le mois suivant, et c
 - **Cohorte traitée :** 30 000 clients issus de 25 colonnes; 0 valeur manquante brute.
 - **Niveau de défaut :** 22,12 % sur la cohorte; limites totales de NT$ 5 024 529 680 et exposition des défaillants de NT$ 863 407 680.
 - **Modèle test :** ROC-AUC 0,7536, PR-AUC 0,5016, KS 0,3948; précision 45,32 % et rappel 58,81 % au seuil 0,25.
-- **Livrables :** 8 tables chargées (7 en étoile et une scorecard), 14 mesures DAX, 4 pages planifiées et 8 graphiques; part test à risque élevé 31,89 %.
+- **Livrables :** 8 tables chargées (7 en étoile et une scorecard) et 8 graphiques; part test à risque élevé 31,89 %.
 <!-- DYNAMIQUE_SUMMARY_END -->
 
 ## Données et contrôle qualité
@@ -31,7 +31,7 @@ Contrôles automatisés : **16/16 PASS**; 70 lignes appartenant à des profils i
 
 Le pipeline lit la deuxième ligne comme en-tête métier (`header=1`), conserve les valeurs source d’éducation et d’état matrimonial, puis applique les recodages documentés dans le dictionnaire. Il calcule les bandes d’âge et de limite, l’utilisation, le ratio de paiement, les retards sur six périodes et le retard récent. Aucun client n’est supprimé.
 
-Le modèle est une régression logistique avec séparation stratifiée, standardisation des prédicteurs numériques et encodage de l’éducation. `sex`, `marriage` et `age` sont exclus du score; les analyses qui les décrivent ne constituent pas des règles de décision. Les définitions et consignes Power BI figurent dans [`model/DATA_MODEL.md`](model/DATA_MODEL.md), [`model/DAX_MEASURES.md`](model/DAX_MEASURES.md) et [`powerbi/POWER_QUERY.md`](powerbi/POWER_QUERY.md).
+Le modèle est une régression logistique avec séparation stratifiée, standardisation des prédicteurs numériques et encodage de l’éducation. `sex`, `marriage` et `age` sont exclus du score; les analyses qui les décrivent ne constituent pas des règles de décision. Le modèle de données est décrit dans [`model/DATA_MODEL.md`](model/DATA_MODEL.md).
 
 <!-- DYNAMIQUE_METHOD_BEGIN -->
 Séparation stratifiée : **70,00 % Train / 30,00 % Test**, `random_state=42`; seuil de classification **0,25**. Bandes de score documentées : `<0.10; 0.10-<0.20; 0.20-<0.40; >=0.40`. La perte attendue applique une LGD de base de **45,00 %** sur l’exposition facturée positive.
@@ -90,13 +90,13 @@ La cohorte est historique, taïwanaise et datée de 2005; sa transposition à un
 ## Statut qualité
 
 <!-- DYNAMIQUE_STATUS_BEGIN -->
-Automatisé : **PASS** · Manuel Power BI : **à faire** (20 cases non cochées; aucun test Desktop n’est revendiqué).
+Automatisé : **PASS** selon [`qa/validation_report.md`](qa/validation_report.md).
 <!-- DYNAMIQUE_STATUS_END -->
 
 ## Dashboard
 
 <!-- DYNAMIQUE_DASHBOARD_BEGIN -->
-Dashboard web interactif : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/04-risque-credit/dashboard/web/) · [code](dashboard/web/) · captures : [vue d’ensemble](preview/dashboard_web.png) et [filtre « Très élevé »](preview/dashboard_web_risque_eleve.png). Le plan Power BI de **4 pages** ([`powerbi/PAGE_PLAN.md`](powerbi/PAGE_PLAN.md)) reste disponible en option.
+Dashboard web interactif : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/04-risque-credit/dashboard/web/) · [code](dashboard/web/) · captures : [vue d’ensemble](preview/dashboard_web.png) et [filtre « Très élevé »](preview/dashboard_web_risque_eleve.png).
 <!-- DYNAMIQUE_DASHBOARD_END -->
 
 ## Reproduire
@@ -114,6 +114,5 @@ Le pipeline régénère les CSV traités, la base SQLite, les résultats, les gr
 
 <!-- DYNAMIQUE_COUNTS_BEGIN -->
 - Tables CSV traitées : **8** (7 tables en étoile et une scorecard auxiliaire).
-- Mesures DAX documentées : **14**; pages planifiées : **4**; indicateurs de portefeuille : **9**.
 - Recommandations chiffrées : **4**; graphiques Matplotlib : **8**.
 <!-- DYNAMIQUE_COUNTS_END -->

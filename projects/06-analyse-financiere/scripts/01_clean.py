@@ -1,4 +1,4 @@
-"""Extrait les états financiers SEC, contrôle la cohérence et construit l'étoile Power BI."""
+"""Extrait les états financiers SEC, contrôle la cohérence et construit l'étoile."""
 from __future__ import annotations
 
 import numpy as np

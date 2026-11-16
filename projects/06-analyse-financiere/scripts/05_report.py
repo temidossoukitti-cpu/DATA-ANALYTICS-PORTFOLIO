@@ -1,4 +1,4 @@
-"""Génère le rapport QA, les valeurs attendues DAX et les blocs dynamiques des README."""
+"""Génère le rapport QA et les blocs dynamiques des README."""
 from __future__ import annotations
 
 import hashlib
@@ -58,31 +58,6 @@ def project_files() -> list[Path]:
     return [p for p in ROOT.rglob("*") if p.is_file() and "__pycache__" not in p.parts]
 
 
-def render_dax_expected(latest: pd.Series) -> str:
-    values = [
-        ("M01", "Produits", fr_num(latest["revenue"]) + " USD"),
-        ("M02", "Résultat d'exploitation", fr_num(latest["operating_income"]) + " USD"),
-        ("M03", "Résultat net", fr_num(latest["net_income"]) + " USD"),
-        ("M04", "Marge opérationnelle", fr_pct(latest["operating_margin"], 2)),
-        ("M05", "Marge nette", fr_pct(latest["net_margin"], 2)),
-        ("M06", "ROE", fr_pct(latest["roe"], 2)),
-        ("M07", "ROA", fr_pct(latest["roa"], 2)),
-        ("M08", "Flux de trésorerie disponible", fr_num(latest["fcf"]) + " USD"),
-        ("M09", "Marge de flux disponible", fr_pct(latest["fcf_margin"], 2)),
-        ("M10", "Croissance des produits", fr_pct(latest["revenue_growth"], 2)),
-        ("M11", "Ratio de liquidité courante", fr_ratio(latest["current_ratio"], 2)),
-        ("M12", "Taux d'endettement", fr_pct(latest["debt_ratio"], 2)),
-        ("M13", "Couverture des intérêts", fr_ratio(latest["interest_coverage"], 2) + "x"),
-        ("M14", "BPA dilué", fr_num(latest["eps_diluted"], 2) + " USD par action"),
-        ("M15", "Taux d'imposition effectif", fr_pct(latest["effective_tax_rate"], 2)),
-    ]
-    return "\n".join([
-        "| ID | Mesure | Valeur attendue depuis les sorties générées |",
-        "|---|---|---|",
-        *[f"| {key} | {name} | {value} |" for key, name, value in values],
-    ])
-
-
 def main() -> None:
     results = ROOT / "results"
     processed = ROOT / "data/processed"
@@ -97,23 +72,15 @@ def main() -> None:
     prior_year = int(latest_year - 1)
     latest = annual.loc[latest_year]
 
-    dax_path = ROOT / "model/DAX_MEASURES.md"
     readme_path = ROOT / "README.md"
-    dax_text = dax_path.read_text(encoding="utf-8")
     readme_text = readme_path.read_text(encoding="utf-8")
 
-    dax_count = len(re.findall(r"(?m)^### M\d{2} ·", dax_text))
-    page_plan_text = (ROOT / "powerbi/PAGE_PLAN.md").read_text(encoding="utf-8")
-    page_count = len(re.findall(r"(?m)^### Page \d+ ·", page_plan_text))
     table_count = sum((processed / name).is_file() for name in PROCESSED_TABLES)
     visual_count = len(list((ROOT / "visuals").glob("*.png")))
     sql_queries = len([p for p in (ROOT / "sql").glob("[0-9][0-9]_*.sql")])
     quality_failures = int(quality["status"].eq("FAIL").sum())
     sql_passes = int(parity["status"].eq("PASS").sum())
     sql_failures = int(parity["status"].eq("FAIL").sum())
-    manual_text = (ROOT / "qa/CHECKLIST.md").read_text(encoding="utf-8")
-    manual_marks = re.findall(r"(?m)^- \[([ xX])\]", manual_text)
-    manual_all_unchecked = bool(manual_marks) and all(mark == " " for mark in manual_marks)
 
     files = project_files()
     total_bytes = sum(path.stat().st_size for path in files)
@@ -130,9 +97,8 @@ def main() -> None:
         "results/quality_check.csv", "results/financial_scorecard.csv", "results/annual_kpis.csv",
         "results/ratio_summary.csv", "results/growth_summary.csv", "results/reference_comparison.csv",
         "results/alerts.csv", "results/recommendations.csv", "results/coverage_gaps.csv",
-        "results/sql_parity.csv", "model/DATA_MODEL.md", "model/DAX_MEASURES.md",
-        "powerbi/PAGE_PLAN.md", "powerbi/POWER_QUERY.md", "powerbi/EXPORT_PREVIEWS.md",
-        "qa/CHECKLIST.md", "qa/INTERACTION_TESTS.md",
+        "results/sql_parity.csv", "model/DATA_MODEL.md",
+         
     ]
     missing_files = [name for name in required if not (ROOT / name).is_file()]
 
@@ -140,7 +106,7 @@ def main() -> None:
         f"- **Période et source :** sept exercices 2019–2025, quinze indicateurs et 105 valeurs extraites des 10-K annuels de la SEC.",
         f"- **Dernier exercice :** produits {fr_num(latest['revenue']/1e9, 2)} Md USD, résultat net {fr_num(latest['net_income']/1e9, 2)} Md USD, marge opérationnelle {fr_pct(latest['operating_margin'], 2)}, ROE {fr_pct(latest['roe'], 2)}.",
         f"- **Structure et trésorerie :** liquidité courante {fr_ratio(latest['current_ratio'], 2)}, passif/actif {fr_pct(latest['debt_ratio'], 2)}, flux disponible {fr_num(latest['fcf']/1e9, 2)} Md USD ({fr_pct(latest['fcf_margin'], 2)} des produits).",
-        f"- **Livrables automatisés :** {table_count} tables Power BI, {dax_count} mesures DAX, {page_count} pages planifiées, {visual_count} graphiques, {sql_passes}/{len(parity)} comparaisons SQL/Python; dashboard web publié.",
+        f"- **Livrables automatisés :** {table_count} tables CSV, {visual_count} graphiques, {sql_passes}/{len(parity)} comparaisons SQL/Python; dashboard web publié.",
     ])
     key_results = "\n".join([
         "| Indicateur | Résultat | Référence |",
@@ -157,15 +123,12 @@ def main() -> None:
         "|---:|---|---|",
         *[f"| {int(row.priority)} | {str(row.recommendation).replace('|', '/')} | {str(row.evidence).replace('|', '/')} |" for row in recommendations.itertuples(index=False)],
     ])
-    dax_expected = render_dax_expected(latest)
-    dax_text = replace_block(dax_text, "<!-- AUTO:DAX_EXPECTED_BEGIN -->", "<!-- AUTO:DAX_EXPECTED_END -->", dax_expected)
-    dax_path.write_text(dax_text, encoding="utf-8")
 
     project_status_placeholder = "EN COURS"
     readme_text = replace_block(readme_text, "<!-- AUTO:SUMMARY_BEGIN -->", "<!-- AUTO:SUMMARY_END -->", summary_block)
     readme_text = replace_block(readme_text, "<!-- AUTO:KEY_RESULTS_BEGIN -->", "<!-- AUTO:KEY_RESULTS_END -->", key_results)
     readme_text = replace_block(readme_text, "<!-- AUTO:RECOMMENDATIONS_BEGIN -->", "<!-- AUTO:RECOMMENDATIONS_END -->", recommendation_md)
-    qa_status = f"**Automatisé :** `{project_status_placeholder}` selon [`qa/validation_report.md`](qa/validation_report.md). **Manuel Power BI :** à faire par Samuel; aucune validation Desktop n’est revendiquée."
+    qa_status = f"**Automatisé :** `{project_status_placeholder}` selon [`qa/validation_report.md`](qa/validation_report.md)."
     readme_text = replace_block(readme_text, "<!-- AUTO:QA_STATUS_BEGIN -->", "<!-- AUTO:QA_STATUS_END -->", qa_status)
     readme_path.write_text(readme_text, encoding="utf-8")
 
@@ -189,7 +152,6 @@ def main() -> None:
     markdown_badge = "![PORTFOLIO](https://img.shields.io/badge/PORTFOLIO" in readme_path.read_text(encoding="utf-8")
     requirements = (ROOT / "requirements.txt").read_text(encoding="utf-8").splitlines()
     pinned = bool(requirements) and all("==" in line for line in requirements if line.strip())
-    forbidden = [p.name for p in ROOT.rglob("*") if p.is_file() and p.suffix.lower() in {".html", ".xlsx", ".xls", ".pbix", ".pbip", ".pbir", ".tmdl"}]
 
     checks = []
 
@@ -204,9 +166,7 @@ def main() -> None:
     completeness_ok = len(fact_ratios_frame) == 130 and len(fact_financials_frame) == 105
     record("Complétude", "105 valeurs comptables; 130 ratios", f"{len(fact_financials_frame)} valeurs; {len(fact_ratios_frame)} ratios", completeness_ok)
     record("Parité SQL/Python", "Au moins 5 requêtes, tous PASS", f"{sql_queries} requêtes; {sql_passes}/{len(parity)} PASS; {sql_failures} FAIL", sql_queries >= 5 and sql_failures == 0 and sql_passes == len(parity))
-    record("Tables Power BI", "7 CSV traités", f"{table_count}/7 présents", table_count == 7)
-    record("Mesures DAX", "Définitions numérotées et valeurs générées", f"{dax_count} mesures", dax_count == 15)
-    record("Pages planifiées", "4 pages", f"{page_count} pages", page_count == 4)
+    record("Tables CSV", "7 CSV traités", f"{table_count}/7 présents", table_count == 7)
     record("Graphiques", "Au moins 6 PNG Matplotlib", f"{visual_count} PNG", visual_count >= 6)
     record("README projet", "Au plus 120 lignes; badge PORTFOLIO", f"{line_count} lignes; badge {'présent' if markdown_badge else 'absent'}", line_count <= 120 and markdown_badge)
     record("Liens relatifs/images", "Tous résolus", f"{len(link_errors)} cassé(s)", len(link_errors) == 0)
@@ -214,12 +174,10 @@ def main() -> None:
     record("Caches Python", "Aucun", f"{len(caches)} artefact(s)", len(caches) == 0)
     record("Conformité texte", "Aucun chemin absolu, TODO, LinkedIn ou emoji", f"{len(absolute_paths)} chemin(s), {todos} TODO, {linked_in} LinkedIn, {emoji} emoji", not absolute_paths and todos == 0 and linked_in == 0 and emoji == 0)
     record("Dépendances", "Versions directes épinglées avec ==", f"{len(requirements)} dépendances", pinned)
-    record("Formats interdits", "Aucun HTML/Excel/PBIX/PBIP/PBIR/TMDL", f"{len(forbidden)} fichier(s)", not forbidden)
-    record("Checklist Desktop", "Tous les tests manuels restent non cochés", f"{len(manual_marks)} cases; toutes non cochées={manual_all_unchecked}", manual_all_unchecked)
 
     overall_status = "PASS" if all(item["status"] == "PASS" for item in checks) else "FAIL"
     readme_text = readme_path.read_text(encoding="utf-8")
-    qa_status = f"**Automatisé :** `{overall_status}` selon [`qa/validation_report.md`](qa/validation_report.md). **Manuel Power BI :** à faire par Samuel; aucune validation Desktop n’est revendiquée."
+    qa_status = f"**Automatisé :** `{overall_status}` selon [`qa/validation_report.md`](qa/validation_report.md)."
     readme_text = replace_block(readme_text, "<!-- AUTO:QA_STATUS_BEGIN -->", "<!-- AUTO:QA_STATUS_END -->", qa_status)
     readme_path.write_text(readme_text, encoding="utf-8")
 
@@ -229,7 +187,7 @@ def main() -> None:
     report = [
         "# Rapport de validation automatique — projet 06",
         "",
-        f"**Statut automatisé : {overall_status}.** Généré par `scripts/05_report.py` depuis les sorties du pipeline. Les tests Desktop sont séparés et restent à faire par Samuel.",
+        f"**Statut automatisé : {overall_status}.** Généré par `scripts/05_report.py` depuis les sorties du pipeline.",
         "",
         "| Contrôle | Attendu | Constaté | Statut |",
         "|---|---|---|---|",
@@ -238,14 +196,13 @@ def main() -> None:
         f"**Source :** SEC EDGAR companyfacts, CIK 1141391; SHA-256 `{RAW_SHA256}`; {RAW_BYTES:,} octets; exercices 2019–2025.",
         f"**Dernier exercice :** produits {fr_num(latest['revenue'])} USD; résultat net {fr_num(latest['net_income'])} USD; marge opérationnelle {fr_pct(latest['operating_margin'], 3)}; ROE {fr_pct(latest['roe'], 3)}; liquidité {fr_ratio(latest['current_ratio'], 3)}; flux disponible {fr_num(latest['fcf'])} USD.",
         f"**Ratios :** {len(summary)} ratios calculés, dont la croissance des produits à {fr_pct(growth.loc['revenue', 'cagr'], 3)} en moyenne annuelle sur la période; aucune valeur n’est extrapolée hors des sept exercices.",
-        "**Manuel :** le dashboard Power BI, les mesures saisies dans Desktop, les scénarios d’interaction et les exports PDF/PNG ne sont pas exécutés dans cette livraison.",
     ]
     (ROOT / "qa/validation_report.md").write_text("\n".join(report) + "\n", encoding="utf-8")
 
     final_link_errors = broken_links([*ROOT.rglob("*.md"), root_readme_path, REPO / "docs/ROADMAP.md"])
     if final_link_errors:
         raise SystemExit("Lien(s) cassé(s) après génération: " + "; ".join(final_link_errors))
-    print(f"Rapport QA {overall_status}: {len(checks)} contrôles; {sql_passes}/{len(parity)} parités SQL; {table_count} tables, {dax_count} mesures, {page_count} pages planifiées.")
+    print(f"Rapport QA {overall_status}: {len(checks)} contrôles; {sql_passes}/{len(parity)} parités SQL; {table_count} tables CSV.")
     if overall_status != "PASS":
         raise SystemExit("Au moins un contrôle QA est en échec; consulter qa/validation_report.md.")
 

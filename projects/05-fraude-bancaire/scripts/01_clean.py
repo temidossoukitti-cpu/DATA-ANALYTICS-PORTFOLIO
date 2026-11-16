@@ -1,4 +1,4 @@
-"""Contrôle l'échantillon versionné et construit les tables d'analyse Power BI."""
+"""Contrôle l'échantillon versionné et construit les tables d'analyse."""
 from __future__ import annotations
 
 import numpy as np

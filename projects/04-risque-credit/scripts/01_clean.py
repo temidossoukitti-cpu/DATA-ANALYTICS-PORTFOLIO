@@ -85,7 +85,7 @@ def main() -> None:
     if (quality["status"] == "FAIL").any():
         failed = quality.loc[quality["status"] == "FAIL", "rule"].tolist()
         raise RuntimeError(f"Échec des contrôles qualité : {failed}")
-    print(f"Nettoyage terminé : {len(clean)} clients; {len(SOURCE_COLUMN_ORDER)} colonnes source; {len(dimensions) + 1} tables Power BI.")
+    print(f"Nettoyage terminé : {len(clean)} clients; {len(SOURCE_COLUMN_ORDER)} colonnes source; {len(dimensions) + 1} tables.")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # Dashboard web — Détection de fraude sur les transactions bancaires
 
-Dashboard interactif sans Power BI : HTML, CSS et JavaScript, sans backend. Trois pages (boutons ronds en haut) :
+Dashboard interactif : HTML, CSS et JavaScript, sans backend. Trois pages (boutons ronds en haut) :
 
 1. **Vue d'ensemble du risque de fraude** : taux de fraude par fenêtre de 6 h et par tranche de montant, montant frauduleux, filtres.
 2. **Scénario : seuil d'alerte et coûts** : trois curseurs (seuil du modèle, coût de friction, sévérité de perte) qui recalculent alertes, précision, rappel et coût estimé contre la référence et contre la règle simple du 99e percentile.
