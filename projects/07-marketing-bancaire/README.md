@@ -1,6 +1,6 @@
 # 07 · Performance marketing d'une banque
 
-[![Portfolio](../../assets/portfolio-button.svg)](../../README.md) · [← Retour à l'index](../../README.md)
+[← Retour à l'index](../../README.md)
 
 **Données publiques :** [UCI Bank Marketing](https://archive.ics.uci.edu/dataset/222/bank+marketing), sous licence CC BY 4.0.
 

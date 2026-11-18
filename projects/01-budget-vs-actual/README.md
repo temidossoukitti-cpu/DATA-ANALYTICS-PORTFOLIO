@@ -65,8 +65,6 @@ python3 scripts/analyze_variances.py
 
 ## Dashboard Power BI
 
-La version interactive est publiée directement dans le navigateur avec GitHub Pages : [ouvrir le dashboard Budget vs Réalisé](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/).
-
 Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 
 ## Limites
