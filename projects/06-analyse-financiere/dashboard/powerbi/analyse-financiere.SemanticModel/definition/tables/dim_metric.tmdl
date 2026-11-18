@@ -1,0 +1,66 @@
+table dim_metric
+	lineageTag: 53c32e0c-1c41-4dfd-91d0-e30fab132679
+
+	column metric_key
+		dataType: string
+		lineageTag: 25266207-d576-4bd0-b19c-59f046f47660
+		summarizeBy: none
+		sourceColumn: metric_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_fr
+		dataType: string
+		lineageTag: cf68c0ff-a77a-4fde-b6d8-4536045dfce5
+		summarizeBy: none
+		sourceColumn: label_fr
+		sortByColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column statement
+		dataType: string
+		lineageTag: 0ddde86a-26ac-443c-91d3-5da19179989e
+		summarizeBy: none
+		sourceColumn: statement
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit
+		dataType: string
+		lineageTag: 4fe40ff5-5925-4ec0-9a5f-a87c608e5206
+		summarizeBy: none
+		sourceColumn: unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column definition
+		dataType: string
+		lineageTag: 62eab5e7-8659-4ade-ba3e-2784df39fd24
+		summarizeBy: none
+		sourceColumn: definition
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ebc5d22-dde1-4e50-8541-0a7f04fb0ee6
+		summarizeBy: none
+		sourceColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_metric = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_06_06-analyse-financiere.xlsx"), null, true),
+				    dim_metric_Sheet = Source{[Item="dim_metric",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(dim_metric_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"metric_key", type text}, {"label_fr", type text}, {"statement", type text}, {"unit", type text}, {"definition", type text}, {"sort_order", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

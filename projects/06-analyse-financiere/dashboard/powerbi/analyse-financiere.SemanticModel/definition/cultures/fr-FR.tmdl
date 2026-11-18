@@ -1,0 +1,368 @@
+cultureInfo fr-FR
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dim_ratio.label_fr": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ratio",
+			          "ConceptualProperty": "label_fr"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ratio": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ratio.category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ratio",
+			          "ConceptualProperty": "category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Famille": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ratio.formula": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ratio",
+			          "ConceptualProperty": "formula"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Formule": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ratio.definition": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ratio",
+			          "ConceptualProperty": "definition"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Définition": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mesures.tcac_chiffre_daffaires": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "TCAC chiffre d'affaires"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Croissance annuelle moyenne du CA": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mesures.chiffre_daffaires": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Chiffre d'affaires"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Chiffre d'affaires (dernier exercice)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mesures.free_cashflow": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Free cash-flow"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Free cash-flow": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mesures.roe": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "ROE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Rentabilité des capitaux (ROE)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mesures.résultat_net": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Résultat net"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Résultat net": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mesures.tcac_résultat_net": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "TCAC résultat net"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Croissance annuelle moyenne du résultat": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_metric.label_fr": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_metric",
+			          "ConceptualProperty": "label_fr"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Indicateur": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_metric.statement": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_metric",
+			          "ConceptualProperty": "statement"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "État financier": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_metric.definition": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_metric",
+			          "ConceptualProperty": "definition"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Définition": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_fiscal_year.label_fr": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_fiscal_year",
+			          "ConceptualProperty": "label_fr"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Exercice": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "financial_alerts.label_fr": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "financial_alerts",
+			          "ConceptualProperty": "label_fr"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Alerte": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "financial_alerts.status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "financial_alerts",
+			          "ConceptualProperty": "status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Statut": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "financial_alerts.definition": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "financial_alerts",
+			          "ConceptualProperty": "definition"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Explication": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

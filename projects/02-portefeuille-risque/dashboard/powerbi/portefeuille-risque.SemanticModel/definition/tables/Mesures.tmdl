@@ -1,0 +1,338 @@
+table Mesures
+	lineageTag: a1b2c3d4-0001-0001-0001-000000000001
+
+	measure 'Nb Actifs' = COUNTROWS(FILTER(VALUES(prices_long[ticker]), prices_long[ticker] <> "IDX"))
+		formatString: 0
+		displayFolder: 4. Comptages
+		lineageTag: a1b2c3d4-0001-0001-0001-000000000002
+
+	measure 'Nb Semaines' = DISTINCTCOUNT(prices_long[date])
+		formatString: 0
+		displayFolder: 4. Comptages
+		lineageTag: a1b2c3d4-0001-0001-0001-000000000012
+
+	measure 'Rendement Moyen Hebdo' = AVERAGEX(FILTER(prices_long, NOT ISBLANK(prices_long[rendement])), prices_long[rendement])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 2. Actifs
+		lineageTag: a1b2c3d4-0001-0001-0001-000000000003
+
+	measure Volatilite = STDEVX.P(FILTER(prices_long, NOT ISBLANK(prices_long[rendement])), prices_long[rendement])
+		formatString: 0.00%
+		displayFolder: 2. Actifs
+		lineageTag: a1b2c3d4-0001-0001-0001-000000000004
+
+	measure 'Perf IDX Cumulee' =
+			VAR FirstIDX = MINX(FILTER(prices_weekly_clean, prices_weekly_clean[date] = MINX(prices_weekly_clean, prices_weekly_clean[date])), prices_weekly_clean[IDX])
+			VAR LastIDX  = MINX(FILTER(prices_weekly_clean, prices_weekly_clean[date] = MAXX(prices_weekly_clean, prices_weekly_clean[date])), prices_weekly_clean[IDX])
+			RETURN DIVIDE(LastIDX - FirstIDX, FirstIDX)
+		formatString: 0.00%
+		displayFolder: 9. Divers
+		lineageTag: a1b2c3d4-0001-0001-0001-000000000005
+
+	measure 'Rendement Cumule' = SUMX(FILTER(prices_long, NOT ISBLANK(prices_long[rendement])), prices_long[rendement])
+		formatString: 0.00%
+		displayFolder: 9. Divers
+		lineageTag: a1b2c3d4-0001-0001-0001-000000000007
+
+	measure 'Sharpe Ratio' = DIVIDE([Rendement Moyen Hebdo], [Volatilite])
+		formatString: 0.00
+		displayFolder: 9. Divers
+		lineageTag: a1b2c3d4-0001-0001-0001-000000000008
+
+	measure 'Pire Semaine' = MINX(FILTER(prices_long, NOT ISBLANK(prices_long[rendement])), prices_long[rendement])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 3. Risque
+		lineageTag: a1b2c3d4-0001-0001-0001-000000000009
+
+	measure 'Pct Semaines Positives' =
+			DIVIDE(
+			    COUNTROWS(FILTER(prices_long, prices_long[rendement] > 0)),
+			    COUNTROWS(FILTER(prices_long, NOT ISBLANK(prices_long[rendement])))
+			)
+		formatString: 0.0%
+		displayFolder: 2. Actifs
+		lineageTag: a1b2c3d4-0001-0001-0001-000000000013
+
+	measure 'Contribution Actif' = DIVIDE([Rendement Cumule], CALCULATE([Rendement Cumule], ALL(prices_long[ticker])))
+		formatString: 0.00%
+		displayFolder: 9. Divers
+		lineageTag: a1b2c3d4-0001-0001-0001-000000000014
+
+	measure 'Meilleure Semaine' = MAXX(FILTER(prices_long, NOT ISBLANK(prices_long[rendement])), prices_long[rendement])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 3. Risque
+		lineageTag: a1b2c3d4-0001-0001-0001-000000000015
+
+	measure 'Perf Cumulée Actif' =
+			AVERAGEX(
+			    VALUES(prices_long[ticker]),
+			    CALCULATE(
+			        PRODUCTX(FILTER(prices_long, NOT ISBLANK(prices_long[rendement])), 1 + prices_long[rendement])
+			    ) - 1
+			)
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 2. Actifs
+		lineageTag: a1b2c3d4-0002-0001-0001-000000000001
+
+	measure 'Rendement Annualisé' =
+			AVERAGEX(
+			    VALUES(prices_long[ticker]),
+			    VAR _n = CALCULATE(COUNTROWS(FILTER(prices_long, NOT ISBLANK(prices_long[rendement]))))
+			    VAR _p = [Perf Cumulée Actif]
+			    RETURN IF(_n > 0, POWER(1 + _p, DIVIDE(52, _n)) - 1)
+			)
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 2. Actifs
+		lineageTag: a1b2c3d4-0002-0001-0001-000000000002
+
+	measure 'Volatilité Annualisée' = AVERAGEX(VALUES(prices_long[ticker]), [Volatilite] * SQRT(52))
+		formatString: 0.0%
+		displayFolder: 3. Risque
+		lineageTag: a1b2c3d4-0002-0001-0001-000000000003
+
+	measure 'Sharpe Annualisé' = DIVIDE([Rendement Annualisé], [Volatilité Annualisée])
+		formatString: 0.00
+		displayFolder: 3. Risque
+		lineageTag: a1b2c3d4-0002-0001-0001-000000000004
+
+	measure 'MDD Actif' =
+			VAR _t = ADDCOLUMNS(VALUES(prices_long[date]), "@c", CALCULATE(AVERAGE(prices_long[close])))
+			VAR _t2 =
+			    ADDCOLUMNS(
+			        _t,
+			        "@dd",
+			            VAR _d = prices_long[date]
+			            VAR _c = [@c]
+			            VAR _pk = MAXX(FILTER(_t, prices_long[date] <= _d), [@c])
+			            RETURN DIVIDE(_c, _pk) - 1
+			    )
+			RETURN MINX(_t2, [@dd])
+		formatString: 0.0%;-0.0%;0.0%
+		isHidden
+		displayFolder: 3. Risque
+		lineageTag: a1b2c3d4-0002-0001-0001-000000000005
+
+	measure 'Max Drawdown Actif' = MINX(VALUES(prices_long[ticker]), [MDD Actif])
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 3. Risque
+		lineageTag: a1b2c3d4-0002-0001-0001-000000000006
+
+	measure 'Actif Base 100' =
+			VAR _d = MAX(prices_long[date])
+			VAR _p =
+			    CALCULATE(
+			        PRODUCTX(FILTER(prices_long, NOT ISBLANK(prices_long[rendement])), 1 + prices_long[rendement]),
+			        FILTER(ALLSELECTED(prices_long[date]), prices_long[date] <= _d)
+			    )
+			RETURN 100 * COALESCE(_p, 1)
+		formatString: 0.0
+		displayFolder: 2. Actifs
+		lineageTag: a1b2c3d4-0002-0001-0001-000000000007
+
+	measure 'Rdt Hebdo Portefeuille' = CALCULATE(AVERAGE(prices_long[rendement]), KEEPFILTERS(prices_long[ticker] <> "IDX"))
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 1. Portefeuille
+		lineageTag: a1b2c3d4-0003-0001-0001-000000000001
+
+	measure 'Perf Portefeuille' =
+			VAR _t = FILTER(ADDCOLUMNS(VALUES(prices_long[date]), "@r", [Rdt Hebdo Portefeuille]), NOT ISBLANK([@r]))
+			RETURN IF(COUNTROWS(_t) > 0, PRODUCTX(_t, 1 + [@r]) - 1)
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 1. Portefeuille
+		lineageTag: a1b2c3d4-0003-0001-0001-000000000002
+
+	measure 'Perf Indice IDX' =
+			VAR _p =
+			    CALCULATE(
+			        PRODUCTX(FILTER(prices_long, NOT ISBLANK(prices_long[rendement])), 1 + prices_long[rendement]),
+			        prices_long[ticker] = "IDX"
+			    )
+			RETURN IF(NOT ISBLANK(_p), _p - 1)
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 1. Portefeuille
+		lineageTag: a1b2c3d4-0003-0001-0001-000000000003
+
+	measure 'Surperformance vs IDX' = [Perf Portefeuille] - [Perf Indice IDX]
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 1. Portefeuille
+		lineageTag: a1b2c3d4-0003-0001-0001-000000000004
+
+	measure 'Volatilité Portefeuille' =
+			VAR _t = FILTER(ADDCOLUMNS(VALUES(prices_long[date]), "@r", [Rdt Hebdo Portefeuille]), NOT ISBLANK([@r]))
+			RETURN STDEVX.S(_t, [@r]) * SQRT(52)
+		formatString: 0.0%
+		displayFolder: 1. Portefeuille
+		lineageTag: a1b2c3d4-0003-0001-0001-000000000005
+
+	measure 'Rendement Annualisé Portefeuille' =
+			VAR _n = COUNTROWS(FILTER(ADDCOLUMNS(VALUES(prices_long[date]), "@r", [Rdt Hebdo Portefeuille]), NOT ISBLANK([@r])))
+			RETURN IF(_n > 0, POWER(1 + [Perf Portefeuille], DIVIDE(52, _n)) - 1)
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 1. Portefeuille
+		lineageTag: a1b2c3d4-0003-0001-0001-000000000006
+
+	measure 'Sharpe Portefeuille' = DIVIDE([Rendement Annualisé Portefeuille], [Volatilité Portefeuille])
+		formatString: 0.00
+		displayFolder: 1. Portefeuille
+		lineageTag: a1b2c3d4-0003-0001-0001-000000000007
+
+	measure 'Portefeuille Base 100' =
+			VAR _d = MAX(prices_long[date])
+			RETURN 100 * (1 + CALCULATE([Perf Portefeuille], FILTER(ALLSELECTED(prices_long[date]), prices_long[date] <= _d)))
+		formatString: 0.0
+		displayFolder: 1. Portefeuille
+		lineageTag: a1b2c3d4-0003-0001-0001-000000000008
+
+	measure 'Indice IDX Base 100' =
+			VAR _d = MAX(prices_long[date])
+			RETURN 100 * (1 + CALCULATE([Perf Indice IDX], FILTER(ALLSELECTED(prices_long[date]), prices_long[date] <= _d)))
+		formatString: 0.0
+		displayFolder: 1. Portefeuille
+		lineageTag: a1b2c3d4-0003-0001-0001-000000000009
+
+	measure 'Drawdown Portefeuille' =
+			VAR _d = MAX(prices_long[date])
+			VAR _v = [Portefeuille Base 100]
+			VAR _pk = MAXX(FILTER(ALLSELECTED(prices_long[date]), prices_long[date] <= _d), [Portefeuille Base 100])
+			RETURN DIVIDE(_v, _pk) - 1
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 1. Portefeuille
+		lineageTag: a1b2c3d4-0003-0001-0001-000000000010
+
+	measure 'Max Drawdown Portefeuille' =
+			VAR _t = ADDCOLUMNS(VALUES(prices_long[date]), "@dd", [Drawdown Portefeuille])
+			RETURN MINX(_t, [@dd])
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 1. Portefeuille
+		lineageTag: a1b2c3d4-0003-0001-0001-000000000011
+
+	measure Corrélation =
+			VAR _a = SELECTEDVALUE(prices_long[ticker])
+			VAR _b = SELECTEDVALUE('Actif B'[Actif])
+			VAR _t =
+			    FILTER(
+			        ADDCOLUMNS(
+			            CALCULATETABLE(VALUES(prices_long[date]), REMOVEFILTERS(prices_long[ticker])),
+			            "@x", CALCULATE(MAX(prices_long[rendement]), REMOVEFILTERS(prices_long[ticker]), prices_long[ticker] = _a),
+			            "@y", CALCULATE(MAX(prices_long[rendement]), REMOVEFILTERS(prices_long[ticker]), prices_long[ticker] = _b)
+			        ),
+			        NOT ISBLANK([@x]) && NOT ISBLANK([@y])
+			    )
+			VAR _n = COUNTROWS(_t)
+			VAR _sx = SUMX(_t, [@x])
+			VAR _sy = SUMX(_t, [@y])
+			VAR _sxy = SUMX(_t, [@x] * [@y])
+			VAR _sxx = SUMX(_t, [@x] * [@x])
+			VAR _syy = SUMX(_t, [@y] * [@y])
+			RETURN
+			    IF(
+			        NOT ISBLANK(_a) && NOT ISBLANK(_b) && _n > 2,
+			        DIVIDE(_n * _sxy - _sx * _sy, SQRT((_n * _sxx - _sx * _sx) * (_n * _syy - _sy * _sy)))
+			    )
+		formatString: 0.00;-0.00;0.00
+		displayFolder: 3. Risque
+		lineageTag: a1b2c3d4-0004-0001-0001-000000000001
+
+	measure 'Corrélation vs IDX' =
+			VAR _a = SELECTEDVALUE(prices_long[ticker])
+			VAR _t =
+			    FILTER(
+			        ADDCOLUMNS(
+			            CALCULATETABLE(VALUES(prices_long[date]), REMOVEFILTERS(prices_long[ticker])),
+			            "@x", CALCULATE(MAX(prices_long[rendement]), REMOVEFILTERS(prices_long[ticker]), prices_long[ticker] = _a),
+			            "@y", CALCULATE(MAX(prices_long[rendement]), REMOVEFILTERS(prices_long[ticker]), prices_long[ticker] = "IDX")
+			        ),
+			        NOT ISBLANK([@x]) && NOT ISBLANK([@y])
+			    )
+			VAR _n = COUNTROWS(_t)
+			VAR _sx = SUMX(_t, [@x])
+			VAR _sy = SUMX(_t, [@y])
+			VAR _sxy = SUMX(_t, [@x] * [@y])
+			VAR _sxx = SUMX(_t, [@x] * [@x])
+			VAR _syy = SUMX(_t, [@y] * [@y])
+			RETURN
+			    IF(
+			        NOT ISBLANK(_a) && _a <> "IDX" && _n > 2,
+			        DIVIDE(_n * _sxy - _sx * _sy, SQRT((_n * _sxx - _sx * _sx) * (_n * _syy - _sy * _sy)))
+			    )
+		formatString: 0.00;-0.00;0.00
+		displayFolder: 3. Risque
+		lineageTag: a1b2c3d4-0004-0001-0001-000000000002
+
+	measure 'Beta vs IDX' =
+			VAR _a = SELECTEDVALUE(prices_long[ticker])
+			VAR _t =
+			    FILTER(
+			        ADDCOLUMNS(
+			            CALCULATETABLE(VALUES(prices_long[date]), REMOVEFILTERS(prices_long[ticker])),
+			            "@x", CALCULATE(MAX(prices_long[rendement]), REMOVEFILTERS(prices_long[ticker]), prices_long[ticker] = _a),
+			            "@y", CALCULATE(MAX(prices_long[rendement]), REMOVEFILTERS(prices_long[ticker]), prices_long[ticker] = "IDX")
+			        ),
+			        NOT ISBLANK([@x]) && NOT ISBLANK([@y])
+			    )
+			VAR _n = COUNTROWS(_t)
+			VAR _sx = SUMX(_t, [@x])
+			VAR _sy = SUMX(_t, [@y])
+			VAR _sxy = SUMX(_t, [@x] * [@y])
+			VAR _syy = SUMX(_t, [@y] * [@y])
+			RETURN IF(NOT ISBLANK(_a) && _a <> "IDX" && _n > 2, DIVIDE(_n * _sxy - _sx * _sy, _n * _syy - _sy * _sy))
+		formatString: 0.00;-0.00;0.00
+		displayFolder: 3. Risque
+		lineageTag: a1b2c3d4-0004-0001-0001-000000000003
+
+	measure 'Couleur Corrélation' =
+			VAR _c = [Corrélation]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_c), BLANK(),
+			        _c >= 0.999, "#D9D5E8",
+			        _c >= 0.6, "#F5B82E",
+			        _c >= 0.3, "#F9D98F",
+			        _c > -0.3, "#F6F5FA",
+			        "#B4AACF"
+			    )
+		displayFolder: 5. Mise en forme
+		lineageTag: a1b2c3d4-0005-0001-0001-000000000001
+
+	measure 'Couleur Perf' =
+			VAR _v = [Perf Cumulée Actif]
+			RETURN IF(ISBLANK(_v), BLANK(), IF(_v >= 0, "#F5B82E", "#8E83B5"))
+		displayFolder: 5. Mise en forme
+		lineageTag: a1b2c3d4-0005-0001-0001-000000000002
+
+	measure 'Couleur Perf Portefeuille' =
+			VAR _v = [Perf Portefeuille]
+			RETURN IF(ISBLANK(_v), BLANK(), IF(_v >= 0, "#F5B82E", "#8E83B5"))
+		displayFolder: 5. Mise en forme
+		lineageTag: a1b2c3d4-0005-0001-0001-000000000003
+
+	measure 'Couleur Texte Perf' =
+			VAR _v = [Perf Cumulée Actif]
+			RETURN IF(ISBLANK(_v), BLANK(), IF(_v >= 0, "#2E9E6B", "#D0533F"))
+		displayFolder: 5. Mise en forme
+		lineageTag: a1b2c3d4-0005-0001-0001-000000000004
+
+	measure 'Période analysée' =
+			"Du " & FORMAT(MIN(prices_long[date]), "dd/mm/yyyy") & " au " & FORMAT(MAX(prices_long[date]), "dd/mm/yyyy")
+			    & "  ·  " & FORMAT([Nb Semaines], "0") & " semaines"
+		displayFolder: 5. Mise en forme
+		lineageTag: a1b2c3d4-0005-0001-0001-000000000005
+
+	column _
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a1b2c3d4-0009-0001-0001-0000000000ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [_]
+
+		annotation SummarizationSetBy = User
+
+	partition Mesures = calculated
+		mode: import
+		source = DATATABLE("_", INTEGER, {{1}})
+
+	annotation PBI_ResultType = Table
+

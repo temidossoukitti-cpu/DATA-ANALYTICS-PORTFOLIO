@@ -1,0 +1,31 @@
+relationship AutoDetected_aa8d878f-a69e-4319-9887-bee547502e75
+	fromColumn: fact_transactions.amount_band_key
+	toColumn: dim_amount_band.amount_band_key
+
+relationship AutoDetected_530dc3f9-33ac-411a-bfad-e09bf22c9182
+	fromColumn: fact_model_test.amount_band_key
+	toColumn: dim_amount_band.amount_band_key
+
+relationship AutoDetected_ceed0510-9b8b-4f9e-8fb8-4c4f4aa2bbb8
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: fact_model_test.transaction_id
+	toColumn: fact_transactions.transaction_id
+
+relationship AutoDetected_2b79dc32-8f87-4639-bcdc-1418863a740d
+	fromColumn: fact_transactions.outcome_key
+	toColumn: dim_outcome.outcome_key
+
+relationship AutoDetected_012db22b-ca8a-475b-8670-050920486e13
+	fromColumn: fact_model_test.outcome_key
+	toColumn: dim_outcome.outcome_key
+
+relationship AutoDetected_5764a49b-c541-478a-a894-938a8a7ba941
+	fromColumn: fact_transactions.time_window_key
+	toColumn: dim_time_window.time_window_key
+
+relationship AutoDetected_5f25841d-f513-4754-8bb5-43e8aa265253
+	fromColumn: fact_model_test.time_window_key
+	toColumn: dim_time_window.time_window_key
+

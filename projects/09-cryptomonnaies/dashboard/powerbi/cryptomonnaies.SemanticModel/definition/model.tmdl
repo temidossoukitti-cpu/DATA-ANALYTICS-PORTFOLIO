@@ -1,0 +1,25 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["_temp_clean","A_lire"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table _temp_clean
+ref table DateTableTemplate_79c12d0c-41d0-4d38-9ef9-80d06d82a9f7
+ref table LocalDateTable_ed8c64a6-1241-49b7-bcb0-e9ce43485097
+ref table LocalDateTable_01c7d748-609f-4473-a741-02bfbc28042a
+ref table A_lire
+ref table Mesures
+ref table LocalDateTable_a3b0cafe-cb6f-4bb4-9dad-7034d331fc57
+
+ref cultureInfo fr-FR
+

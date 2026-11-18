@@ -1,0 +1,3716 @@
+table country_indicators
+	lineageTag: d29cbc2d-981f-47bc-9b97-1bbaaa6c8127
+
+	column countrynewwb
+		dataType: string
+		lineageTag: 4f849b5d-ecad-43cf-9b8c-c683dc2b3abe
+		summarizeBy: none
+		sourceColumn: countrynewwb
+
+		annotation SummarizationSetBy = Automatic
+
+	column codewb
+		dataType: string
+		lineageTag: b78d0f1d-aad6-456d-943c-8406246edccb
+		summarizeBy: none
+		sourceColumn: codewb
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a1f7b6d-1a5e-40b6-9c85-238681672e2c
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column pop_adult
+		dataType: int64
+		formatString: 0
+		lineageTag: 6318ae3b-d146-4cce-bd4f-1069032ef090
+		summarizeBy: sum
+		sourceColumn: pop_adult
+
+		annotation SummarizationSetBy = Automatic
+
+	column regionwb24_hi
+		dataType: string
+		lineageTag: 1b3fc352-ccfa-4395-98da-d21723a78cb4
+		summarizeBy: none
+		sourceColumn: regionwb24_hi
+
+		annotation SummarizationSetBy = Automatic
+
+	column incomegroupwb24
+		dataType: string
+		lineageTag: a377b244-e317-4e61-940f-056e58f6ea3d
+		summarizeBy: none
+		sourceColumn: incomegroupwb24
+
+		annotation SummarizationSetBy = Automatic
+
+	column group
+		dataType: string
+		lineageTag: b7602724-d9c6-4d74-ae38-ca93b1042c7f
+		summarizeBy: none
+		sourceColumn: group
+
+		annotation SummarizationSetBy = Automatic
+
+	column group2
+		dataType: string
+		lineageTag: bb1aea0a-d08c-4c4a-8186-1ed60a52af11
+		summarizeBy: none
+		sourceColumn: group2
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_t_d
+		dataType: double
+		lineageTag: f21a96b5-e78f-4727-af6d-34da9f71515c
+		summarizeBy: sum
+		sourceColumn: account_t_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fiaccount_t_d
+		dataType: double
+		lineageTag: 0bbc398a-45cb-4eb9-b960-32e748e138da
+		summarizeBy: sum
+		sourceColumn: fiaccount_t_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mobileaccount_t_d
+		dataType: double
+		lineageTag: dd8f60b3-1ed8-4317-9e86-bddddf6f2145
+		summarizeBy: sum
+		sourceColumn: mobileaccount_t_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column borrow_any_t_d
+		dataType: double
+		lineageTag: 929926ce-e64a-45e5-befe-e02d796d9410
+		summarizeBy: sum
+		sourceColumn: borrow_any_t_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin4_d
+		dataType: string
+		lineageTag: 7e6da969-1dcd-4a18-a16a-ae40299298d0
+		summarizeBy: none
+		sourceColumn: fin4_d
+
+		annotation SummarizationSetBy = Automatic
+
+	column dig_acc
+		dataType: string
+		lineageTag: 7eea4bbc-ddc9-47cd-9e85-fbe28cf42ffd
+		summarizeBy: none
+		sourceColumn: dig_acc
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11_2a
+		dataType: string
+		lineageTag: 146924c6-62e2-4f3f-ab94-cab29bfb994e
+		summarizeBy: none
+		sourceColumn: fin11_2a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11a
+		dataType: string
+		lineageTag: 3afc1373-6de9-4fb9-ad9d-084da062f166
+		summarizeBy: none
+		sourceColumn: fin11a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11b
+		dataType: string
+		lineageTag: 61c6a3de-895a-4480-be14-b5982df04cf4
+		summarizeBy: none
+		sourceColumn: fin11b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11c
+		dataType: string
+		lineageTag: e0aeba18-42c5-4795-b079-0f49abfa8bf4
+		summarizeBy: none
+		sourceColumn: fin11c
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11f
+		dataType: string
+		lineageTag: 0a420a8c-1ce1-469f-903f-03853005c52e
+		summarizeBy: none
+		sourceColumn: fin11f
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11d
+		dataType: string
+		lineageTag: 88e49f60-fbfa-4eed-ba73-a656e9b94e9c
+		summarizeBy: none
+		sourceColumn: fin11d
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11e
+		dataType: string
+		lineageTag: 823b3920-2864-4288-8f18-60f019ed9e3c
+		summarizeBy: none
+		sourceColumn: fin11e
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin14a
+		dataType: string
+		lineageTag: 034c224c-8dd1-4f35-912a-68f065e6251e
+		summarizeBy: none
+		sourceColumn: fin14a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin14b
+		dataType: string
+		lineageTag: 286fa1dd-ea26-42d6-8c29-b20b7314b4e3
+		summarizeBy: none
+		sourceColumn: fin14b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin14c
+		dataType: string
+		lineageTag: efea4f81-f673-4df1-8ace-9700c76c9d15
+		summarizeBy: none
+		sourceColumn: fin14c
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin14d
+		dataType: string
+		lineageTag: b3d1c32d-7a21-4e9f-871c-1139e9237656
+		summarizeBy: none
+		sourceColumn: fin14d
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13_1a
+		dataType: string
+		lineageTag: 7a29cc50-57f0-4568-91c1-39f3cb1cbfce
+		summarizeBy: none
+		sourceColumn: fin13_1a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13_1b
+		dataType: string
+		lineageTag: 42ad32fd-f777-45f5-a175-67a2158d446b
+		summarizeBy: none
+		sourceColumn: fin13_1b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin26a
+		dataType: string
+		lineageTag: c129b515-5de5-42a7-9100-0db6d4c6fc6f
+		summarizeBy: none
+		sourceColumn: fin26a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin26b
+		dataType: string
+		lineageTag: 28b5a930-7456-4816-9028-3f5d22e0f1cc
+		summarizeBy: none
+		sourceColumn: fin26b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin27a
+		dataType: string
+		lineageTag: beed2a4a-0265-4149-b9b5-9bdce215c1d5
+		summarizeBy: none
+		sourceColumn: fin27a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin27b
+		dataType: string
+		lineageTag: 67f5c2fe-2613-4d17-a501-43f21c086285
+		summarizeBy: none
+		sourceColumn: fin27b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin17f
+		dataType: string
+		lineageTag: fe09a0cd-8d19-45ff-843c-d07086e26471
+		summarizeBy: none
+		sourceColumn: fin17f
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin17a_17a1_d
+		dataType: double
+		lineageTag: 20c4b76b-765d-4496-bef9-e6eadbd78912
+		summarizeBy: sum
+		sourceColumn: fin17a_17a1_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin17a
+		dataType: double
+		lineageTag: 1eaffceb-e687-4c78-84b6-24701ba1f16d
+		summarizeBy: sum
+		sourceColumn: fin17a
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin17b
+		dataType: string
+		lineageTag: 47465e10-b541-4326-8678-8e7243059674
+		summarizeBy: none
+		sourceColumn: fin17b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin17c
+		dataType: double
+		lineageTag: 1fb10a1a-3acc-44d6-9405-6b77a95ef0c5
+		summarizeBy: sum
+		sourceColumn: fin17c
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin22d
+		dataType: double
+		lineageTag: d7c60840-00ca-486d-954d-597646df46d9
+		summarizeBy: sum
+		sourceColumn: fin22d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin22e
+		dataType: double
+		lineageTag: 0edda2bd-dfbf-46c8-83c8-552d7d3ef7a2
+		summarizeBy: sum
+		sourceColumn: fin22e
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin22a_22a1_22g_d
+		dataType: double
+		lineageTag: edfed7ad-3d75-4951-878f-3710b695fe3e
+		summarizeBy: sum
+		sourceColumn: fin22a_22a1_22g_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin22a
+		dataType: double
+		lineageTag: 0a70f2b1-5053-41b0-9b9b-ffb971e86291
+		summarizeBy: sum
+		sourceColumn: fin22a
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin22a_22g
+		dataType: double
+		lineageTag: 12989049-79a0-4f03-916b-5e87cfedea19
+		summarizeBy: sum
+		sourceColumn: fin22a_22g
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin22a_1
+		dataType: string
+		lineageTag: 78e78702-b673-429a-adae-fefa6f1eada6
+		summarizeBy: none
+		sourceColumn: fin22a_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin22b
+		dataType: double
+		lineageTag: 1837249c-1751-45c1-9a2a-93801decebd3
+		summarizeBy: sum
+		sourceColumn: fin22b
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin22c
+		dataType: string
+		lineageTag: b568aaf1-9c1f-4cb8-951b-6379b2f50fb1
+		summarizeBy: none
+		sourceColumn: fin22c
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24sav
+		dataType: string
+		lineageTag: b0527770-fe0a-4eca-b97f-c6fbb96b02ad
+		summarizeBy: none
+		sourceColumn: fin24sav
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24fam
+		dataType: string
+		lineageTag: 3965e65e-072e-44f6-ad8b-fd86941cfdaa
+		summarizeBy: none
+		sourceColumn: fin24fam
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24work
+		dataType: string
+		lineageTag: 180b0618-9882-4665-83a0-f6df15a5e815
+		summarizeBy: none
+		sourceColumn: fin24work
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24bor
+		dataType: string
+		lineageTag: 6cdd1384-14ff-4f3f-8cdf-7e4fb431f6f0
+		summarizeBy: none
+		sourceColumn: fin24bor
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24sell
+		dataType: string
+		lineageTag: 21b8fe76-28ed-4cb1-a234-8563717c5586
+		summarizeBy: none
+		sourceColumn: fin24sell
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24other
+		dataType: string
+		lineageTag: accad732-d66c-423a-8b36-9e13c9bee233
+		summarizeBy: none
+		sourceColumn: fin24other
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24aVD
+		dataType: string
+		lineageTag: 1f17d793-1d50-4cf9-b0e1-20da167c411c
+		summarizeBy: none
+		sourceColumn: fin24aVD
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24aSD
+		dataType: string
+		lineageTag: 07963ad0-f4bf-4ff1-a59b-87aeb556dc28
+		summarizeBy: none
+		sourceColumn: fin24aSD
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24aND
+		dataType: string
+		lineageTag: 5e344d5d-68b0-4eb4-a740-eb57aa85e1a3
+		summarizeBy: none
+		sourceColumn: fin24aND
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24aSD_ND
+		dataType: string
+		lineageTag: 2134b836-7dc6-433c-83fe-25236156ecd5
+		summarizeBy: none
+		sourceColumn: fin24aSD_ND
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24aP
+		dataType: double
+		lineageTag: 19ae4778-cf00-4a12-b8bf-be07b968bfcc
+		summarizeBy: sum
+		sourceColumn: fin24aP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin24aN
+		dataType: double
+		lineageTag: cdf32d34-8cc0-4154-856b-8a342bbac3d1
+		summarizeBy: sum
+		sourceColumn: fin24aN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin24sav_SD_ND
+		dataType: string
+		lineageTag: c6bdbc58-7d96-4b3d-aafa-233cc8d76a05
+		summarizeBy: none
+		sourceColumn: fin24sav_SD_ND
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24fam_SD_ND
+		dataType: string
+		lineageTag: 9a4f6153-b651-4f14-b471-0037ab480e98
+		summarizeBy: none
+		sourceColumn: fin24fam_SD_ND
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24work_SD_ND
+		dataType: string
+		lineageTag: b93bb02a-3465-4d84-a361-251ee9ea4b92
+		summarizeBy: none
+		sourceColumn: fin24work_SD_ND
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24bor_SD_ND
+		dataType: string
+		lineageTag: a80bfdb5-81fe-4895-86de-68c6e8168497
+		summarizeBy: none
+		sourceColumn: fin24bor_SD_ND
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24sell_SD_ND
+		dataType: string
+		lineageTag: 7319ea93-ca3e-4cb4-b9c2-738801188966
+		summarizeBy: none
+		sourceColumn: fin24sell_SD_ND
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24other_SD_ND
+		dataType: string
+		lineageTag: d198f89c-3468-4253-a7e5-9bd8dd88ade7
+		summarizeBy: none
+		sourceColumn: fin24other_SD_ND
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24sav_VD
+		dataType: string
+		lineageTag: 62df066d-f9ce-4006-87c2-c36e7ecb51af
+		summarizeBy: none
+		sourceColumn: fin24sav_VD
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24fam_VD
+		dataType: string
+		lineageTag: 1c8e2d52-7824-4eaf-8ae3-a3419bd7f376
+		summarizeBy: none
+		sourceColumn: fin24fam_VD
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24work_VD
+		dataType: string
+		lineageTag: 1486ddc9-53d7-401e-90f1-c647f1d024ac
+		summarizeBy: none
+		sourceColumn: fin24work_VD
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24bor_VD
+		dataType: string
+		lineageTag: b656c3f2-9f57-460c-af30-090b183896a4
+		summarizeBy: none
+		sourceColumn: fin24bor_VD
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24sell_VD
+		dataType: string
+		lineageTag: 708c6303-6886-4184-bc9f-1b930952cb4a
+		summarizeBy: none
+		sourceColumn: fin24sell_VD
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24other_VD
+		dataType: string
+		lineageTag: a6386854-666a-4bdf-aa1b-7085a3157e2c
+		summarizeBy: none
+		sourceColumn: fin24other_VD
+
+		annotation SummarizationSetBy = Automatic
+
+	column fh1
+		dataType: string
+		lineageTag: 4670ada9-7b2f-4c7a-8a90-93ff40cbd066
+		summarizeBy: none
+		sourceColumn: fh1
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin28
+		dataType: string
+		lineageTag: f6b4d405-fae3-4195-924e-83b0ccc279ca
+		summarizeBy: none
+		sourceColumn: fin28
+
+		annotation SummarizationSetBy = Automatic
+
+	column fh2
+		dataType: string
+		lineageTag: 20428981-7401-4600-b74e-61ec448d2b56
+		summarizeBy: none
+		sourceColumn: fh2
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin29
+		dataType: string
+		lineageTag: 6b142066-153f-41eb-8e25-ab2aa35d9eb2
+		summarizeBy: none
+		sourceColumn: fin29
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin31a_31b
+		dataType: double
+		lineageTag: 9c7b8c38-86c0-4d6a-9107-afa767661350
+		summarizeBy: sum
+		sourceColumn: fin31a_31b
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin30
+		dataType: double
+		lineageTag: c1eb4dbf-54bd-4a85-97d9-8b9cb2d1f3eb
+		summarizeBy: sum
+		sourceColumn: fin30
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin31a
+		dataType: double
+		lineageTag: f71a251e-2b4e-435a-a388-7c5b27421d8f
+		summarizeBy: sum
+		sourceColumn: fin31a
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin31b
+		dataType: double
+		lineageTag: c92e2aff-4480-4e84-bd38-9e103e45d5ba
+		summarizeBy: sum
+		sourceColumn: fin31b
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin31d
+		dataType: double
+		lineageTag: 99b8e580-caa2-4d42-98e3-3a89ecd3da9c
+		summarizeBy: sum
+		sourceColumn: fin31d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_33_34a
+		dataType: double
+		lineageTag: 52564762-9708-47a5-ac2d-70663b5950f3
+		summarizeBy: sum
+		sourceColumn: fin32_33_34a
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_33_34b
+		dataType: double
+		lineageTag: 2edda7e4-ebd6-4764-81ba-0136fb5fcbb8
+		summarizeBy: sum
+		sourceColumn: fin32_33_34b
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_33_34c
+		dataType: double
+		lineageTag: d5e65bc5-2781-416e-ab95-da7a6612d7de
+		summarizeBy: sum
+		sourceColumn: fin32_33_34c
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_33_34d
+		dataType: double
+		lineageTag: 605762eb-ce02-458b-aee4-f8d679174926
+		summarizeBy: sum
+		sourceColumn: fin32_33_34d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_33_acc
+		dataType: double
+		lineageTag: 650bcf09-3c9e-4364-97a4-b332bb62892b
+		summarizeBy: sum
+		sourceColumn: fin32_33_acc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_33
+		dataType: double
+		lineageTag: 785319ba-7c1d-4387-a645-a1a02c14d58c
+		summarizeBy: sum
+		sourceColumn: fin32_33
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_n33_34a
+		dataType: double
+		lineageTag: e6b7c48a-25b9-4e41-81ac-32ac4ac82c18
+		summarizeBy: sum
+		sourceColumn: fin32_n33_34a
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_n33_34b
+		dataType: double
+		lineageTag: bec82cb8-a824-41c0-9a2c-2de3dd12dc7d
+		summarizeBy: sum
+		sourceColumn: fin32_n33_34b
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_n33_34c
+		dataType: double
+		lineageTag: 7e606726-fc98-469f-90a9-c430ce180cc9
+		summarizeBy: sum
+		sourceColumn: fin32_n33_34c
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_n33_34d
+		dataType: double
+		lineageTag: 4154c55c-ccd2-44da-8d03-c8e34a4a769b
+		summarizeBy: sum
+		sourceColumn: fin32_n33_34d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_n33_acc
+		dataType: double
+		lineageTag: 8de6ba4e-e298-4fe1-bcc0-b26b773ebb05
+		summarizeBy: sum
+		sourceColumn: fin32_n33_acc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_n33
+		dataType: double
+		lineageTag: 80c2cf1c-9236-44ef-8060-227511a32fc8
+		summarizeBy: sum
+		sourceColumn: fin32_n33
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32
+		dataType: double
+		lineageTag: c1a92a64-febc-4864-88c8-e262d75e7d65
+		summarizeBy: sum
+		sourceColumn: fin32
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_acc
+		dataType: double
+		lineageTag: 7564a177-86ce-481b-8c39-2292f576d2e9
+		summarizeBy: sum
+		sourceColumn: fin32_acc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin34a
+		dataType: double
+		lineageTag: bf0cbacd-9259-41b9-adb9-799167c42cc2
+		summarizeBy: sum
+		sourceColumn: fin34a
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin34b
+		dataType: double
+		lineageTag: b5499b48-eb2c-4324-b595-998e5893d97d
+		summarizeBy: sum
+		sourceColumn: fin34b
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin34c
+		dataType: double
+		lineageTag: 7dac6ab5-5211-494b-beaa-2297770d4f5c
+		summarizeBy: sum
+		sourceColumn: fin34c
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin34d
+		dataType: double
+		lineageTag: 0159cba9-dcba-483c-b0c6-825eaded9405
+		summarizeBy: sum
+		sourceColumn: fin34d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin37_38_39a
+		dataType: string
+		lineageTag: 46d47f66-9d6a-409f-8a2b-2339526b562f
+		summarizeBy: none
+		sourceColumn: fin37_38_39a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_38_39b
+		dataType: string
+		lineageTag: eb2fe20f-08e3-49d8-9646-80618f72543d
+		summarizeBy: none
+		sourceColumn: fin37_38_39b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_38_39c
+		dataType: string
+		lineageTag: 7aeef9a5-8677-4d4a-9da5-a49789dd5493
+		summarizeBy: none
+		sourceColumn: fin37_38_39c
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_38_39d
+		dataType: string
+		lineageTag: e89b41b6-cf15-420a-8ccc-a66c32c1a946
+		summarizeBy: none
+		sourceColumn: fin37_38_39d
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_38_39_acc
+		dataType: string
+		lineageTag: 53fd7fb6-0aab-46c2-9004-09f3749bd333
+		summarizeBy: none
+		sourceColumn: fin37_38_39_acc
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_38
+		dataType: string
+		lineageTag: b745f886-80e2-4eca-9e02-608a11d6cb7a
+		summarizeBy: none
+		sourceColumn: fin37_38
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_39a
+		dataType: double
+		lineageTag: aebd1905-8f62-4460-b62c-400e05a3f7e5
+		summarizeBy: sum
+		sourceColumn: fin37_39a
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin37_39b
+		dataType: double
+		lineageTag: a05d9aa1-7db9-4f2d-9300-68e74120a808
+		summarizeBy: sum
+		sourceColumn: fin37_39b
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin37_39c
+		dataType: double
+		lineageTag: 04f2973c-3acd-4ae0-bb9a-55b8215abda3
+		summarizeBy: sum
+		sourceColumn: fin37_39c
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin37_39d
+		dataType: double
+		lineageTag: f63411bb-d5b5-4382-a37b-ac9eb975788e
+		summarizeBy: sum
+		sourceColumn: fin37_39d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin37_39_acc
+		dataType: double
+		lineageTag: 21f92d9c-2008-44e2-9726-70097adc1ace
+		summarizeBy: sum
+		sourceColumn: fin37_39_acc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin37
+		dataType: double
+		lineageTag: 131950f4-49ed-4ebb-b71d-9c2bb47b0215
+		summarizeBy: sum
+		sourceColumn: fin37
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin38_39a
+		dataType: string
+		lineageTag: daa04108-3074-43f2-8899-5ce7357018e6
+		summarizeBy: none
+		sourceColumn: fin38_39a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin38_39b
+		dataType: string
+		lineageTag: d986c7dd-649d-4839-bc74-63034acb5a81
+		summarizeBy: none
+		sourceColumn: fin38_39b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin38_39c
+		dataType: string
+		lineageTag: 2699bed9-4566-41a4-8730-cf960cce5494
+		summarizeBy: none
+		sourceColumn: fin38_39c
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin38_39d
+		dataType: string
+		lineageTag: 95e84988-ebc3-40c2-bf39-d541adcf6b88
+		summarizeBy: none
+		sourceColumn: fin38_39d
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin38_39_acc
+		dataType: string
+		lineageTag: 435f7af4-8ab3-48e3-be2f-6fb3f8345582
+		summarizeBy: none
+		sourceColumn: fin38_39_acc
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin38
+		dataType: string
+		lineageTag: ada463a6-993c-4c78-9541-08eaefccbba8
+		summarizeBy: none
+		sourceColumn: fin38
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin2_t_d
+		dataType: double
+		lineageTag: 5f52b206-033f-48f4-be25-62ec21a92513
+		summarizeBy: sum
+		sourceColumn: fin2_t_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin42
+		dataType: double
+		lineageTag: 5c482940-bad3-4d35-94c3-87ab424914d7
+		summarizeBy: sum
+		sourceColumn: fin42
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin42_acc
+		dataType: double
+		lineageTag: cff219a8-26e6-4c8f-993e-4b7f429a0fa8
+		summarizeBy: sum
+		sourceColumn: fin42_acc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin43a
+		dataType: double
+		lineageTag: 78a26c4c-41dd-4b72-945f-e8f8e04f35be
+		summarizeBy: sum
+		sourceColumn: fin43a
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin43b
+		dataType: string
+		lineageTag: 9b385520-d43e-4eca-87a7-4001ece4919e
+		summarizeBy: none
+		sourceColumn: fin43b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin43c
+		dataType: double
+		lineageTag: 66525db2-93ff-48bd-93a9-fbd32ed6abaa
+		summarizeBy: sum
+		sourceColumn: fin43c
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin43d
+		dataType: string
+		lineageTag: 7330e35f-5de7-4b12-a149-3318dd028cdc
+		summarizeBy: none
+		sourceColumn: fin43d
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin45a
+		dataType: string
+		lineageTag: 4f1faeb6-0fda-4a5c-80a6-209cc48f8030
+		summarizeBy: none
+		sourceColumn: fin45a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin45c
+		dataType: string
+		lineageTag: f3567cac-02a5-4948-a7ea-c2bdb48d8f01
+		summarizeBy: none
+		sourceColumn: fin45c
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin45d
+		dataType: string
+		lineageTag: dafa1d1d-e424-402c-93e0-628c4cc841cc
+		summarizeBy: none
+		sourceColumn: fin45d
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin45e
+		dataType: string
+		lineageTag: 74fee23e-62ce-421d-baf6-c6467f457171
+		summarizeBy: none
+		sourceColumn: fin45e
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin45b
+		dataType: string
+		lineageTag: dd762ba3-b990-45d2-82fc-5fcf7eeba464
+		summarizeBy: none
+		sourceColumn: fin45b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e2
+		dataType: string
+		lineageTag: a76db272-e520-48df-900e-c82af00784e1
+		summarizeBy: none
+		sourceColumn: fin25e2
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin9b
+		dataType: string
+		lineageTag: e1e524cb-48f5-46e1-8eac-a65a97a28dee
+		summarizeBy: none
+		sourceColumn: fin9b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin10
+		dataType: double
+		lineageTag: 24b90c65-61ea-435b-993d-7b11c2748f69
+		summarizeBy: sum
+		sourceColumn: fin10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin22g
+		dataType: double
+		lineageTag: 249edf79-2a0c-49b6-ac10-442b5e826a9f
+		summarizeBy: sum
+		sourceColumn: fin22g
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin22h
+		dataType: string
+		lineageTag: 4c28bb8b-3335-4a2b-b7c7-5e55a6508849
+		summarizeBy: none
+		sourceColumn: fin22h
+
+		annotation SummarizationSetBy = Automatic
+
+	column inactive_t_d
+		dataType: double
+		lineageTag: 961ac59c-a057-453f-ab1a-d8c3a825b4ae
+		summarizeBy: sum
+		sourceColumn: inactive_t_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fing2p_acc
+		dataType: string
+		lineageTag: b5dfb131-a6da-44d5-9f30-f320f9362602
+		summarizeBy: none
+		sourceColumn: fing2p_acc
+
+		annotation SummarizationSetBy = Automatic
+
+	column fing2p_card
+		dataType: double
+		lineageTag: 81e7d259-0946-4d87-aa98-53fbecee3db6
+		summarizeBy: sum
+		sourceColumn: fing2p_card
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fing2p_cash
+		dataType: string
+		lineageTag: 667fd734-9c97-44d0-a77c-e06dc3310f21
+		summarizeBy: none
+		sourceColumn: fing2p_cash
+
+		annotation SummarizationSetBy = Automatic
+
+	column fing2p_fin
+		dataType: double
+		lineageTag: a65d9a75-c6eb-4a84-8e59-c9737b54d618
+		summarizeBy: sum
+		sourceColumn: fing2p_fin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fing2p_mob
+		dataType: double
+		lineageTag: 9d96ea9c-e774-4da4-bb32-3bc0fbe0501b
+		summarizeBy: sum
+		sourceColumn: fing2p_mob
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fing2p
+		dataType: string
+		lineageTag: 16aba16f-498b-4e10-8859-344fdbb8c13b
+		summarizeBy: none
+		sourceColumn: fing2p
+
+		annotation SummarizationSetBy = Automatic
+
+	column g20_made
+		dataType: double
+		lineageTag: 431c349f-1840-4ae5-8714-92330a0b67b7
+		summarizeBy: sum
+		sourceColumn: g20_made
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column g20_received
+		dataType: double
+		lineageTag: d7a50181-b922-4aed-b69c-ceb415467b5e
+		summarizeBy: sum
+		sourceColumn: g20_received
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column g20_any
+		dataType: double
+		lineageTag: 6d50b9ad-575d-43ae-8f88-b2a677cdda62
+		summarizeBy: sum
+		sourceColumn: g20_any
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column merchant_pay
+		dataType: string
+		lineageTag: 7c625eff-999f-4569-b948-8aa4d5f59e93
+		summarizeBy: none
+		sourceColumn: merchant_pay
+
+		annotation SummarizationSetBy = Automatic
+
+	column save_any_t_d
+		dataType: double
+		lineageTag: 4682d371-dc1a-4fa3-867d-39538139d2e3
+		summarizeBy: sum
+		sourceColumn: save_any_t_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin11_1
+		dataType: string
+		lineageTag: 0cf1cf27-c73c-4b5d-ac28-92c20e94c287
+		summarizeBy: none
+		sourceColumn: fin11_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin5w
+		dataType: string
+		lineageTag: 89b754ec-bdd0-4a07-98df-b5065fedda2f
+		summarizeBy: none
+		sourceColumn: fin5w
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin5m
+		dataType: string
+		lineageTag: 50e336c8-c729-4854-95ef-e115d97612c4
+		summarizeBy: none
+		sourceColumn: fin5m
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin5lm
+		dataType: string
+		lineageTag: 5214a4f2-2fea-4fd5-b99a-83a7a9264d7c
+		summarizeBy: none
+		sourceColumn: fin5lm
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin5n
+		dataType: string
+		lineageTag: 982e84fe-3e90-4d35-8d81-ba15d4776eaa
+		summarizeBy: none
+		sourceColumn: fin5n
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin6w
+		dataType: string
+		lineageTag: d7183908-9640-4eab-95a1-3250e9a85684
+		summarizeBy: none
+		sourceColumn: fin6w
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin6m
+		dataType: string
+		lineageTag: 5bb3624d-5591-4d35-9071-cfb1223b5fb7
+		summarizeBy: none
+		sourceColumn: fin6m
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin6lm
+		dataType: string
+		lineageTag: fad1893a-aeed-4c21-94c6-ebdc3908e84b
+		summarizeBy: none
+		sourceColumn: fin6lm
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin6n
+		dataType: string
+		lineageTag: 5fd63cc5-b332-41ee-8568-7cffe746e241
+		summarizeBy: none
+		sourceColumn: fin6n
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11_0
+		dataType: string
+		lineageTag: a55756d5-427e-47ec-b8c7-7da1730a7bc4
+		summarizeBy: none
+		sourceColumn: fin11_0
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin9a
+		dataType: string
+		lineageTag: ef03c49a-81f8-479f-b787-43c6da13ca27
+		summarizeBy: none
+		sourceColumn: fin9a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin17dw
+		dataType: string
+		lineageTag: 7e7424f4-c2b4-498d-a5a5-5a99dc283b2c
+		summarizeBy: none
+		sourceColumn: fin17dw
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin17dm
+		dataType: string
+		lineageTag: c167f8eb-a31a-4e9e-afb9-789378312db8
+		summarizeBy: none
+		sourceColumn: fin17dm
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin17dlm
+		dataType: string
+		lineageTag: da25e581-5124-417a-8157-f673510c4b3b
+		summarizeBy: none
+		sourceColumn: fin17dlm
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin17e
+		dataType: string
+		lineageTag: fd65a8d8-6395-4309-99f8-82f2d4a9f992
+		summarizeBy: none
+		sourceColumn: fin17e
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin7
+		dataType: string
+		lineageTag: ae21de4b-0aa2-4607-b97b-1d638a8ba077
+		summarizeBy: none
+		sourceColumn: fin7
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin3
+		dataType: string
+		lineageTag: 43295ca7-4363-4596-b686-0a07cb65cf2d
+		summarizeBy: none
+		sourceColumn: fin3
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin19
+		dataType: string
+		lineageTag: 7bf7d81b-db8f-4aa1-a701-ca7052981e63
+		summarizeBy: none
+		sourceColumn: fin19
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin20
+		dataType: string
+		lineageTag: 7b940280-622d-42fe-b437-51f590f824ff
+		summarizeBy: none
+		sourceColumn: fin20
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin21
+		dataType: string
+		lineageTag: a1dcfd5a-95d6-4bce-9825-6a27e988a0aa
+		summarizeBy: none
+		sourceColumn: fin21
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24ba
+		dataType: string
+		lineageTag: 270c4cf4-0f17-4405-8f91-68310594919a
+		summarizeBy: none
+		sourceColumn: fin24ba
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24bb
+		dataType: string
+		lineageTag: 15bc3c92-2653-4d7a-b212-28e0766e0483
+		summarizeBy: none
+		sourceColumn: fin24bb
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24bc
+		dataType: string
+		lineageTag: 9cc39696-71cd-4dc5-a92a-dea9b23496b1
+		summarizeBy: none
+		sourceColumn: fin24bc
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24bd
+		dataType: string
+		lineageTag: 89165cb0-2e69-46f3-a61f-da0e86cf9d8f
+		summarizeBy: none
+		sourceColumn: fin24bd
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24c
+		dataType: string
+		lineageTag: 1b87b23e-0db3-49be-a586-48ba80bfdaef
+		summarizeBy: none
+		sourceColumn: fin24c
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24d1
+		dataType: string
+		lineageTag: 24261475-4ea3-42e9-998b-dea29155dc2f
+		summarizeBy: none
+		sourceColumn: fin24d1
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24d2
+		dataType: string
+		lineageTag: 44fd728c-bad2-4052-a492-b1b8fb7c856b
+		summarizeBy: none
+		sourceColumn: fin24d2
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24d3
+		dataType: string
+		lineageTag: a32ec595-ef67-4644-8e04-7158aab45c48
+		summarizeBy: none
+		sourceColumn: fin24d3
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e1
+		dataType: string
+		lineageTag: 5a312623-f41a-4187-9aad-055631ffad27
+		summarizeBy: none
+		sourceColumn: fin25e1
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e2b
+		dataType: string
+		lineageTag: be3f18a2-bae5-4ef4-b55b-7793db578fdb
+		summarizeBy: none
+		sourceColumn: fin25e2b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e3w
+		dataType: string
+		lineageTag: 88be11fd-e34c-4ee7-b4d2-3dd0473b660e
+		summarizeBy: none
+		sourceColumn: fin25e3w
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e3m
+		dataType: string
+		lineageTag: 9209b409-2e85-4b4c-abdf-31a0a1fa91b2
+		summarizeBy: none
+		sourceColumn: fin25e3m
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e3lm
+		dataType: string
+		lineageTag: fd0e723d-1e66-479b-a858-6eac8fe8099e
+		summarizeBy: none
+		sourceColumn: fin25e3lm
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e4a
+		dataType: string
+		lineageTag: 92f85166-6196-40b7-9a23-8cc33ba5c918
+		summarizeBy: none
+		sourceColumn: fin25e4a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e4b
+		dataType: string
+		lineageTag: 8b5f46ff-2acf-46c5-8772-249d377019a2
+		summarizeBy: none
+		sourceColumn: fin25e4b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e4c
+		dataType: string
+		lineageTag: 2f75a648-dfa2-4cac-ac24-fefc6e622c0f
+		summarizeBy: none
+		sourceColumn: fin25e4c
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e4d
+		dataType: string
+		lineageTag: 0dc91cdb-4ae5-4964-8ce6-004bc42381f5
+		summarizeBy: none
+		sourceColumn: fin25e4d
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e4e
+		dataType: string
+		lineageTag: 67606990-1f49-43ee-9411-e1407d389d70
+		summarizeBy: none
+		sourceColumn: fin25e4e
+
+		annotation SummarizationSetBy = Automatic
+
+	column fh2a
+		dataType: string
+		lineageTag: 66dc8d2d-b75d-47df-82b5-e6a3310a8fad
+		summarizeBy: none
+		sourceColumn: fh2a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin31c
+		dataType: string
+		lineageTag: e2e0d270-ca46-4890-9966-ba6d782a3b8b
+		summarizeBy: none
+		sourceColumn: fin31c
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin36a
+		dataType: string
+		lineageTag: 7a79e636-e7bf-4946-82b8-4ca909edb731
+		summarizeBy: none
+		sourceColumn: fin36a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin36b
+		dataType: string
+		lineageTag: fa279208-1100-4420-af69-fa880b694c25
+		summarizeBy: none
+		sourceColumn: fin36b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin40a
+		dataType: string
+		lineageTag: 6c4b93bc-4633-4788-9155-41936d240693
+		summarizeBy: none
+		sourceColumn: fin40a
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin40b
+		dataType: string
+		lineageTag: 106a882d-c9e7-47f7-80e8-cbbe78095e95
+		summarizeBy: none
+		sourceColumn: fin40b
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin36Aa
+		dataType: int64
+		formatString: 0
+		lineageTag: 7459aa3b-93da-47b4-ac40-a302c6fb18e6
+		summarizeBy: sum
+		sourceColumn: fin36Aa
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin36Ab
+		dataType: int64
+		formatString: 0
+		lineageTag: 150091a8-8be0-4e62-ad6b-dab384c3f583
+		summarizeBy: sum
+		sourceColumn: fin36Ab
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin8
+		dataType: string
+		lineageTag: bc7e622d-273c-4193-86fb-9c2eb2a45456
+		summarizeBy: none
+		sourceColumn: fin8
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13aw
+		dataType: string
+		lineageTag: b104bbb1-e062-4f90-8119-e86400c17412
+		summarizeBy: none
+		sourceColumn: fin13aw
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13am
+		dataType: string
+		lineageTag: 0d39e40a-183d-4569-965d-7d68598bcbc6
+		summarizeBy: none
+		sourceColumn: fin13am
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13alm
+		dataType: string
+		lineageTag: 5489c0b6-589a-4f95-af9a-be5daf924396
+		summarizeBy: none
+		sourceColumn: fin13alm
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13an
+		dataType: string
+		lineageTag: 8a7cae6c-a1a2-4c2c-b428-6e230544380f
+		summarizeBy: none
+		sourceColumn: fin13an
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13bw
+		dataType: string
+		lineageTag: db897967-92ec-40fc-bb48-c1701f3d180a
+		summarizeBy: none
+		sourceColumn: fin13bw
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13bm
+		dataType: string
+		lineageTag: 6d86c3b0-4463-4e2d-9ac5-274838c7da66
+		summarizeBy: none
+		sourceColumn: fin13bm
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13blm
+		dataType: string
+		lineageTag: d5de494b-12ee-44ac-886a-964b6bb3400b
+		summarizeBy: none
+		sourceColumn: fin13blm
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13bn
+		dataType: string
+		lineageTag: 30f40104-dd8c-44ae-b1ed-80924738a9ec
+		summarizeBy: none
+		sourceColumn: fin13bn
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13cw
+		dataType: string
+		lineageTag: 1dec0057-38fc-4ce9-8d28-2f26b71dee11
+		summarizeBy: none
+		sourceColumn: fin13cw
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13cm
+		dataType: string
+		lineageTag: c7a69698-ebdf-4e27-9fa0-7ed13336e263
+		summarizeBy: none
+		sourceColumn: fin13cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13clm
+		dataType: string
+		lineageTag: d9161e7e-2623-4f9d-9d82-e717282963d3
+		summarizeBy: none
+		sourceColumn: fin13clm
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13cn
+		dataType: string
+		lineageTag: 37773480-d228-4fc1-bdcd-07cd95805f7e
+		summarizeBy: none
+		sourceColumn: fin13cn
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13e
+		dataType: string
+		lineageTag: 2c405f0b-d5d6-447d-8007-f1a43615f1ba
+		summarizeBy: none
+		sourceColumn: fin13e
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13f
+		dataType: string
+		lineageTag: 6a245826-1b90-4466-b4d1-06dacd71d235
+		summarizeBy: none
+		sourceColumn: fin13f
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13f_1
+		dataType: string
+		lineageTag: 2e9cd483-d73a-4aa3-aaf9-f195c4966717
+		summarizeBy: none
+		sourceColumn: fin13f_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin15
+		dataType: string
+		lineageTag: 7f3a224c-05a9-47d0-a25d-0dae3cf1b232
+		summarizeBy: none
+		sourceColumn: fin15
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin16
+		dataType: string
+		lineageTag: 61c0da1f-418d-4bf9-bde4-33ae333a1f71
+		summarizeBy: none
+		sourceColumn: fin16
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin22f
+		dataType: string
+		lineageTag: 58f6912d-834f-4647-90c2-163773ff8ec3
+		summarizeBy: none
+		sourceColumn: fin22f
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin41
+		dataType: string
+		lineageTag: 4c54b996-a192-4796-b2ec-e12842e71e70
+		summarizeBy: none
+		sourceColumn: fin41
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin35
+		dataType: string
+		lineageTag: e69d37a0-837a-4d01-9d50-f65a035abb8f
+		summarizeBy: none
+		sourceColumn: fin35
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin44
+		dataType: string
+		lineageTag: 6c46394f-4937-4bf6-9020-c69ff5013aba
+		summarizeBy: none
+		sourceColumn: fin44
+
+		annotation SummarizationSetBy = Automatic
+
+	column fh1_fh2
+		dataType: string
+		lineageTag: 70110b8e-1044-4d22-8ac9-9b1df28a4745
+		summarizeBy: none
+		sourceColumn: fh1_fh2
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin28_29
+		dataType: string
+		lineageTag: 5e8cab2f-432f-4976-8ed4-204f6b397557
+		summarizeBy: none
+		sourceColumn: fin28_29
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin31d_s
+		dataType: double
+		lineageTag: 43837a92-2165-44d6-934b-d4ffebb218ca
+		summarizeBy: sum
+		sourceColumn: fin31d_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_n33_34c_s
+		dataType: double
+		lineageTag: 93f587ef-b2ec-4d9b-a2de-404535f66b5d
+		summarizeBy: sum
+		sourceColumn: fin32_n33_34c_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin34c_s
+		dataType: double
+		lineageTag: ef3e1669-8712-431f-900d-f7dd9969ddde
+		summarizeBy: sum
+		sourceColumn: fin34c_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin43c_s
+		dataType: double
+		lineageTag: 2a3e5b5a-0eee-4c73-9d33-ae5c363bdfa2
+		summarizeBy: sum
+		sourceColumn: fin43c_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_acc_s
+		dataType: double
+		lineageTag: 1d89e6e4-3209-499f-9173-18dfc1cd84cc
+		summarizeBy: sum
+		sourceColumn: fin32_acc_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin34a_s
+		dataType: double
+		lineageTag: 0dbed352-ac4e-4d82-95e1-378e431778b8
+		summarizeBy: sum
+		sourceColumn: fin34a_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_33_acc_s
+		dataType: double
+		lineageTag: dfd389cd-5dee-461f-9b4c-b3f8d670dbe1
+		summarizeBy: sum
+		sourceColumn: fin32_33_acc_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column inactive_t_d_s
+		dataType: double
+		lineageTag: bd1ba34e-ea2d-42c0-ab2c-aa2e6c6730bd
+		summarizeBy: sum
+		sourceColumn: inactive_t_d_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fing2p_fin_s
+		dataType: string
+		lineageTag: 986b92c9-0191-4fbe-b0a3-1ca5dcb997ad
+		summarizeBy: none
+		sourceColumn: fing2p_fin_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin32_33_34a_s
+		dataType: double
+		lineageTag: 6d710cfa-8a73-47ec-b6b9-5d362df12efb
+		summarizeBy: sum
+		sourceColumn: fin32_33_34a_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_n33_acc_s
+		dataType: double
+		lineageTag: 14f831d9-7637-4db7-9df4-9ff299ee3f05
+		summarizeBy: sum
+		sourceColumn: fin32_n33_acc_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin37_39_acc_s
+		dataType: double
+		lineageTag: 1ec0154d-8c13-459e-8af7-4bb8277d51f1
+		summarizeBy: sum
+		sourceColumn: fin37_39_acc_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin37_39c_s
+		dataType: double
+		lineageTag: 9155b068-8d3d-4961-87cf-61423f21fe06
+		summarizeBy: sum
+		sourceColumn: fin37_39c_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin31a_31b_s
+		dataType: double
+		lineageTag: b8170d88-5b2d-459b-b63d-ba38fb516064
+		summarizeBy: sum
+		sourceColumn: fin31a_31b_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin31a_s
+		dataType: double
+		lineageTag: 97d96ef0-e625-40df-8d5a-77fb7f4a660b
+		summarizeBy: sum
+		sourceColumn: fin31a_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin31b_s
+		dataType: double
+		lineageTag: 12f165d1-824f-4f70-96cb-e125455acfc6
+		summarizeBy: sum
+		sourceColumn: fin31b_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_n33_34a_s
+		dataType: double
+		lineageTag: aceebdf1-4ef3-418c-9506-ecc7459843e1
+		summarizeBy: sum
+		sourceColumn: fin32_n33_34a_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin37_39a_s
+		dataType: double
+		lineageTag: a69c33e8-526b-4c7c-beb3-9bc2a6067636
+		summarizeBy: sum
+		sourceColumn: fin37_39a_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin34d_s
+		dataType: double
+		lineageTag: fd780d1b-f373-414c-9131-61d21a8cf8e6
+		summarizeBy: sum
+		sourceColumn: fin34d_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_33_34d_s
+		dataType: double
+		lineageTag: e6186f6b-1a66-4afc-9732-1bcdd99d632b
+		summarizeBy: sum
+		sourceColumn: fin32_33_34d_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fin32_n33_34d_s
+		dataType: double
+		lineageTag: d14c949e-2118-47b4-bf75-65c282bf0266
+		summarizeBy: sum
+		sourceColumn: fin32_n33_34d_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fing2p_card_s
+		dataType: string
+		lineageTag: e66c04be-2194-448c-ab82-7df23d64f85a
+		summarizeBy: none
+		sourceColumn: fing2p_card_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_39d_s
+		dataType: string
+		lineageTag: 114b7711-9e59-452a-96bc-2d5a555d5855
+		summarizeBy: none
+		sourceColumn: fin37_39d_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin42_acc_s
+		dataType: string
+		lineageTag: 4ddc0e90-b8ad-4e96-bfad-55987c56f2d7
+		summarizeBy: none
+		sourceColumn: fin42_acc_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin32_33_34c_s
+		dataType: string
+		lineageTag: c0603526-4815-4065-a822-5f5f16acdf7d
+		summarizeBy: none
+		sourceColumn: fin32_33_34c_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_38_39c_s
+		dataType: string
+		lineageTag: 04610d95-b901-4171-a977-0c8d2f5bd94b
+		summarizeBy: none
+		sourceColumn: fin37_38_39c_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin38_39c_s
+		dataType: string
+		lineageTag: 085874aa-8032-417c-bc53-cdab964416d6
+		summarizeBy: none
+		sourceColumn: fin38_39c_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fing2p_acc_s
+		dataType: string
+		lineageTag: d5be42b8-2a1d-4b47-bf1f-d2546f9d6e36
+		summarizeBy: none
+		sourceColumn: fing2p_acc_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fing2p_cash_s
+		dataType: string
+		lineageTag: 4554b2f8-17fc-43ea-bb37-be5fe85b0443
+		summarizeBy: none
+		sourceColumn: fing2p_cash_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_38_39a_s
+		dataType: string
+		lineageTag: 52deef40-8ef2-4f57-acdf-d5be7818d078
+		summarizeBy: none
+		sourceColumn: fin37_38_39a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_38_39_acc_s
+		dataType: string
+		lineageTag: 9f16232a-9efc-4328-8598-d209012f703d
+		summarizeBy: none
+		sourceColumn: fin37_38_39_acc_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin38_39a_s
+		dataType: string
+		lineageTag: fecde540-80c8-48df-a2b5-1072d16128cb
+		summarizeBy: none
+		sourceColumn: fin38_39a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin38_39_acc_s
+		dataType: string
+		lineageTag: 3df78db9-5b7b-47c7-8158-6407b30a0408
+		summarizeBy: none
+		sourceColumn: fin38_39_acc_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin34b_s
+		dataType: string
+		lineageTag: 6afdd0e2-61fc-4636-822f-75e7788b8c8b
+		summarizeBy: none
+		sourceColumn: fin34b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin32_n33_34b_s
+		dataType: string
+		lineageTag: 1c1812cb-bd41-4cf9-af65-90de52b77288
+		summarizeBy: none
+		sourceColumn: fin32_n33_34b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin43b_s
+		dataType: string
+		lineageTag: 74cd77f7-6c49-49db-b2bb-17833ebaac42
+		summarizeBy: none
+		sourceColumn: fin43b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin27b_s
+		dataType: string
+		lineageTag: 8de06228-7b44-474e-9cb3-6ad672402a28
+		summarizeBy: none
+		sourceColumn: fin27b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin27a_s
+		dataType: string
+		lineageTag: c56c9903-ee6c-4a75-adad-5b522855db0c
+		summarizeBy: none
+		sourceColumn: fin27a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin22h_s
+		dataType: string
+		lineageTag: ed55ebff-8a42-49ed-a7df-7e76e755ee12
+		summarizeBy: none
+		sourceColumn: fin22h_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin28_29_s
+		dataType: string
+		lineageTag: 0dc09592-a239-4cc1-a3ab-2d8e59001ece
+		summarizeBy: none
+		sourceColumn: fin28_29_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin28_s
+		dataType: string
+		lineageTag: facca43b-05a2-40ae-a6a3-3972a5585ebe
+		summarizeBy: none
+		sourceColumn: fin28_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin29_s
+		dataType: string
+		lineageTag: c52838cf-c9ca-4911-87be-cb2c932fbd14
+		summarizeBy: none
+		sourceColumn: fin29_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fing2p_mob_s
+		dataType: string
+		lineageTag: 51fd3841-393e-45a5-8cfd-c4b7d1fd152b
+		summarizeBy: none
+		sourceColumn: fing2p_mob_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_38_39d_s
+		dataType: string
+		lineageTag: 8c6bfc64-8839-4b80-bab5-afd3ef3c991c
+		summarizeBy: none
+		sourceColumn: fin37_38_39d_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_38_39b_s
+		dataType: string
+		lineageTag: 3db57513-c0fb-4b01-afdb-cb3b24893228
+		summarizeBy: none
+		sourceColumn: fin37_38_39b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin37_39b_s
+		dataType: string
+		lineageTag: 4a3a0d69-10ab-4822-b341-7389c4354a22
+		summarizeBy: none
+		sourceColumn: fin37_39b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11_2a_s
+		dataType: string
+		lineageTag: c60c1091-68b7-4e38-b18b-5679136f07a2
+		summarizeBy: none
+		sourceColumn: fin11_2a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11b_s
+		dataType: string
+		lineageTag: db2efb09-a4f4-4acc-8389-d8c4b7c18524
+		summarizeBy: none
+		sourceColumn: fin11b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11f_s
+		dataType: string
+		lineageTag: e7a3d874-c314-42be-a5bb-19c1a7c0027b
+		summarizeBy: none
+		sourceColumn: fin11f_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11d_s
+		dataType: string
+		lineageTag: 77df50fd-3bdb-437c-967f-76407236e6bf
+		summarizeBy: none
+		sourceColumn: fin11d_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11e_s
+		dataType: string
+		lineageTag: 95f0a926-2ec7-48db-9a88-564ea500f4d6
+		summarizeBy: none
+		sourceColumn: fin11e_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin9b_s
+		dataType: string
+		lineageTag: 32584939-50ee-48af-add6-c7080e0f387b
+		summarizeBy: none
+		sourceColumn: fin9b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11_1_s
+		dataType: string
+		lineageTag: df38fda8-ddf5-4850-8717-e6cad20f6a48
+		summarizeBy: none
+		sourceColumn: fin11_1_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin5m_s
+		dataType: string
+		lineageTag: 9a468d85-a51b-442a-ba77-f038ddccbf33
+		summarizeBy: none
+		sourceColumn: fin5m_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin6m_s
+		dataType: string
+		lineageTag: dc7b42ad-f294-4e58-90f8-dcceba39e658
+		summarizeBy: none
+		sourceColumn: fin6m_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin9a_s
+		dataType: string
+		lineageTag: ed075280-7e46-47d4-aeaf-484eac17ce8a
+		summarizeBy: none
+		sourceColumn: fin9a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin5w_s
+		dataType: string
+		lineageTag: 56d67d64-3dd0-4be1-9725-abe016377775
+		summarizeBy: none
+		sourceColumn: fin5w_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin6w_s
+		dataType: string
+		lineageTag: 4a42c9b5-9612-44eb-a124-19062e79e120
+		summarizeBy: none
+		sourceColumn: fin6w_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin17dm_s
+		dataType: string
+		lineageTag: b4efb62c-7126-4eaa-a682-1f19232e274b
+		summarizeBy: none
+		sourceColumn: fin17dm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin17dlm_s
+		dataType: string
+		lineageTag: 00d8c4ba-7790-4af1-bd86-7ad9a8a65dee
+		summarizeBy: none
+		sourceColumn: fin17dlm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e3w_s
+		dataType: string
+		lineageTag: fbafb2b1-c745-4706-9f7c-626ee49a5f7a
+		summarizeBy: none
+		sourceColumn: fin25e3w_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e3m_s
+		dataType: string
+		lineageTag: 8d1adb44-8f1d-482d-be3a-c1f29d15623f
+		summarizeBy: none
+		sourceColumn: fin25e3m_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24d1_s
+		dataType: string
+		lineageTag: eaddc70f-64b9-4eeb-a4ca-a2b81b1f7aef
+		summarizeBy: none
+		sourceColumn: fin24d1_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin14d_s
+		dataType: string
+		lineageTag: a143b08f-da9a-46aa-8e98-9f4c3565fe51
+		summarizeBy: none
+		sourceColumn: fin14d_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24d2_s
+		dataType: string
+		lineageTag: bd9a51f6-c873-491d-8178-5d44273bb076
+		summarizeBy: none
+		sourceColumn: fin24d2_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11a_s
+		dataType: string
+		lineageTag: e83502bd-7e01-460c-9858-8cf329b98366
+		summarizeBy: none
+		sourceColumn: fin11a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin11c_s
+		dataType: string
+		lineageTag: 99b66607-b081-4062-b4d6-f6b748262175
+		summarizeBy: none
+		sourceColumn: fin11c_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin5lm_s
+		dataType: string
+		lineageTag: 9e6eac5c-96c8-4018-a0b6-074786c985bf
+		summarizeBy: none
+		sourceColumn: fin5lm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin6lm_s
+		dataType: string
+		lineageTag: 5e89c4da-38b1-4681-bcb0-fdc1a146636e
+		summarizeBy: none
+		sourceColumn: fin6lm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin17dw_s
+		dataType: string
+		lineageTag: 77d194b3-2730-47d0-9a84-90f95c3edb94
+		summarizeBy: none
+		sourceColumn: fin17dw_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin14c_s
+		dataType: string
+		lineageTag: 6e45d05b-1bff-483b-84b1-b4be08a296ca
+		summarizeBy: none
+		sourceColumn: fin14c_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13_1a_s
+		dataType: string
+		lineageTag: 98bef917-6fb0-42f1-823f-1d055f9ebba5
+		summarizeBy: none
+		sourceColumn: fin13_1a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13_1b_s
+		dataType: string
+		lineageTag: 064c5543-a029-44d5-91ee-fa94b79c85f9
+		summarizeBy: none
+		sourceColumn: fin13_1b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13am_s
+		dataType: string
+		lineageTag: ac61f596-23db-4571-99e6-94ee8adf3b34
+		summarizeBy: none
+		sourceColumn: fin13am_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13alm_s
+		dataType: string
+		lineageTag: 8bbc2244-eaad-4acf-9dc1-bdd8b676793e
+		summarizeBy: none
+		sourceColumn: fin13alm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13bm_s
+		dataType: string
+		lineageTag: ea1e0e60-8b60-46c2-b6c4-b65db887b312
+		summarizeBy: none
+		sourceColumn: fin13bm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13blm_s
+		dataType: string
+		lineageTag: ee8aaa0f-ebf1-4718-a434-6cdefd9d61b8
+		summarizeBy: none
+		sourceColumn: fin13blm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13cm_s
+		dataType: string
+		lineageTag: 9036507a-24de-432a-b7c3-03adce8bf71f
+		summarizeBy: none
+		sourceColumn: fin13cm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13clm_s
+		dataType: string
+		lineageTag: 09c2c2c7-949a-42fb-9596-7730d9f46439
+		summarizeBy: none
+		sourceColumn: fin13clm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin21_s
+		dataType: string
+		lineageTag: c5e5d92b-e2ed-45bb-85c3-3043b69d7710
+		summarizeBy: none
+		sourceColumn: fin21_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin14b_s
+		dataType: string
+		lineageTag: 85e4be6f-cb40-485b-a828-9fef716aaeac
+		summarizeBy: none
+		sourceColumn: fin14b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13cw_s
+		dataType: string
+		lineageTag: 2bddcee0-7ce4-4bf1-a952-80ce16305a89
+		summarizeBy: none
+		sourceColumn: fin13cw_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13f_s
+		dataType: string
+		lineageTag: c5e6b593-cf59-426b-a2e7-02d8f0860b52
+		summarizeBy: none
+		sourceColumn: fin13f_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin14a_s
+		dataType: string
+		lineageTag: f66d5c69-be1e-42d3-ac87-e016219dfb15
+		summarizeBy: none
+		sourceColumn: fin14a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin25e3lm_s
+		dataType: string
+		lineageTag: 2b95914e-bf36-48bc-8aa2-e9eca5655bc9
+		summarizeBy: none
+		sourceColumn: fin25e3lm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13aw_s
+		dataType: string
+		lineageTag: 411b5f02-05c2-4ea2-a613-e7181f8cebfe
+		summarizeBy: none
+		sourceColumn: fin13aw_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13bw_s
+		dataType: string
+		lineageTag: dde74e9a-0997-43df-ad49-9a1b92974025
+		summarizeBy: none
+		sourceColumn: fin13bw_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin24d3_s
+		dataType: string
+		lineageTag: a6cc54a5-06fa-45c7-8b79-b0876ad5b0c1
+		summarizeBy: none
+		sourceColumn: fin24d3_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin5n_s
+		dataType: string
+		lineageTag: e9c965b8-082f-4bb0-96e7-c1634159e1ec
+		summarizeBy: none
+		sourceColumn: fin5n_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin6n_s
+		dataType: string
+		lineageTag: 10a42288-7b9a-4b3d-b44f-0f02f019e6f5
+		summarizeBy: none
+		sourceColumn: fin6n_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin13f_1_s
+		dataType: string
+		lineageTag: d8252e0c-1ca1-472f-be53-556bd6ee13a7
+		summarizeBy: none
+		sourceColumn: fin13f_1_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin32_33_34b_s
+		dataType: string
+		lineageTag: adc9d5fc-5141-4ce0-804c-34ef517870e9
+		summarizeBy: none
+		sourceColumn: fin32_33_34b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con1
+		dataType: string
+		lineageTag: eb7cf5a9-4e69-4243-8d7f-37f3a832b8f9
+		summarizeBy: none
+		sourceColumn: con1
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2a
+		dataType: string
+		lineageTag: 0dd02deb-17b8-43a8-91a6-8b144fc3d31d
+		summarizeBy: none
+		sourceColumn: con2a
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2b
+		dataType: string
+		lineageTag: 3fe6b6c7-30bd-4d7c-b5a5-d84bf8af259b
+		summarizeBy: none
+		sourceColumn: con2b
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2c
+		dataType: string
+		lineageTag: 1e2965cd-a7b5-410f-ad8e-813842e73792
+		summarizeBy: none
+		sourceColumn: con2c
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2d
+		dataType: string
+		lineageTag: 2b57818e-e355-4788-8122-8982a339c766
+		summarizeBy: none
+		sourceColumn: con2d
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2e
+		dataType: string
+		lineageTag: 1c120030-a5f5-4aac-a589-c55edea5138c
+		summarizeBy: none
+		sourceColumn: con2e
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2f
+		dataType: string
+		lineageTag: 2b5eb7d0-57fc-4cdb-89dd-04b9b14946da
+		summarizeBy: none
+		sourceColumn: con2f
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2g
+		dataType: string
+		lineageTag: b8da5112-9893-4fac-9a51-3e2ed6641202
+		summarizeBy: none
+		sourceColumn: con2g
+
+		annotation SummarizationSetBy = Automatic
+
+	column con3a
+		dataType: string
+		lineageTag: e1251d6d-28f3-44fe-8a1d-a252eae15fb1
+		summarizeBy: none
+		sourceColumn: con3a
+
+		annotation SummarizationSetBy = Automatic
+
+	column con3b
+		dataType: string
+		lineageTag: a539b453-f3bc-478a-8f16-b29d3e97060e
+		summarizeBy: none
+		sourceColumn: con3b
+
+		annotation SummarizationSetBy = Automatic
+
+	column con3c
+		dataType: string
+		lineageTag: bb6f7056-96fe-46dc-80cc-f398d6955c08
+		summarizeBy: none
+		sourceColumn: con3c
+
+		annotation SummarizationSetBy = Automatic
+
+	column con3d
+		dataType: string
+		lineageTag: d88d9542-9a79-4bf8-8ad1-3ccf89c1f784
+		summarizeBy: none
+		sourceColumn: con3d
+
+		annotation SummarizationSetBy = Automatic
+
+	column con3e
+		dataType: string
+		lineageTag: f40526c6-8472-43e5-90e8-a663f84e2e4a
+		summarizeBy: none
+		sourceColumn: con3e
+
+		annotation SummarizationSetBy = Automatic
+
+	column con3f
+		dataType: string
+		lineageTag: f84aa99c-5172-456d-b2eb-1b8a67d0828a
+		summarizeBy: none
+		sourceColumn: con3f
+
+		annotation SummarizationSetBy = Automatic
+
+	column con3g
+		dataType: string
+		lineageTag: e2b7c0bf-c513-413b-acc5-4bad41194487
+		summarizeBy: none
+		sourceColumn: con3g
+
+		annotation SummarizationSetBy = Automatic
+
+	column con4
+		dataType: string
+		lineageTag: 4603b7e4-ea15-40d6-a3f0-2e87292a11e1
+		summarizeBy: none
+		sourceColumn: con4
+
+		annotation SummarizationSetBy = Automatic
+
+	column con5a
+		dataType: string
+		lineageTag: ff04e18b-160c-4ad1-b116-7289629869f1
+		summarizeBy: none
+		sourceColumn: con5a
+
+		annotation SummarizationSetBy = Automatic
+
+	column con5b
+		dataType: string
+		lineageTag: 8c6966fd-fca9-43cd-ad9a-7ce3ce196a4e
+		summarizeBy: none
+		sourceColumn: con5b
+
+		annotation SummarizationSetBy = Automatic
+
+	column con6
+		dataType: string
+		lineageTag: 29668b21-392f-43bf-af2f-764f76efe6c4
+		summarizeBy: none
+		sourceColumn: con6
+
+		annotation SummarizationSetBy = Automatic
+
+	column con7
+		dataType: string
+		lineageTag: 285f7862-cf0f-451e-88ca-304a9df277ed
+		summarizeBy: none
+		sourceColumn: con7
+
+		annotation SummarizationSetBy = Automatic
+
+	column con8
+		dataType: string
+		lineageTag: 62c6965d-d225-4a60-a2a7-e2b8e549e8fa
+		summarizeBy: none
+		sourceColumn: con8
+
+		annotation SummarizationSetBy = Automatic
+
+	column con9a
+		dataType: string
+		lineageTag: b496388e-61f6-4b91-a718-1c3d01228714
+		summarizeBy: none
+		sourceColumn: con9a
+
+		annotation SummarizationSetBy = Automatic
+
+	column con9b
+		dataType: string
+		lineageTag: 63cba1b1-262a-4075-94f8-188f60942d8a
+		summarizeBy: none
+		sourceColumn: con9b
+
+		annotation SummarizationSetBy = Automatic
+
+	column con10
+		dataType: string
+		lineageTag: a4b72137-5d41-41ec-b2a4-1150237610ad
+		summarizeBy: none
+		sourceColumn: con10
+
+		annotation SummarizationSetBy = Automatic
+
+	column con11
+		dataType: string
+		lineageTag: a446d131-af9c-4348-b434-64cf6d7f1fe9
+		summarizeBy: none
+		sourceColumn: con11
+
+		annotation SummarizationSetBy = Automatic
+
+	column con12d
+		dataType: string
+		lineageTag: abe89681-169e-47cb-a963-125fe70116c8
+		summarizeBy: none
+		sourceColumn: con12d
+
+		annotation SummarizationSetBy = Automatic
+
+	column con12w
+		dataType: string
+		lineageTag: f553b0b6-4619-45a8-a231-d700129e2741
+		summarizeBy: none
+		sourceColumn: con12w
+
+		annotation SummarizationSetBy = Automatic
+
+	column con12m
+		dataType: string
+		lineageTag: 725ec423-c714-46af-ab95-acc7bd077e62
+		summarizeBy: none
+		sourceColumn: con12m
+
+		annotation SummarizationSetBy = Automatic
+
+	column con12lm
+		dataType: string
+		lineageTag: e19632f4-8fcc-4e32-b1a7-499379658aa2
+		summarizeBy: none
+		sourceColumn: con12lm
+
+		annotation SummarizationSetBy = Automatic
+
+	column con13
+		dataType: string
+		lineageTag: fab53a32-c35e-421e-8959-ac1a16be4d1c
+		summarizeBy: none
+		sourceColumn: con13
+
+		annotation SummarizationSetBy = Automatic
+
+	column con14
+		dataType: string
+		lineageTag: 32f67430-15c4-4d05-8306-f6a1b70306a2
+		summarizeBy: none
+		sourceColumn: con14
+
+		annotation SummarizationSetBy = Automatic
+
+	column con15
+		dataType: string
+		lineageTag: 9e30a92a-59b7-428f-83e8-8a1f4ea21af2
+		summarizeBy: none
+		sourceColumn: con15
+
+		annotation SummarizationSetBy = Automatic
+
+	column con16
+		dataType: string
+		lineageTag: d545fb06-678d-403e-8122-a7658c29f37d
+		summarizeBy: none
+		sourceColumn: con16
+
+		annotation SummarizationSetBy = Automatic
+
+	column con17a
+		dataType: string
+		lineageTag: b38eb9a4-aa54-4a03-b580-b55ecc7af45e
+		summarizeBy: none
+		sourceColumn: con17a
+
+		annotation SummarizationSetBy = Automatic
+
+	column con17b
+		dataType: string
+		lineageTag: 86b6bfa6-2bab-468e-812f-16b0363d4658
+		summarizeBy: none
+		sourceColumn: con17b
+
+		annotation SummarizationSetBy = Automatic
+
+	column con17c
+		dataType: string
+		lineageTag: 42caa74d-8759-48a9-a65e-1a9f064e0d45
+		summarizeBy: none
+		sourceColumn: con17c
+
+		annotation SummarizationSetBy = Automatic
+
+	column con17d
+		dataType: string
+		lineageTag: f1573ab5-285b-4d74-a582-84bccee02dd6
+		summarizeBy: none
+		sourceColumn: con17d
+
+		annotation SummarizationSetBy = Automatic
+
+	column con18
+		dataType: string
+		lineageTag: 43d78bae-3621-43e0-b9fe-03b799e63d54
+		summarizeBy: none
+		sourceColumn: con18
+
+		annotation SummarizationSetBy = Automatic
+
+	column con19
+		dataType: string
+		lineageTag: c195ee95-12c2-4d2b-95d3-5cc4a7a32c40
+		summarizeBy: none
+		sourceColumn: con19
+
+		annotation SummarizationSetBy = Automatic
+
+	column con20
+		dataType: string
+		lineageTag: e4bade2e-a343-460b-90ed-f4741a269499
+		summarizeBy: none
+		sourceColumn: con20
+
+		annotation SummarizationSetBy = Automatic
+
+	column con21
+		dataType: string
+		lineageTag: 9b7eb3f8-9592-44c0-ac72-b6fea56532c2
+		summarizeBy: none
+		sourceColumn: con21
+
+		annotation SummarizationSetBy = Automatic
+
+	column con22
+		dataType: string
+		lineageTag: 00f41fff-51ec-4c97-8562-35def5707592
+		summarizeBy: none
+		sourceColumn: con22
+
+		annotation SummarizationSetBy = Automatic
+
+	column con23
+		dataType: string
+		lineageTag: bb099fd2-0b99-420c-a300-e412316d99a8
+		summarizeBy: none
+		sourceColumn: con23
+
+		annotation SummarizationSetBy = Automatic
+
+	column internet
+		dataType: string
+		lineageTag: 95c8b443-ab04-4cbe-8093-dcad365b7847
+		summarizeBy: none
+		sourceColumn: internet
+
+		annotation SummarizationSetBy = Automatic
+
+	column con26d
+		dataType: string
+		lineageTag: e0817fc3-9b32-43b5-bb20-de72f769ae90
+		summarizeBy: none
+		sourceColumn: con26d
+
+		annotation SummarizationSetBy = Automatic
+
+	column con26w
+		dataType: string
+		lineageTag: 4e063999-c2a0-4f0d-937f-7c1c47e0738d
+		summarizeBy: none
+		sourceColumn: con26w
+
+		annotation SummarizationSetBy = Automatic
+
+	column con26m
+		dataType: string
+		lineageTag: f45bfc96-61e7-47e2-ac31-75791b97c540
+		summarizeBy: none
+		sourceColumn: con26m
+
+		annotation SummarizationSetBy = Automatic
+
+	column con26lm
+		dataType: string
+		lineageTag: 827ccf71-0584-4ebf-92c0-e32901e3ba1c
+		summarizeBy: none
+		sourceColumn: con26lm
+
+		annotation SummarizationSetBy = Automatic
+
+	column con27
+		dataType: string
+		lineageTag: 8f5c1e43-e76d-4d0d-ad8b-3bdabbf88084
+		summarizeBy: none
+		sourceColumn: con27
+
+		annotation SummarizationSetBy = Automatic
+
+	column con28d
+		dataType: string
+		lineageTag: 391cc468-97ee-4a29-a6fd-6d673e24ff21
+		summarizeBy: none
+		sourceColumn: con28d
+
+		annotation SummarizationSetBy = Automatic
+
+	column con28w
+		dataType: string
+		lineageTag: 15b6df98-c95d-41dd-b59c-d0bba231dc18
+		summarizeBy: none
+		sourceColumn: con28w
+
+		annotation SummarizationSetBy = Automatic
+
+	column con28m
+		dataType: string
+		lineageTag: b9bd670f-6f7e-4a00-8e45-49ddc05a5b07
+		summarizeBy: none
+		sourceColumn: con28m
+
+		annotation SummarizationSetBy = Automatic
+
+	column con28lm
+		dataType: string
+		lineageTag: d27a509a-a897-4f8a-95a1-f12de3782141
+		summarizeBy: none
+		sourceColumn: con28lm
+
+		annotation SummarizationSetBy = Automatic
+
+	column con28n
+		dataType: string
+		lineageTag: ee6e19fa-824d-4875-b5e0-862fa92e5667
+		summarizeBy: none
+		sourceColumn: con28n
+
+		annotation SummarizationSetBy = Automatic
+
+	column con29
+		dataType: string
+		lineageTag: 87fabfa3-84e3-45d2-a551-2bf7c06bee4e
+		summarizeBy: none
+		sourceColumn: con29
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30a
+		dataType: string
+		lineageTag: b9f4aea9-b9f9-49e3-a9bf-2601faffa127
+		summarizeBy: none
+		sourceColumn: con30a
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30b
+		dataType: string
+		lineageTag: eeeb766c-5da0-4dbd-aee5-ea17345dc594
+		summarizeBy: none
+		sourceColumn: con30b
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30c
+		dataType: string
+		lineageTag: 31d55b1a-811a-4b43-b808-88db8995cff9
+		summarizeBy: none
+		sourceColumn: con30c
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30d
+		dataType: string
+		lineageTag: 073970c2-e1dc-4eb6-b166-ee64c250bf3d
+		summarizeBy: none
+		sourceColumn: con30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30e
+		dataType: string
+		lineageTag: 87961264-e659-4aa7-b10d-19c5d5654b22
+		summarizeBy: none
+		sourceColumn: con30e
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30f
+		dataType: string
+		lineageTag: 7a52adf8-fee5-4fbc-b034-bbe2bca31c8c
+		summarizeBy: none
+		sourceColumn: con30f
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30g
+		dataType: string
+		lineageTag: d888ab7e-da2e-48e1-853c-c2b68c07d4d6
+		summarizeBy: none
+		sourceColumn: con30g
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30h
+		dataType: string
+		lineageTag: 07b1a535-8893-461a-98ec-d79793df6a18
+		summarizeBy: none
+		sourceColumn: con30h
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31a
+		dataType: string
+		lineageTag: c66287df-ca93-457d-beea-5c4d1a77a207
+		summarizeBy: none
+		sourceColumn: con31a
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31b
+		dataType: string
+		lineageTag: ae004e2a-c6d0-4af9-bb40-f4daef75c644
+		summarizeBy: none
+		sourceColumn: con31b
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31c
+		dataType: string
+		lineageTag: 7abf9c48-a4b4-49ac-b504-6ecf4bd50657
+		summarizeBy: none
+		sourceColumn: con31c
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31d
+		dataType: string
+		lineageTag: e3e2513d-e441-409f-bdb8-83d43bc63173
+		summarizeBy: none
+		sourceColumn: con31d
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31e
+		dataType: string
+		lineageTag: f4b157c4-dd7c-4f4a-aa9a-5fdacdfbb95b
+		summarizeBy: none
+		sourceColumn: con31e
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31f
+		dataType: string
+		lineageTag: 1ac15d4c-c70a-49d1-a777-a20eb7054e47
+		summarizeBy: none
+		sourceColumn: con31f
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31g
+		dataType: string
+		lineageTag: 09da0500-1349-41cd-9198-e130826f4ddf
+		summarizeBy: none
+		sourceColumn: con31g
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31h
+		dataType: string
+		lineageTag: d7990f01-bfb7-4018-9106-383e39de0996
+		summarizeBy: none
+		sourceColumn: con31h
+
+		annotation SummarizationSetBy = Automatic
+
+	column con32a
+		dataType: string
+		lineageTag: 6fe170e6-c434-45f2-9254-60a1dbb91f79
+		summarizeBy: none
+		sourceColumn: con32a
+
+		annotation SummarizationSetBy = Automatic
+
+	column con32b
+		dataType: string
+		lineageTag: 6ab01918-66a2-4405-bce5-3d0cd6ca097d
+		summarizeBy: none
+		sourceColumn: con32b
+
+		annotation SummarizationSetBy = Automatic
+
+	column con32c
+		dataType: string
+		lineageTag: 13176ce9-44e7-4b41-a21f-8b3ce67e216f
+		summarizeBy: none
+		sourceColumn: con32c
+
+		annotation SummarizationSetBy = Automatic
+
+	column con32d
+		dataType: string
+		lineageTag: 682e67eb-d8e4-40a9-a5f2-3b992a6b2ec4
+		summarizeBy: none
+		sourceColumn: con32d
+
+		annotation SummarizationSetBy = Automatic
+
+	column con32e
+		dataType: string
+		lineageTag: e3d446b5-8a96-48c2-9768-9bfb3492da41
+		summarizeBy: none
+		sourceColumn: con32e
+
+		annotation SummarizationSetBy = Automatic
+
+	column con32f
+		dataType: string
+		lineageTag: 0414a4ea-1057-44b8-9918-69ee43611a45
+		summarizeBy: none
+		sourceColumn: con32f
+
+		annotation SummarizationSetBy = Automatic
+
+	column con32g
+		dataType: string
+		lineageTag: 51d0927b-435b-4e91-941d-cb0a071b987c
+		summarizeBy: none
+		sourceColumn: con32g
+
+		annotation SummarizationSetBy = Automatic
+
+	column con32h
+		dataType: string
+		lineageTag: c7e74e41-ea30-45f3-bec9-eac23a197093
+		summarizeBy: none
+		sourceColumn: con32h
+
+		annotation SummarizationSetBy = Automatic
+
+	column con10_s
+		dataType: string
+		lineageTag: 3bb98d8e-d5fb-44da-a5f7-d5463831379c
+		summarizeBy: none
+		sourceColumn: con10_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con11_s
+		dataType: string
+		lineageTag: 258fa9f0-60ce-4a60-b635-3c45cb149cf8
+		summarizeBy: none
+		sourceColumn: con11_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con12d_s
+		dataType: string
+		lineageTag: 11d92b6e-7a33-4625-9e6f-ba95b2a2d297
+		summarizeBy: none
+		sourceColumn: con12d_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con14_s
+		dataType: string
+		lineageTag: 155a4160-bf74-44d7-b0db-4613f2e2c6b9
+		summarizeBy: none
+		sourceColumn: con14_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con16_s
+		dataType: string
+		lineageTag: 81ddcd11-0693-4e0f-89cd-46d4d4bc4803
+		summarizeBy: none
+		sourceColumn: con16_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con17a_s
+		dataType: string
+		lineageTag: febe4b81-64e3-4751-9401-c0783fdf37ad
+		summarizeBy: none
+		sourceColumn: con17a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con17b_s
+		dataType: string
+		lineageTag: 0910659a-ae74-4059-9ede-bdcb46b2fbf7
+		summarizeBy: none
+		sourceColumn: con17b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con18_s
+		dataType: string
+		lineageTag: c35fac81-2c16-489c-b832-3ab5bc685fc1
+		summarizeBy: none
+		sourceColumn: con18_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con19_s
+		dataType: string
+		lineageTag: a3dba6a4-a366-433f-9968-43c3a089c116
+		summarizeBy: none
+		sourceColumn: con19_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con20_s
+		dataType: string
+		lineageTag: bff89576-09be-4746-9f6d-f15536ce17cc
+		summarizeBy: none
+		sourceColumn: con20_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con21_s
+		dataType: string
+		lineageTag: e5933607-1b02-4f19-9283-a95cd57157ab
+		summarizeBy: none
+		sourceColumn: con21_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con26d_s
+		dataType: string
+		lineageTag: 02a6b707-6d4f-4b20-9cf9-edf0d673dd0b
+		summarizeBy: none
+		sourceColumn: con26d_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con27_s
+		dataType: string
+		lineageTag: cb008b53-4894-49ab-a10c-d57df2f2cf28
+		summarizeBy: none
+		sourceColumn: con27_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con28m_s
+		dataType: string
+		lineageTag: 592b1759-d51d-493c-8335-fe854ae0caca
+		summarizeBy: none
+		sourceColumn: con28m_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30a_s
+		dataType: string
+		lineageTag: f0bd5be4-170e-4107-acc2-752c99ba4f72
+		summarizeBy: none
+		sourceColumn: con30a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30b_s
+		dataType: string
+		lineageTag: 24e86962-5529-451f-a154-f59dbcda7248
+		summarizeBy: none
+		sourceColumn: con30b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30c_s
+		dataType: string
+		lineageTag: 5668637d-3a2c-4ec4-8f94-a8bd9175936d
+		summarizeBy: none
+		sourceColumn: con30c_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30d_s
+		dataType: string
+		lineageTag: f149dd42-acd8-48ab-b6c3-742a858ddb28
+		summarizeBy: none
+		sourceColumn: con30d_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30e_s
+		dataType: string
+		lineageTag: 61f861d9-4ffb-4a7f-9ed2-450910cd6462
+		summarizeBy: none
+		sourceColumn: con30e_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30f_s
+		dataType: string
+		lineageTag: 79ac0f93-3ed2-42ce-b6bb-5812da422035
+		summarizeBy: none
+		sourceColumn: con30f_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30g_s
+		dataType: string
+		lineageTag: 56a2a684-2cbd-4b5d-b968-40b921bf6097
+		summarizeBy: none
+		sourceColumn: con30g_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con30h_s
+		dataType: string
+		lineageTag: 5abccbdd-270f-47cf-893a-840f6d9a4d82
+		summarizeBy: none
+		sourceColumn: con30h_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31a_s
+		dataType: string
+		lineageTag: 19221d52-59f5-4283-849d-f9c4001d016d
+		summarizeBy: none
+		sourceColumn: con31a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31b_s
+		dataType: string
+		lineageTag: a7a7c0a5-bb05-46c6-8837-57dd35406403
+		summarizeBy: none
+		sourceColumn: con31b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31f_s
+		dataType: string
+		lineageTag: a60fb364-874f-4e29-b6e8-b35f9ce06a85
+		summarizeBy: none
+		sourceColumn: con31f_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2a_s
+		dataType: string
+		lineageTag: 4945b46f-5b4c-4944-a3a0-9926ae729969
+		summarizeBy: none
+		sourceColumn: con2a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con15_s
+		dataType: string
+		lineageTag: 079ca964-db9c-40dc-897a-29beee14082a
+		summarizeBy: none
+		sourceColumn: con15_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con17d_s
+		dataType: string
+		lineageTag: 431a8096-026a-49e9-9b6e-41cff579a239
+		summarizeBy: none
+		sourceColumn: con17d_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con29_s
+		dataType: string
+		lineageTag: 1f2a8f05-0658-4632-9173-d2b3168b3daa
+		summarizeBy: none
+		sourceColumn: con29_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31d_s
+		dataType: string
+		lineageTag: c736c8fa-5a48-41e2-a051-535d27cf15b2
+		summarizeBy: none
+		sourceColumn: con31d_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31h_s
+		dataType: string
+		lineageTag: fc07aa10-d1a8-438e-a6ad-e3ff5f0903d7
+		summarizeBy: none
+		sourceColumn: con31h_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con32a_s
+		dataType: string
+		lineageTag: 3f40f8e6-8ad6-49e2-a1b0-2c945df6f49b
+		summarizeBy: none
+		sourceColumn: con32a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con3a_s
+		dataType: string
+		lineageTag: 3f9dcbc9-ce68-4a8f-8ed1-bbaab806cd41
+		summarizeBy: none
+		sourceColumn: con3a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con4_s
+		dataType: string
+		lineageTag: e4e60f4e-622c-4caa-a8d6-3509cb359a4e
+		summarizeBy: none
+		sourceColumn: con4_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con28d_s
+		dataType: string
+		lineageTag: 1a4b59e5-0cea-4a97-9bb5-c083f66bb210
+		summarizeBy: none
+		sourceColumn: con28d_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con28w_s
+		dataType: string
+		lineageTag: ca7de989-d940-4182-aa76-bfb6da3b2487
+		summarizeBy: none
+		sourceColumn: con28w_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con23_s
+		dataType: string
+		lineageTag: b1c4cc14-c617-425b-9c52-29e494d001fb
+		summarizeBy: none
+		sourceColumn: con23_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con31c_s
+		dataType: string
+		lineageTag: eeeea63d-ebaa-4c18-a2ca-0eea06630b00
+		summarizeBy: none
+		sourceColumn: con31c_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2b_s
+		dataType: string
+		lineageTag: 7fd7e929-3141-49db-8e64-149fb65f1f46
+		summarizeBy: none
+		sourceColumn: con2b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2d_s
+		dataType: string
+		lineageTag: 32ce9495-fb2d-4232-af86-18a68e56a720
+		summarizeBy: none
+		sourceColumn: con2d_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con26w_s
+		dataType: string
+		lineageTag: ecfbb88f-fd28-431e-8302-7eee4637681d
+		summarizeBy: none
+		sourceColumn: con26w_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2c_s
+		dataType: string
+		lineageTag: c678c640-ec40-4554-aa77-e5ff4b355f7e
+		summarizeBy: none
+		sourceColumn: con2c_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2e_s
+		dataType: string
+		lineageTag: b87f2b04-705c-44fb-a4ae-fbe9c7162a51
+		summarizeBy: none
+		sourceColumn: con2e_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2g_s
+		dataType: string
+		lineageTag: 6633b11f-c2b9-4e94-90ce-94d5c09b3004
+		summarizeBy: none
+		sourceColumn: con2g_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con5b_s
+		dataType: string
+		lineageTag: e41ff261-cedb-4ede-85b2-862939cc26b5
+		summarizeBy: none
+		sourceColumn: con5b_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con12m_s
+		dataType: string
+		lineageTag: 10d0ee8b-fb2a-4b72-9383-830ed86a8408
+		summarizeBy: none
+		sourceColumn: con12m_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con26lm_s
+		dataType: string
+		lineageTag: e385120c-0960-4776-b70f-552d4ccd28e9
+		summarizeBy: none
+		sourceColumn: con26lm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con12w_s
+		dataType: string
+		lineageTag: 98dbea09-fccf-4e30-8e5d-d99ce6ad75b7
+		summarizeBy: none
+		sourceColumn: con12w_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con2f_s
+		dataType: string
+		lineageTag: a66aed9f-ca04-49f9-b110-a49ad43221f1
+		summarizeBy: none
+		sourceColumn: con2f_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con13_s
+		dataType: string
+		lineageTag: 1c393d32-ee05-448a-bff5-9606db8a7953
+		summarizeBy: none
+		sourceColumn: con13_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con26m_s
+		dataType: string
+		lineageTag: ebb094eb-56b9-4406-a1ca-ba2136df8355
+		summarizeBy: none
+		sourceColumn: con26m_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con28lm_s
+		dataType: string
+		lineageTag: 734089d6-2923-4674-8a50-4ac975e680b6
+		summarizeBy: none
+		sourceColumn: con28lm_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con5a_s
+		dataType: string
+		lineageTag: 13f44612-4603-4aa6-8a9f-de27262eb225
+		summarizeBy: none
+		sourceColumn: con5a_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con17c_s
+		dataType: string
+		lineageTag: 23bdd277-680a-43ae-af0b-65f909b0919d
+		summarizeBy: none
+		sourceColumn: con17c_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column con32h_s
+		dataType: string
+		lineageTag: d964997a-a34c-43ca-a6ce-125ba07f7d1c
+		summarizeBy: none
+		sourceColumn: con32h_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type entité'
+		dataType: string
+		lineageTag: 08a8c0de-0008-0001-0001-000000000001
+		summarizeBy: none
+		sourceColumn: Type entité
+
+	column Région
+		dataType: string
+		lineageTag: 08a8c0de-0008-0001-0001-000000000002
+		summarizeBy: none
+		sourceColumn: Région
+
+	column 'Groupe de revenu'
+		dataType: string
+		lineageTag: 08a8c0de-0008-0001-0001-000000000003
+		summarizeBy: none
+		sourceColumn: Groupe de revenu
+		sortByColumn: 'Ordre revenu'
+
+	column 'Ordre revenu'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 08a8c0de-0008-0001-0001-000000000004
+		summarizeBy: none
+		sourceColumn: Ordre revenu
+
+	partition country_indicators = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_08_08-inclusion-financiere.xlsx"), null, true),
+				    country_indicators_Sheet = Source{[Item="country_indicators",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(country_indicators_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"countrynewwb", type text}, {"codewb", type text}, {"year", Int64.Type}, {"pop_adult", Int64.Type}, {"regionwb24_hi", type text}, {"incomegroupwb24", type text}, {"group", type text}, {"group2", type text}, {"account_t_d", type number}, {"fiaccount_t_d", type number}, {"mobileaccount_t_d", type number}, {"borrow_any_t_d", type number}, {"fin4_d", type any}, {"dig_acc", type any}, {"fin11_2a", type any}, {"fin11a", type any}, {"fin11b", type any}, {"fin11c", type any}, {"fin11f", type any}, {"fin11d", type any}, {"fin11e", type any}, {"fin14a", type any}, {"fin14b", type any}, {"fin14c", type any}, {"fin14d", type any}, {"fin13_1a", type any}, {"fin13_1b", type any}, {"fin26a", type any}, {"fin26b", type any}, {"fin27a", type any}, {"fin27b", type any}, {"fin17f", type any}, {"fin17a_17a1_d", type number}, {"fin17a", type number}, {"fin17b", type any}, {"fin17c", type number}, {"fin22d", type number}, {"fin22e", type number}, {"fin22a_22a1_22g_d", type number}, {"fin22a", type number}, {"fin22a_22g", type number}, {"fin22a_1", type any}, {"fin22b", type number}, {"fin22c", type any}, {"fin24sav", type any}, {"fin24fam", type any}, {"fin24work", type any}, {"fin24bor", type any}, {"fin24sell", type any}, {"fin24other", type any}, {"fin24aVD", type any}, {"fin24aSD", type any}, {"fin24aND", type any}, {"fin24aSD_ND", type any}, {"fin24aP", type number}, {"fin24aN", type number}, {"fin24sav_SD_ND", type any}, {"fin24fam_SD_ND", type any}, {"fin24work_SD_ND", type any}, {"fin24bor_SD_ND", type any}, {"fin24sell_SD_ND", type any}, {"fin24other_SD_ND", type any}, {"fin24sav_VD", type any}, {"fin24fam_VD", type any}, {"fin24work_VD", type any}, {"fin24bor_VD", type any}, {"fin24sell_VD", type any}, {"fin24other_VD", type any}, {"fh1", type any}, {"fin28", type any}, {"fh2", type any}, {"fin29", type any}, {"fin31a_31b", type number}, {"fin30", type number}, {"fin31a", type number}, {"fin31b", type number}, {"fin31d", type number}, {"fin32_33_34a", type number}, {"fin32_33_34b", type number}, {"fin32_33_34c", type number}, {"fin32_33_34d", type number}, {"fin32_33_acc", type number}, {"fin32_33", type number}, {"fin32_n33_34a", type number}, {"fin32_n33_34b", type number}, {"fin32_n33_34c", type number}, {"fin32_n33_34d", type number}, {"fin32_n33_acc", type number}, {"fin32_n33", type number}, {"fin32", type number}, {"fin32_acc", type number}, {"fin34a", type number}, {"fin34b", type number}, {"fin34c", type number}, {"fin34d", type number}, {"fin37_38_39a", type any}, {"fin37_38_39b", type any}, {"fin37_38_39c", type any}, {"fin37_38_39d", type any}, {"fin37_38_39_acc", type any}, {"fin37_38", type any}, {"fin37_39a", type number}, {"fin37_39b", type number}, {"fin37_39c", type number}, {"fin37_39d", type number}, {"fin37_39_acc", type number}, {"fin37", type number}, {"fin38_39a", type any}, {"fin38_39b", type any}, {"fin38_39c", type any}, {"fin38_39d", type any}, {"fin38_39_acc", type any}, {"fin38", type any}, {"fin2_t_d", type number}, {"fin42", type number}, {"fin42_acc", type number}, {"fin43a", type number}, {"fin43b", type any}, {"fin43c", type number}, {"fin43d", type any}, {"fin45a", type any}, {"fin45c", type any}, {"fin45d", type any}, {"fin45e", type any}, {"fin45b", type any}, {"fin25e2", type any}, {"fin9b", type any}, {"fin10", type number}, {"fin22g", type number}, {"fin22h", type any}, {"inactive_t_d", type number}, {"fing2p_acc", type any}, {"fing2p_card", type number}, {"fing2p_cash", type any}, {"fing2p_fin", type number}, {"fing2p_mob", type number}, {"fing2p", type any}, {"g20_made", type number}, {"g20_received", type number}, {"g20_any", type number}, {"merchant_pay", type any}, {"save_any_t_d", type number}, {"fin11_1", type any}, {"fin5w", type any}, {"fin5m", type any}, {"fin5lm", type any}, {"fin5n", type any}, {"fin6w", type any}, {"fin6m", type any}, {"fin6lm", type any}, {"fin6n", type any}, {"fin11_0", type any}, {"fin9a", type any}, {"fin17dw", type any}, {"fin17dm", type any}, {"fin17dlm", type any}, {"fin17e", type any}, {"fin7", type any}, {"fin3", type any}, {"fin19", type any}, {"fin20", type any}, {"fin21", type any}, {"fin24ba", type any}, {"fin24bb", type any}, {"fin24bc", type any}, {"fin24bd", type any}, {"fin24c", type any}, {"fin24d1", type any}, {"fin24d2", type any}, {"fin24d3", type any}, {"fin25e1", type any}, {"fin25e2b", type any}, {"fin25e3w", type any}, {"fin25e3m", type any}, {"fin25e3lm", type any}, {"fin25e4a", type any}, {"fin25e4b", type any}, {"fin25e4c", type any}, {"fin25e4d", type any}, {"fin25e4e", type any}, {"fh2a", type any}, {"fin31c", type any}, {"fin36a", type any}, {"fin36b", type any}, {"fin40a", type any}, {"fin40b", type any}, {"fin36Aa", Int64.Type}, {"fin36Ab", Int64.Type}, {"fin8", type any}, {"fin13aw", type any}, {"fin13am", type any}, {"fin13alm", type any}, {"fin13an", type any}, {"fin13bw", type any}, {"fin13bm", type any}, {"fin13blm", type any}, {"fin13bn", type any}, {"fin13cw", type any}, {"fin13cm", type any}, {"fin13clm", type any}, {"fin13cn", type any}, {"fin13e", type any}, {"fin13f", type any}, {"fin13f_1", type any}, {"fin15", type any}, {"fin16", type any}, {"fin22f", type any}, {"fin41", type any}, {"fin35", type any}, {"fin44", type any}, {"fh1_fh2", type any}, {"fin28_29", type any}, {"fin31d_s", type number}, {"fin32_n33_34c_s", type number}, {"fin34c_s", type number}, {"fin43c_s", type number}, {"fin32_acc_s", type number}, {"fin34a_s", type number}, {"fin32_33_acc_s", type number}, {"inactive_t_d_s", type number}, {"fing2p_fin_s", type any}, {"fin32_33_34a_s", type number}, {"fin32_n33_acc_s", type number}, {"fin37_39_acc_s", type number}, {"fin37_39c_s", type number}, {"fin31a_31b_s", type number}, {"fin31a_s", type number}, {"fin31b_s", type number}, {"fin32_n33_34a_s", type number}, {"fin37_39a_s", type number}, {"fin34d_s", type number}, {"fin32_33_34d_s", type number}, {"fin32_n33_34d_s", type number}, {"fing2p_card_s", type any}, {"fin37_39d_s", type any}, {"fin42_acc_s", type any}, {"fin32_33_34c_s", type any}, {"fin37_38_39c_s", type any}, {"fin38_39c_s", type any}, {"fing2p_acc_s", type any}, {"fing2p_cash_s", type any}, {"fin37_38_39a_s", type any}, {"fin37_38_39_acc_s", type any}, {"fin38_39a_s", type any}, {"fin38_39_acc_s", type any}, {"fin34b_s", type any}, {"fin32_n33_34b_s", type any}, {"fin43b_s", type any}, {"fin27b_s", type any}, {"fin27a_s", type any}, {"fin22h_s", type any}, {"fin28_29_s", type any}, {"fin28_s", type any}, {"fin29_s", type any}, {"fing2p_mob_s", type any}, {"fin37_38_39d_s", type any}, {"fin37_38_39b_s", type any}, {"fin37_39b_s", type any}, {"fin11_2a_s", type any}, {"fin11b_s", type any}, {"fin11f_s", type any}, {"fin11d_s", type any}, {"fin11e_s", type any}, {"fin9b_s", type any}, {"fin11_1_s", type any}, {"fin5m_s", type any}, {"fin6m_s", type any}, {"fin9a_s", type any}, {"fin5w_s", type any}, {"fin6w_s", type any}, {"fin17dm_s", type any}, {"fin17dlm_s", type any}, {"fin25e3w_s", type any}, {"fin25e3m_s", type any}, {"fin24d1_s", type any}, {"fin14d_s", type any}, {"fin24d2_s", type any}, {"fin11a_s", type any}, {"fin11c_s", type any}, {"fin5lm_s", type any}, {"fin6lm_s", type any}, {"fin17dw_s", type any}, {"fin14c_s", type any}, {"fin13_1a_s", type any}, {"fin13_1b_s", type any}, {"fin13am_s", type any}, {"fin13alm_s", type any}, {"fin13bm_s", type any}, {"fin13blm_s", type any}, {"fin13cm_s", type any}, {"fin13clm_s", type any}, {"fin21_s", type any}, {"fin14b_s", type any}, {"fin13cw_s", type any}, {"fin13f_s", type any}, {"fin14a_s", type any}, {"fin25e3lm_s", type any}, {"fin13aw_s", type any}, {"fin13bw_s", type any}, {"fin24d3_s", type any}, {"fin5n_s", type any}, {"fin6n_s", type any}, {"fin13f_1_s", type any}, {"fin32_33_34b_s", type any}, {"con1", type any}, {"con2a", type any}, {"con2b", type any}, {"con2c", type any}, {"con2d", type any}, {"con2e", type any}, {"con2f", type any}, {"con2g", type any}, {"con3a", type any}, {"con3b", type any}, {"con3c", type any}, {"con3d", type any}, {"con3e", type any}, {"con3f", type any}, {"con3g", type any}, {"con4", type any}, {"con5a", type any}, {"con5b", type any}, {"con6", type any}, {"con7", type any}, {"con8", type any}, {"con9a", type any}, {"con9b", type any}, {"con10", type any}, {"con11", type any}, {"con12d", type any}, {"con12w", type any}, {"con12m", type any}, {"con12lm", type any}, {"con13", type any}, {"con14", type any}, {"con15", type any}, {"con16", type any}, {"con17a", type any}, {"con17b", type any}, {"con17c", type any}, {"con17d", type any}, {"con18", type any}, {"con19", type any}, {"con20", type any}, {"con21", type any}, {"con22", type any}, {"con23", type any}, {"internet", type any}, {"con26d", type any}, {"con26w", type any}, {"con26m", type any}, {"con26lm", type any}, {"con27", type any}, {"con28d", type any}, {"con28w", type any}, {"con28m", type any}, {"con28lm", type any}, {"con28n", type any}, {"con29", type any}, {"con30a", type any}, {"con30b", type any}, {"con30c", type any}, {"con30d", type any}, {"con30e", type any}, {"con30f", type any}, {"con30g", type any}, {"con30h", type any}, {"con31a", type any}, {"con31b", type any}, {"con31c", type any}, {"con31d", type any}, {"con31e", type any}, {"con31f", type any}, {"con31g", type any}, {"con31h", type any}, {"con32a", type any}, {"con32b", type any}, {"con32c", type any}, {"con32d", type any}, {"con32e", type any}, {"con32f", type any}, {"con32g", type any}, {"con32h", type any}, {"con10_s", type any}, {"con11_s", type any}, {"con12d_s", type any}, {"con14_s", type any}, {"con16_s", type any}, {"con17a_s", type any}, {"con17b_s", type any}, {"con18_s", type any}, {"con19_s", type any}, {"con20_s", type any}, {"con21_s", type any}, {"con26d_s", type any}, {"con27_s", type any}, {"con28m_s", type any}, {"con30a_s", type any}, {"con30b_s", type any}, {"con30c_s", type any}, {"con30d_s", type any}, {"con30e_s", type any}, {"con30f_s", type any}, {"con30g_s", type any}, {"con30h_s", type any}, {"con31a_s", type any}, {"con31b_s", type any}, {"con31f_s", type any}, {"con2a_s", type any}, {"con15_s", type any}, {"con17d_s", type any}, {"con29_s", type any}, {"con31d_s", type any}, {"con31h_s", type any}, {"con32a_s", type any}, {"con3a_s", type any}, {"con4_s", type any}, {"con28d_s", type any}, {"con28w_s", type any}, {"con23_s", type any}, {"con31c_s", type any}, {"con2b_s", type any}, {"con2d_s", type any}, {"con26w_s", type any}, {"con2c_s", type any}, {"con2e_s", type any}, {"con2g_s", type any}, {"con5b_s", type any}, {"con12m_s", type any}, {"con26lm_s", type any}, {"con12w_s", type any}, {"con2f_s", type any}, {"con13_s", type any}, {"con26m_s", type any}, {"con28lm_s", type any}, {"con5a_s", type any}, {"con17c_s", type any}, {"con32h_s", type any}})
+				    , RegFR = [#"High income" = "Économies à revenu élevé", #"Sub-Saharan Africa (excluding high income)" = "Afrique subsaharienne", #"Europe & Central Asia (excluding high income)" = "Europe & Asie centrale", #"Latin America & Caribbean (excluding high income)" = "Amérique latine & Caraïbes", #"Middle East & North Africa (excluding high income)" = "Moyen-Orient & Afrique du Nord", #"East Asia & Pacific (excluding high income)" = "Asie de l'Est & Pacifique", #"South Asia (excluding high income)" = "Asie du Sud"]
+				    , RevFR = [#"High income" = "Revenu élevé", #"Upper middle income" = "Revenu intermédiaire sup.", #"Lower middle income" = "Revenu intermédiaire inf.", #"Low income" = "Faible revenu"]
+				    , RevOrd = [#"Low income" = 1, #"Lower middle income" = 2, #"Upper middle income" = 3, #"High income" = 4]
+				    , AjoutType = Table.AddColumn(#"Type modifié", "Type entité", each if [regionwb24_hi] = null then "Agrégat" else "Pays", type text)
+				    , AjoutRegion = Table.AddColumn(AjoutType, "Région", each if [regionwb24_hi] = null then null else Record.FieldOrDefault(RegFR, [regionwb24_hi], [regionwb24_hi]), type text)
+				    , AjoutRevenu = Table.AddColumn(AjoutRegion, "Groupe de revenu", each if [incomegroupwb24] = null then null else Record.FieldOrDefault(RevFR, [incomegroupwb24], [incomegroupwb24]), type text)
+				    , AjoutOrdre = Table.AddColumn(AjoutRevenu, "Ordre revenu", each if [incomegroupwb24] = null then 9 else Record.FieldOrDefault(RevOrd, [incomegroupwb24], 9), Int64.Type)
+				in
+				    AjoutOrdre
+
+	annotation PBI_ResultType = Table
+

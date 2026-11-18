@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "portefeuille-risque"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1a8592d3-abc8-4c12-92e6-92e05d70d7ec"
+  }
+}

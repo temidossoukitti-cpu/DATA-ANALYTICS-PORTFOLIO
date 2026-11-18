@@ -1,0 +1,76 @@
+table financial_alerts
+	lineageTag: 4fe01e86-bae3-412a-bf97-4510fe8fc255
+
+	column alert_key
+		dataType: string
+		lineageTag: c8ccb5f0-360f-466a-a259-e466717d7cd6
+		summarizeBy: none
+		sourceColumn: alert_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_fr
+		dataType: string
+		lineageTag: 270620af-107e-431a-a5de-3f54f415bfdc
+		summarizeBy: none
+		sourceColumn: label_fr
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit
+		dataType: string
+		lineageTag: 2d212536-6cf4-4644-bf06-2e97b7bccc69
+		summarizeBy: none
+		sourceColumn: unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column threshold
+		dataType: double
+		lineageTag: 8eacda5d-3748-4bbd-9d3d-59c4489eea24
+		summarizeBy: sum
+		sourceColumn: threshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column observed
+		dataType: double
+		lineageTag: 7c50c270-29ff-452c-859c-62b5d1fd23eb
+		summarizeBy: sum
+		sourceColumn: observed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column status
+		dataType: string
+		lineageTag: f1144aac-9f3d-492f-ae57-a56bdcc244e1
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column definition
+		dataType: string
+		lineageTag: a0be6dcf-a16c-46d1-82e4-fe6f71f1185f
+		summarizeBy: none
+		sourceColumn: definition
+
+		annotation SummarizationSetBy = Automatic
+
+	partition financial_alerts = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_06_06-analyse-financiere.xlsx"), null, true),
+				    financial_alerts_Sheet = Source{[Item="financial_alerts",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(financial_alerts_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"alert_key", type text}, {"label_fr", type text}, {"unit", type text}, {"threshold", type number}, {"observed", type number}, {"status", type text}, {"definition", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

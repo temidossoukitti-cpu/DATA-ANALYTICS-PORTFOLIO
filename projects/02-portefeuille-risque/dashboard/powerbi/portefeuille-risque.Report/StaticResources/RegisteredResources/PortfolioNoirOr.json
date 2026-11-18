@@ -1,0 +1,118 @@
+{
+  "name": "PortfolioNoirOr",
+  "dataColors": [
+    "#3B3650",
+    "#FFC72C",
+    "#C9C6D6",
+    "#F07C45",
+    "#6E6888",
+    "#FFE08A",
+    "#5B5574",
+    "#F4A261",
+    "#9C97B4",
+    "#2E2A3E",
+    "#E9C46A"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#2E2A3E",
+  "tableAccent": "#3B3650",
+  "good": "#2E9E6B",
+  "neutral": "#FFC72C",
+  "bad": "#F07C45",
+  "maximum": "#3B3650",
+  "center": "#FFC72C",
+  "minimum": "#F6F5FA",
+  "textClasses": {
+    "callout": {
+      "fontSize": 22,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#FFC72C"
+    },
+    "title": {
+      "fontSize": 11,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#2E2A3E"
+    },
+    "header": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#2E2A3E"
+    },
+    "label": {
+      "fontSize": 9,
+      "fontFace": "Segoe UI",
+      "color": "#2E2A3E"
+    }
+  },
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#EFEEF4"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#EFEEF4"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    },
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#E2E0EA"
+              }
+            },
+            "radius": 12
+          }
+        ],
+        "title": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#2E2A3E"
+              }
+            },
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ],
+        "padding": [
+          {
+            "top": 8,
+            "bottom": 8,
+            "left": 10,
+            "right": 10
+          }
+        ]
+      }
+    }
+  }
+}

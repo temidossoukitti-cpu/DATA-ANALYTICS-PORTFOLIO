@@ -1,0 +1,162 @@
+table Mesures
+	lineageTag: f6a7b8c9-0006-0001-0001-000000000001
+
+	measure Valeur = SUM(fact_financials[value])
+		formatString: #,0
+		displayFolder: 1. États financiers
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000002
+
+	measure 'Valeur N-1' =
+			VAR _y = MAX(dim_fiscal_year[fiscal_year])
+			RETURN CALCULATE([Valeur], REMOVEFILTERS(dim_fiscal_year), dim_fiscal_year[fiscal_year] = _y - 1)
+		formatString: #,0
+		displayFolder: 1. États financiers
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000003
+
+	measure 'Variation vs N-1' = DIVIDE([Valeur] - [Valeur N-1], ABS([Valeur N-1]))
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 1. États financiers
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000004
+
+	measure 'Valeur ratio' = AVERAGE(fact_ratios[value])
+		formatString: #,0.00
+		displayFolder: 2. Ratios
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000005
+
+	measure 'Ratio N-1' =
+			VAR _y = MAX(dim_fiscal_year[fiscal_year])
+			RETURN CALCULATE([Valeur ratio], REMOVEFILTERS(dim_fiscal_year), dim_fiscal_year[fiscal_year] = _y - 1)
+		formatString: #,0.00
+		displayFolder: 2. Ratios
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000006
+
+	measure 'Évolution ratio' = [Valeur ratio] - [Ratio N-1]
+		formatString: +#,0.00;-#,0.00;0.00
+		displayFolder: 2. Ratios
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000007
+
+	measure 'Chiffre d''affaires' = MAX(financial_scorecard[revenue])
+		formatString: #,0
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000010
+
+	measure 'Résultat opérationnel' = MAX(financial_scorecard[operating_income])
+		formatString: #,0
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000011
+
+	measure 'Résultat net' = MAX(financial_scorecard[net_income])
+		formatString: #,0
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000012
+
+	measure 'Marge opérationnelle' = MAX(financial_scorecard[operating_margin])
+		formatString: 0.0%
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000013
+
+	measure 'Marge nette' = MAX(financial_scorecard[net_margin])
+		formatString: 0.0%
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000014
+
+	measure ROE = MAX(financial_scorecard[roe])
+		formatString: 0.0%
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000015
+
+	measure ROA = MAX(financial_scorecard[roa])
+		formatString: 0.0%
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000016
+
+	measure 'Ratio de liquidité' = MAX(financial_scorecard[current_ratio])
+		formatString: 0.00
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000017
+
+	measure 'Taux d''endettement' = MAX(financial_scorecard[debt_ratio])
+		formatString: 0.0%
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000018
+
+	measure 'Free cash-flow' = MAX(financial_scorecard[fcf])
+		formatString: #,0
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000019
+
+	measure 'Marge FCF' = MAX(financial_scorecard[fcf_margin])
+		formatString: 0.0%
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000020
+
+	measure 'BPA dilué' = MAX(financial_scorecard[eps_diluted])
+		formatString: 0.00
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000021
+
+	measure 'TCAC chiffre d''affaires' = MAX(financial_scorecard[revenue_cagr])
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000022
+
+	measure 'TCAC résultat net' = MAX(financial_scorecard[net_income_cagr])
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000023
+
+	measure 'Entité analysée' = MAX(financial_scorecard[entity]) & "  ·  exercices " & MAX(financial_scorecard[period_start]) & "–" & MAX(financial_scorecard[period_end])
+		displayFolder: 3. Synthèse
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000024
+
+	measure Seuil = MAX(financial_alerts[threshold])
+		formatString: #,0.00
+		displayFolder: 4. Alertes
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000030
+
+	measure Observé = MAX(financial_alerts[observed])
+		formatString: #,0.00
+		displayFolder: 4. Alertes
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000031
+
+	measure 'Indicateurs surveillés' = COUNTROWS(financial_alerts)
+		formatString: 0
+		displayFolder: 4. Alertes
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000032
+
+	measure 'Couleur variation' =
+			VAR _v = [Variation vs N-1]
+			RETURN IF(ISBLANK(_v), BLANK(), IF(_v >= 0, "#3F8F3A", "#C0392B"))
+		displayFolder: 9. Mise en forme
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000040
+
+	measure 'Couleur statut' =
+			VAR _s = LOWER(SELECTEDVALUE(financial_alerts[status]))
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_s), BLANK(),
+			        CONTAINSSTRING(_s, "ok") || CONTAINSSTRING(_s, "vert") || CONTAINSSTRING(_s, "sain") || CONTAINSSTRING(_s, "normal"), "#DDF0D8",
+			        CONTAINSSTRING(_s, "surveil") || CONTAINSSTRING(_s, "watch") || CONTAINSSTRING(_s, "orange"), "#FBE7C6",
+			        "#F6D0CB"
+			    )
+		displayFolder: 9. Mise en forme
+		lineageTag: f6a7b8c9-0006-0001-0001-000000000041
+
+	column _
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f6a7b8c9-0006-0001-0001-0000000000ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [_]
+
+		annotation SummarizationSetBy = User
+
+	partition Mesures = calculated
+		mode: import
+		source = DATATABLE("_", INTEGER, {{1}})
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,42 @@
+table dim_outcome
+	lineageTag: f5202af5-5aa3-420e-8f9e-4d1f9491bd89
+
+	column outcome_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 2547a65d-d935-434e-8069-01f843622c03
+		summarizeBy: none
+		sourceColumn: outcome_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_fr
+		dataType: string
+		lineageTag: 880ee4cd-8cb5-4db4-95d4-26a238151d3f
+		summarizeBy: none
+		sourceColumn: label_fr
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_fraud
+		dataType: int64
+		formatString: 0
+		lineageTag: b8084b1b-5686-4f2f-8517-1250984366f2
+		summarizeBy: sum
+		sourceColumn: is_fraud
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_outcome = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_05_05-fraude-bancaire.xlsx"), null, true),
+				    dim_outcome_Sheet = Source{[Item="dim_outcome",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(dim_outcome_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"outcome_key", Int64.Type}, {"label_fr", type text}, {"is_fraud", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

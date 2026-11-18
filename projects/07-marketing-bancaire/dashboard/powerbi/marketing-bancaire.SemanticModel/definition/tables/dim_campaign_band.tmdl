@@ -1,0 +1,61 @@
+table dim_campaign_band
+	lineageTag: c83cc186-c692-47e2-bc1d-b4538b38571a
+
+	column campaign_band_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 04114c6c-7474-472d-b6e2-d0b71ef8aff6
+		summarizeBy: sum
+		sourceColumn: campaign_band_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_fr
+		dataType: string
+		lineageTag: 64eefbc1-b3cb-40d1-ae92-77924bb51e98
+		summarizeBy: none
+		sourceColumn: label_fr
+		sortByColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column lower_inclusive
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d52ae7d-502d-4e0b-9f01-1af6ca33386b
+		summarizeBy: sum
+		sourceColumn: lower_inclusive
+
+		annotation SummarizationSetBy = Automatic
+
+	column upper_inclusive
+		dataType: int64
+		formatString: 0
+		lineageTag: c23aaca1-51f4-41b4-884c-c352cc018242
+		summarizeBy: sum
+		sourceColumn: upper_inclusive
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		formatString: 0
+		lineageTag: d918c33f-a8ea-424f-a5d4-ec9e04d42db2
+		summarizeBy: none
+		sourceColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_campaign_band = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_07_07-marketing-bancaire.xlsx"), null, true),
+				    dim_campaign_band_Sheet = Source{[Item="dim_campaign_band",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(dim_campaign_band_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"campaign_band_key", Int64.Type}, {"label_fr", type text}, {"lower_inclusive", Int64.Type}, {"upper_inclusive", Int64.Type}, {"sort_order", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

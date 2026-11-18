@@ -1,0 +1,187 @@
+table expense_variance_summary
+	lineageTag: 3d0aed7f-8a52-4746-ab66-dca372d8f0ea
+
+	measure 'Budget postes' = SUM(expense_variance_summary[budget])
+		formatString: \$#,0;-\$#,0;\$#,0
+		displayFolder: 1. Montants
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000001
+
+	measure 'Dépenses postes' = SUM(expense_variance_summary[expenditures])
+		formatString: \$#,0;-\$#,0;\$#,0
+		displayFolder: 1. Montants
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000002
+
+	measure 'Écart postes' = [Dépenses postes] - [Budget postes]
+		formatString: +\$#,0;-\$#,0;\$#,0
+		displayFolder: 1. Montants
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000003
+
+	measure 'Dépassement total' =
+			SUMX(
+			    FILTER(expense_variance_summary, expense_variance_summary[variance] > 0),
+			    expense_variance_summary[variance]
+			)
+		formatString: \$#,0
+		displayFolder: 1. Montants
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000004
+
+	measure 'Sous-consommation totale' =
+			- SUMX(
+			    FILTER(expense_variance_summary, expense_variance_summary[variance] < 0),
+			    expense_variance_summary[variance]
+			)
+		formatString: \$#,0
+		displayFolder: 1. Montants
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000005
+
+	measure 'Écart % postes' = DIVIDE([Écart postes], ABS([Budget postes]))
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 2. Ratios
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000006
+
+	measure 'Nb postes' = COUNTROWS(expense_variance_summary)
+		formatString: #,0
+		displayFolder: 3. Comptages
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000007
+
+	measure 'Postes en dépassement' = CALCULATE(COUNTROWS(expense_variance_summary), expense_variance_summary[variance] > 0) + 0
+		formatString: #,0
+		displayFolder: 3. Comptages
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000008
+
+	measure '% postes en dépassement' = DIVIDE([Postes en dépassement], [Nb postes])
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 2. Ratios
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000009
+
+	measure 'Top 10 dépassements' =
+			VAR _rang =
+			    RANKX(
+			        ALLSELECTED(expense_variance_summary[expense_name]),
+			        [Dépassement total], , DESC, Dense
+			    )
+			RETURN
+			    IF(_rang <= 10 && [Dépassement total] > 0, [Dépassement total])
+		formatString: \$#,0
+		displayFolder: 4. Classements
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000010
+
+	measure 'Top 10 sous-consommations' =
+			VAR _rang =
+			    RANKX(
+			        ALLSELECTED(expense_variance_summary[expense_name]),
+			        [Sous-consommation totale], , DESC, Dense
+			    )
+			RETURN
+			    IF(_rang <= 10 && [Sous-consommation totale] > 0, [Sous-consommation totale])
+		formatString: \$#,0
+		displayFolder: 4. Classements
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000011
+
+	measure 'Couleur écart postes' =
+			VAR _v = [Écart postes]
+			RETURN
+			    SWITCH(TRUE(), ISBLANK(_v), "#9AA3B5", _v > 0, "#D64545", _v < 0, "#1F9D74", "#9AA3B5")
+		displayFolder: 5. Mise en forme
+		lineageTag: 7e2a1b20-0001-4d4f-8b02-000000000012
+
+	column expense_name
+		dataType: string
+		lineageTag: 08e048bb-75b0-4528-a7aa-514ec01f5772
+		summarizeBy: none
+		sourceColumn: expense_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column budget
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c585a4e-46e9-463a-8a4e-89ec5b875654
+		summarizeBy: sum
+		sourceColumn: budget
+
+		annotation SummarizationSetBy = Automatic
+
+	column expenditures
+		dataType: double
+		lineageTag: c5bb8250-4988-4844-a178-712a3eaa09a1
+		summarizeBy: sum
+		sourceColumn: expenditures
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column variance
+		dataType: double
+		lineageTag: c7a11d81-18e9-44a5-b0be-4d5354dad6a8
+		summarizeBy: sum
+		sourceColumn: variance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rows
+		dataType: int64
+		formatString: 0
+		lineageTag: 796d39d4-d2ae-46be-b627-2036a337a263
+		summarizeBy: sum
+		sourceColumn: rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column zero_budget_rows
+		dataType: int64
+		formatString: 0
+		lineageTag: 091af644-6411-4156-b32d-3554740b9f0d
+		summarizeBy: sum
+		sourceColumn: zero_budget_rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column variance_pct
+		dataType: double
+		lineageTag: 6fae6f71-dc61-4036-9ec9-accffb5c0628
+		summarizeBy: none
+		sourceColumn: variance_pct
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unfavorable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4b6b321e-b672-4d35-8668-39c78bccd096
+		summarizeBy: none
+		sourceColumn: unfavorable
+
+		annotation SummarizationSetBy = Automatic
+
+	column Statut
+		dataType: string
+		lineageTag: 7e2a1b20-0002-4d4f-8b02-000000000001
+		summarizeBy: none
+		sourceColumn: Statut
+
+		annotation SummarizationSetBy = Automatic
+
+	partition expense_variance_summary = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_01_01-budget-vs-actual.xlsx"), null, true),
+				    expense_variance_summary_Sheet = Source{[Item="expense_variance_summary",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(expense_variance_summary_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"expense_name", type text}, {"budget", Int64.Type}, {"expenditures", type number}, {"variance", type number}, {"rows", Int64.Type}, {"zero_budget_rows", Int64.Type}, {"variance_pct", type number}, {"unfavorable", type logical}}),
+				    #"Statut ajouté" = Table.AddColumn(#"Type modifié", "Statut", each
+				        if [variance] = null then "Conforme"
+				        else if [variance] > 0 then "Dépassement"
+				        else if [variance] < 0 then "Sous-consommation"
+				        else "Conforme", type text)
+				in
+				    #"Statut ajouté"
+
+	annotation PBI_ResultType = Table
+

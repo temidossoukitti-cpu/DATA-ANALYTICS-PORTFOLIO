@@ -31,7 +31,7 @@ Le fichier brut doit rester inchangé. Le fichier préparé dans `data/processed
 | `data/data_dictionary.csv` | Explication des colonnes |
 | `scripts/` | Programmes reproductibles de téléchargement, contrôle et analyse |
 | `sql/model_budget_vs_actual.sql` | Structure SQL et contrôles de base |
-| `dashboard/web/` | Dashboard web statique (code source dans `dashboard-web/`) |
+| `dashboard/powerbi/` | Dashboard Power BI (PBIP) et données sources |
 | `dashboard/austin_budget_vs_actual_model.xlsx` | Modèle Excel avec détail, synthèse et listes de référence |
 | `visuals/` | Graphiques générés à partir des données |
 | `checks/` | Résultats des contrôles qualité |
@@ -63,11 +63,11 @@ python3 scripts/create_excel_model.py
 python3 scripts/analyze_variances.py
 ```
 
-## Dashboard web
+## Dashboard Power BI
 
 La version interactive est publiée directement dans le navigateur avec GitHub Pages : [ouvrir le dashboard Budget vs Réalisé](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/).
 
-Le code source se trouve dans `dashboard-web/`. La version publiée est construite dans la branche `gh-pages` du dépôt.
+Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 
 ## Limites
 

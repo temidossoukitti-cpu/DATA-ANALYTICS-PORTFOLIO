@@ -40,3 +40,7 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# Power BI Desktop (PBIP) : caches et réglages locaux
+**/.pbi/localSettings.json
+**/.pbi/cache.abf

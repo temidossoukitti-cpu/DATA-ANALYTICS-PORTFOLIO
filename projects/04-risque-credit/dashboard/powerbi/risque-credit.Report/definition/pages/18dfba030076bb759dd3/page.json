@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "18dfba030076bb759dd3",
+  "displayName": "Vue du portefeuille",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

@@ -1,0 +1,95 @@
+table prices_long
+	lineageTag: 01435bd2-46ee-472e-8b84-612da466d9c2
+
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a751ff44-babb-4d57-8375-46e396bb8761
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: e1807a41-d025-41c0-a01e-239b8ecdf9d1
+			defaultHierarchy: LocalDateTable_f54383fa-4757-46fd-84e5-a2502ecd5efa.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ticker
+		dataType: string
+		lineageTag: 9e50a7c7-59bd-48ee-bf6f-2688b51b6529
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column close
+		dataType: double
+		lineageTag: 20ab060e-db16-4be1-bc64-c76f5d5455fc
+		summarizeBy: sum
+		sourceColumn: close
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rendement
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 78a54391-62db-45c6-abcf-98cdaab38c08
+		summarizeBy: none
+		sourceColumn: rendement
+
+		annotation SummarizationSetBy = User
+
+	column Année
+		dataType: string
+		lineageTag: b2c3d4e5-0001-0001-0001-000000000001
+		summarizeBy: none
+		sourceColumn: Année
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: string
+		lineageTag: b2c3d4e5-0001-0001-0001-000000000002
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mois
+		dataType: string
+		lineageTag: b2c3d4e5-0001-0001-0001-000000000003
+		summarizeBy: none
+		sourceColumn: Mois
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type actif'
+		dataType: string
+		lineageTag: b2c3d4e5-0001-0001-0001-000000000004
+		summarizeBy: none
+		sourceColumn: Type actif
+
+		annotation SummarizationSetBy = Automatic
+
+	partition prices_long = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_02_02-portefeuille-risque.xlsx"), null, true),
+				    prices_long_Sheet = Source{[Item="prices_long",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(prices_long_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"date", type date}, {"ticker", type text}, {"close", type number}, {"rendement", type number}}),
+				    #"Année" = Table.AddColumn(#"Type modifié", "Année", each Text.From(Date.Year([date])), type text),
+				    #"Trimestre" = Table.AddColumn(#"Année", "Trimestre", each Text.From(Date.Year([date])) & "-T" & Text.From(Date.QuarterOfYear([date])), type text),
+				    #"Mois" = Table.AddColumn(#"Trimestre", "Mois", each Text.From(Date.Year([date])) & "-" & Text.PadStart(Text.From(Date.Month([date])), 2, "0"), type text),
+				    #"Type actif" = Table.AddColumn(#"Mois", "Type actif", each if [ticker] = "IDX" then "Indice de référence" else "Action", type text)
+				in
+				    #"Type actif"
+
+	annotation PBI_ResultType = Table
+

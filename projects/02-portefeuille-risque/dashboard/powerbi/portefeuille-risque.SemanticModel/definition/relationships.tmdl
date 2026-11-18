@@ -1,0 +1,10 @@
+relationship e1807a41-d025-41c0-a01e-239b8ecdf9d1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: prices_long.date
+	toColumn: LocalDateTable_f54383fa-4757-46fd-84e5-a2502ecd5efa.Date
+
+relationship 29122d88-70ce-4c1c-8700-cb53cb4a83dc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: prices_weekly_clean.date
+	toColumn: LocalDateTable_b7aef8b5-e27b-4785-b613-fec426dbf02f.Date
+

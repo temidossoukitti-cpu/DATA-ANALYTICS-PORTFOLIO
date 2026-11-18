@@ -1,0 +1,241 @@
+table fact_campaign
+	lineageTag: 38e83cd7-b78c-4af0-9da8-efefa93f5059
+
+	column campaign_id
+		dataType: int64
+		formatString: 0
+		lineageTag: fbe5379e-f77c-4f3c-9fe0-011c06898cbb
+		summarizeBy: sum
+		sourceColumn: campaign_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: 86f5d23f-fae7-4384-9a65-a5019c922d28
+		summarizeBy: sum
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column age_band_key
+		dataType: int64
+		formatString: 0
+		lineageTag: e2537992-0a5b-449c-b6f0-34755eddac82
+		summarizeBy: none
+		sourceColumn: age_band_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_key
+		dataType: int64
+		formatString: 0
+		lineageTag: f18fbf6b-da98-4918-a1de-0ab44c50830b
+		summarizeBy: none
+		sourceColumn: job_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column marital_key
+		dataType: int64
+		formatString: 0
+		lineageTag: accae7ca-82c6-4463-9924-5bb7b8b23b13
+		summarizeBy: sum
+		sourceColumn: marital_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column education_key
+		dataType: int64
+		formatString: 0
+		lineageTag: abc186a7-819a-4201-ae63-de888b94a003
+		summarizeBy: sum
+		sourceColumn: education_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column default_status
+		dataType: string
+		lineageTag: eda76bf3-a18a-4ec6-879f-458c320cc00d
+		summarizeBy: none
+		sourceColumn: default_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column housing_loan
+		dataType: string
+		lineageTag: e4f8c63f-aca5-492b-93d7-bca38329cef3
+		summarizeBy: none
+		sourceColumn: housing_loan
+
+		annotation SummarizationSetBy = Automatic
+
+	column personal_loan
+		dataType: string
+		lineageTag: 712e8de9-1ca5-4ea9-8a2f-0730f8a6b471
+		summarizeBy: none
+		sourceColumn: personal_loan
+
+		annotation SummarizationSetBy = Automatic
+
+	column contact_key
+		dataType: int64
+		formatString: 0
+		lineageTag: bcb4f6d7-27c8-4fee-85cf-3143356f991c
+		summarizeBy: sum
+		sourceColumn: contact_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_key
+		dataType: int64
+		formatString: 0
+		lineageTag: fefb6998-33f1-4442-b550-c11cd4ddc131
+		summarizeBy: sum
+		sourceColumn: month_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_week
+		dataType: string
+		lineageTag: 4feef3ed-3d08-4415-883d-c2ce5c139030
+		summarizeBy: none
+		sourceColumn: day_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration
+		dataType: int64
+		formatString: 0
+		lineageTag: 10f1e6f7-5cfe-4966-aa58-edaa836a9bd2
+		summarizeBy: sum
+		sourceColumn: duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column campaign
+		dataType: int64
+		formatString: 0
+		lineageTag: 54b07705-1c77-4fc3-9b1d-f94281efa24c
+		summarizeBy: sum
+		sourceColumn: campaign
+
+		annotation SummarizationSetBy = Automatic
+
+	column campaign_band_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 58151d88-f8d3-42a7-8a00-3f43e1cda051
+		summarizeBy: sum
+		sourceColumn: campaign_band_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column pdays
+		dataType: int64
+		formatString: 0
+		lineageTag: 837e0415-9be8-4f1c-aeef-c94ab9c295bf
+		summarizeBy: sum
+		sourceColumn: pdays
+
+		annotation SummarizationSetBy = Automatic
+
+	column previously_contacted
+		dataType: int64
+		formatString: 0
+		lineageTag: b9e40a23-bd09-4b27-aa0d-361b82f5621d
+		summarizeBy: sum
+		sourceColumn: previously_contacted
+
+		annotation SummarizationSetBy = Automatic
+
+	column previous
+		dataType: int64
+		formatString: 0
+		lineageTag: 105a6578-8f1b-4912-8652-6940725b8bbc
+		summarizeBy: sum
+		sourceColumn: previous
+
+		annotation SummarizationSetBy = Automatic
+
+	column poutcome_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cfcb38a-0b8f-49a8-892b-00cf7a8c19b0
+		summarizeBy: sum
+		sourceColumn: poutcome_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'emp.var.rate'
+		dataType: double
+		lineageTag: 643040b2-f125-4194-9a57-0e438a6aaa87
+		summarizeBy: sum
+		sourceColumn: emp.var.rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'cons.price.idx'
+		dataType: double
+		lineageTag: 1156b513-cefc-4176-a09f-209c9a267314
+		summarizeBy: sum
+		sourceColumn: cons.price.idx
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'cons.conf.idx'
+		dataType: double
+		lineageTag: 5bffb81e-e3d0-4df8-8389-46e99a361fbe
+		summarizeBy: sum
+		sourceColumn: cons.conf.idx
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column euribor3m
+		dataType: double
+		lineageTag: 5b1dbc17-51cb-4ee6-b56b-736eb5f9b851
+		summarizeBy: sum
+		sourceColumn: euribor3m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'nr.employed'
+		dataType: int64
+		formatString: 0
+		lineageTag: 11936b05-a266-4689-9a19-8be934bd75bd
+		summarizeBy: sum
+		sourceColumn: nr.employed
+
+		annotation SummarizationSetBy = Automatic
+
+	column outcome_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 273d0a07-fc44-4ea2-bb37-f35d13c34e19
+		summarizeBy: none
+		sourceColumn: outcome_key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_campaign = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_07_07-marketing-bancaire.xlsx"), null, true),
+				    fact_campaign_Sheet = Source{[Item="fact_campaign",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(fact_campaign_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"campaign_id", Int64.Type}, {"age", Int64.Type}, {"age_band_key", Int64.Type}, {"job_key", Int64.Type}, {"marital_key", Int64.Type}, {"education_key", Int64.Type}, {"default_status", type text}, {"housing_loan", type text}, {"personal_loan", type text}, {"contact_key", Int64.Type}, {"month_key", Int64.Type}, {"day_of_week", type text}, {"duration", Int64.Type}, {"campaign", Int64.Type}, {"campaign_band_key", Int64.Type}, {"pdays", Int64.Type}, {"previously_contacted", Int64.Type}, {"previous", Int64.Type}, {"poutcome_key", Int64.Type}, {"emp.var.rate", type number}, {"cons.price.idx", type number}, {"cons.conf.idx", type number}, {"euribor3m", type number}, {"nr.employed", Int64.Type}, {"outcome_key", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

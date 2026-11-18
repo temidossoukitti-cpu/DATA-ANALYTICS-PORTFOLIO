@@ -1,0 +1,135 @@
+table model_scorecard
+	lineageTag: 04c4ed17-0004-0008-0000-000000000000
+
+	column train_clients
+		dataType: int64
+		formatString: #,0
+		lineageTag: 04c4ed17-0004-0008-0000-000000000001
+		summarizeBy: none
+		sourceColumn: train_clients
+
+	column test_clients
+		dataType: int64
+		formatString: #,0
+		lineageTag: 04c4ed17-0004-0008-0000-000000000002
+		summarizeBy: none
+		sourceColumn: test_clients
+
+	column test_default_rate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 04c4ed17-0004-0008-0000-000000000003
+		summarizeBy: none
+		sourceColumn: test_default_rate
+
+	column decision_threshold
+		dataType: double
+		formatString: 0.00
+		lineageTag: 04c4ed17-0004-0008-0000-000000000004
+		summarizeBy: none
+		sourceColumn: decision_threshold
+
+	column roc_auc
+		dataType: double
+		formatString: 0.000
+		lineageTag: 04c4ed17-0004-0008-0000-000000000005
+		summarizeBy: none
+		sourceColumn: roc_auc
+
+	column pr_auc_average_precision
+		dataType: double
+		formatString: 0.000
+		lineageTag: 04c4ed17-0004-0008-0000-000000000006
+		summarizeBy: none
+		sourceColumn: pr_auc_average_precision
+
+	column ks_statistic
+		dataType: double
+		formatString: 0.000
+		lineageTag: 04c4ed17-0004-0008-0000-000000000007
+		summarizeBy: none
+		sourceColumn: ks_statistic
+
+	column precision_at_threshold
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 04c4ed17-0004-0008-0000-000000000008
+		summarizeBy: none
+		sourceColumn: precision_at_threshold
+
+	column recall_at_threshold
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 04c4ed17-0004-0008-0000-000000000009
+		summarizeBy: none
+		sourceColumn: recall_at_threshold
+
+	column brier_score
+		dataType: double
+		formatString: 0.000
+		lineageTag: 04c4ed17-0004-0008-0000-000000000010
+		summarizeBy: none
+		sourceColumn: brier_score
+
+	column true_negative
+		dataType: int64
+		formatString: #,0
+		lineageTag: 04c4ed17-0004-0008-0000-000000000011
+		summarizeBy: none
+		sourceColumn: true_negative
+
+	column false_positive
+		dataType: int64
+		formatString: #,0
+		lineageTag: 04c4ed17-0004-0008-0000-000000000012
+		summarizeBy: none
+		sourceColumn: false_positive
+
+	column false_negative
+		dataType: int64
+		formatString: #,0
+		lineageTag: 04c4ed17-0004-0008-0000-000000000013
+		summarizeBy: none
+		sourceColumn: false_negative
+
+	column true_positive
+		dataType: int64
+		formatString: #,0
+		lineageTag: 04c4ed17-0004-0008-0000-000000000014
+		summarizeBy: none
+		sourceColumn: true_positive
+
+	column base_lgd_assumption
+		dataType: double
+		formatString: 0%
+		lineageTag: 04c4ed17-0004-0008-0000-000000000015
+		summarizeBy: none
+		sourceColumn: base_lgd_assumption
+
+	column 'Seuils des classes'
+		dataType: string
+		lineageTag: 04c4ed17-0004-0008-0000-000000000016
+		summarizeBy: none
+		sourceColumn: Seuils des classes
+
+	column 'Variables exclues'
+		dataType: string
+		lineageTag: 04c4ed17-0004-0008-0000-000000000017
+		summarizeBy: none
+		sourceColumn: Variables exclues
+
+	partition model_scorecard = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_04_04-risque-credit.xlsx"), null, true),
+				    Feuille = Source{[Item="model_scorecard",Kind="Sheet"]}[Data],
+				    Entetes = Table.PromoteHeaders(Feuille, [PromoteAllScalars=true]),
+				    Colonnes = Table.SelectColumns(Entetes, {"train_clients", "test_clients", "test_default_rate", "decision_threshold", "roc_auc", "pr_auc_average_precision", "ks_statistic", "precision_at_threshold", "recall_at_threshold", "brier_score", "true_negative", "false_positive", "false_negative", "true_positive", "base_lgd_assumption", "risk_band_cutoffs", "protected_features_excluded"}),
+				    Renomme = Table.RenameColumns(Colonnes, {{"risk_band_cutoffs", "Seuils des classes"}, {"protected_features_excluded", "Variables exclues"}}),
+				    Types = Table.TransformColumnTypes(Renomme, {{"train_clients", Int64.Type}, {"test_clients", Int64.Type}, {"test_default_rate", type number}, {"decision_threshold", type number}, {"roc_auc", type number}, {"pr_auc_average_precision", type number}, {"ks_statistic", type number}, {"precision_at_threshold", type number}, {"recall_at_threshold", type number}, {"brier_score", type number}, {"true_negative", Int64.Type}, {"false_positive", Int64.Type}, {"false_negative", Int64.Type}, {"true_positive", Int64.Type}, {"base_lgd_assumption", type number}, {"Seuils des classes", type text}, {"Variables exclues", type text}})
+				in
+				    Types
+
+	annotation PBI_ResultType = Table
+

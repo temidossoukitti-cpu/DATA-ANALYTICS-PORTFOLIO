@@ -1,0 +1,33 @@
+table dim_marriage
+	lineageTag: 04c4ed17-0004-0003-0000-000000000000
+
+	column marriage_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0003-0000-000000000001
+		summarizeBy: none
+		sourceColumn: marriage_key
+
+	column 'Situation familiale'
+		dataType: string
+		lineageTag: 04c4ed17-0004-0003-0000-000000000002
+		summarizeBy: none
+		sourceColumn: Situation familiale
+		sortByColumn: marriage_key
+
+	partition dim_marriage = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_04_04-risque-credit.xlsx"), null, true),
+				    Feuille = Source{[Item="dim_marriage",Kind="Sheet"]}[Data],
+				    Entetes = Table.PromoteHeaders(Feuille, [PromoteAllScalars=true]),
+				    Colonnes = Table.SelectColumns(Entetes, {"marriage_key", "marriage_label"}),
+				    Renomme = Table.RenameColumns(Colonnes, {{"marriage_label", "Situation familiale"}}),
+				    Types = Table.TransformColumnTypes(Renomme, {{"marriage_key", Int64.Type}, {"Situation familiale", type text}})
+				in
+				    Types
+
+	annotation PBI_ResultType = Table
+

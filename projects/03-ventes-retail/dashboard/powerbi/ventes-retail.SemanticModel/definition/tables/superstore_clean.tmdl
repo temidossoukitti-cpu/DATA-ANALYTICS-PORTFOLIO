@@ -1,0 +1,218 @@
+table superstore_clean
+	lineageTag: f9e04abf-a6ac-4844-84cc-eeca3b5b2d05
+
+	column 'Row ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 79e832ad-0deb-4c40-a099-b0a096558432
+		summarizeBy: count
+		sourceColumn: Row ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order ID'
+		dataType: string
+		lineageTag: 7361d7d8-e21a-4850-a05d-0a073106b380
+		summarizeBy: none
+		sourceColumn: Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3597bd4f-d3fe-4274-932c-03caa060bf1c
+		summarizeBy: none
+		sourceColumn: Order Date
+
+		variation Variation
+			isDefault
+			relationship: fe4273ea-e549-45f9-913a-0dcc4652bcc6
+			defaultHierarchy: LocalDateTable_14b452bc-efbd-4025-b5a4-2511cf91b3f6.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Ship Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f82d2673-7236-4acd-9a86-d61c93bf5c27
+		summarizeBy: none
+		sourceColumn: Ship Date
+
+		variation Variation
+			isDefault
+			relationship: e347917f-d692-4cf6-b716-7a87a2117c4a
+			defaultHierarchy: LocalDateTable_85ba57b4-6c23-45b8-b36c-3b476b3a0070.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Ship Mode'
+		dataType: string
+		lineageTag: 6b240deb-fc78-4ca1-adfd-f8a0cdd21fd2
+		summarizeBy: none
+		sourceColumn: Ship Mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 8ef94f50-5274-4ef0-aee8-66d131b3a88f
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 0cd858a1-640c-4972-890b-36a48f9277f0
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 13f4723e-e1ea-4c2b-8c25-295536ebfa46
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: f8117366-57fe-435f-b2e2-9d7c3a42674b
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 5f1aa11c-56d0-42fb-ab00-f84b4b53eb81
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 6306898c-a7dc-4e90-8962-d91048d8c4e1
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Code'
+		dataType: int64
+		formatString: 0
+		lineageTag: 62decf03-868f-473d-b7d1-c9ae07918e9c
+		summarizeBy: count
+		sourceColumn: Postal Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: c578c1b3-35d4-43b9-805a-309f5a06ddbc
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product ID'
+		dataType: string
+		lineageTag: 7a2fa330-f417-4bf6-b711-2ceca2d2c5e6
+		summarizeBy: none
+		sourceColumn: Product ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 73f56642-34f8-47ad-93af-0d8c6ec23243
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub-Category
+		dataType: string
+		lineageTag: 0300836b-9ce6-43a5-9b5e-07ffaed79e4a
+		summarizeBy: none
+		sourceColumn: Sub-Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 7d927627-ea10-468b-84ae-7c8cdcffeef8
+		summarizeBy: none
+		sourceColumn: Product Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: double
+		lineageTag: b7bc532d-01ff-416a-b61c-39ae5bec13f9
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: ce72ec4c-fa06-45a3-aec6-cf71a302ad3e
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discount
+		dataType: double
+		lineageTag: 636b3c6e-f125-47cf-ba42-cc4583aebfa9
+		summarizeBy: sum
+		sourceColumn: Discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit
+		dataType: double
+		lineageTag: 11135e8f-62d6-4564-a9d5-5a2e300c76de
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Potential Duplicate'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b4948a1b-e7e1-4164-b974-877618e9930a
+		summarizeBy: none
+		sourceColumn: Potential Duplicate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition superstore_clean = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_03_03-ventes-retail (1).xlsx"), null, true),
+				    superstore_clean_Sheet = Source{[Item="superstore_clean",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(superstore_clean_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"Row ID", Int64.Type}, {"Order ID", type text}, {"Order Date", type date}, {"Ship Date", type date}, {"Ship Mode", type text}, {"Customer ID", type text}, {"Customer Name", type text}, {"Segment", type text}, {"Country", type text}, {"City", type text}, {"State", type text}, {"Postal Code", Int64.Type}, {"Region", type text}, {"Product ID", type text}, {"Category", type text}, {"Sub-Category", type text}, {"Product Name", type text}, {"Sales", type number}, {"Quantity", Int64.Type}, {"Discount", type number}, {"Profit", type number}, {"Potential Duplicate", type logical}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

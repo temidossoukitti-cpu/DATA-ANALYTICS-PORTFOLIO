@@ -1,0 +1,67 @@
+table fact_financials
+	lineageTag: 1c49a9df-96f9-4a33-a1bb-e32cf4ac653d
+
+	column fiscal_year_key
+		dataType: int64
+		formatString: 0
+		lineageTag: f0ea1e7e-0e5b-4f0a-b3d1-e0f98d75f68b
+		summarizeBy: sum
+		sourceColumn: fiscal_year_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column metric_key
+		dataType: string
+		lineageTag: ec4c6d5b-c77a-4ad8-91e2-f39c9ba60fb4
+		summarizeBy: none
+		sourceColumn: metric_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column value
+		dataType: double
+		lineageTag: 027dd926-caab-4f98-8146-38329ec3cb72
+		summarizeBy: sum
+		sourceColumn: value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit
+		dataType: string
+		lineageTag: b79a7596-a67c-4d7b-b4f1-8ea251e035c2
+		summarizeBy: none
+		sourceColumn: unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column statement
+		dataType: string
+		lineageTag: 18250315-f610-488c-9c17-8ad12a890ca6
+		summarizeBy: none
+		sourceColumn: statement
+
+		annotation SummarizationSetBy = Automatic
+
+	column definition
+		dataType: string
+		lineageTag: 6891ce52-1e8e-465b-b179-95dd33deca51
+		summarizeBy: none
+		sourceColumn: definition
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_financials = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_06_06-analyse-financiere.xlsx"), null, true),
+				    fact_financials_Sheet = Source{[Item="fact_financials",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(fact_financials_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"fiscal_year_key", Int64.Type}, {"metric_key", type text}, {"value", type number}, {"unit", type text}, {"statement", type text}, {"definition", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

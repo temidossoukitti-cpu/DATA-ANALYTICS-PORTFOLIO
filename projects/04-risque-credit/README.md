@@ -96,7 +96,7 @@ Automatisé : **PASS** selon [`qa/validation_report.md`](qa/validation_report.md
 ## Dashboard
 
 <!-- DYNAMIQUE_DASHBOARD_BEGIN -->
-Dashboard web interactif : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/04-risque-credit/dashboard/web/) · [code](dashboard/web/) · captures : [vue d’ensemble](preview/dashboard_web.png) et [filtre « Très élevé »](preview/dashboard_web_risque_eleve.png).
+Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 <!-- DYNAMIQUE_DASHBOARD_END -->
 
 ## Reproduire

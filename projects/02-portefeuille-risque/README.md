@@ -73,8 +73,7 @@ Les résultats sont écrits dans `results/` et `data/cleaned/`.
 
 Le projet dispose de deux dashboards :
 
-- [Dashboard HTML interactif](dashboard/web/) — version statique publiable sur GitHub Pages ;
-- [Dashboard web permanent](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/02-portefeuille-risque/dashboard/web/) — version hébergée sur GitHub Pages ;
+- Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 - [Application Streamlit en ligne](https://projet02-portefeuille-risque.streamlit.app/) — version interactive hébergée sur Streamlit Community Cloud ;
 - [Code de l’application Streamlit](dashboard/streamlit_app.py) — version exécutable en local ;
 - [Rapport PDF](reports/rapport_portefeuille_risque.pdf) — synthèse de quatre pages ;

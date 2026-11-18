@@ -1,0 +1,110 @@
+table model_scorecard
+	lineageTag: 03b62e53-1fbb-4f6f-b03b-c24c1b88cc0f
+
+	column model_name
+		dataType: string
+		lineageTag: f8e7cd4b-a785-4488-9d9c-1e857a2dbc41
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column recommended_threshold
+		dataType: double
+		lineageTag: 3b7c6e21-9e3a-416e-8d8e-f387d3c5598f
+		summarizeBy: sum
+		sourceColumn: recommended_threshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pr_auc_test
+		dataType: double
+		lineageTag: 269f2605-b183-4111-ad20-fe22954768a5
+		summarizeBy: sum
+		sourceColumn: pr_auc_test
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column precision_test
+		dataType: double
+		lineageTag: 5e7257b8-30aa-44f7-a02a-d70ade7c2b3f
+		summarizeBy: sum
+		sourceColumn: precision_test
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column recall_test
+		dataType: double
+		lineageTag: 0ae87e14-3be2-4a44-96b5-a29ebc45839b
+		summarizeBy: sum
+		sourceColumn: recall_test
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column f1_test
+		dataType: double
+		lineageTag: 7328391b-6612-44ee-9bd6-6bdfc252595a
+		summarizeBy: sum
+		sourceColumn: f1_test
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column expected_cost_test
+		dataType: double
+		lineageTag: 17da0478-5dd4-4c28-b161-dba9d7a4a04c
+		summarizeBy: sum
+		sourceColumn: expected_cost_test
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_transactions_population_estimate
+		dataType: double
+		lineageTag: 0ab03c2f-15e1-41a1-a590-cb3287462971
+		summarizeBy: sum
+		sourceColumn: test_transactions_population_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column split_method
+		dataType: string
+		lineageTag: b729c7b4-d068-43ea-ad3d-ec84f1952005
+		summarizeBy: none
+		sourceColumn: split_method
+
+		annotation SummarizationSetBy = Automatic
+
+	column features_used
+		dataType: string
+		lineageTag: 2b7441d3-f26a-4657-a1d0-833bc40b9113
+		summarizeBy: none
+		sourceColumn: features_used
+
+		annotation SummarizationSetBy = Automatic
+
+	partition model_scorecard = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_05_05-fraude-bancaire.xlsx"), null, true),
+				    model_scorecard_Sheet = Source{[Item="model_scorecard",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(model_scorecard_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"model_name", type text}, {"recommended_threshold", type number}, {"pr_auc_test", type number}, {"precision_test", type number}, {"recall_test", type number}, {"f1_test", type number}, {"expected_cost_test", type number}, {"test_transactions_population_estimate", type number}, {"split_method", type text}, {"features_used", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

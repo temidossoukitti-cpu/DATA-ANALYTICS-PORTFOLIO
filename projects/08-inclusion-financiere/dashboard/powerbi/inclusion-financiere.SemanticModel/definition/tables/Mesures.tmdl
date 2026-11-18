@@ -1,0 +1,180 @@
+table Mesures
+	lineageTag: 08a8c0de-0008-0002-0000-000000000000
+
+	measure 'Édition retenue' = MAX(country_indicators[year])
+		formatString: 0
+		displayFolder: 0. Contexte
+		lineageTag: 08a8c0de-0008-0002-0000-000000000001
+
+	measure Bancarisation =
+			VAR _y = MAX(country_indicators[year])
+			VAR _t = FILTER(country_indicators, country_indicators[Type entité] = "Pays" && country_indicators[year] = _y && NOT ISBLANK(country_indicators[account_t_d]) && NOT ISBLANK(country_indicators[pop_adult]))
+			RETURN DIVIDE(SUMX(_t, country_indicators[account_t_d] * country_indicators[pop_adult]), SUMX(_t, country_indicators[pop_adult]))
+		formatString: 0.0%
+		displayFolder: 1. Accès
+		lineageTag: 08a8c0de-0008-0002-0000-000000000002
+
+	measure 'Compte en institution financière' =
+			VAR _y = MAX(country_indicators[year])
+			VAR _t = FILTER(country_indicators, country_indicators[Type entité] = "Pays" && country_indicators[year] = _y && NOT ISBLANK(country_indicators[fiaccount_t_d]) && NOT ISBLANK(country_indicators[pop_adult]))
+			RETURN DIVIDE(SUMX(_t, country_indicators[fiaccount_t_d] * country_indicators[pop_adult]), SUMX(_t, country_indicators[pop_adult]))
+		formatString: 0.0%
+		displayFolder: 1. Accès
+		lineageTag: 08a8c0de-0008-0002-0000-000000000003
+
+	measure 'Mobile money' =
+			VAR _y = MAX(country_indicators[year])
+			VAR _t = FILTER(country_indicators, country_indicators[Type entité] = "Pays" && country_indicators[year] = _y && NOT ISBLANK(country_indicators[mobileaccount_t_d]) && NOT ISBLANK(country_indicators[pop_adult]))
+			RETURN DIVIDE(SUMX(_t, country_indicators[mobileaccount_t_d] * country_indicators[pop_adult]), SUMX(_t, country_indicators[pop_adult]))
+		formatString: 0.0%
+		displayFolder: 1. Accès
+		lineageTag: 08a8c0de-0008-0002-0000-000000000004
+
+	measure 'Carte de débit' =
+			VAR _y = MAX(country_indicators[year])
+			VAR _t = FILTER(country_indicators, country_indicators[Type entité] = "Pays" && country_indicators[year] = _y && NOT ISBLANK(country_indicators[fin2_t_d]) && NOT ISBLANK(country_indicators[pop_adult]))
+			RETURN DIVIDE(SUMX(_t, country_indicators[fin2_t_d] * country_indicators[pop_adult]), SUMX(_t, country_indicators[pop_adult]))
+		formatString: 0.0%
+		displayFolder: 2. Usages
+		lineageTag: 08a8c0de-0008-0002-0000-000000000005
+
+	measure 'Paiements numériques' =
+			VAR _y = MAX(country_indicators[year])
+			VAR _t = FILTER(country_indicators, country_indicators[Type entité] = "Pays" && country_indicators[year] = _y && NOT ISBLANK(country_indicators[g20_any]) && NOT ISBLANK(country_indicators[pop_adult]))
+			RETURN DIVIDE(SUMX(_t, country_indicators[g20_any] * country_indicators[pop_adult]), SUMX(_t, country_indicators[pop_adult]))
+		formatString: 0.0%
+		displayFolder: 2. Usages
+		lineageTag: 08a8c0de-0008-0002-0000-000000000006
+
+	measure Épargne =
+			VAR _y = MAX(country_indicators[year])
+			VAR _t = FILTER(country_indicators, country_indicators[Type entité] = "Pays" && country_indicators[year] = _y && NOT ISBLANK(country_indicators[save_any_t_d]) && NOT ISBLANK(country_indicators[pop_adult]))
+			RETURN DIVIDE(SUMX(_t, country_indicators[save_any_t_d] * country_indicators[pop_adult]), SUMX(_t, country_indicators[pop_adult]))
+		formatString: 0.0%
+		displayFolder: 2. Usages
+		lineageTag: 08a8c0de-0008-0002-0000-000000000007
+
+	measure Emprunt =
+			VAR _y = MAX(country_indicators[year])
+			VAR _t = FILTER(country_indicators, country_indicators[Type entité] = "Pays" && country_indicators[year] = _y && NOT ISBLANK(country_indicators[borrow_any_t_d]) && NOT ISBLANK(country_indicators[pop_adult]))
+			RETURN DIVIDE(SUMX(_t, country_indicators[borrow_any_t_d] * country_indicators[pop_adult]), SUMX(_t, country_indicators[pop_adult]))
+		formatString: 0.0%
+		displayFolder: 2. Usages
+		lineageTag: 08a8c0de-0008-0002-0000-000000000008
+
+	measure 'Comptes inactifs' =
+			VAR _y = MAX(country_indicators[year])
+			VAR _t = FILTER(country_indicators, country_indicators[Type entité] = "Pays" && country_indicators[year] = _y && NOT ISBLANK(country_indicators[inactive_t_d]) && NOT ISBLANK(country_indicators[pop_adult]))
+			RETURN DIVIDE(SUMX(_t, country_indicators[inactive_t_d] * country_indicators[pop_adult]), SUMX(_t, country_indicators[pop_adult]))
+		formatString: 0.0%
+		displayFolder: 2. Usages
+		lineageTag: 08a8c0de-0008-0002-0000-000000000009
+
+	measure 'Adultes (M)' =
+			VAR _y = MAX(country_indicators[year])
+			RETURN DIVIDE(CALCULATE(SUM(country_indicators[pop_adult]), country_indicators[Type entité] = "Pays", country_indicators[year] = _y), 1000000)
+		formatString: #,0" M"
+		displayFolder: 1. Accès
+		lineageTag: 08a8c0de-0008-0002-0000-000000000010
+
+	measure 'Adultes non bancarisés (M)' =
+			VAR _y = MAX(country_indicators[year])
+			VAR _t = FILTER(country_indicators, country_indicators[Type entité] = "Pays" && country_indicators[year] = _y && NOT ISBLANK(country_indicators[account_t_d]) && NOT ISBLANK(country_indicators[pop_adult]))
+			RETURN DIVIDE(SUMX(_t, (1 - country_indicators[account_t_d]) * country_indicators[pop_adult]), 1000000)
+		formatString: #,0" M"
+		displayFolder: 1. Accès
+		lineageTag: 08a8c0de-0008-0002-0000-000000000011
+
+	measure 'Pays couverts' =
+			VAR _y = MAX(country_indicators[year])
+			RETURN COUNTROWS(FILTER(country_indicators, country_indicators[Type entité] = "Pays" && country_indicators[year] = _y && NOT ISBLANK(country_indicators[account_t_d])))
+		formatString: 0
+		displayFolder: 0. Contexte
+		lineageTag: 08a8c0de-0008-0002-0000-000000000012
+
+	measure 'Édition précédente' =
+			VAR _y = MAX(country_indicators[year])
+			RETURN CALCULATE(MAX(country_indicators[year]), REMOVEFILTERS(country_indicators[year]), country_indicators[year] < _y)
+		formatString: 0
+		displayFolder: 0. Contexte
+		lineageTag: 08a8c0de-0008-0002-0000-000000000013
+
+	measure 'Bancarisation précédente' =
+			VAR _p = [Édition précédente]
+			RETURN IF(NOT ISBLANK(_p), CALCULATE([Bancarisation], REMOVEFILTERS(country_indicators[year]), country_indicators[year] = _p))
+		formatString: 0.0%
+		displayFolder: 3. Évolution
+		lineageTag: 08a8c0de-0008-0002-0000-000000000014
+
+	measure 'Évolution bancarisation (pts)' =
+			VAR _p = [Bancarisation précédente]
+			RETURN IF(NOT ISBLANK(_p) && NOT ISBLANK([Bancarisation]), ([Bancarisation] - _p) * 100)
+		formatString: +0.0" pts";-0.0" pts";0.0" pts"
+		displayFolder: 3. Évolution
+		lineageTag: 08a8c0de-0008-0002-0000-000000000015
+
+	measure 'Évolution bancarisation (texte)' =
+			VAR _d = [Évolution bancarisation (pts)]
+			RETURN IF(ISBLANK(_d), "Première édition disponible", IF(_d >= 0, "▲ +", "▼ ") & FORMAT(_d, "0.0") & " pts vs " & [Édition précédente])
+		displayFolder: 3. Évolution
+		lineageTag: 08a8c0de-0008-0002-0000-000000000016
+
+	measure 'Bancarisation 2011' = CALCULATE([Bancarisation], REMOVEFILTERS(country_indicators[year]), country_indicators[year] = 2011)
+		formatString: 0.0%
+		displayFolder: 3. Évolution
+		lineageTag: 08a8c0de-0008-0002-0000-000000000017
+
+	measure 'Gain depuis 2011 (pts)' =
+			VAR _a = [Bancarisation 2011]
+			RETURN IF(NOT ISBLANK(_a) && NOT ISBLANK([Bancarisation]), ([Bancarisation] - _a) * 100)
+		formatString: +0.0" pts";-0.0" pts";0.0" pts"
+		displayFolder: 3. Évolution
+		lineageTag: 08a8c0de-0008-0002-0000-000000000018
+
+	measure 'Top 10 bancarisation' =
+			VAR _t = TOPN(10, FILTER(ALLSELECTED(country_indicators[countrynewwb]), NOT ISBLANK([Bancarisation])), [Bancarisation], DESC)
+			RETURN IF(COUNTROWS(INTERSECT(VALUES(country_indicators[countrynewwb]), _t)) > 0, [Bancarisation])
+		formatString: 0.0%
+		displayFolder: 4. Classements
+		lineageTag: 08a8c0de-0008-0002-0000-000000000019
+
+	measure 'Flop 10 bancarisation' =
+			VAR _t = TOPN(10, FILTER(ALLSELECTED(country_indicators[countrynewwb]), NOT ISBLANK([Bancarisation])), [Bancarisation], ASC)
+			RETURN IF(COUNTROWS(INTERSECT(VALUES(country_indicators[countrynewwb]), _t)) > 0, [Bancarisation])
+		formatString: 0.0%
+		displayFolder: 4. Classements
+		lineageTag: 08a8c0de-0008-0002-0000-000000000020
+
+	measure 'Couleur bancarisation' =
+			VAR _b = [Bancarisation]
+			RETURN IF(ISBLANK(_b), BLANK(), IF(_b < 0.4, "#E5484D", IF(_b < 0.7, "#F5A524", "#2F6BEA")))
+		displayFolder: 9. Mise en forme
+		lineageTag: 08a8c0de-0008-0002-0000-000000000021
+
+	measure 'Couleur évolution' =
+			VAR _d = [Évolution bancarisation (pts)]
+			RETURN IF(ISBLANK(_d), BLANK(), IF(_d >= 0, "#1A9E5C", "#E5484D"))
+		displayFolder: 9. Mise en forme
+		lineageTag: 08a8c0de-0008-0002-0000-000000000022
+
+	measure Sous-titre = "Édition " & [Édition retenue] & " · " & [Pays couverts] & " pays · moyennes pondérées par la population adulte"
+		displayFolder: 9. Mise en forme
+		lineageTag: 08a8c0de-0008-0002-0000-000000000023
+
+	column _
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 08a8c0de-0008-0002-0000-0000000000ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [_]
+
+		annotation SummarizationSetBy = User
+
+	partition Mesures = calculated
+		mode: import
+		source = DATATABLE("_", INTEGER, {{1}})
+
+	annotation PBI_ResultType = Table
+

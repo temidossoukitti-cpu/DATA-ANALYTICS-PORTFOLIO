@@ -1,0 +1,14 @@
+relationship fe4273ea-e549-45f9-913a-0dcc4652bcc6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: superstore_clean.'Order Date'
+	toColumn: LocalDateTable_14b452bc-efbd-4025-b5a4-2511cf91b3f6.Date
+
+relationship e347917f-d692-4cf6-b716-7a87a2117c4a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: superstore_clean.'Ship Date'
+	toColumn: LocalDateTable_85ba57b4-6c23-45b8-b36c-3b476b3a0070.Date
+
+relationship 5a6b7c8d-0003-0001-0001-0000000000aa
+	fromColumn: superstore_clean.'Order Date'
+	toColumn: Calendrier.Date
+

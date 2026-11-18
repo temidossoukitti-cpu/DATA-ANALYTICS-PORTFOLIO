@@ -1,0 +1,24 @@
+relationship 04c4ed17-0004-00ff-0000-000000000001
+	fromColumn: fact_clients.age_band_key
+	toColumn: dim_age_band.age_band_key
+
+relationship 04c4ed17-0004-00ff-0000-000000000002
+	fromColumn: fact_clients.education_key
+	toColumn: dim_education.education_key
+
+relationship 04c4ed17-0004-00ff-0000-000000000003
+	fromColumn: fact_clients.marriage_key
+	toColumn: dim_marriage.marriage_key
+
+relationship 04c4ed17-0004-00ff-0000-000000000004
+	fromColumn: fact_clients.limit_band_key
+	toColumn: dim_limit_band.limit_band_key
+
+relationship 04c4ed17-0004-00ff-0000-000000000005
+	fromColumn: fact_clients.pay_status_key
+	toColumn: dim_pay_status.pay_status_key
+
+relationship 04c4ed17-0004-00ff-0000-000000000006
+	fromColumn: fact_clients.risk_band_key
+	toColumn: dim_risk_band.risk_band_key
+

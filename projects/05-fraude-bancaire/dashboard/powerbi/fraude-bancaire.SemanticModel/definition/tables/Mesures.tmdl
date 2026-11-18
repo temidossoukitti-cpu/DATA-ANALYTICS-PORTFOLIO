@@ -1,0 +1,234 @@
+table Mesures
+	lineageTag: e5f6a7b8-0005-0002-0001-000000000001
+
+	measure Transactions = SUM(fact_transactions[sampling_weight])
+		formatString: #,0
+		displayFolder: 1. Fraude observée
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000002
+
+	measure 'Transactions échantillon' = COUNTROWS(fact_transactions)
+		formatString: #,0
+		displayFolder: 1. Fraude observée
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000003
+
+	measure Fraudes = CALCULATE(SUM(fact_transactions[sampling_weight]), dim_outcome[is_fraud] = 1)
+		formatString: #,0
+		displayFolder: 1. Fraude observée
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000004
+
+	measure 'Taux de fraude' = DIVIDE([Fraudes], [Transactions])
+		formatString: 0.000%
+		displayFolder: 1. Fraude observée
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000005
+
+	measure 'Montant total' = SUMX(fact_transactions, fact_transactions[amount] * fact_transactions[sampling_weight])
+		formatString: #,0 €
+		displayFolder: 1. Fraude observée
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000006
+
+	measure 'Montant fraudé' = CALCULATE([Montant total], dim_outcome[is_fraud] = 1)
+		formatString: #,0 €
+		displayFolder: 1. Fraude observée
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000007
+
+	measure '% montant fraudé' = DIVIDE([Montant fraudé], [Montant total])
+		formatString: 0.00%
+		displayFolder: 1. Fraude observée
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000008
+
+	measure 'Montant moyen fraude' = DIVIDE([Montant fraudé], [Fraudes])
+		formatString: #,0.00 €
+		displayFolder: 1. Fraude observée
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000009
+
+	measure 'Montant moyen légitime' = DIVIDE(CALCULATE([Montant total], dim_outcome[is_fraud] = 0), CALCULATE([Transactions], dim_outcome[is_fraud] = 0))
+		formatString: #,0.00 €
+		displayFolder: 1. Fraude observée
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000010
+
+	measure 'Transactions test' = SUM(fact_model_test[eval_population_weight])
+		formatString: #,0
+		displayFolder: 2. Modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000011
+
+	measure 'Vrais positifs' = CALCULATE([Transactions test], fact_model_test[model_prediction] = 1, dim_outcome[is_fraud] = 1)
+		formatString: #,0
+		displayFolder: 2. Modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000012
+
+	measure 'Faux positifs' = CALCULATE([Transactions test], fact_model_test[model_prediction] = 1, dim_outcome[is_fraud] = 0)
+		formatString: #,0
+		displayFolder: 2. Modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000013
+
+	measure 'Faux négatifs' = CALCULATE([Transactions test], fact_model_test[model_prediction] = 0, dim_outcome[is_fraud] = 1)
+		formatString: #,0
+		displayFolder: 2. Modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000014
+
+	measure Précision = DIVIDE([Vrais positifs], [Vrais positifs] + [Faux positifs])
+		formatString: 0.0%
+		displayFolder: 2. Modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000015
+
+	measure Rappel = DIVIDE([Vrais positifs], [Vrais positifs] + [Faux négatifs])
+		formatString: 0.0%
+		displayFolder: 2. Modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000016
+
+	measure 'Score F1' = DIVIDE(2 * [Précision] * [Rappel], [Précision] + [Rappel])
+		formatString: 0.000
+		displayFolder: 2. Modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000017
+
+	measure 'Précision règle montant' =
+			VAR _vp = CALCULATE([Transactions test], fact_model_test[baseline_amount_flag] = 1, dim_outcome[is_fraud] = 1)
+			VAR _fp = CALCULATE([Transactions test], fact_model_test[baseline_amount_flag] = 1, dim_outcome[is_fraud] = 0)
+			RETURN DIVIDE(_vp, _vp + _fp)
+		formatString: 0.0%
+		displayFolder: 2. Modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000018
+
+	measure 'Rappel règle montant' =
+			VAR _vp = CALCULATE([Transactions test], fact_model_test[baseline_amount_flag] = 1, dim_outcome[is_fraud] = 1)
+			VAR _fn = CALCULATE([Transactions test], fact_model_test[baseline_amount_flag] = 0, dim_outcome[is_fraud] = 1)
+			RETURN DIVIDE(_vp, _vp + _fn)
+		formatString: 0.0%
+		displayFolder: 2. Modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000019
+
+	measure 'Fraude interceptée €' = SUM(fact_model_test[fraud_amount_intercepted_contribution])
+		formatString: #,0 €
+		displayFolder: 3. Coûts
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000020
+
+	measure 'Fraude manquée €' = SUM(fact_model_test[fraud_amount_missed_contribution])
+		formatString: #,0 €
+		displayFolder: 3. Coûts
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000021
+
+	measure 'Légitime bloqué €' = SUM(fact_model_test[legitimate_amount_blocked_contribution])
+		formatString: #,0 €
+		displayFolder: 3. Coûts
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000022
+
+	measure 'Taux d''interception €' = DIVIDE([Fraude interceptée €], [Fraude interceptée €] + [Fraude manquée €])
+		formatString: 0.0%
+		displayFolder: 3. Coûts
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000023
+
+	measure 'Coût attendu' = SUM(fact_model_test[expected_cost_contribution])
+		formatString: #,0 €
+		displayFolder: 3. Coûts
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000024
+
+	measure 'Score moyen' = AVERAGE(fact_model_test[model_probability])
+		formatString: 0.000
+		displayFolder: 2. Modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000025
+
+	measure 'Méthode · fraude interceptée' = SUM(model_money_controls[fraud_amount_intercepted_estimate])
+		formatString: #,0 €
+		displayFolder: 4. Comparaison méthodes
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000026
+
+	measure 'Méthode · fraude manquée' = SUM(model_money_controls[fraud_amount_missed_estimate])
+		formatString: #,0 €
+		displayFolder: 4. Comparaison méthodes
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000027
+
+	measure 'Méthode · légitime bloqué' = SUM(model_money_controls[legitimate_amount_blocked_estimate])
+		formatString: #,0 €
+		displayFolder: 4. Comparaison méthodes
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000028
+
+	measure 'Méthode · coût attendu' = SUM(model_money_controls[expected_cost_estimate])
+		formatString: #,0 €
+		displayFolder: 4. Comparaison méthodes
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000029
+
+	measure 'Méthode · transactions alertées' = SUM(model_money_controls[transactions_flagged_estimate])
+		formatString: #,0
+		displayFolder: 4. Comparaison méthodes
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000030
+
+	measure 'Sensibilité · coût attendu' = SUM(model_cost_sensitivity[test_expected_cost_estimate])
+		formatString: #,0 €
+		displayFolder: 5. Sensibilité
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000031
+
+	measure 'Sensibilité · rappel' = AVERAGE(model_cost_sensitivity[test_weighted_recall])
+		formatString: 0.0%
+		displayFolder: 5. Sensibilité
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000032
+
+	measure 'Sensibilité · précision' = AVERAGE(model_cost_sensitivity[test_weighted_precision])
+		formatString: 0.0%
+		displayFolder: 5. Sensibilité
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000033
+
+	measure 'Sensibilité · seuil' = AVERAGE(model_cost_sensitivity[threshold_selected_on_training_oof])
+		formatString: 0.000
+		displayFolder: 5. Sensibilité
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000034
+
+	measure 'Fiche · seuil' = MAX(model_scorecard[recommended_threshold])
+		formatString: 0.000
+		displayFolder: 6. Fiche modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000040
+
+	measure 'Fiche · PR-AUC' = MAX(model_scorecard[pr_auc_test])
+		formatString: 0.000
+		displayFolder: 6. Fiche modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000041
+
+	measure 'Fiche · précision' = MAX(model_scorecard[precision_test])
+		formatString: 0.0%
+		displayFolder: 6. Fiche modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000042
+
+	measure 'Fiche · rappel' = MAX(model_scorecard[recall_test])
+		formatString: 0.0%
+		displayFolder: 6. Fiche modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000043
+
+	measure 'Fiche · F1' = MAX(model_scorecard[f1_test])
+		formatString: 0.000
+		displayFolder: 6. Fiche modèle
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000044
+
+	measure 'Couleur issue' = IF(SELECTEDVALUE(dim_outcome[is_fraud]) = 1, "#D9785A", "#3E5C7E")
+		displayFolder: 9. Mise en forme
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000035
+
+	measure 'Couleur décision' =
+			VAR _f = SELECTEDVALUE(dim_outcome[is_fraud])
+			VAR _d = SELECTEDVALUE(fact_model_test[Décision modèle])
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        _f = 1 && _d = "Alerte (bloquée)", "#CFE8DA",
+			        _f = 0 && _d = "Acceptée", "#CFE8DA",
+			        ISBLANK(_f) || ISBLANK(_d), BLANK(),
+			        "#F6D3C6"
+			    )
+		displayFolder: 9. Mise en forme
+		lineageTag: e5f6a7b8-0005-0002-0001-000000000036
+
+	column _
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e5f6a7b8-0005-0002-0001-0000000000ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [_]
+
+		annotation SummarizationSetBy = User
+
+	partition Mesures = calculated
+		mode: import
+		source = DATATABLE("_", INTEGER, {{1}})
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,51 @@
+table dim_poutcome
+	lineageTag: 861576c5-8787-4030-8cad-1d97598b4586
+
+	column poutcome_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 15ab734d-e3af-4333-bfe9-ec7b21a047dc
+		summarizeBy: sum
+		sourceColumn: poutcome_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column code_source
+		dataType: string
+		lineageTag: f55f3fe2-b808-43ba-8834-2905da0c6ff0
+		summarizeBy: none
+		sourceColumn: code_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_fr
+		dataType: string
+		lineageTag: e4abcad4-e8c1-4a67-9613-7dd23c9400b3
+		summarizeBy: none
+		sourceColumn: label_fr
+		sortByColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 52304954-3d93-4e2f-bb82-7321a54391b3
+		summarizeBy: none
+		sourceColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_poutcome = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_07_07-marketing-bancaire.xlsx"), null, true),
+				    dim_poutcome_Sheet = Source{[Item="dim_poutcome",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(dim_poutcome_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"poutcome_key", Int64.Type}, {"code_source", type text}, {"label_fr", type text}, {"sort_order", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

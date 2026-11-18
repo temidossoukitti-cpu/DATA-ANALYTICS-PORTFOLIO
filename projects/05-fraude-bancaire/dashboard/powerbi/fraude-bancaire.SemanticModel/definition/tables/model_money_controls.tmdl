@@ -1,0 +1,140 @@
+table model_money_controls
+	lineageTag: 556abb7b-a376-4796-b49b-c2fb474ee082
+
+	column method
+		dataType: string
+		lineageTag: be5dcc7c-107d-4e52-800c-7fc88cb6b201
+		summarizeBy: none
+		sourceColumn: method
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactions_flagged_estimate
+		dataType: double
+		lineageTag: f3dbe7bd-7685-4e36-a59a-2b41c3bde6d2
+		summarizeBy: sum
+		sourceColumn: transactions_flagged_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column legitimate_transactions_blocked_estimate
+		dataType: double
+		lineageTag: 929425c8-4e4e-4582-bcec-983cd63f349a
+		summarizeBy: sum
+		sourceColumn: legitimate_transactions_blocked_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fraud_transactions_intercepted_estimate
+		dataType: double
+		lineageTag: c4fb1165-d24d-4cd1-b41b-42500abc47a8
+		summarizeBy: sum
+		sourceColumn: fraud_transactions_intercepted_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fraud_transactions_missed_estimate
+		dataType: double
+		lineageTag: 3cea0b05-d963-4203-afc1-3a50d27ce43f
+		summarizeBy: sum
+		sourceColumn: fraud_transactions_missed_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_flagged_estimate
+		dataType: double
+		lineageTag: 4cf34169-02e5-43ab-b154-abc766b6f84f
+		summarizeBy: sum
+		sourceColumn: amount_flagged_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fraud_amount_intercepted_estimate
+		dataType: double
+		lineageTag: 226b5d34-e182-4c19-9315-3917cf82e3d9
+		summarizeBy: sum
+		sourceColumn: fraud_amount_intercepted_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fraud_amount_missed_estimate
+		dataType: double
+		lineageTag: 44c6a984-1be9-4a32-b046-c806331b4019
+		summarizeBy: sum
+		sourceColumn: fraud_amount_missed_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column legitimate_amount_blocked_estimate
+		dataType: double
+		lineageTag: e3fcd717-6878-4468-93c3-6ab8278bd2d3
+		summarizeBy: sum
+		sourceColumn: legitimate_amount_blocked_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column expected_cost_estimate
+		dataType: double
+		lineageTag: 02fc3008-7f0a-4034-9d76-681d71973f06
+		summarizeBy: sum
+		sourceColumn: expected_cost_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column missed_fraud_loss_severity_assumption
+		dataType: int64
+		formatString: 0
+		lineageTag: e4e564e2-0e97-4b84-b49f-56782f6bc619
+		summarizeBy: sum
+		sourceColumn: missed_fraud_loss_severity_assumption
+
+		annotation SummarizationSetBy = Automatic
+
+	column legitimate_friction_cost_assumption
+		dataType: int64
+		formatString: 0
+		lineageTag: 36ad1712-8840-406a-a268-c927b2722c8f
+		summarizeBy: sum
+		sourceColumn: legitimate_friction_cost_assumption
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_unit
+		dataType: string
+		lineageTag: b00c08ec-eacc-4746-aa17-e1ebfb5e29c2
+		summarizeBy: none
+		sourceColumn: cost_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	partition model_money_controls = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_05_05-fraude-bancaire.xlsx"), null, true),
+				    model_money_controls_Sheet = Source{[Item="model_money_controls",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(model_money_controls_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"method", type text}, {"transactions_flagged_estimate", type number}, {"legitimate_transactions_blocked_estimate", type number}, {"fraud_transactions_intercepted_estimate", type number}, {"fraud_transactions_missed_estimate", type number}, {"amount_flagged_estimate", type number}, {"fraud_amount_intercepted_estimate", type number}, {"fraud_amount_missed_estimate", type number}, {"legitimate_amount_blocked_estimate", type number}, {"expected_cost_estimate", type number}, {"missed_fraud_loss_severity_assumption", Int64.Type}, {"legitimate_friction_cost_assumption", Int64.Type}, {"cost_unit", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

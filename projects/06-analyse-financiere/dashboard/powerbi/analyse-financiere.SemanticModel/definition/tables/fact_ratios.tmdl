@@ -1,0 +1,43 @@
+table fact_ratios
+	lineageTag: c7073220-2f4e-41e8-9af5-4619218f261d
+
+	column fiscal_year_key
+		dataType: int64
+		formatString: 0
+		lineageTag: f2ab1d92-3afb-42df-9d57-8f89b946aa41
+		summarizeBy: none
+		sourceColumn: fiscal_year_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column ratio_key
+		dataType: string
+		lineageTag: 222aacdb-e8a0-4fd2-aefb-352743fd0fdf
+		summarizeBy: none
+		sourceColumn: ratio_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column value
+		dataType: double
+		lineageTag: d7edf240-d094-42ef-b226-e7ccb90552ba
+		summarizeBy: sum
+		sourceColumn: value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_ratios = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_06_06-analyse-financiere.xlsx"), null, true),
+				    fact_ratios_Sheet = Source{[Item="fact_ratios",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(fact_ratios_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"fiscal_year_key", Int64.Type}, {"ratio_key", type text}, {"value", type number}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

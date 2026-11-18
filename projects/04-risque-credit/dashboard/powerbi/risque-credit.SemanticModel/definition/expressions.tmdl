@@ -1,0 +1,5 @@
+expression DossierDonnees = "C:\DATA-ANALYTICS-PORTFOLIO\projects\04-risque-credit\dashboard\powerbi\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 9f1e7c2a-0000-4000-8000-000296237249
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
+  "pageOrder": [
+    "81b309746014439775d2",
+    "p7_profil",
+    "p7_campagne",
+    "p7_ciblage"
+  ],
+  "activePageName": "p7_ciblage"
+}

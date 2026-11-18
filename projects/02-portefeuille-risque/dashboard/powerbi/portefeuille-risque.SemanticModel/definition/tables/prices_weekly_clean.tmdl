@@ -1,0 +1,142 @@
+table prices_weekly_clean
+	lineageTag: 8ba59d08-cf64-4f1b-9749-bb2f7067e596
+
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a13affb3-8f71-41bf-8953-fd3ec24cfdb7
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: 29122d88-70ce-4c1c-8700-cb53cb4a83dc
+			defaultHierarchy: LocalDateTable_b7aef8b5-e27b-4785-b613-fec426dbf02f.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NVTK
+		dataType: double
+		lineageTag: 87988e4f-ab0b-421a-980a-ebfe75cb8686
+		summarizeBy: sum
+		sourceColumn: NVTK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLDX
+		dataType: double
+		lineageTag: db798b0c-cd83-4899-b0d9-b51e943e0ea6
+		summarizeBy: sum
+		sourceColumn: CLDX
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AFBK
+		dataType: double
+		lineageTag: 2750334e-070b-487d-8831-4c07e48a92df
+		summarizeBy: sum
+		sourceColumn: AFBK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GLPY
+		dataType: double
+		lineageTag: cb853614-801b-420d-86a0-e41e4a05138d
+		summarizeBy: sum
+		sourceColumn: GLPY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MDVT
+		dataType: double
+		lineageTag: ca245083-9453-4312-b581-7e1fe7849647
+		summarizeBy: sum
+		sourceColumn: MDVT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ENRG
+		dataType: double
+		lineageTag: 06833f97-1b50-4d74-bb8d-4db6bd8913b2
+		summarizeBy: sum
+		sourceColumn: ENRG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CNSM
+		dataType: double
+		lineageTag: 62a50668-ccc7-49c1-8b6d-74e0f851266a
+		summarizeBy: sum
+		sourceColumn: CNSM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INDX
+		dataType: double
+		lineageTag: 0c8dfe2f-80c8-4f5c-b191-40e760362fcc
+		summarizeBy: sum
+		sourceColumn: INDX
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TLCM
+		dataType: double
+		lineageTag: 8a2b537c-3cb7-49e9-aa10-1180905f1807
+		summarizeBy: sum
+		sourceColumn: TLCM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UTLG
+		dataType: double
+		lineageTag: 92e0ea8f-0d0c-491f-a2df-b67c846a2e91
+		summarizeBy: sum
+		sourceColumn: UTLG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IDX
+		dataType: double
+		lineageTag: 906bc2da-eb45-4a13-b165-5accfccd3b69
+		summarizeBy: sum
+		sourceColumn: IDX
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition prices_weekly_clean = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_02_02-portefeuille-risque.xlsx"), null, true),
+				    prices_weekly_clean_Sheet = Source{[Item="prices_weekly_clean",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(prices_weekly_clean_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"date", type date}, {"NVTK", type number}, {"CLDX", type number}, {"AFBK", type number}, {"GLPY", type number}, {"MDVT", type number}, {"ENRG", type number}, {"CNSM", type number}, {"INDX", type number}, {"TLCM", type number}, {"UTLG", type number}, {"IDX", type number}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

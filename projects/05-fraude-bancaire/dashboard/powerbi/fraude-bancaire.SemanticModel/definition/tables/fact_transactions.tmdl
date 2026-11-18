@@ -1,0 +1,89 @@
+table fact_transactions
+	lineageTag: c2eab3ea-e02a-434c-b3f7-ea4739ebf113
+
+	column transaction_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 70ca95e0-01af-4d78-ba6c-eec4576cbf43
+		summarizeBy: sum
+		sourceColumn: transaction_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_seconds
+		dataType: int64
+		formatString: 0
+		lineageTag: 90237798-75da-4796-84cc-2f31f8a32b66
+		summarizeBy: sum
+		sourceColumn: time_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount
+		dataType: double
+		lineageTag: 6ba256f3-f048-4180-b130-4007df41ce09
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column outcome_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 923781b5-5cdc-451d-b578-72674d108c10
+		summarizeBy: none
+		sourceColumn: outcome_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_band_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 42a92ce1-5e83-44cd-9f01-264eadcd856a
+		summarizeBy: none
+		sourceColumn: amount_band_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_window_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 91d0df6e-8427-451f-a541-33d13647e7ed
+		summarizeBy: none
+		sourceColumn: time_window_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column sampling_weight
+		dataType: double
+		lineageTag: 72d4ac77-7f0b-4a3f-9beb-ebcff09698f8
+		summarizeBy: sum
+		sourceColumn: sampling_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sample_partition
+		dataType: string
+		lineageTag: d43155e4-79e7-4aa7-80bc-9add5534e036
+		summarizeBy: none
+		sourceColumn: sample_partition
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_transactions = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_05_05-fraude-bancaire.xlsx"), null, true),
+				    fact_transactions_Sheet = Source{[Item="fact_transactions",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(fact_transactions_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"transaction_id", Int64.Type}, {"time_seconds", Int64.Type}, {"amount", type number}, {"outcome_key", Int64.Type}, {"amount_band_key", Int64.Type}, {"time_window_key", Int64.Type}, {"sampling_weight", type number}, {"sample_partition", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,15 @@
+relationship 84d72256-2f05-487b-8e97-502294c21160
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _temp_clean.open_time
+	toColumn: LocalDateTable_ed8c64a6-1241-49b7-bcb0-e9ce43485097.Date
+
+relationship b425b206-2f00-4301-b18e-9aad08afa889
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _temp_clean.close_time
+	toColumn: LocalDateTable_01c7d748-609f-4473-a741-02bfbc28042a.Date
+
+relationship d4ee3d21-9842-40c5-92e3-f7d714279544
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _temp_clean.Jour
+	toColumn: LocalDateTable_a3b0cafe-cb6f-4bb4-9dad-7034d331fc57.Date
+

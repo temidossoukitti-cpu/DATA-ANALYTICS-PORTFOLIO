@@ -1,0 +1,23 @@
+table A_lire
+	lineageTag: b38a9590-c902-4585-9852-03b2bd86025f
+
+	column Column1
+		dataType: string
+		lineageTag: a98c5d8f-ed90-4e5b-81e4-c82c3e865bbf
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition A_lire = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_09_09-cryptomonnaies.xlsx"), null, true),
+				    A_lire_Sheet = Source{[Item="A_lire",Kind="Sheet"]}[Data],
+				    #"Type modifié" = Table.TransformColumnTypes(A_lire_Sheet,{{"Column1", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

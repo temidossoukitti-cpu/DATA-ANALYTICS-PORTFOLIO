@@ -1,7 +1,5 @@
-# Dashboard web — projet 07
+# Dashboard
 
-Dashboard interactif en HTML/CSS/JavaScript sans CDN externe. Les filtres mois source, canal, issue précédente, groupe d’âge et métier recalculent les KPI et visuels sur les données traitées.
+Le dashboard de ce projet est un **rapport Power BI** au format PBIP : voir [`powerbi/`](powerbi/) et son [mode d’emploi](powerbi/README.md).
 
-- Générer les données : `python3 dashboard/build_web_data.py`
-- Ouvrir localement : `python3 -m http.server 8765 --directory dashboard/web`
-- Données : `data/processed/fact_campaign.csv` et dimensions associées.
+Les captures éventuelles se trouvent dans `preview/`. L’ancienne version web (HTML/JavaScript) a été retirée au profit de Power BI.

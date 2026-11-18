@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "inclusion-financiere"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3857c818-3b24-4931-a748-6afbbada7bf6"
+  }
+}

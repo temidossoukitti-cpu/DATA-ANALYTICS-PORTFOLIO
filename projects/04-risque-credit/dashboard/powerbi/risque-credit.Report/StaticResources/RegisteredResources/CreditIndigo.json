@@ -1,0 +1,115 @@
+{
+  "name": "CreditIndigo",
+  "dataColors": [
+    "#1C1A6E",
+    "#7B5CE6",
+    "#2196F3",
+    "#C9C2F5",
+    "#3F51B5",
+    "#90CAF9",
+    "#F5A524",
+    "#D32F2F"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#16153A",
+  "tableAccent": "#1C1A6E",
+  "good": "#2E7D32",
+  "neutral": "#F5A524",
+  "bad": "#D32F2F",
+  "maximum": "#1C1A6E",
+  "center": "#7B5CE6",
+  "minimum": "#EEF2FC",
+  "textClasses": {
+    "callout": {
+      "fontSize": 22,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#0D0B4D"
+    },
+    "title": {
+      "fontSize": 11,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#16153A"
+    },
+    "header": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#16153A"
+    },
+    "label": {
+      "fontSize": 9,
+      "fontFace": "Segoe UI",
+      "color": "#16153A"
+    }
+  },
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F4F4F8"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F4F4F8"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    },
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#E3E3EE"
+              }
+            },
+            "radius": 12
+          }
+        ],
+        "title": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#16153A"
+              }
+            },
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ],
+        "padding": [
+          {
+            "top": 8,
+            "bottom": 8,
+            "left": 10,
+            "right": 10
+          }
+        ]
+      }
+    }
+  }
+}

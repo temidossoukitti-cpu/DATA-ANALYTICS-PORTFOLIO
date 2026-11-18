@@ -39,9 +39,9 @@ Les sorties sont dans `visuals/` : conversion par mois, métier, issue précéde
 
 **Automatisé : PASS**, sous réserve de l'exécution de `python scripts/run_all.py`. Le rapport de contrôle est dans `qa/validation_report.md`.
 
-## Dashboard web
+## Dashboard Power BI
 
-[Ouvrir le dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/07-marketing-bancaire/dashboard/web/) : filtres par mois, canal, issue précédente, groupe d'âge et métier. Le code est dans `dashboard/`.
+Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 
 ## Reproduire
 
@@ -58,6 +58,5 @@ Le pipeline régénère les tables de `data/processed/`, les agrégats de `resul
 
 `data/` contient la source, le dictionnaire et les tables préparées. `scripts/` contient le pipeline. `results/` et `visuals/` contiennent les sorties. `model/` décrit le modèle de données. `dashboard/` contient le dashboard web. `qa/` contient le rapport de validation.
 
-## Dashboard web publié
+## Dashboard Power BI
 
-[Ouvrir le dashboard web](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/07-marketing-bancaire/dashboard/web/) · Captures : `preview/dashboard_web.png`, `preview/dashboard_web_1.png`, `preview/dashboard_web_2.png`. Les filtres sont recalculés à partir des 41 188 lignes traitées.

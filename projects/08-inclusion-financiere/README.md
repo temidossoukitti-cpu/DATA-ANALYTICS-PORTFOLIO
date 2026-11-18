@@ -14,9 +14,9 @@ Les fractures entre groupes sont également visibles. L’écart hommes-femmes d
 
 ## Livrables
 
-Le dossier contient le CSV officiel Global Findex 2025, son glossaire, la source documentée, un script d’analyse reproductible, les tables de résultats et les contrôles qualité. Le dashboard web interactif place désormais **Fractures d’accès** en page d’accueil : classements des écarts femmes–hommes et riches–pauvres, comparaison régionale descriptive, et précautions méthodologiques visibles. Les vues d’ensemble, comparaison pays et tendances restent accessibles dans la navigation.
+Le dossier contient le CSV officiel Global Findex 2025, son glossaire, la source documentée, un script d’analyse reproductible, les tables de résultats et les contrôles qualité. Le dashboard Power BI place désormais **Fractures d’accès** en page d’accueil : classements des écarts femmes–hommes et riches–pauvres, comparaison régionale descriptive, et précautions méthodologiques visibles. Les vues d’ensemble, comparaison pays et tendances restent accessibles dans la navigation.
 
-[Ouvrir le dashboard web](dashboard/web/) · [Voir la preview Fractures d’accès](dashboard/preview/findex_dashboard_fractures.png)
+Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 
 ## Reproduction
 
@@ -25,11 +25,9 @@ Depuis le dossier du projet :
 ```bash
 python3 -m pip install -r requirements.txt
 python3 scripts/01_analyze.py
-python3 dashboard/build_web_data.py
 python3 -m http.server 8000
 ```
 
-Puis ouvrir `http://localhost:8000/dashboard/web/`. Le CSV et le glossaire sont disponibles dans `data/raw/`.
 
 ## Méthode et limites
 
