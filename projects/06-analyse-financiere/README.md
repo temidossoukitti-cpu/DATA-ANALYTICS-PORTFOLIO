@@ -80,6 +80,8 @@ La source ne fournit ni segmentation par activité, ni ventilation géographique
 
 Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 
+![Dashboard Power BI — vue d'ensemble](dashboard/preview/powerbi_overview.png)
+
 ## Reproduire
 
 ```bash

@@ -97,6 +97,8 @@ Automatisé : **PASS** selon [`qa/validation_report.md`](qa/validation_report.md
 
 <!-- DYNAMIQUE_DASHBOARD_BEGIN -->
 Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
+
+![Dashboard Power BI — vue d'ensemble](dashboard/preview/powerbi_overview.png)
 <!-- DYNAMIQUE_DASHBOARD_END -->
 
 ## Reproduire
