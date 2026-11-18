@@ -29,7 +29,7 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 | Référence | Projet | Décision soutenue et repère chiffré | Technologies | État |
 |---|---|---|---|---|
 | 01 | [Civic Signal · Budget contre réalisé](projects/01-budget-vs-actual/README.md) · [Dashboard Power BI](projects/01-budget-vs-actual/dashboard/powerbi/) | Ajuster l’analyse budgétaire; consommation observée : **74,32 %**. | Python · SQL · Excel · Power BI | Publié |
-| 02 | [Risque et performance d’un portefeuille](projects/02-portefeuille-risque/README.md) · [Dashboard Streamlit](https://projet02-portefeuille-risque.streamlit.app/) · [Dashboard Power BI](projects/02-portefeuille-risque/dashboard/powerbi/) | Limiter les concentrations; AFBK représente **34,9 % du risque**. | Python · pandas · NumPy · SciPy · Streamlit · Power BI | Dashboards publiés |
+| 02 | [Risque et performance d’un portefeuille](projects/02-portefeuille-risque/README.md) · [Dashboard Power BI](projects/02-portefeuille-risque/dashboard/powerbi/) | Limiter les concentrations; AFBK représente **34,9 % du risque**. | Python · pandas · NumPy · SciPy · Power BI | Dashboards publiés |
 | 04 | [Risque de défaut des cartes de crédit](projects/04-risque-credit/README.md) · [Dashboard Power BI](projects/04-risque-credit/dashboard/powerbi/) | Orienter le suivi du risque; défaut observé : **22,12 %**. | Python · pandas · scikit-learn · SQLite · Power BI | Dashboard Power BI |
 | 05 | [Détection de fraude sur les transactions bancaires](projects/05-fraude-bancaire/README.md) · [Dashboard Power BI](projects/05-fraude-bancaire/dashboard/powerbi/) | Prioriser la revue; fraude source : **0,173 %**. | Python · pandas · scikit-learn · SQLite · Power BI | Dashboard Power BI |
 | 06 | [Analyse financière de Mastercard](projects/06-analyse-financiere/README.md) · [Dashboard Power BI](projects/06-analyse-financiere/dashboard/powerbi/) | Protéger la marge; marge opérationnelle **57,63 %**. | Python · pandas · SQLite · Power BI | Dashboard Power BI |
@@ -41,7 +41,7 @@ Ce portfolio met l’accent sur la **finance et la gestion du risque**, avec des
 
 | Référence | Projet | Décision soutenue et repère chiffré | Technologies | État |
 |---|---|---|---|---|
-| 03 | [Analyse des ventes d’un distributeur](projects/03-ventes-retail/README.md) · [Dashboard Streamlit](https://projet03-ventes-retail.streamlit.app/) · [Dashboard Power BI](projects/03-ventes-retail/dashboard/powerbi/) | Prioriser produits et marchés; **2,30 M$ de ventes**. | Python · Excel · Streamlit · Power BI | Publié |
+| 03 | [Analyse des ventes d’un distributeur](projects/03-ventes-retail/README.md) · [Dashboard Power BI](projects/03-ventes-retail/dashboard/powerbi/) | Prioriser produits et marchés; **2,30 M$ de ventes**. | Python · Excel · Power BI | Publié |
 
 ### Aperçu du projet ventes
 
@@ -66,7 +66,7 @@ Consulter le [standard de qualité](docs/STANDARD_QUALITE.md) et la [feuille de 
 | Domaine | Outils et pratiques |
 |---|---|
 | Analyse et traitement | Python, pandas, NumPy, SciPy, scikit-learn, SQL, SQLite |
-| Visualisation et restitution | **Power BI** (DAX, Power Query, modélisation en étoile, format PBIP), Matplotlib, Excel, Streamlit |
+| Visualisation et restitution | **Power BI** (DAX, Power Query, modélisation en étoile, format PBIP), Matplotlib, Excel |
 | Finance et gestion | Budget et réalisé, rentabilité, risque et performance de portefeuille |
 | Méthode | Git, documentation, contrôles qualité, analyses reproductibles |
 

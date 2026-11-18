@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "6d595f2113b2b56abee1",
   "position": {
     "x": 16,
@@ -33,24 +33,6 @@
             }
           ]
         },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Mesures"
-                    }
-                  },
-                  "Property": "Variation vs N-1"
-                }
-              },
-              "queryRef": "Mesures.Variation vs N-1",
-              "nativeQueryRef": "Variation vs N-1"
-            }
-          ]
-        },
         "Y": {
           "projections": [
             {
@@ -66,6 +48,24 @@
               },
               "queryRef": "Mesures.Valeur",
               "nativeQueryRef": "Valeur"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesures"
+                    }
+                  },
+                  "Property": "Variation vs N-1"
+                }
+              },
+              "queryRef": "Mesures.Variation vs N-1",
+              "nativeQueryRef": "Variation vs N-1"
             }
           ]
         }
@@ -442,51 +442,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "91885aa4a9609cc1c050",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_fiscal_year"
-              }
-            },
-            "Property": "label_fr"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "adb0204b52e3e8a6b005",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Mesures"
-              }
-            },
-            "Property": "Valeur"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1b2920b7c26a17b57a81",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Mesures"
-              }
-            },
-            "Property": "Variation vs N-1"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

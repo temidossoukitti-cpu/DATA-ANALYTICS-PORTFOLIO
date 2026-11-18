@@ -3,10 +3,10 @@
   "name": "149538b9a6e5281c42c6",
   "position": {
     "x": 280,
-    "y": 99,
+    "y": 100,
     "z": 18000,
-    "height": 24,
-    "width": 36,
+    "height": 22,
+    "width": 45,
     "tabOrder": 18000
   },
   "visual": {
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "👥",
+                    "value": "BDE",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "11pt",
+                      "fontSize": "9pt",
                       "color": "#FFFFFF",
                       "fontWeight": "bold"
                     }

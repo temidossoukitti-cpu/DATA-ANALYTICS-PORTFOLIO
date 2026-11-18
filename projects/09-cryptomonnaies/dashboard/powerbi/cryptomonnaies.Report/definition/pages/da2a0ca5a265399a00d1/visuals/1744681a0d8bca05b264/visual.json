@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "1744681a0d8bca05b264",
   "position": {
     "x": 216,
@@ -32,6 +32,24 @@
             }
           ]
         },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesures"
+                    }
+                  },
+                  "Property": "Base 100"
+                }
+              },
+              "queryRef": "Mesures.Base 100",
+              "nativeQueryRef": "Base 100"
+            }
+          ]
+        },
         "Series": {
           "projections": [
             {
@@ -48,24 +66,6 @@
               "queryRef": "_temp_clean.symbol",
               "nativeQueryRef": "symbol",
               "displayName": "Crypto"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Mesures"
-                    }
-                  },
-                  "Property": "Base 100"
-                }
-              },
-              "queryRef": "Mesures.Base 100",
-              "nativeQueryRef": "Base 100"
             }
           ]
         }
@@ -404,51 +404,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "54373082805651bd9cea",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_temp_clean"
-              }
-            },
-            "Property": "Jour"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3bb04b4dea835c2aa41b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Mesures"
-              }
-            },
-            "Property": "Base 100"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b1947f5746cb0b28695b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_temp_clean"
-              }
-            },
-            "Property": "symbol"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

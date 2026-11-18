@@ -2,15 +2,6 @@
 
 Les données de ce projet sont **simulées**. Les entreprises, prix et positions sont fictifs.
 
-## Streamlit
-
-Depuis le dossier du projet :
-
-```bash
-python3 -m pip install -r dashboard/requirements.txt
-streamlit run dashboard/streamlit_app.py
-```
-
 ## Power BI
 
 Le dashboard principal est un **rapport Power BI** au format PBIP : voir [`powerbi/`](powerbi/) et son

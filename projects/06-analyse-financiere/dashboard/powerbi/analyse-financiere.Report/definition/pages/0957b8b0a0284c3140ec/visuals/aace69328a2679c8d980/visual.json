@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "aace69328a2679c8d980",
   "position": {
     "x": 16,
@@ -33,6 +33,24 @@
             }
           ]
         },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesures"
+                    }
+                  },
+                  "Property": "Valeur ratio"
+                }
+              },
+              "queryRef": "Mesures.Valeur ratio",
+              "nativeQueryRef": "Valeur ratio"
+            }
+          ]
+        },
         "Series": {
           "projections": [
             {
@@ -49,24 +67,6 @@
               "queryRef": "dim_ratio.label_fr",
               "nativeQueryRef": "dim_ratio_label_fr",
               "displayName": "Ratio"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Mesures"
-                    }
-                  },
-                  "Property": "Valeur ratio"
-                }
-              },
-              "queryRef": "Mesures.Valeur ratio",
-              "nativeQueryRef": "Valeur ratio"
             }
           ]
         }
@@ -423,51 +423,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "19332b5adb6c42e70730",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_fiscal_year"
-              }
-            },
-            "Property": "label_fr"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ad465463dc005b2b495b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Mesures"
-              }
-            },
-            "Property": "Valeur ratio"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3bcbe5dcd013e3151726",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_ratio"
-              }
-            },
-            "Property": "label_fr"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

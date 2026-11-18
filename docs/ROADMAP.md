@@ -4,7 +4,7 @@ Le portfolio compte **9 projets publiés**, numérotés de 01 à 09. L’objecti
 
 ## Lot 1 : Finance (en priorité)
 1. Budget contre réalisé : Civic Signal Budget Control Tower *(projet 01, publié)*
-2. Risque et performance d’un portefeuille d’actions *(projet 02, publié, dashboards web et Streamlit)*
+2. Risque et performance d’un portefeuille d’actions *(projet 02, publié, dashboard Power BI)*
 3. Risque de défaut des cartes de crédit *(projet 04, publié)*
 4. Détection de fraude sur des transactions bancaires *(projet 05, publié)*
 5. Analyse financière d’une entreprise : ratios, marges, liquidité *(projet 06, publié)*
@@ -14,7 +14,7 @@ Le portfolio compte **9 projets publiés**, numérotés de 01 à 09. L’objecti
 9. P&L et seuil de rentabilité d’une PME *(à construire)*
 
 ## Lot 2 : Diversification
-- Ventes et commerce : analyse d’un distributeur *(projet 03, publié, dashboards web et Streamlit)*
+- Ventes et commerce : analyse d’un distributeur *(projet 03, publié, dashboard Power BI)*
 - À venir : économie ouest-africaine, santé, IA (churn), cybersécurité, énergie et climat
 
 *La numérotation des dossiers suit l’ordre de création ; l’index du README range les projets par domaine.*

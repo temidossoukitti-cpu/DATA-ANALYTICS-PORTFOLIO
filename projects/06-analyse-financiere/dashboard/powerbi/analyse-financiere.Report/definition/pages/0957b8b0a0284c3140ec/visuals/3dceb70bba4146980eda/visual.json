@@ -3,10 +3,10 @@
   "name": "3dceb70bba4146980eda",
   "position": {
     "x": 785,
-    "y": 99,
+    "y": 100,
     "z": 24000,
-    "height": 24,
-    "width": 36,
+    "height": 22,
+    "width": 45,
     "tabOrder": 24000
   },
   "visual": {
@@ -22,7 +22,7 @@
                     "value": "ROE",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "11pt",
+                      "fontSize": "9pt",
                       "color": "#FFFFFF",
                       "fontWeight": "bold"
                     }

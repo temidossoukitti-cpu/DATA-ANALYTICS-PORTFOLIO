@@ -3,9 +3,9 @@
   "name": "233d93ce3bddf9e9dad2",
   "position": {
     "x": 28,
-    "y": 99,
+    "y": 100,
     "z": 12000,
-    "height": 24,
+    "height": 22,
     "width": 36,
     "tabOrder": 12000
   },
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "⇄",
+                    "value": "AM",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "11pt",
+                      "fontSize": "9pt",
                       "color": "#FFFFFF",
                       "fontWeight": "bold"
                     }

@@ -27,7 +27,7 @@ table Mesures
 		lineageTag: 04c4ed17-0004-0009-0000-000000000005
 
 	measure 'Plafond total' = SUM(fact_clients[Plafond])
-		formatString: #,0,," M"
+		formatString: #,0
 		displayFolder: 1. Portefeuille
 		lineageTag: 04c4ed17-0004-0009-0000-000000000006
 
@@ -37,7 +37,7 @@ table Mesures
 		lineageTag: 04c4ed17-0004-0009-0000-000000000007
 
 	measure 'Exposition (EAD)' = SUMX(fact_clients, MAX(fact_clients[bill_amt1], 0))
-		formatString: #,0,," M"
+		formatString: #,0
 		displayFolder: 2. Risque
 		lineageTag: 04c4ed17-0004-0009-0000-000000000008
 
@@ -47,7 +47,7 @@ table Mesures
 		lineageTag: 04c4ed17-0004-0009-0000-000000000009
 
 	measure 'Perte attendue' = SUMX(fact_clients, fact_clients[PD prédite] * MAX(fact_clients[bill_amt1], 0)) * [LGD]
-		formatString: #,0.0,," M"
+		formatString: #,0
 		displayFolder: 2. Risque
 		lineageTag: 04c4ed17-0004-0009-0000-000000000010
 

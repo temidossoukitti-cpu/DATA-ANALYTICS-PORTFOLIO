@@ -3,10 +3,10 @@
   "name": "fe7a15ba6cab63217d09",
   "position": {
     "x": 533,
-    "y": 99,
+    "y": 100,
     "z": 21000,
-    "height": 24,
-    "width": 36,
+    "height": 22,
+    "width": 45,
     "tabOrder": 21000
   },
   "visual": {
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "📱",
+                    "value": "GD2",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "11pt",
+                      "fontSize": "9pt",
                       "color": "#FFFFFF",
                       "fontWeight": "bold"
                     }

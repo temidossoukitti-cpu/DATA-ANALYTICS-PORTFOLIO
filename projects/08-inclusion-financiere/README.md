@@ -18,6 +18,8 @@ Le dossier contient le CSV officiel Global Findex 2025, son glossaire, la source
 
 Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 
+![Dashboard Power BI — vue d'ensemble](dashboard/preview/powerbi_overview.png)
+
 ## Reproduction
 
 Depuis le dossier du projet :

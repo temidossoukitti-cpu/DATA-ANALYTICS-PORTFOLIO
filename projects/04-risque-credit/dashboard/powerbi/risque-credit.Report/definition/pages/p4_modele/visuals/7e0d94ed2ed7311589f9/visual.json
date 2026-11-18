@@ -3,10 +3,10 @@
   "name": "7e0d94ed2ed7311589f9",
   "position": {
     "x": 647,
-    "y": 99,
+    "y": 100,
     "z": 28000,
-    "height": 24,
-    "width": 29,
+    "height": 22,
+    "width": 37,
     "tabOrder": 28000
   },
   "visual": {
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "€",
+                    "value": "PS2",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "11pt",
+                      "fontSize": "9pt",
                       "color": "#FFFFFF",
                       "fontWeight": "bold"
                     }

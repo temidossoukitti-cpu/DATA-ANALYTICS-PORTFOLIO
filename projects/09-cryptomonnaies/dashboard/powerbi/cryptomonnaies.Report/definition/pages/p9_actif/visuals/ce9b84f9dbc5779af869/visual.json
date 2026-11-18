@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "ce9b84f9dbc5779af869",
   "position": {
     "x": 650,
-    "y": 99,
+    "y": 100,
     "z": 25000,
-    "height": 24,
+    "height": 22,
     "width": 30,
     "tabOrder": 25000
   },
@@ -19,9 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "B",
+                    "value": "PB",
                     "textStyle": {
-                      "fontSize": "12pt"
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "9pt",
+                      "color": "#FFFFFF",
+                      "fontWeight": "bold"
                     }
                   }
                 ],

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "939612f121e00aba3e5f",
   "position": {
     "x": 216,
@@ -32,6 +32,24 @@
             }
           ]
         },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesures"
+                    }
+                  },
+                  "Property": "Volume échangé"
+                }
+              },
+              "queryRef": "Mesures.Volume échangé",
+              "nativeQueryRef": "Volume échangé"
+            }
+          ]
+        },
         "Series": {
           "projections": [
             {
@@ -48,24 +66,6 @@
               "queryRef": "_temp_clean.symbol",
               "nativeQueryRef": "symbol",
               "displayName": "Crypto"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Mesures"
-                    }
-                  },
-                  "Property": "Volume échangé"
-                }
-              },
-              "queryRef": "Mesures.Volume échangé",
-              "nativeQueryRef": "Volume échangé"
             }
           ]
         }
@@ -384,51 +384,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f9d7641a5056c093836d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_temp_clean"
-              }
-            },
-            "Property": "Mois"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8af676a8eb693a6b9ceb",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Mesures"
-              }
-            },
-            "Property": "Volume échangé"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "176c0a85b1866a488e01",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_temp_clean"
-              }
-            },
-            "Property": "symbol"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

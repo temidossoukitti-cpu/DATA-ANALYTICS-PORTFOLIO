@@ -3,10 +3,10 @@
   "name": "ce8074b5c6bf76243c36",
   "position": {
     "x": 854,
-    "y": 99,
+    "y": 100,
     "z": 31000,
-    "height": 24,
-    "width": 29,
+    "height": 22,
+    "width": 37,
     "tabOrder": 31000
   },
   "visual": {
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "📉",
+                    "value": "CRE",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "11pt",
+                      "fontSize": "9pt",
                       "color": "#FFFFFF",
                       "fontWeight": "bold"
                     }

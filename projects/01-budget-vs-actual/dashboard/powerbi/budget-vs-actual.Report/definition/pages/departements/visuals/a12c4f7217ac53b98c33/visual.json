@@ -63,7 +63,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'☰   Tableau détaillé'"
+                  "Value": "' Tableau détaillé'"
                 }
               }
             },

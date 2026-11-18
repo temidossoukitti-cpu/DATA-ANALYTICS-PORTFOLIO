@@ -3,10 +3,10 @@
   "name": "c2e5b42aacc821b43b6b",
   "position": {
     "x": 28,
-    "y": 99,
+    "y": 100,
     "z": 15000,
-    "height": 24,
-    "width": 36,
+    "height": 22,
+    "width": 45,
     "tabOrder": 15000
   },
   "visual": {
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "🏦",
+                    "value": "PCD",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "11pt",
+                      "fontSize": "9pt",
                       "color": "#FFFFFF",
                       "fontWeight": "bold"
                     }
