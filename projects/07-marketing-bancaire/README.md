@@ -43,6 +43,8 @@ Les sorties sont dans `visuals/` : conversion par mois, métier, issue précéde
 
 Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 
+![Dashboard Power BI — vue d'ensemble](dashboard/preview/powerbi_overview.png)
+
 ## Reproduire
 
 Depuis ce dossier :
