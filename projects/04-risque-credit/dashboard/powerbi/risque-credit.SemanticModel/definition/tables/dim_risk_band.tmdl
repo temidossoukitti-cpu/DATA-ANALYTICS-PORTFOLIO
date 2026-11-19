@@ -1,0 +1,48 @@
+table dim_risk_band
+	lineageTag: 04c4ed17-0004-0006-0000-000000000000
+
+	column risk_band_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0006-0000-000000000001
+		summarizeBy: none
+		sourceColumn: risk_band_key
+
+	column 'Classe de risque'
+		dataType: string
+		lineageTag: 04c4ed17-0004-0006-0000-000000000002
+		summarizeBy: none
+		sourceColumn: Classe de risque
+		sortByColumn: ordre
+
+	column 'Plage de PD'
+		dataType: string
+		lineageTag: 04c4ed17-0004-0006-0000-000000000003
+		summarizeBy: none
+		sourceColumn: Plage de PD
+
+	column ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0006-0000-000000000004
+		summarizeBy: none
+		sourceColumn: ordre
+
+	partition dim_risk_band = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_04_04-risque-credit.xlsx"), null, true),
+				    Feuille = Source{[Item="dim_risk_band",Kind="Sheet"]}[Data],
+				    Entetes = Table.PromoteHeaders(Feuille, [PromoteAllScalars=true]),
+				    Types0 = Table.TransformColumnTypes(Entetes, {{"risk_band_key", Int64.Type}, {"risk_band_label", type text}, {"probability_min", type number}, {"probability_max", type number}, {"ordre", Int64.Type}}),
+				    Renomme = Table.RenameColumns(Types0, {{"risk_band_label", "Classe de risque"}}),
+				    Plage = Table.AddColumn(Renomme, "Plage de PD", each Number.ToText([probability_min] * 100, "0") & " - " & Number.ToText([probability_max] * 100, "0") & " %", type text),
+				    Colonnes = Table.SelectColumns(Plage, {"risk_band_key", "Classe de risque", "Plage de PD", "ordre"})
+				in
+				    Colonnes
+
+	annotation PBI_ResultType = Table
+

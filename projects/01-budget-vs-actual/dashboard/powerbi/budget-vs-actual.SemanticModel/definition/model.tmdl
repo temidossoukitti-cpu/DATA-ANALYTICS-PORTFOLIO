@@ -1,0 +1,20 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["department_variance_summary","expense_variance_summary"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table department_variance_summary
+ref table expense_variance_summary
+
+ref cultureInfo fr-FR
+

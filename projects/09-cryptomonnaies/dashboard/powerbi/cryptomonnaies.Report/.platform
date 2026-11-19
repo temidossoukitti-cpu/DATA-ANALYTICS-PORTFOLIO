@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "cryptomonnaies"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7bc87e5d-80e4-4971-b4ef-2f479e03de9c"
+  }
+}

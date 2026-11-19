@@ -1,0 +1,135 @@
+table Mesures
+	lineageTag: a7b8c9d0-0007-0001-0001-000000000001
+
+	measure Contacts = COUNTROWS(fact_campaign)
+		formatString: #,0
+		displayFolder: 1. Volumes
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000002
+
+	measure Souscriptions = CALCULATE(COUNTROWS(fact_campaign), dim_outcome[is_subscription] = 1)
+		formatString: #,0
+		displayFolder: 1. Volumes
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000003
+
+	measure Non-souscriptions = [Contacts] - [Souscriptions]
+		formatString: #,0
+		displayFolder: 1. Volumes
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000004
+
+	measure 'Taux de conversion' = DIVIDE([Souscriptions], [Contacts])
+		formatString: 0.0%
+		displayFolder: 2. Conversion
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000005
+
+	measure 'Taux moyen (sélection)' = CALCULATE([Taux de conversion], ALLSELECTED())
+		formatString: 0.0%
+		displayFolder: 2. Conversion
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000006
+
+	measure 'Écart vs moyenne' = [Taux de conversion] - [Taux moyen (sélection)]
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 2. Conversion
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000007
+
+	measure 'Durée moyenne (min)' = DIVIDE(AVERAGE(fact_campaign[duration]), 60)
+		formatString: 0.0
+		displayFolder: 3. Effort commercial
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000008
+
+	measure 'Durée moyenne souscripteurs (min)' = CALCULATE([Durée moyenne (min)], dim_outcome[is_subscription] = 1)
+		formatString: 0.0
+		displayFolder: 3. Effort commercial
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000009
+
+	measure 'Durée moyenne non-souscripteurs (min)' = CALCULATE([Durée moyenne (min)], dim_outcome[is_subscription] = 0)
+		formatString: 0.0
+		displayFolder: 3. Effort commercial
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000010
+
+	measure 'Appels par client' = AVERAGE(fact_campaign[campaign])
+		formatString: 0.0
+		displayFolder: 3. Effort commercial
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000011
+
+	measure 'Appels par souscription' = DIVIDE(SUM(fact_campaign[campaign]), [Souscriptions])
+		formatString: 0.0
+		displayFolder: 3. Effort commercial
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000012
+
+	measure '% déjà contactés' = AVERAGE(fact_campaign[previously_contacted])
+		formatString: 0.0%
+		displayFolder: 3. Effort commercial
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000013
+
+	measure 'Conversion clients déjà contactés' = CALCULATE([Taux de conversion], fact_campaign[previously_contacted] = 1)
+		formatString: 0.0%
+		displayFolder: 2. Conversion
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000014
+
+	measure 'Conversion nouveaux clients' = CALCULATE([Taux de conversion], fact_campaign[previously_contacted] = 0)
+		formatString: 0.0%
+		displayFolder: 2. Conversion
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000015
+
+	measure 'Euribor 3 mois' = AVERAGE(fact_campaign[euribor3m])
+		formatString: 0.00
+		displayFolder: 4. Contexte économique
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000016
+
+	measure 'Confiance consommateurs' = AVERAGE(fact_campaign[cons.conf.idx])
+		formatString: 0.0
+		displayFolder: 4. Contexte économique
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000017
+
+	measure 'Variation de l''emploi' = AVERAGE(fact_campaign[emp.var.rate])
+		formatString: +0.0;-0.0;0.0
+		displayFolder: 4. Contexte économique
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000018
+
+	measure 'Âge moyen' = AVERAGE(fact_campaign[age])
+		formatString: 0.0
+		displayFolder: 1. Volumes
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000019
+
+	measure 'Couleur conversion' =
+			VAR _e = [Écart vs moyenne]
+			RETURN IF(ISBLANK(_e), BLANK(), IF(_e >= 0, "#6A5ACD", "#D6D6D6"))
+		displayFolder: 9. Mise en forme
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000020
+
+	measure 'Fond conversion' =
+			VAR _t = [Taux de conversion]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_t), BLANK(),
+			        _t >= 0.30, "#4B3F8C",
+			        _t >= 0.20, "#6A5ACD",
+			        _t >= 0.12, "#A79BE0",
+			        _t >= 0.08, "#D9D4F3",
+			        "#F6F4FB"
+			    )
+		displayFolder: 9. Mise en forme
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000021
+
+	measure 'Texte conversion' = IF([Taux de conversion] >= 0.20, "#FFFFFF", "#2A2440")
+		displayFolder: 9. Mise en forme
+		lineageTag: a7b8c9d0-0007-0001-0001-000000000022
+
+	column _
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a7b8c9d0-0007-0001-0001-0000000000ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [_]
+
+		annotation SummarizationSetBy = User
+
+	partition Mesures = calculated
+		mode: import
+		source = DATATABLE("_", INTEGER, {{1}})
+
+	annotation PBI_ResultType = Table
+

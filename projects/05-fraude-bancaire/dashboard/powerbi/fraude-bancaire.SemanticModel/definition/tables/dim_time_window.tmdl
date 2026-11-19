@@ -1,0 +1,61 @@
+table dim_time_window
+	lineageTag: ab663cc7-2bf7-45ab-bbb2-b4918af4d5c1
+
+	column time_window_key
+		dataType: int64
+		formatString: 0
+		lineageTag: d295394d-ee18-48bc-b575-0125fe2ff826
+		summarizeBy: none
+		sourceColumn: time_window_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_fr
+		dataType: string
+		lineageTag: 9ed9f80c-028d-4777-8da5-af519084f72a
+		summarizeBy: none
+		sourceColumn: label_fr
+		sortByColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_second
+		dataType: int64
+		formatString: 0
+		lineageTag: f6af3ceb-e37e-43e6-9147-dcf7c399be9f
+		summarizeBy: sum
+		sourceColumn: start_second
+
+		annotation SummarizationSetBy = Automatic
+
+	column end_second_exclusive
+		dataType: int64
+		formatString: 0
+		lineageTag: 464562bd-d03a-4385-bb2d-80437f54c767
+		summarizeBy: sum
+		sourceColumn: end_second_exclusive
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		formatString: 0
+		lineageTag: aea03bd6-766a-414e-9a3e-2359e3307254
+		summarizeBy: sum
+		sourceColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_time_window = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_05_05-fraude-bancaire.xlsx"), null, true),
+				    dim_time_window_Sheet = Source{[Item="dim_time_window",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(dim_time_window_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"time_window_key", Int64.Type}, {"label_fr", type text}, {"start_second", Int64.Type}, {"end_second_exclusive", Int64.Type}, {"sort_order", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

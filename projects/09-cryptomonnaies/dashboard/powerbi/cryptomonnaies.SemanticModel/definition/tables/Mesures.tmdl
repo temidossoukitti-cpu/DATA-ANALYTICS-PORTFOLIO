@@ -1,0 +1,148 @@
+table Mesures
+	lineageTag: b8c9d0e1-0009-0002-0001-000000000001
+
+	measure Clôture =
+			AVERAGEX(
+			    VALUES(_temp_clean[symbol]),
+			    VAR _t = CALCULATE(MAX(_temp_clean[open_time]))
+			    RETURN CALCULATE(MAX(_temp_clean[close]), _temp_clean[open_time] = _t)
+			)
+		formatString: #,0.00##
+		displayFolder: 1. Prix
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000002
+
+	measure Performance =
+			AVERAGEX(
+			    VALUES(_temp_clean[symbol]),
+			    VAR _t0 = CALCULATE(MIN(_temp_clean[open_time]))
+			    VAR _t1 = CALCULATE(MAX(_temp_clean[open_time]))
+			    VAR _o = CALCULATE(MAX(_temp_clean[open]), _temp_clean[open_time] = _t0)
+			    VAR _c = CALCULATE(MAX(_temp_clean[close]), _temp_clean[open_time] = _t1)
+			    RETURN DIVIDE(_c, _o) - 1
+			)
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 1. Prix
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000003
+
+	measure 'Base 100' =
+			AVERAGEX(
+			    VALUES(_temp_clean[symbol]),
+			    VAR _c = [Clôture]
+			    VAR _t0 = CALCULATE(MIN(_temp_clean[open_time]), ALLSELECTED(_temp_clean[Jour]))
+			    VAR _o = CALCULATE(MAX(_temp_clean[open]), ALLSELECTED(_temp_clean[Jour]), _temp_clean[open_time] = _t0)
+			    RETURN 100 * DIVIDE(_c, _o)
+			)
+		formatString: 0.0
+		displayFolder: 1. Prix
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000004
+
+	measure 'Plus haut' = MAX(_temp_clean[high])
+		formatString: #,0.00##
+		displayFolder: 1. Prix
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000005
+
+	measure 'Plus bas' = MIN(_temp_clean[low])
+		formatString: #,0.00##
+		displayFolder: 1. Prix
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000006
+
+	measure 'Rendement journalier' =
+			AVERAGEX(
+			    VALUES(_temp_clean[symbol]),
+			    VAR _d = CALCULATE(MAX(_temp_clean[Jour]))
+			    VAR _c = [Clôture]
+			    VAR _dp =
+			        CALCULATE(
+			            MAX(_temp_clean[Jour]),
+			            REMOVEFILTERS(_temp_clean[Jour], _temp_clean[Mois], _temp_clean[Année], _temp_clean[open_time]),
+			            _temp_clean[Jour] < _d
+			        )
+			    VAR _cp =
+			        CALCULATE(
+			            [Clôture],
+			            REMOVEFILTERS(_temp_clean[Jour], _temp_clean[Mois], _temp_clean[Année], _temp_clean[open_time]),
+			            _temp_clean[Jour] = _dp
+			        )
+			    RETURN IF(NOT ISBLANK(_cp), DIVIDE(_c, _cp) - 1)
+			)
+		formatString: +0.00%;-0.00%;0.00%
+		displayFolder: 2. Risque
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000007
+
+	measure 'Volatilité annualisée' =
+			AVERAGEX(
+			    VALUES(_temp_clean[symbol]),
+			    CALCULATE(STDEVX.S(VALUES(_temp_clean[Jour]), [Rendement journalier]))
+			) * SQRT(365)
+		formatString: 0.0%
+		displayFolder: 2. Risque
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000008
+
+	measure 'Amplitude moyenne' = AVERAGEX(_temp_clean, DIVIDE(_temp_clean[high] - _temp_clean[low], _temp_clean[open]))
+		formatString: 0.00%
+		displayFolder: 2. Risque
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000009
+
+	measure 'Bougies haussières %' = DIVIDE(COUNTROWS(FILTER(_temp_clean, _temp_clean[close] >= _temp_clean[open])), COUNTROWS(_temp_clean))
+		formatString: 0.0%
+		displayFolder: 2. Risque
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000010
+
+	measure 'Volume échangé' = SUM(_temp_clean[quote_volume])
+		formatString: \$#,0
+		displayFolder: 3. Activité
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000011
+
+	measure 'Nombre de trades' = SUM(_temp_clean[trades])
+		formatString: #,0
+		displayFolder: 3. Activité
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000012
+
+	measure 'Achats agressifs %' = DIVIDE(SUM(_temp_clean[taker_buy_quote_volume]), SUM(_temp_clean[quote_volume]))
+		formatString: 0.0%
+		displayFolder: 3. Activité
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000013
+
+	measure 'Taille moyenne d''un trade' = DIVIDE([Volume échangé], [Nombre de trades])
+		formatString: \$#,0.00
+		displayFolder: 3. Activité
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000014
+
+	measure 'Part du volume' = DIVIDE([Volume échangé], CALCULATE([Volume échangé], ALLSELECTED(_temp_clean[symbol])))
+		formatString: 0.0%
+		displayFolder: 3. Activité
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000015
+
+	measure 'Couleur perf' =
+			VAR _p = [Performance]
+			RETURN IF(ISBLANK(_p), BLANK(), IF(_p >= 0, "#7C4DFF", "#FF4D6D"))
+		displayFolder: 9. Mise en forme
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000020
+
+	measure 'Couleur texte perf' =
+			VAR _p = [Performance]
+			RETURN IF(ISBLANK(_p), BLANK(), IF(_p >= 0, "#2ECC71", "#FF4D6D"))
+		displayFolder: 9. Mise en forme
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000021
+
+	measure Période = "Du " & FORMAT(MIN(_temp_clean[Jour]), "dd/mm/yyyy") & " au " & FORMAT(MAX(_temp_clean[Jour]), "dd/mm/yyyy")
+		displayFolder: 9. Mise en forme
+		lineageTag: b8c9d0e1-0009-0002-0001-000000000022
+
+	column _
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b8c9d0e1-0009-0002-0001-0000000000ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [_]
+
+		annotation SummarizationSetBy = User
+
+	partition Mesures = calculated
+		mode: import
+		source = DATATABLE("_", INTEGER, {{1}})
+
+	annotation PBI_ResultType = Table
+

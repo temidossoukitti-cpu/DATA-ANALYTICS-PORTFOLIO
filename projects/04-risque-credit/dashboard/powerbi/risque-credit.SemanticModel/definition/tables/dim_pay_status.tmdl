@@ -1,0 +1,40 @@
+table dim_pay_status
+	lineageTag: 04c4ed17-0004-0005-0000-000000000000
+
+	column pay_status_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0005-0000-000000000001
+		summarizeBy: none
+		sourceColumn: pay_status_key
+
+	column pay_code
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0005-0000-000000000002
+		summarizeBy: none
+		sourceColumn: pay_code
+
+	column 'Statut de paiement'
+		dataType: string
+		lineageTag: 04c4ed17-0004-0005-0000-000000000003
+		summarizeBy: none
+		sourceColumn: Statut de paiement
+		sortByColumn: pay_code
+
+	partition dim_pay_status = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_04_04-risque-credit.xlsx"), null, true),
+				    Feuille = Source{[Item="dim_pay_status",Kind="Sheet"]}[Data],
+				    Entetes = Table.PromoteHeaders(Feuille, [PromoteAllScalars=true]),
+				    Renomme = Table.RenameColumns(Entetes, {{"pay_status_label", "Statut de paiement"}}),
+				    Types = Table.TransformColumnTypes(Renomme, {{"pay_status_key", Int64.Type}, {"pay_code", Int64.Type}, {"Statut de paiement", type text}})
+				in
+				    Types
+
+	annotation PBI_ResultType = Table
+

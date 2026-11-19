@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
+  "pageOrder": [
+    "1e931339933935a91812",
+    "departements",
+    "postes",
+    "detail"
+  ],
+  "activePageName": "1e931339933935a91812"
+}

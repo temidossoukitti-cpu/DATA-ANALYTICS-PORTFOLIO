@@ -1,0 +1,181 @@
+table Mesures
+	lineageTag: 04c4ed17-0004-0009-0000-000000000000
+
+	measure Clients = COUNTROWS(fact_clients)
+		formatString: #,0
+		displayFolder: 1. Portefeuille
+		lineageTag: 04c4ed17-0004-0009-0000-000000000001
+
+	measure Défauts = CALCULATE(COUNTROWS(fact_clients), fact_clients[default_next_month] = 1)
+		formatString: #,0
+		displayFolder: 1. Portefeuille
+		lineageTag: 04c4ed17-0004-0009-0000-000000000002
+
+	measure 'Taux de défaut' = DIVIDE([Défauts], [Clients])
+		formatString: 0.0%
+		displayFolder: 1. Portefeuille
+		lineageTag: 04c4ed17-0004-0009-0000-000000000003
+
+	measure 'PD moyenne' = AVERAGE(fact_clients[PD prédite])
+		formatString: 0.0%
+		displayFolder: 2. Risque
+		lineageTag: 04c4ed17-0004-0009-0000-000000000004
+
+	measure 'Écart PD - observé (pts)' = IF(NOT ISBLANK([Clients]), ([PD moyenne] - [Taux de défaut]) * 100)
+		formatString: +0.0" pts";-0.0" pts";0.0" pts"
+		displayFolder: 2. Risque
+		lineageTag: 04c4ed17-0004-0009-0000-000000000005
+
+	measure 'Plafond total' = SUM(fact_clients[Plafond])
+		formatString: #,0
+		displayFolder: 1. Portefeuille
+		lineageTag: 04c4ed17-0004-0009-0000-000000000006
+
+	measure 'Plafond moyen' = AVERAGE(fact_clients[Plafond])
+		formatString: #,0
+		displayFolder: 1. Portefeuille
+		lineageTag: 04c4ed17-0004-0009-0000-000000000007
+
+	measure 'Exposition (EAD)' = SUMX(fact_clients, MAX(fact_clients[bill_amt1], 0))
+		formatString: #,0
+		displayFolder: 2. Risque
+		lineageTag: 04c4ed17-0004-0009-0000-000000000008
+
+	measure LGD = MAX(model_scorecard[base_lgd_assumption])
+		formatString: 0%
+		displayFolder: 2. Risque
+		lineageTag: 04c4ed17-0004-0009-0000-000000000009
+
+	measure 'Perte attendue' = SUMX(fact_clients, fact_clients[PD prédite] * MAX(fact_clients[bill_amt1], 0)) * [LGD]
+		formatString: #,0
+		displayFolder: 2. Risque
+		lineageTag: 04c4ed17-0004-0009-0000-000000000010
+
+	measure 'Perte attendue (montant)' = SUMX(fact_clients, fact_clients[PD prédite] * MAX(fact_clients[bill_amt1], 0)) * [LGD]
+		formatString: #,0
+		displayFolder: 2. Risque
+		lineageTag: 04c4ed17-0004-0009-0000-000000000011
+
+	measure 'Perte attendue / exposition' = DIVIDE([Perte attendue], [Exposition (EAD)])
+		formatString: 0.0%
+		displayFolder: 2. Risque
+		lineageTag: 04c4ed17-0004-0009-0000-000000000012
+
+	measure 'Utilisation moyenne' = AVERAGE(fact_clients[Utilisation])
+		formatString: 0.0%
+		displayFolder: 1. Portefeuille
+		lineageTag: 04c4ed17-0004-0009-0000-000000000013
+
+	measure 'Retard récent %' = AVERAGE(fact_clients[risk_flag_recent_delay])
+		formatString: 0.0%
+		displayFolder: 2. Risque
+		lineageTag: 04c4ed17-0004-0009-0000-000000000014
+
+	measure 'Âge moyen' = AVERAGE(fact_clients[age])
+		formatString: 0.0" ans"
+		displayFolder: 1. Portefeuille
+		lineageTag: 04c4ed17-0004-0009-0000-000000000015
+
+	measure 'Clients à risque élevé ou plus' = CALCULATE([Clients], dim_risk_band[ordre] >= 3)
+		formatString: #,0
+		displayFolder: 2. Risque
+		lineageTag: 04c4ed17-0004-0009-0000-000000000016
+
+	measure 'Part risque élevé ou plus' = DIVIDE([Clients à risque élevé ou plus], [Clients])
+		formatString: 0.0%
+		displayFolder: 2. Risque
+		lineageTag: 04c4ed17-0004-0009-0000-000000000017
+
+	measure 'Indice de risque' = 100 * DIVIDE([Taux de défaut], CALCULATE([Taux de défaut], ALLSELECTED()))
+		formatString: 0
+		displayFolder: 2. Risque
+		lineageTag: 04c4ed17-0004-0009-0000-000000000018
+
+	measure AUC = MAX(model_scorecard[roc_auc])
+		formatString: 0.000
+		displayFolder: 3. Modèle
+		lineageTag: 04c4ed17-0004-0009-0000-000000000019
+
+	measure Gini = 2 * [AUC] - 1
+		formatString: 0.000
+		displayFolder: 3. Modèle
+		lineageTag: 04c4ed17-0004-0009-0000-000000000020
+
+	measure KS = MAX(model_scorecard[ks_statistic])
+		formatString: 0.000
+		displayFolder: 3. Modèle
+		lineageTag: 04c4ed17-0004-0009-0000-000000000021
+
+	measure 'Précision au seuil' = MAX(model_scorecard[precision_at_threshold])
+		formatString: 0.0%
+		displayFolder: 3. Modèle
+		lineageTag: 04c4ed17-0004-0009-0000-000000000022
+
+	measure 'Rappel au seuil' = MAX(model_scorecard[recall_at_threshold])
+		formatString: 0.0%
+		displayFolder: 3. Modèle
+		lineageTag: 04c4ed17-0004-0009-0000-000000000023
+
+	measure 'Score de Brier' = MAX(model_scorecard[brier_score])
+		formatString: 0.000
+		displayFolder: 3. Modèle
+		lineageTag: 04c4ed17-0004-0009-0000-000000000024
+
+	measure 'Vrais positifs' = MAX(model_scorecard[true_positive])
+		formatString: #,0
+		displayFolder: 3. Modèle
+		lineageTag: 04c4ed17-0004-0009-0000-000000000025
+
+	measure 'Faux positifs' = MAX(model_scorecard[false_positive])
+		formatString: #,0
+		displayFolder: 3. Modèle
+		lineageTag: 04c4ed17-0004-0009-0000-000000000026
+
+	measure 'Faux négatifs' = MAX(model_scorecard[false_negative])
+		formatString: #,0
+		displayFolder: 3. Modèle
+		lineageTag: 04c4ed17-0004-0009-0000-000000000027
+
+	measure 'Vrais négatifs' = MAX(model_scorecard[true_negative])
+		formatString: #,0
+		displayFolder: 3. Modèle
+		lineageTag: 04c4ed17-0004-0009-0000-000000000028
+
+	measure 'Seuil de décision' = MAX(model_scorecard[decision_threshold])
+		formatString: 0%
+		displayFolder: 3. Modèle
+		lineageTag: 04c4ed17-0004-0009-0000-000000000029
+
+	measure 'Couleur taux de défaut' =
+			VAR _t = [Taux de défaut]
+			RETURN IF(ISBLANK(_t), BLANK(), IF(_t >= 0.3, "#E5484D", IF(_t >= 0.2, "#F5A524", "#22A06B")))
+		displayFolder: 9. Mise en forme
+		lineageTag: 04c4ed17-0004-0009-0000-000000000030
+
+	measure 'Couleur PD client' =
+			VAR _p = MAX(fact_clients[PD prédite])
+			RETURN IF(_p >= 0.4, "#E5484D", IF(_p >= 0.2, "#F5A524", "#22A06B"))
+		displayFolder: 9. Mise en forme
+		lineageTag: 04c4ed17-0004-0009-0000-000000000031
+
+	measure Sous-titre = FORMAT([Clients], "#,0") & " clients · taux de défaut observé " & FORMAT([Taux de défaut], "0.0%") & " · PD moyenne " & FORMAT([PD moyenne], "0.0%")
+		displayFolder: 9. Mise en forme
+		lineageTag: 04c4ed17-0004-0009-0000-000000000032
+
+	column _
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0009-0000-0000000000ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [_]
+
+		annotation SummarizationSetBy = User
+
+	partition Mesures = calculated
+		mode: import
+		source = DATATABLE("_", INTEGER, {{1}})
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,25 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["prices_long","prices_weekly_clean"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table prices_long
+ref table DateTableTemplate_6b7066ee-5e64-4dd7-b1f3-25fda5d3c1eb
+ref table LocalDateTable_f54383fa-4757-46fd-84e5-a2502ecd5efa
+ref table prices_weekly_clean
+ref table LocalDateTable_b7aef8b5-e27b-4785-b613-fec426dbf02f
+ref table Mesures
+ref table 'Actif B'
+
+ref cultureInfo fr-FR
+

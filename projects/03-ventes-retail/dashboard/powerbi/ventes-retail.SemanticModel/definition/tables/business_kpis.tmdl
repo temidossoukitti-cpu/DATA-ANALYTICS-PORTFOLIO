@@ -1,0 +1,42 @@
+table business_kpis
+	lineageTag: a430fe89-0629-4eb4-a628-73ed0509a643
+
+	column KPI
+		dataType: string
+		lineageTag: bd93817d-6d0e-4d41-91d7-76c21f0b0382
+		summarizeBy: none
+		sourceColumn: KPI
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: a1a08174-531b-46a4-b82d-a214ecb327be
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Format
+		dataType: string
+		lineageTag: 7bbb09ef-0c54-498f-b417-41c7553de8ee
+		summarizeBy: none
+		sourceColumn: Format
+
+		annotation SummarizationSetBy = Automatic
+
+	partition business_kpis = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_03_03-ventes-retail (1).xlsx"), null, true),
+				    business_kpis_Sheet = Source{[Item="business_kpis",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(business_kpis_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"KPI", type text}, {"Value", type number}, {"Format", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

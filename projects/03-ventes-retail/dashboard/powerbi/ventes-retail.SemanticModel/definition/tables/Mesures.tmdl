@@ -1,0 +1,148 @@
+table Mesures
+	lineageTag: d4e5f6a7-0003-0002-0001-000000000001
+
+	measure CA = SUM(superstore_clean[Sales])
+		formatString: \$#,0
+		displayFolder: 1. Ventes
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000002
+
+	measure Profit = SUM(superstore_clean[Profit])
+		formatString: \$#,0;-\$#,0;\$#,0
+		displayFolder: 1. Ventes
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000003
+
+	measure 'Marge %' = DIVIDE([Profit], [CA])
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 1. Ventes
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000004
+
+	measure Commandes = DISTINCTCOUNT(superstore_clean[Order ID])
+		formatString: #,0
+		displayFolder: 2. Volumes
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000005
+
+	measure Clients = DISTINCTCOUNT(superstore_clean[Customer ID])
+		formatString: #,0
+		displayFolder: 2. Volumes
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000006
+
+	measure 'Panier moyen' = DIVIDE([CA], [Commandes])
+		formatString: \$#,0.00
+		displayFolder: 1. Ventes
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000007
+
+	measure 'Quantité vendue' = SUM(superstore_clean[Quantity])
+		formatString: #,0
+		displayFolder: 2. Volumes
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000008
+
+	measure 'Remise moyenne' = AVERAGE(superstore_clean[Discount])
+		formatString: 0.0%
+		displayFolder: 3. Opérations
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000009
+
+	measure 'Délai livraison (j)' = AVERAGEX(superstore_clean, DATEDIFF(superstore_clean[Order Date], superstore_clean[Ship Date], DAY))
+		formatString: 0.0
+		displayFolder: 3. Opérations
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000010
+
+	measure 'Nb produits' = DISTINCTCOUNT(superstore_clean[Product ID])
+		formatString: #,0
+		displayFolder: 2. Volumes
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000011
+
+	measure 'CA N-1' = CALCULATE([CA], SAMEPERIODLASTYEAR(Calendrier[Date]))
+		formatString: \$#,0
+		displayFolder: 4. Comparaison N-1
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000012
+
+	measure 'Profit N-1' = CALCULATE([Profit], SAMEPERIODLASTYEAR(Calendrier[Date]))
+		formatString: \$#,0;-\$#,0;\$#,0
+		displayFolder: 4. Comparaison N-1
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000013
+
+	measure 'Croissance CA %' = DIVIDE([CA] - [CA N-1], [CA N-1])
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 4. Comparaison N-1
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000014
+
+	measure 'Croissance Profit %' = DIVIDE([Profit] - [Profit N-1], ABS([Profit N-1]))
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 4. Comparaison N-1
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000015
+
+	measure 'Commandes N-1' = CALCULATE([Commandes], SAMEPERIODLASTYEAR(Calendrier[Date]))
+		formatString: #,0
+		displayFolder: 4. Comparaison N-1
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000016
+
+	measure 'Top 10 produits CA' =
+			VAR _r = RANKX(ALLSELECTED(superstore_clean[Product Name]), [CA], , DESC, Dense)
+			RETURN IF(_r <= 10, [CA])
+		formatString: \$#,0
+		displayFolder: 5. Classements
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000017
+
+	measure 'Top 10 clients CA' =
+			VAR _r = RANKX(ALLSELECTED(superstore_clean[Customer Name]), [CA], , DESC, Dense)
+			RETURN IF(_r <= 10, [CA])
+		formatString: \$#,0
+		displayFolder: 5. Classements
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000018
+
+	measure 'Top 12 états CA' =
+			VAR _r = RANKX(ALLSELECTED(superstore_clean[State]), [CA], , DESC, Dense)
+			RETURN IF(_r <= 12, [CA])
+		formatString: \$#,0
+		displayFolder: 5. Classements
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000019
+
+	measure 'Couleur profit' =
+			VAR _p = [Profit]
+			RETURN IF(ISBLANK(_p), BLANK(), IF(_p >= 0, "#0B6BDE", "#B3261E"))
+		displayFolder: 6. Mise en forme
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000020
+
+	measure 'Couleur croissance' =
+			VAR _g = [Croissance CA %]
+			RETURN IF(ISBLANK(_g), "#5F6B7A", IF(_g >= 0, "#0E7C5A", "#B3261E"))
+		displayFolder: 6. Mise en forme
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000021
+
+	measure 'CA vs N-1' =
+			VAR _g = [Croissance CA %]
+			RETURN IF(ISBLANK(_g), "Pas de N-1", IF(_g >= 0, "▲ ", "▼ ") & FORMAT(_g, "+0.0%;-0.0%") & " vs N-1")
+		displayFolder: 6. Mise en forme
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000022
+
+	measure 'Profit vs N-1' =
+			VAR _g = [Croissance Profit %]
+			RETURN IF(ISBLANK(_g), "Pas de N-1", IF(_g >= 0, "▲ ", "▼ ") & FORMAT(_g, "+0.0%;-0.0%") & " vs N-1")
+		displayFolder: 6. Mise en forme
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000023
+
+	measure 'Filtre actif' =
+			"Période : "
+			    & IF(ISFILTERED(Calendrier[Année]), CONCATENATEX(VALUES(Calendrier[Année]), Calendrier[Année], ", "), "toutes les années")
+			    & "  ·  Région : "
+			    & IF(ISFILTERED(superstore_clean[Region]), CONCATENATEX(VALUES(superstore_clean[Region]), superstore_clean[Region], ", "), "toutes")
+		displayFolder: 6. Mise en forme
+		lineageTag: d4e5f6a7-0003-0002-0001-000000000024
+
+	column _
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d4e5f6a7-0003-0002-0001-0000000000ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [_]
+
+		annotation SummarizationSetBy = User
+
+	partition Mesures = calculated
+		mode: import
+		source = DATATABLE("_", INTEGER, {{1}})
+
+	annotation PBI_ResultType = Table
+

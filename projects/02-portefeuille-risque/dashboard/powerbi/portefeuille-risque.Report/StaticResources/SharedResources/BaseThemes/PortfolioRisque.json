@@ -1,0 +1,159 @@
+{
+  "name": "PortfolioRisque",
+  "dataColors": [
+    "#F5A623",
+    "#4FC3F7",
+    "#81C784",
+    "#E57373",
+    "#CE93D8",
+    "#FFD54F",
+    "#4DD0E1",
+    "#AED581",
+    "#FF8A65",
+    "#90A4AE"
+  ],
+  "background": "#1E2235",
+  "foreground": "#2D3454",
+  "tableAccent": "#F5A623",
+  "maximum": "#81C784",
+  "center": "#F5A623",
+  "minimum": "#E57373",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#2D3454"
+              }
+            }
+          }
+        ],
+        "border": [
+          {
+            "color": {
+              "solid": {
+                "color": "#3A3F5C"
+              }
+            }
+          }
+        ],
+        "fontColor": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            }
+          }
+        ],
+        "labelColor": [
+          {
+            "color": {
+              "solid": {
+                "color": "#CCCCCC"
+              }
+            }
+          }
+        ],
+        "title": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "background": {
+              "solid": {
+                "color": "#2D3454"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "calloutValue": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F5A623"
+              }
+            }
+          }
+        ],
+        "categoryLabel": [
+          {
+            "color": {
+              "solid": {
+                "color": "#CCCCCC"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#2D3454"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    },
+    "lineChart": {
+      "*": {
+        "lineColor": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F5A623"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "clusteredBarChart": {
+      "*": {
+        "dataColor": [
+          {
+            "color": {
+              "solid": {
+                "color": "#2D3454"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#1E2235"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#1E2235"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

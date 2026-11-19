@@ -1,0 +1,27 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["fact_clients","dim_age_band","dim_education","dim_marriage","dim_limit_band","dim_pay_status","dim_risk_band","model_scorecard"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table fact_clients
+ref table dim_age_band
+ref table dim_education
+ref table dim_marriage
+ref table dim_limit_band
+ref table dim_pay_status
+ref table dim_risk_band
+ref table model_scorecard
+ref table Mesures
+
+ref cultureInfo fr-FR
+

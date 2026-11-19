@@ -1,0 +1,103 @@
+table model_cost_sensitivity
+	lineageTag: 55a418a5-94ee-4e3d-91d3-a076805ee867
+
+	column loss_severity_assumption
+		dataType: double
+		lineageTag: 98cb86e8-1ac5-4949-bc10-32ef4df07748
+		summarizeBy: sum
+		sourceColumn: loss_severity_assumption
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column legitimate_friction_cost_assumption
+		dataType: int64
+		formatString: 0
+		lineageTag: 65b41e2d-272b-4690-a0ba-666504a3f12c
+		summarizeBy: sum
+		sourceColumn: legitimate_friction_cost_assumption
+
+		annotation SummarizationSetBy = Automatic
+
+	column threshold_selected_on_training_oof
+		dataType: double
+		lineageTag: d28cb3e3-c7e5-4fab-8024-d48bbc3b8b5f
+		summarizeBy: sum
+		sourceColumn: threshold_selected_on_training_oof
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_expected_cost_estimate
+		dataType: double
+		lineageTag: 6ed867c5-b5ff-4469-80fe-0500e741c2d6
+		summarizeBy: sum
+		sourceColumn: test_expected_cost_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_weighted_precision
+		dataType: double
+		lineageTag: 1b9d27fa-56ab-4520-a0a5-8f9c5d6fc378
+		summarizeBy: sum
+		sourceColumn: test_weighted_precision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_weighted_recall
+		dataType: double
+		lineageTag: 9e5de86f-920d-4f26-9ed6-2fab0572929f
+		summarizeBy: sum
+		sourceColumn: test_weighted_recall
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_fraud_amount_missed_estimate
+		dataType: double
+		lineageTag: 94ac9a6e-7793-46f6-bafa-f62a108477c4
+		summarizeBy: sum
+		sourceColumn: test_fraud_amount_missed_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_legitimate_transactions_blocked_estimate
+		dataType: double
+		lineageTag: 97bb0f2d-9b84-4e3f-bcb1-f875abb970ad
+		summarizeBy: sum
+		sourceColumn: test_legitimate_transactions_blocked_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cost_unit
+		dataType: string
+		lineageTag: 0beb3d53-aab1-43b2-bad7-3101dd8f5404
+		summarizeBy: none
+		sourceColumn: cost_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	partition model_cost_sensitivity = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_05_05-fraude-bancaire.xlsx"), null, true),
+				    model_cost_sensitivity_Sheet = Source{[Item="model_cost_sensitivity",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(model_cost_sensitivity_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"loss_severity_assumption", type number}, {"legitimate_friction_cost_assumption", Int64.Type}, {"threshold_selected_on_training_oof", type number}, {"test_expected_cost_estimate", type number}, {"test_weighted_precision", type number}, {"test_weighted_recall", type number}, {"test_fraud_amount_missed_estimate", type number}, {"test_legitimate_transactions_blocked_estimate", type number}, {"cost_unit", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

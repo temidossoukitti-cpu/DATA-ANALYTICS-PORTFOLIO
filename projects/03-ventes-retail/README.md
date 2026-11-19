@@ -1,6 +1,6 @@
 # 03 · Analyse des ventes d'un distributeur américain
 
-[Site du portfolio](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/) · [Retour à l'index](../../README.md)
+[← Retour à l'index](../../README.md)
 
 > **Données publiques** : jeu de données *Sample Superstore* (commandes d'un distributeur américain, 2014-2017).
 
@@ -90,11 +90,11 @@ Liste complète : [`data/processed/business_kpis.csv`](data/processed/business_k
 | ![États](visuals/07_state_profit_extremes.png) | ![Top clients](visuals/08_top_customers.png) |
 
 ## Dashboard
-[Ouvrir le dashboard web interactif](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/03-ventes-retail/dashboard/web/) · [Application Streamlit en ligne](https://projet03-ventes-retail.streamlit.app/) · Guide de lancement dans [`dashboard/README.md`](dashboard/README.md).
+Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 
-![Dashboard retail — vue d’ensemble](dashboard/preview/retail_dashboard_overview.png)
+![Dashboard Power BI — vue d'ensemble](dashboard/preview/powerbi_overview.png)
 
-Application Streamlit : [`dashboard/streamlit_app.py`](dashboard/streamlit_app.py) · Rapport du dashboard : [`dashboard/reports/retail_dashboard_report.pdf`](dashboard/reports/retail_dashboard_report.pdf) · [Captures web et Streamlit](dashboard/preview/).
+Rapport du dashboard : [`dashboard/reports/retail_dashboard_report.pdf`](dashboard/reports/retail_dashboard_report.pdf).
 
 ## Reproduire l'analyse
 Prérequis : Python 3.10+ et `pip`. Depuis **ce dossier** (`projects/03-ventes-retail`) :
@@ -114,12 +114,12 @@ projects/03-ventes-retail/
 ├── scripts/       # explore.py · clean_data.py · analyze_sales.py
 ├── reports/       # rapports Markdown et classeur Excel
 ├── visuals/       # 8 graphiques PNG
-├── dashboard/     # versions web et Streamlit, captures et rapport PDF
+├── dashboard/     # rapport Power BI (powerbi/), capture et rapport PDF
 └── requirements.txt
 ```
 
 ## Livrables
-[Rapport d'exploration](reports/data_exploration.md) · [Rapport de nettoyage](reports/data_cleaning_report.md) · [Rapport d'analyse métier](reports/business_analysis.md) · [Rapport PDF du dashboard](dashboard/reports/retail_dashboard_report.pdf) · [Application Streamlit](dashboard/streamlit_app.py) · [Classeur Excel](reports/retail_sales_analysis.xlsx) · [Dataset nettoyé](data/processed/superstore_clean.csv) · [KPI](data/processed/business_kpis.csv)
+[Rapport d'exploration](reports/data_exploration.md) · [Rapport de nettoyage](reports/data_cleaning_report.md) · [Rapport d'analyse métier](reports/business_analysis.md) · [Rapport PDF du dashboard](dashboard/reports/retail_dashboard_report.pdf) · [Dashboard Power BI](dashboard/powerbi/) · [Classeur Excel](reports/retail_sales_analysis.xlsx) · [Dataset nettoyé](data/processed/superstore_clean.csv) · [KPI](data/processed/business_kpis.csv)
 
 ## Auteur
 

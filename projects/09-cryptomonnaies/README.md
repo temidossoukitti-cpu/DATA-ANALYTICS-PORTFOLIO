@@ -10,7 +10,7 @@ Pipeline de données, analyse, visualisations et rapport initialisés. Les chiff
 
 ## Livrables
 
-La source est conservée dans `data/raw/binance_spot_daily_ohlc.csv` avec sa fiche de provenance. Les résultats se trouvent dans `results/`, les graphiques dans `visuals/`, le rapport dans `reports/README.md` et le dashboard dans `dashboard/web/`.
+Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 
 ## Reproduction
 

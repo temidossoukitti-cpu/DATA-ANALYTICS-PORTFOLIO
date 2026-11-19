@@ -1,0 +1,220 @@
+table department_variance_summary
+	lineageTag: 9020a172-4807-478b-b26d-ff86a5fe81b4
+
+	measure 'Budget total' = SUM(department_variance_summary[budget])
+		formatString: \$#,0
+		displayFolder: 1. Montants
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000001
+
+	measure 'Dépenses totales' = SUM(department_variance_summary[expenditures])
+		formatString: \$#,0
+		displayFolder: 1. Montants
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000002
+
+	measure 'Écart total' = [Dépenses totales] - [Budget total]
+		formatString: \$#,0;-\$#,0;\$#,0
+		displayFolder: 1. Montants
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000003
+
+	measure 'Budget non consommé' = MAX(0, [Budget total] - [Dépenses totales])
+		formatString: \$#,0
+		displayFolder: 1. Montants
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000004
+
+	measure 'Exécution %' = DIVIDE([Dépenses totales], [Budget total])
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 2. Ratios
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000005
+
+	measure 'Écart %' = DIVIDE([Écart total], [Budget total])
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 2. Ratios
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000006
+
+	measure 'Lignes sans budget %' = DIVIDE(SUM(department_variance_summary[zero_budget_rows]), SUM(department_variance_summary[rows]))
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 2. Ratios
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000007
+
+	measure 'Nb départements' = DISTINCTCOUNT(department_variance_summary[department_name])
+		formatString: 0
+		displayFolder: 3. Comptages
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000008
+
+	measure 'Départements sous 75 %' =
+			COUNTROWS(
+			    FILTER(
+			        VALUES(department_variance_summary[department_name]),
+			        [Budget total] > 0 && [Exécution %] < 0.75
+			    )
+			) + 0
+		formatString: 0
+		displayFolder: 3. Comptages
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000009
+
+	measure 'Lignes budgétaires' = SUM(department_variance_summary[rows])
+		formatString: #,0
+		displayFolder: 3. Comptages
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000010
+
+	measure 'Top 10 budget non consommé' =
+			VAR _rang =
+			    RANKX(
+			        ALLSELECTED(department_variance_summary[department_name]),
+			        [Budget non consommé], , DESC, Dense
+			    )
+			RETURN
+			    IF(_rang <= 10 && [Budget non consommé] > 0, [Budget non consommé])
+		formatString: \$#,0
+		displayFolder: 4. Classements
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000011
+
+	measure 'Couleur exécution' =
+			VAR _e = [Exécution %]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_e), "#9AA3B5",
+			        _e > 1, "#D64545",
+			        _e >= 0.9, "#1F9D74",
+			        _e >= 0.75, "#3E6FD8",
+			        _e >= 0.5, "#F2A93B",
+			        "#D64545"
+			    )
+		displayFolder: 5. Mise en forme
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000012
+
+	measure 'Titre filtre' =
+			IF(
+			    ISFILTERED(department_variance_summary[dept_rollup_name]),
+			    "Regroupement : " & CONCATENATEX(VALUES(department_variance_summary[dept_rollup_name]), department_variance_summary[dept_rollup_name], ", "),
+			    "Tous les regroupements"
+			)
+		displayFolder: 5. Mise en forme
+		lineageTag: 6d1f0a10-0001-4c3e-9a01-000000000013
+
+	column dept_rollup_name
+		dataType: string
+		lineageTag: a98ccb50-f1f5-4324-8633-4c248d357d1e
+		summarizeBy: none
+		sourceColumn: dept_rollup_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column department_name
+		dataType: string
+		lineageTag: 233b74b6-3913-470e-9139-5ce6a1a9a169
+		summarizeBy: none
+		sourceColumn: department_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column budget
+		dataType: double
+		lineageTag: 8b8df392-2fe7-4bfc-b19a-4a5f1daf967f
+		summarizeBy: sum
+		sourceColumn: budget
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column expenditures
+		dataType: double
+		lineageTag: 2248c69c-867c-4dda-b872-b979be25ff3c
+		summarizeBy: sum
+		sourceColumn: expenditures
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column variance
+		dataType: double
+		lineageTag: 577a5fe0-8683-45cb-af11-095fc25227fc
+		summarizeBy: sum
+		sourceColumn: variance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rows
+		dataType: int64
+		formatString: 0
+		lineageTag: 235a463e-d57e-46c4-a8ab-87959173a0ce
+		summarizeBy: sum
+		sourceColumn: rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column zero_budget_rows
+		dataType: int64
+		formatString: 0
+		lineageTag: f2f39d57-26c7-4262-aed3-5399187f77bb
+		summarizeBy: sum
+		sourceColumn: zero_budget_rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column variance_pct
+		dataType: double
+		lineageTag: d2c7bdf2-2f51-4eb7-8d69-fa180bea4fda
+		summarizeBy: none
+		sourceColumn: variance_pct
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unfavorable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 152e35ff-8979-47fd-8f71-ac945b56f23c
+		summarizeBy: none
+		sourceColumn: unfavorable
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tranche exécution'
+		dataType: string
+		lineageTag: 6d1f0a10-0002-4c3e-9a01-000000000001
+		summarizeBy: none
+		sourceColumn: Tranche exécution
+		sortByColumn: 'Ordre tranche'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ordre tranche'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6d1f0a10-0002-4c3e-9a01-000000000002
+		summarizeBy: none
+		sourceColumn: Ordre tranche
+
+		annotation SummarizationSetBy = User
+
+	partition department_variance_summary = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_01_01-budget-vs-actual.xlsx"), null, true),
+				    department_variance_summary_Sheet = Source{[Item="department_variance_summary",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(department_variance_summary_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"dept_rollup_name", type text}, {"department_name", type text}, {"budget", type number}, {"expenditures", type number}, {"variance", type number}, {"rows", Int64.Type}, {"zero_budget_rows", Int64.Type}, {"variance_pct", type number}, {"unfavorable", type logical}}),
+				    #"Ordre ajouté" = Table.AddColumn(#"Type modifié", "Ordre tranche", each
+				        if [budget] = null or [budget] = 0 then 6
+				        else let r = [expenditures] / [budget] in
+				            if r > 1 then 5
+				            else if r >= 0.9 then 4
+				            else if r >= 0.75 then 3
+				            else if r >= 0.5 then 2
+				            else 1, Int64.Type),
+				    #"Tranche ajoutée" = Table.AddColumn(#"Ordre ajouté", "Tranche exécution", each
+				        {"< 50 %", "50 – 75 %", "75 – 90 %", "90 – 100 %", "> 100 %", "Sans budget"}{[Ordre tranche] - 1}, type text)
+				in
+				    #"Tranche ajoutée"
+
+	annotation PBI_ResultType = Table
+

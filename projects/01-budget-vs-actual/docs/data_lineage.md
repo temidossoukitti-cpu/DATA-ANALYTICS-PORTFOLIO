@@ -8,7 +8,7 @@
 | 2. Contrôle initial | Fichier brut | Vérification des colonnes, lignes, valeurs vides et doublons | `checks/austin_full_profile.txt` |
 | 3. Préparation | Fichier brut | Nettoyage des textes, conversion des codes en identifiants, calcul des écarts et alertes | `data/processed/austin_budget_vs_actual_prepared.csv` |
 | 4. Agrégation | Fichier préparé | Regroupement par département ou catégorie | `data/processed/department_variance_summary.csv` et `expense_variance_summary.csv` |
-| 5. Restitution | Synthèses calculées | Création de graphiques et du dashboard web | `visuals/`, `dashboard/web/` et fichier Excel |
+| 5. Restitution | Synthèses calculées | Création de graphiques et du dashboard Power BI | `visuals/`, `dashboard/powerbi/` et fichier Excel |
 | 6. Décision | Graphiques et indicateurs | Lecture des écarts et priorisation des vérifications | `reports/management_pack.md` |
 
 ## Principe de traçabilité

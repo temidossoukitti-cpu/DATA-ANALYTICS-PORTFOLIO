@@ -1,0 +1,33 @@
+table dim_limit_band
+	lineageTag: 04c4ed17-0004-0004-0000-000000000000
+
+	column limit_band_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0004-0000-000000000001
+		summarizeBy: none
+		sourceColumn: limit_band_key
+
+	column 'Tranche de plafond'
+		dataType: string
+		lineageTag: 04c4ed17-0004-0004-0000-000000000002
+		summarizeBy: none
+		sourceColumn: Tranche de plafond
+		sortByColumn: limit_band_key
+
+	partition dim_limit_band = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_04_04-risque-credit.xlsx"), null, true),
+				    Feuille = Source{[Item="dim_limit_band",Kind="Sheet"]}[Data],
+				    Entetes = Table.PromoteHeaders(Feuille, [PromoteAllScalars=true]),
+				    Types0 = Table.TransformColumnTypes(Entetes, {{"limit_band_key", Int64.Type}, {"limit_band_label", type text}, {"lower_limit", type number}, {"upper_limit", type number}}),
+				    Libelle = Table.AddColumn(Types0, "Tranche de plafond", each [limit_band_label] & " · " & Number.ToText([lower_limit] / 1000, "0") & "-" & Number.ToText([upper_limit] / 1000, "0") & " k", type text),
+				    Colonnes = Table.SelectColumns(Libelle, {"limit_band_key", "Tranche de plafond"})
+				in
+				    Colonnes
+
+	annotation PBI_ResultType = Table
+

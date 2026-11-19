@@ -1,0 +1,36 @@
+relationship AutoDetected_34ccdff0-0f99-4fb7-85f1-a42e739874fd
+	fromColumn: fact_campaign.age_band_key
+	toColumn: dim_age_band.age_band_key
+
+relationship AutoDetected_b9f188d2-4770-44dd-bad8-2c21a4848412
+	fromColumn: fact_campaign.campaign_band_key
+	toColumn: dim_campaign_band.campaign_band_key
+
+relationship AutoDetected_0e46f6e5-c4a5-449e-8e79-f4e8fb8a0a19
+	fromColumn: fact_campaign.contact_key
+	toColumn: dim_contact.contact_key
+
+relationship AutoDetected_fb0d5b7a-2d5e-47af-8cd5-7a0368097074
+	fromColumn: fact_campaign.education_key
+	toColumn: dim_education.education_key
+
+relationship AutoDetected_d38091bc-c0ee-4f60-830b-87a44e7d20d0
+	fromColumn: fact_campaign.job_key
+	toColumn: dim_job.job_key
+
+relationship AutoDetected_3fdb8498-0184-4c3f-922b-85bba6f79e77
+	fromColumn: fact_campaign.marital_key
+	toColumn: dim_marital.marital_key
+
+relationship AutoDetected_056a8f9b-7b1f-4265-88a7-84b051c6d72c
+	fromColumn: fact_campaign.month_key
+	toColumn: dim_month.month_key
+
+relationship AutoDetected_c09ae9f1-113b-4027-a7e5-9cb29543d09e
+	fromColumn: fact_campaign.outcome_key
+	toColumn: dim_outcome.outcome_key
+
+relationship AutoDetected_1a26874b-0229-4f83-8239-e7a4ecd58347
+	fromColumn: fact_campaign.poutcome_key
+	toColumn: dim_poutcome.poutcome_key
+

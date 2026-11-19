@@ -1,0 +1,61 @@
+table dim_age_band
+	lineageTag: 8c6e99fa-43c5-4e6f-9f02-6d2d856b0634
+
+	column age_band_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 53a8bde4-5a2f-4ba0-9c20-53ff25b41706
+		summarizeBy: none
+		sourceColumn: age_band_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_fr
+		dataType: string
+		lineageTag: 9ef3cc09-0783-426d-b197-fef29294002e
+		summarizeBy: none
+		sourceColumn: label_fr
+		sortByColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column lower_inclusive
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b5c26fe-ca36-4a53-9932-f2beb5ce09b4
+		summarizeBy: none
+		sourceColumn: lower_inclusive
+
+		annotation SummarizationSetBy = Automatic
+
+	column upper_inclusive
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b26a7c2-b69c-4a2a-9da4-2ed962037ce3
+		summarizeBy: none
+		sourceColumn: upper_inclusive
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b4e7595-5948-4295-9f3e-5fa724400295
+		summarizeBy: none
+		sourceColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_age_band = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_07_07-marketing-bancaire.xlsx"), null, true),
+				    dim_age_band_Sheet = Source{[Item="dim_age_band",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(dim_age_band_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"age_band_key", Int64.Type}, {"label_fr", type text}, {"lower_inclusive", Int64.Type}, {"upper_inclusive", Int64.Type}, {"sort_order", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,187 @@
+table financial_scorecard
+	lineageTag: 75a42ede-81a5-45da-b0b7-b4070b7b89d2
+
+	column entity
+		dataType: string
+		lineageTag: f69153de-106b-423a-815b-2b27aa93593b
+		summarizeBy: none
+		sourceColumn: entity
+
+		annotation SummarizationSetBy = Automatic
+
+	column latest_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 9063bcbe-7236-4af6-93f4-4d7030b15272
+		summarizeBy: sum
+		sourceColumn: latest_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue
+		dataType: int64
+		formatString: 0
+		lineageTag: 32818d28-8ffa-4485-8c73-c8bcecc17383
+		summarizeBy: sum
+		sourceColumn: revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column operating_income
+		dataType: int64
+		formatString: 0
+		lineageTag: 42d97f24-b621-4c22-acf5-63f671c92264
+		summarizeBy: sum
+		sourceColumn: operating_income
+
+		annotation SummarizationSetBy = Automatic
+
+	column net_income
+		dataType: int64
+		formatString: 0
+		lineageTag: ba910754-2718-44a0-a9c6-d84c3fa908f9
+		summarizeBy: sum
+		sourceColumn: net_income
+
+		annotation SummarizationSetBy = Automatic
+
+	column operating_margin
+		dataType: double
+		lineageTag: 8742b79e-120e-47b1-8478-42c846088c0b
+		summarizeBy: sum
+		sourceColumn: operating_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_margin
+		dataType: double
+		lineageTag: 428ef3f0-e992-4c34-b05d-c912aeeecb63
+		summarizeBy: sum
+		sourceColumn: net_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column roe
+		dataType: double
+		lineageTag: 2b524bdf-0dd8-49b8-ad56-9661e8789993
+		summarizeBy: sum
+		sourceColumn: roe
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column roa
+		dataType: double
+		lineageTag: 0b2c98a0-fc5e-4037-8d7a-507a0d903658
+		summarizeBy: sum
+		sourceColumn: roa
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column current_ratio
+		dataType: double
+		lineageTag: 11b543c9-24de-4865-b4b4-c60f0cc45bd8
+		summarizeBy: sum
+		sourceColumn: current_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debt_ratio
+		dataType: double
+		lineageTag: 162c9899-f7fc-4650-9b32-9a994913dbf6
+		summarizeBy: sum
+		sourceColumn: debt_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fcf
+		dataType: int64
+		formatString: 0
+		lineageTag: 31ac05f9-9a50-4d2d-b63c-9409371b2cbc
+		summarizeBy: sum
+		sourceColumn: fcf
+
+		annotation SummarizationSetBy = Automatic
+
+	column fcf_margin
+		dataType: double
+		lineageTag: 3c7bfff1-3a0a-492e-8b9f-8cffd23e118a
+		summarizeBy: sum
+		sourceColumn: fcf_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column eps_diluted
+		dataType: double
+		lineageTag: 30c4a238-0196-4c63-bc38-0a8b3ebc7a12
+		summarizeBy: sum
+		sourceColumn: eps_diluted
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column revenue_cagr
+		dataType: double
+		lineageTag: 615ab70c-343a-45fa-b169-7147e244eab3
+		summarizeBy: sum
+		sourceColumn: revenue_cagr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_income_cagr
+		dataType: double
+		lineageTag: 90725e8d-815e-45ec-a92d-7733ec1d50b3
+		summarizeBy: sum
+		sourceColumn: net_income_cagr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column period_start
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fe42fd3-110e-45de-8386-0e1488ae77fe
+		summarizeBy: sum
+		sourceColumn: period_start
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_end
+		dataType: int64
+		formatString: 0
+		lineageTag: bb324251-e665-4345-800d-34af7efa27c8
+		summarizeBy: sum
+		sourceColumn: period_end
+
+		annotation SummarizationSetBy = Automatic
+
+	partition financial_scorecard = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_06_06-analyse-financiere.xlsx"), null, true),
+				    financial_scorecard_Sheet = Source{[Item="financial_scorecard",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(financial_scorecard_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"entity", type text}, {"latest_year", Int64.Type}, {"revenue", Int64.Type}, {"operating_income", Int64.Type}, {"net_income", Int64.Type}, {"operating_margin", type number}, {"net_margin", type number}, {"roe", type number}, {"roa", type number}, {"current_ratio", type number}, {"debt_ratio", type number}, {"fcf", Int64.Type}, {"fcf_margin", type number}, {"eps_diluted", type number}, {"revenue_cagr", type number}, {"net_income_cagr", type number}, {"period_start", Int64.Type}, {"period_end", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

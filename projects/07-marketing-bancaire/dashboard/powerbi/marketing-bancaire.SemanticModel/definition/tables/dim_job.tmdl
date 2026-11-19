@@ -1,0 +1,60 @@
+table dim_job
+	lineageTag: 4fb2521e-5cfc-4741-aa93-548ec6fce294
+
+	column job_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b6757574-d25d-4337-a64b-17b24b1124af
+		summarizeBy: none
+		sourceColumn: job_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column code_source
+		dataType: string
+		lineageTag: d95122c9-c30f-45c5-a046-59643d53588b
+		summarizeBy: none
+		sourceColumn: code_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_fr
+		dataType: string
+		lineageTag: 604384db-5c95-4aaa-8fec-991fe8e99daa
+		summarizeBy: none
+		sourceColumn: label_fr
+		sortByColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a750b5e-0092-4d19-82df-b6159ca8cb1d
+		summarizeBy: none
+		sourceColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_rows
+		dataType: int64
+		formatString: 0
+		lineageTag: 118bdfe3-ba7c-4745-9412-a76e0eae6e35
+		summarizeBy: none
+		sourceColumn: source_rows
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_job = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_07_07-marketing-bancaire.xlsx"), null, true),
+				    dim_job_Sheet = Source{[Item="dim_job",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(dim_job_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"job_key", Int64.Type}, {"code_source", type text}, {"label_fr", type text}, {"sort_order", Int64.Type}, {"source_rows", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

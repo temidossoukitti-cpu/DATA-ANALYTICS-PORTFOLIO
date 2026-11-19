@@ -2,27 +2,12 @@
 
 Les données de ce projet sont **simulées**. Les entreprises, prix et positions sont fictifs.
 
-## Streamlit
+## Power BI
 
-Depuis le dossier du projet :
+Le dashboard principal est un **rapport Power BI** au format PBIP : voir [`powerbi/`](powerbi/) et son
+[mode d’emploi](powerbi/README.md). L’ancienne version HTML a été retirée au profit de Power BI.
 
-```bash
-python3 -m pip install -r dashboard/requirements.txt
-streamlit run dashboard/streamlit_app.py
-```
-
-## Version HTML
-
-Depuis le dossier du projet, lancer un serveur statique :
-
-```bash
-python3 -m http.server 8000
-```
-
-Puis ouvrir [http://localhost:8000/dashboard/web/](http://localhost:8000/dashboard/web/).
-La version HTML ne nécessite aucun backend et charge les fichiers JSON générés dans `dashboard/web/data/`.
-
-## Régénérer les données web et le PDF
+## Régénérer le rapport PDF
 
 ```bash
 python3 dashboard/build_assets.py

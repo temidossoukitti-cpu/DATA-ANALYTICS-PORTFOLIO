@@ -1,0 +1,49 @@
+table indicator_dictionary
+	lineageTag: 0e2e6374-2197-4514-a6cc-cdadde28670e
+
+	column Series_key
+		dataType: string
+		lineageTag: 1bd41f84-fb0d-47a5-834a-df4e5c0c9314
+		summarizeBy: none
+		sourceColumn: Series_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indicateur
+		dataType: string
+		lineageTag: 4d695c47-b334-48dd-a9ba-3b1ef5b4070f
+		summarizeBy: none
+		sourceColumn: Indicateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nom Banque mondiale'
+		dataType: string
+		lineageTag: 9e53b9b7-9def-4d24-bb23-5a07df7397db
+		summarizeBy: none
+		sourceColumn: Nom Banque mondiale
+
+		annotation SummarizationSetBy = Automatic
+
+	column Définition
+		dataType: string
+		lineageTag: f8109a11-88d6-45b7-beea-2be81eb3f4d4
+		summarizeBy: none
+		sourceColumn: Définition
+
+		annotation SummarizationSetBy = Automatic
+
+	partition indicator_dictionary = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_08_08-inclusion-financiere.xlsx"), null, true),
+				    indicator_dictionary_Sheet = Source{[Item="indicator_dictionary",Kind="Sheet"]}[Data],
+				    Entetes = Table.PromoteHeaders(indicator_dictionary_Sheet, [PromoteAllScalars=true]),
+				    Renomme = Table.RenameColumns(Entetes, {{"dashboard_label", "Indicateur"}, {"Indicator name", "Nom Banque mondiale"}, {"Definition", "Définition"}}),
+				    Types = Table.TransformColumnTypes(Renomme, {{"Series_key", type text}, {"Indicateur", type text}, {"Nom Banque mondiale", type text}, {"Définition", type text}})
+				in
+				    Types
+
+	annotation PBI_ResultType = Table
+

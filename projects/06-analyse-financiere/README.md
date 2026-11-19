@@ -16,7 +16,7 @@ Comment évaluer la rentabilité, l’efficacité, la liquidité et la structure
 - **Période et source :** sept exercices 2019–2025, quinze indicateurs et 105 valeurs extraites des 10-K annuels de la SEC.
 - **Dernier exercice :** produits 32,79 Md USD, résultat net 14,97 Md USD, marge opérationnelle 57,63 %, ROE 193,46 %.
 - **Structure et trésorerie :** liquidité courante 1,03, passif/actif 85,70 %, flux disponible 17,16 Md USD (52,33 % des produits).
-- **Livrables automatisés :** 7 tables CSV, 8 graphiques, 109/109 comparaisons SQL/Python; dashboard web publié.
+- **Livrables automatisés :** 7 tables CSV, 8 graphiques, 109/109 comparaisons SQL/Python; dashboard Power BI.
 <!-- AUTO:SUMMARY_END -->
 
 ## Données et contrôle qualité
@@ -78,7 +78,7 @@ La source ne fournit ni segmentation par activité, ni ventilation géographique
 
 ## Dashboard
 
-Dashboard web interactif à quatre pages : [version hébergée](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/projects/06-analyse-financiere/dashboard/web/) · [code](dashboard/web/) · captures : [synthèse](preview/dashboard_web.png), [rentabilité](preview/dashboard_web_rentabilite.png), [liquidité](preview/dashboard_web_liquidite.png) et [trésorerie](preview/dashboard_web_tresorerie.png).
+Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 
 ## Reproduire
 

@@ -1,0 +1,59 @@
+table dim_fiscal_year
+	lineageTag: 36d45335-462b-4975-bb63-1328c3af7583
+
+	column fiscal_year
+		dataType: int64
+		formatString: 0
+		lineageTag: ba4e051a-f54d-46da-8c9c-c72e198c26a7
+		summarizeBy: none
+		sourceColumn: fiscal_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_end
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4a5b533b-4184-4925-812a-dc23a95756c0
+		summarizeBy: none
+		sourceColumn: period_end
+
+		variation Variation
+			isDefault
+			relationship: fa13b525-03d1-4d39-b310-965a3a7ee920
+			defaultHierarchy: LocalDateTable_387311ed-9f31-4343-bd12-0db6481614ae.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column label_fr
+		dataType: string
+		lineageTag: fa54afaf-0340-4d14-926c-74d732857f88
+		summarizeBy: none
+		sourceColumn: label_fr
+		sortByColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		formatString: 0
+		lineageTag: ccba7b0b-41e9-4b84-bf27-f1fb0acdabb1
+		summarizeBy: none
+		sourceColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_fiscal_year = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_06_06-analyse-financiere.xlsx"), null, true),
+				    dim_fiscal_year_Sheet = Source{[Item="dim_fiscal_year",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(dim_fiscal_year_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"fiscal_year", Int64.Type}, {"period_end", type date}, {"label_fr", type text}, {"sort_order", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

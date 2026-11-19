@@ -1,0 +1,40 @@
+table dim_age_band
+	lineageTag: 04c4ed17-0004-0001-0000-000000000000
+
+	column age_band_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0001-0000-000000000001
+		summarizeBy: none
+		sourceColumn: age_band_key
+
+	column 'Tranche d''âge'
+		dataType: string
+		lineageTag: 04c4ed17-0004-0001-0000-000000000002
+		summarizeBy: none
+		sourceColumn: Tranche d'âge
+		sortByColumn: ordre
+
+	column ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0001-0000-000000000003
+		summarizeBy: none
+		sourceColumn: ordre
+
+	partition dim_age_band = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_04_04-risque-credit.xlsx"), null, true),
+				    Feuille = Source{[Item="dim_age_band",Kind="Sheet"]}[Data],
+				    Entetes = Table.PromoteHeaders(Feuille, [PromoteAllScalars=true]),
+				    Renomme = Table.RenameColumns(Entetes, {{"age_band_label", "Tranche d'âge"}}),
+				    Types = Table.TransformColumnTypes(Renomme, {{"age_band_key", Int64.Type}, {"Tranche d'âge", type text}, {"ordre", Int64.Type}})
+				in
+				    Types
+
+	annotation PBI_ResultType = Table
+

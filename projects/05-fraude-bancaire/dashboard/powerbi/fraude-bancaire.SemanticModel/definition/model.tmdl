@@ -1,0 +1,27 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["dim_amount_band","model_scorecard","model_money_controls","model_cost_sensitivity","fact_transactions","fact_model_test","dim_time_window","dim_outcome"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dim_amount_band
+ref table model_scorecard
+ref table model_money_controls
+ref table model_cost_sensitivity
+ref table fact_transactions
+ref table fact_model_test
+ref table dim_time_window
+ref table dim_outcome
+ref table Mesures
+
+ref cultureInfo fr-FR
+

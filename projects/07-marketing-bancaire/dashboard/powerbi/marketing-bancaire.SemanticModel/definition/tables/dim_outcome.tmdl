@@ -1,0 +1,42 @@
+table dim_outcome
+	lineageTag: 6274d693-bcbf-4d9d-ad44-afe2c1e22765
+
+	column outcome_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e1f6810-a268-4961-977a-49f9bcaba591
+		summarizeBy: none
+		sourceColumn: outcome_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_fr
+		dataType: string
+		lineageTag: 466fbbad-9207-409f-9357-7678329f24f7
+		summarizeBy: none
+		sourceColumn: label_fr
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_subscription
+		dataType: int64
+		formatString: 0
+		lineageTag: 2616fc9b-d37c-4d60-adf0-36c345982121
+		summarizeBy: none
+		sourceColumn: is_subscription
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_outcome = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_07_07-marketing-bancaire.xlsx"), null, true),
+				    dim_outcome_Sheet = Source{[Item="dim_outcome",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(dim_outcome_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"outcome_key", Int64.Type}, {"label_fr", type text}, {"is_subscription", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

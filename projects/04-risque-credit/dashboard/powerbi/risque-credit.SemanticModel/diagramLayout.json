@@ -1,0 +1,139 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 852.461839994928,
+            "y": 264.23313056600034
+          },
+          "nodeIndex": "Mesures",
+          "nodeLineageTag": "04c4ed17-0004-0009-0000-000000000000",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.46183999492791,
+            "y": 172.23569856133315
+          },
+          "nodeIndex": "dim_age_band",
+          "nodeLineageTag": "04c4ed17-0004-0001-0000-000000000000",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.42860099627853,
+            "y": 544.18690948198582
+          },
+          "nodeIndex": "dim_education",
+          "nodeLineageTag": "04c4ed17-0004-0002-0000-000000000000",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.20473380521241,
+            "y": 650.46626113200057
+          },
+          "nodeIndex": "dim_limit_band",
+          "nodeLineageTag": "04c4ed17-0004-0004-0000-000000000000",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 420.20584941356708
+          },
+          "nodeIndex": "dim_marriage",
+          "nodeLineageTag": "04c4ed17-0004-0003-0000-000000000000",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50.034816614203237,
+            "y": 95.597756019904978
+          },
+          "nodeIndex": "dim_pay_status",
+          "nodeLineageTag": "04c4ed17-0004-0005-0000-000000000000",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.25250372435136,
+            "y": -50
+          },
+          "nodeIndex": "dim_risk_band",
+          "nodeLineageTag": "04c4ed17-0004-0006-0000-000000000000",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.23521362384292,
+            "y": 236.66546997763322
+          },
+          "nodeIndex": "fact_clients",
+          "nodeLineageTag": "04c4ed17-0004-0007-0000-000000000000",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1136.4618399949281,
+            "y": 264.23313056600034
+          },
+          "nodeIndex": "model_scorecard",
+          "nodeLineageTag": "04c4ed17-0004-0008-0000-000000000000",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Toutes les tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Toutes les tables",
+  "defaultDiagram": "Toutes les tables"
+}

@@ -1,0 +1,27 @@
+relationship fa13b525-03d1-4d39-b310-965a3a7ee920
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_fiscal_year.period_end
+	toColumn: LocalDateTable_387311ed-9f31-4343-bd12-0db6481614ae.Date
+
+relationship AutoDetected_43f9fed3-8a48-4c94-a1dc-16d413c29b2d
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: financial_alerts.label_fr
+	toColumn: dim_ratio.label_fr
+
+relationship AutoDetected_5423032d-3191-4514-810f-900446084394
+	fromColumn: fact_financials.metric_key
+	toColumn: dim_metric.metric_key
+
+relationship AutoDetected_ec8be0fa-54af-4fe5-a7a3-735441f23256
+	fromColumn: fact_ratios.ratio_key
+	toColumn: dim_ratio.ratio_key
+
+relationship AutoDetected_6b6cf838-d8bd-4cff-ab7d-422a79ab98c3
+	fromColumn: fact_financials.fiscal_year_key
+	toColumn: dim_fiscal_year.fiscal_year
+
+relationship AutoDetected_da83b290-2206-4d5c-972a-c8a6fead767e
+	fromColumn: fact_ratios.fiscal_year_key
+	toColumn: dim_fiscal_year.fiscal_year
+

@@ -1,0 +1,28 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["dim_fiscal_year","dim_metric","dim_ratio","fact_financials","fact_ratios","financial_alerts","financial_scorecard"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dim_fiscal_year
+ref table DateTableTemplate_b36353a6-1b06-4125-884b-a7c62caa689d
+ref table LocalDateTable_387311ed-9f31-4343-bd12-0db6481614ae
+ref table dim_metric
+ref table dim_ratio
+ref table fact_financials
+ref table fact_ratios
+ref table financial_alerts
+ref table financial_scorecard
+ref table Mesures
+
+ref cultureInfo fr-FR
+

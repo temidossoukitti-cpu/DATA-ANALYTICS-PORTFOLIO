@@ -1,0 +1,126 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 902.733976666118,
+            "y": 114.20257310841302
+          },
+          "nodeIndex": "dim_fiscal_year",
+          "nodeLineageTag": "36d45335-462b-4975-bb63-1328c3af7583",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1192.6519139101053,
+            "y": 228.9798072996125
+          },
+          "nodeIndex": "dim_metric",
+          "nodeLineageTag": "53c32e0c-1c41-4dfd-91d0-e30fab132679",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.20750435909031,
+            "y": 85.282708959564161
+          },
+          "nodeIndex": "dim_ratio",
+          "nodeLineageTag": "ac692add-7306-44ad-9232-af222a5ec022",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1192.6475496272365,
+            "y": -50
+          },
+          "nodeIndex": "fact_financials",
+          "nodeLineageTag": "1c49a9df-96f9-4a33-a1bb-e32cf4ac653d",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.47154820973208,
+            "y": 129.09646753056344
+          },
+          "nodeIndex": "fact_ratios",
+          "nodeLineageTag": "c7073220-2f4e-41e8-9af5-4619218f261d",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 104.00348139855936
+          },
+          "nodeIndex": "financial_alerts",
+          "nodeLineageTag": "4fe01e86-bae3-412a-bf97-4510fe8fc255",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1426.6519139101053,
+            "y": 101.48990364980625
+          },
+          "nodeIndex": "financial_scorecard",
+          "nodeLineageTag": "75a42ede-81a5-45da-b0b7-b4070b7b89d2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1660.6519139101053,
+            "y": 101.48990364980625
+          },
+          "nodeIndex": "Mesures",
+          "nodeLineageTag": "f6a7b8c9-0006-0001-0001-000000000001",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Toutes les tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Toutes les tables",
+  "defaultDiagram": "Toutes les tables"
+}

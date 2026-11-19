@@ -1,0 +1,18 @@
+table 'Actif B'
+	lineageTag: c3d4e5f6-0001-0001-0001-000000000001
+
+	column Actif
+		dataType: string
+		lineageTag: c3d4e5f6-0001-0001-0001-000000000002
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Actif]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Actif B' = calculated
+		mode: import
+		source = DISTINCT(SELECTCOLUMNS(prices_long, "Actif", prices_long[ticker]))
+
+	annotation PBI_ResultType = Table
+

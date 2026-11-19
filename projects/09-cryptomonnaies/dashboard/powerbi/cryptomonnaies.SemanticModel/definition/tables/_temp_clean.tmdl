@@ -1,0 +1,194 @@
+table _temp_clean
+	lineageTag: 269a6950-42e5-4d51-9e97-3372669074c8
+
+	column open_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4233badc-755b-409a-8bb4-3ee856940fbb
+		summarizeBy: none
+		sourceColumn: open_time
+
+		variation Variation
+			isDefault
+			relationship: 84d72256-2f05-487b-8e97-502294c21160
+			defaultHierarchy: LocalDateTable_ed8c64a6-1241-49b7-bcb0-e9ce43485097.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column open
+		dataType: double
+		lineageTag: adde0979-693f-4aa3-9fa8-0d7de62478c4
+		summarizeBy: sum
+		sourceColumn: open
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column high
+		dataType: double
+		lineageTag: caeeed81-7a92-4850-8958-e071973fde62
+		summarizeBy: sum
+		sourceColumn: high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column low
+		dataType: double
+		lineageTag: a0f2aa2c-5c11-45fd-8723-efe26e9363b3
+		summarizeBy: sum
+		sourceColumn: low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column close
+		dataType: double
+		lineageTag: 263926dc-0467-4aac-a564-7ef3991b53b8
+		summarizeBy: sum
+		sourceColumn: close
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column volume
+		dataType: double
+		lineageTag: 3ec97c31-2cef-4bc8-bc67-88ded3819b5c
+		summarizeBy: sum
+		sourceColumn: volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column close_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 94152713-4267-4061-bfbe-09d8dd51c491
+		summarizeBy: none
+		sourceColumn: close_time
+
+		variation Variation
+			isDefault
+			relationship: b425b206-2f00-4301-b18e-9aad08afa889
+			defaultHierarchy: LocalDateTable_01c7d748-609f-4473-a741-02bfbc28042a.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column quote_volume
+		dataType: double
+		lineageTag: 83bb338d-44cb-4bb3-908e-23f7187d2160
+		summarizeBy: sum
+		sourceColumn: quote_volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trades
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c371620-3fd9-46b8-be73-a4ead928b1ed
+		summarizeBy: sum
+		sourceColumn: trades
+
+		annotation SummarizationSetBy = Automatic
+
+	column taker_buy_base_volume
+		dataType: double
+		lineageTag: e0bc19f7-f5c3-4d17-8d9f-15e3abe72ead
+		summarizeBy: sum
+		sourceColumn: taker_buy_base_volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column taker_buy_quote_volume
+		dataType: double
+		lineageTag: 7dbb56e0-17e5-4a68-b9ed-3a71c3a8b582
+		summarizeBy: sum
+		sourceColumn: taker_buy_quote_volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ignore
+		dataType: int64
+		formatString: 0
+		lineageTag: a95595ff-3c44-4c86-8096-dd888788ce2b
+		summarizeBy: sum
+		sourceColumn: ignore
+
+		annotation SummarizationSetBy = Automatic
+
+	column symbol
+		dataType: string
+		lineageTag: 26b6e212-1096-475f-a010-3c592b0e556e
+		summarizeBy: none
+		sourceColumn: symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column Jour
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: b8c9d0e1-0009-0001-0001-000000000001
+		summarizeBy: none
+		sourceColumn: Jour
+
+		variation Variation
+			isDefault
+			relationship: d4ee3d21-9842-40c5-92e3-f7d714279544
+			defaultHierarchy: LocalDateTable_a3b0cafe-cb6f-4bb4-9dad-7034d331fc57.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Année
+		dataType: string
+		lineageTag: b8c9d0e1-0009-0001-0001-000000000002
+		summarizeBy: none
+		sourceColumn: Année
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mois
+		dataType: string
+		lineageTag: b8c9d0e1-0009-0001-0001-000000000003
+		summarizeBy: none
+		sourceColumn: Mois
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bougie
+		dataType: string
+		lineageTag: b8c9d0e1-0009-0001-0001-000000000004
+		summarizeBy: none
+		sourceColumn: Bougie
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _temp_clean = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_09_09-cryptomonnaies.xlsx"), null, true),
+				    _temp_clean_Sheet = Source{[Item="_temp_clean",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(_temp_clean_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"open_time", type datetime}, {"open", type number}, {"high", type number}, {"low", type number}, {"close", type number}, {"volume", type number}, {"close_time", type datetime}, {"quote_volume", type number}, {"trades", Int64.Type}, {"taker_buy_base_volume", type number}, {"taker_buy_quote_volume", type number}, {"ignore", Int64.Type}, {"symbol", type text}}),
+				    #"Date" = Table.AddColumn(#"Type modifié", "Jour", each DateTime.Date([open_time]), type date),
+				    #"Année" = Table.AddColumn(#"Date", "Année", each Text.From(Date.Year([Jour])), type text),
+				    #"Mois" = Table.AddColumn(#"Année", "Mois", each Text.From(Date.Year([Jour])) & "-" & Text.PadStart(Text.From(Date.Month([Jour])), 2, "0"), type text),
+				    #"Sens" = Table.AddColumn(#"Mois", "Bougie", each if [close] >= [open] then "Haussière" else "Baissière", type text)
+				in
+				    #"Sens"
+
+	annotation PBI_ResultType = Table
+

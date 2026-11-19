@@ -1,0 +1,25 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["business_kpis","superstore_clean"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table business_kpis
+ref table superstore_clean
+ref table DateTableTemplate_c187abed-71f1-48e8-80a0-551969800d27
+ref table LocalDateTable_14b452bc-efbd-4025-b5a4-2511cf91b3f6
+ref table LocalDateTable_85ba57b4-6c23-45b8-b36c-3b476b3a0070
+ref table Calendrier
+ref table Mesures
+
+ref cultureInfo fr-FR
+

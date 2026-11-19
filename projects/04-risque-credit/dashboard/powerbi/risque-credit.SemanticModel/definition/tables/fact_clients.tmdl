@@ -1,0 +1,183 @@
+table fact_clients
+	lineageTag: 04c4ed17-0004-0007-0000-000000000000
+
+	column 'N° client'
+		dataType: int64
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000001
+		summarizeBy: none
+		sourceColumn: client_id
+
+	column Plafond
+		dataType: double
+		formatString: #,0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000002
+		summarizeBy: sum
+		sourceColumn: limit_bal
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000003
+		summarizeBy: none
+		sourceColumn: age
+
+	column bill_amt1
+		dataType: double
+		formatString: #,0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000004
+		summarizeBy: sum
+		sourceColumn: bill_amt1
+
+	column pay_amt1
+		dataType: double
+		formatString: #,0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000005
+		summarizeBy: sum
+		sourceColumn: pay_amt1
+
+	column default_next_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000006
+		summarizeBy: none
+		sourceColumn: default_next_month
+
+	column age_band_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000007
+		summarizeBy: none
+		sourceColumn: age_band_key
+
+	column limit_band_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000008
+		summarizeBy: none
+		sourceColumn: limit_band_key
+
+	column education_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000009
+		summarizeBy: none
+		sourceColumn: education_key
+
+	column marriage_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000010
+		summarizeBy: none
+		sourceColumn: marriage_key
+
+	column pay_status_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000011
+		summarizeBy: none
+		sourceColumn: pay_status_key
+
+	column Utilisation
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 04c4ed17-0004-0007-0000-000000000012
+		summarizeBy: none
+		sourceColumn: utilization
+
+	column max_delay_6m
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000013
+		summarizeBy: none
+		sourceColumn: max_delay_6m
+
+	column 'Nb retards (6 mois)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000014
+		summarizeBy: none
+		sourceColumn: n_delays_6m
+
+	column risk_flag_recent_delay
+		dataType: int64
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000015
+		summarizeBy: none
+		sourceColumn: risk_flag_recent_delay
+
+	column 'PD prédite'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 04c4ed17-0004-0007-0000-000000000016
+		summarizeBy: none
+		sourceColumn: predicted_pd
+
+	column risk_band_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000017
+		summarizeBy: none
+		sourceColumn: risk_band_key
+
+	column Échantillon
+		dataType: string
+		lineageTag: 04c4ed17-0004-0007-0000-000000000018
+		summarizeBy: none
+		sourceColumn: Échantillon
+
+	column 'Défaut observé'
+		dataType: string
+		lineageTag: 04c4ed17-0004-0007-0000-000000000019
+		summarizeBy: none
+		sourceColumn: Défaut observé
+
+	column 'Retard max (6 mois)'
+		dataType: string
+		lineageTag: 04c4ed17-0004-0007-0000-000000000020
+		summarizeBy: none
+		sourceColumn: Retard max (6 mois)
+		sortByColumn: max_delay_6m
+
+	column 'Tranche d''utilisation'
+		dataType: string
+		lineageTag: 04c4ed17-0004-0007-0000-000000000021
+		summarizeBy: none
+		sourceColumn: Tranche d'utilisation
+		sortByColumn: 'Ordre utilisation'
+
+	column 'Ordre utilisation'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4ed17-0004-0007-0000-000000000022
+		summarizeBy: none
+		sourceColumn: Ordre utilisation
+
+	partition fact_clients = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(DossierDonnees & "Projet_04_04-risque-credit.xlsx"), null, true),
+				    Feuille = Source{[Item="fact_clients",Kind="Sheet"]}[Data],
+				    Entetes = Table.PromoteHeaders(Feuille, [PromoteAllScalars=true]),
+				    Colonnes = Table.SelectColumns(Entetes, {"client_id", "limit_bal", "age", "bill_amt1", "pay_amt1", "default_next_month", "age_band_key", "limit_band_key", "education_key", "marriage_key", "pay_status_key", "utilization", "utilization_band", "max_delay_6m", "n_delays_6m", "risk_flag_recent_delay", "predicted_pd", "risk_band_key", "model_partition"}),
+				    Types = Table.TransformColumnTypes(Colonnes, {{"client_id", Int64.Type}, {"limit_bal", type number}, {"age", Int64.Type}, {"bill_amt1", type number}, {"pay_amt1", type number}, {"default_next_month", Int64.Type}, {"age_band_key", Int64.Type}, {"limit_band_key", Int64.Type}, {"education_key", Int64.Type}, {"marriage_key", Int64.Type}, {"pay_status_key", Int64.Type}, {"utilization", type number}, {"utilization_band", type text}, {"max_delay_6m", Int64.Type}, {"n_delays_6m", Int64.Type}, {"risk_flag_recent_delay", Int64.Type}, {"predicted_pd", type number}, {"risk_band_key", Int64.Type}, {"model_partition", type text}}),
+				    Echantillon = Table.AddColumn(Types, "Échantillon", each if [model_partition] = "Train" then "Apprentissage" else "Test", type text),
+				    Defaut = Table.AddColumn(Echantillon, "Défaut observé", each if [default_next_month] = 1 then "Défaut" else "Sain", type text),
+				    Retard = Table.AddColumn(Defaut, "Retard max (6 mois)", each if [max_delay_6m] = 0 then "Aucun retard" else Text.From([max_delay_6m]) & " mois", type text),
+				    Util = Table.RenameColumns(Retard, {{"utilization_band", "Tranche d'utilisation"}}),
+				    OrdreUtil = Table.AddColumn(Util, "Ordre utilisation", each if [#"Tranche d'utilisation"] = "<30 %" then 1 else if [#"Tranche d'utilisation"] = "30-<60 %" then 2 else if [#"Tranche d'utilisation"] = "60-100 %" then 3 else 4, Int64.Type),
+				    Final = Table.RemoveColumns(OrdreUtil, {"model_partition"})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+
