@@ -67,6 +67,8 @@ python3 scripts/analyze_variances.py
 
 Dashboard **Power BI** ([dossier `dashboard/powerbi/`](dashboard/powerbi/)) : rapport PBIP multi-pages (navigation, segments, KPI, analyses détaillées). Ouvrir le fichier `.pbip` avec Power BI Desktop, régler le paramètre `DossierDonnees`, puis actualiser — voir [`dashboard/powerbi/README.md`](dashboard/powerbi/README.md).
 
+![Dashboard Power BI — vue d'ensemble](dashboard/preview/powerbi_overview.png)
+
 ## Limites
 
 Il ne s’agit pas d’une série mensuelle sur plusieurs années. Les résultats décrivent uniquement l’exercice fiscal 2026 jusqu’au troisième trimestre disponible dans l’export. Le dataset concerne une organisation publique et non une entreprise privée. Les lignes avec budget nul ou montant négatif nécessitent une interprétation métier. La version web interactive est le livrable de visualisation retenu.
