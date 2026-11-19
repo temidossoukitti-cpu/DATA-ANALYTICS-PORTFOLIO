@@ -9,7 +9,7 @@
 <p align="center">
   <a href="mailto:temidossoukitti@gmail.com"><img src="assets/contact-button.svg" width="180" height="48" alt="Me contacter"></a>
   &nbsp;&nbsp;
-  <a href="https://temidossoukitti-cpu.github.io/"><img src="assets/portfolio-button.svg" width="150" height="48" alt="Portfolio"></a>
+  <a href="https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/"><img src="assets/portfolio-button.svg" width="150" height="48" alt="Portfolio"></a>
 </p>
 
 </div>
@@ -94,4 +94,4 @@ Chaque dossier de projet contient sa propre présentation et ses livrables. Les 
 
 **Samuel Dossou-Kitti**  
 Analyste de données · Finance et gestion du risque  
-[temidossoukitti@gmail.com](mailto:temidossoukitti@gmail.com) · [Site portfolio](https://temidossoukitti-cpu.github.io/)
+[temidossoukitti@gmail.com](mailto:temidossoukitti@gmail.com) · [Site portfolio](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/)

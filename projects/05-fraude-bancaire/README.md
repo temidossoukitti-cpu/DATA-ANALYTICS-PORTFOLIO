@@ -1,6 +1,6 @@
 # 05 · Détection de fraude sur les transactions bancaires
 
-[![PORTFOLIO](https://img.shields.io/badge/PORTFOLIO-Portfolio%20professionnel-334155?style=flat)](https://temidossoukitti-cpu.github.io/)
+[![PORTFOLIO](https://img.shields.io/badge/PORTFOLIO-Portfolio%20professionnel-334155?style=flat)](https://temidossoukitti-cpu.github.io/DATA-ANALYTICS-PORTFOLIO/)
 
 [← Retour à l’index du portfolio](../../)
 
