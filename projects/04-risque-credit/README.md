@@ -1,6 +1,6 @@
 # 04 · Risque de défaut des cartes de crédit
 
-[![PORTFOLIO](https://img.shields.io/badge/PORTFOLIO-Portfolio%20professionnel-334155?style=flat)](../../)
+[![PORTFOLIO](https://img.shields.io/badge/PORTFOLIO-Portfolio%20professionnel-334155?style=flat)](https://temidossoukitti-cpu.github.io/)
 
 [← Retour à l’index du portfolio](../../)
 
